@@ -24,13 +24,17 @@ const Header = ({ activeHeading }) => {
 
   const handleSearchChange = (e) => {
     const term = e.target.value;
-    setSearchTerm(term);
+    term? setSearchTerm(term): setSearchTerm('');
 
     const filteredProducts = productData.filter((product) =>
       product.name.toLowerCase().includes(term.toLowerCase())
     );
 
-    setSearchData(filteredProducts);
+    if(filteredProducts){
+      setSearchData(filteredProducts);
+    }else{
+      setSearchData('');
+    }
   };
 
   window.addEventListener("scroll", () => {
@@ -59,13 +63,14 @@ const Header = ({ activeHeading }) => {
               value={searchTerm}
               onChange={handleSearchChange}
               className="h-[40px] w-full px-2 border-[#6366F1] border-[2px] rounded-md"
+              onBlur={(e) => e.target.value = ''}
             />
             <AiOutlineSearch
               size={30}
               className="absolute right-2 top-1.5 cursor-pointer"
             />
             {searchData && searchData.length !== 0 ? (
-              <div className="absolute min-h-[30vh] bg-slate-50 shadow-sm-2 z-[9] p-4">
+              <div className="absolute min-h-[30vh] bg-slate-50 shadow-sm-2 z-[9] p-4" >
                 {searchData &&
                   searchData.map((i, index) => {
                     const d = i.name;
@@ -73,7 +78,7 @@ const Header = ({ activeHeading }) => {
                     const Product_name = d.replace(/\s+/g, "-");
                     return (
                       <Link to={`/product/${Product_name}`}>
-                        <div className="w-full flex items-start-py-3">
+                        <div className="w-full flex items-start-py-3" >
                           <img
                             src={i.image_Url[0].url}
                             alt=""
