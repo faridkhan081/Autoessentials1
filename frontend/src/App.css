@@ -90,3 +90,22 @@ input[type=number] {
 }
 
 
+
+@media only screen and (max-width: 600px) {
+  .dropdown .btn-dropdown{
+    border: 1px solid black;
+    margin-left: 16px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    text-align: left;
+    color: white ;
+    background-color: black;
+    font-weight: 400;
+    font-size: 16px;
+    width: 150px;
+    height: 50px;
+  }
+  .btn-dropdowned{
+    margin-left: 16px !important;
+  }
+}
