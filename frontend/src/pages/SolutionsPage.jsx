@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from '../components/Layout/Header'
+import Footer from '../components/Layout/Footer'
 
 function SolutionsPage() {
   return (
@@ -8,6 +9,8 @@ function SolutionsPage() {
         <br />
         <br />
         <h1>Solutions </h1>
+
+        
     </div>
   )
 }

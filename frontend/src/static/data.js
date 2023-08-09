@@ -1080,7 +1080,7 @@ export const productData = [
       },
       {
         public_id: "test",
-        url: "https://eratablet.com/wp-content/uploads/2022/08/H51ba6537405f4948972e293927673546u.jpg",
+        url: "https://klbtheme.com/partdo/wp-content/uploads/sites/2/2022/10/1-7-500x500.jpg",
       },
     ],
     shop: {

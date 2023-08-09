@@ -12,8 +12,9 @@ import { CgProfile } from "react-icons/cg";
 import DropDown from "./DropDown.jsx";
 import Navbar from "./Navbar.jsx";
 import { useSelector } from "react-redux";
-import {backend_url} from '../../server'
-import Cart from '../cart/Cart'
+import { backend_url } from "../../server";
+import Cart from "../cart/Cart";
+import Wishlist from "../wishlist/Wishlist.jsx";
 
 const Header = ({ activeHeading }) => {
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -21,22 +22,22 @@ const Header = ({ activeHeading }) => {
   const [searchData, setSearchData] = useState(null);
   const [active, setActive] = useState(false);
   const [dropDown, setDropDown] = useState(false);
-  const [openCart,setOpenCart] = useState(false);
-  const [openWishlist,setOpenWhishlist] = useState(false);
+  const [openCart, setOpenCart] = useState(false);
+  const [openWishlist, setOpenWhishlist] = useState(false);
   // console.log(user)
 
   const handleSearchChange = (e) => {
     const term = e.target.value;
-    term? setSearchTerm(term): setSearchTerm('');
+    term ? setSearchTerm(term) : setSearchTerm("");
 
     const filteredProducts = productData.filter((product) =>
       product.name.toLowerCase().includes(term.toLowerCase())
     );
 
-    if(filteredProducts){
+    if (filteredProducts) {
       setSearchData(filteredProducts);
-    }else{
-      setSearchData('');
+    } else {
+      setSearchData("");
     }
   };
 
@@ -49,8 +50,7 @@ const Header = ({ activeHeading }) => {
   });
 
   return (
-
-        <>
+    <>
       <div className={`${styles.section}`}>
         <div className="hidden 800px:h-[50px] 800px:my-[20px] 800px:flex items-center justify-between">
           <div>
@@ -66,14 +66,14 @@ const Header = ({ activeHeading }) => {
               value={searchTerm}
               onChange={handleSearchChange}
               className="h-[40px] w-full px-2 border-[#6366F1] border-[2px] rounded-md"
-              onBlur={(e) => e.target.value = ''}
+              onBlur={(e) => (e.target.value = "")}
             />
             <AiOutlineSearch
               size={30}
               className="absolute right-2 top-1.5 cursor-pointer"
             />
             {searchData && searchData.length !== 0 ? (
-              <div className="absolute min-h-[30vh] bg-slate-50 shadow-sm-2 z-[9] p-4" >
+              <div className="absolute min-h-[30vh] bg-slate-50 shadow-sm-2 z-[9] p-4">
                 {searchData &&
                   searchData.map((i, index) => {
                     const d = i.name;
@@ -81,7 +81,7 @@ const Header = ({ activeHeading }) => {
                     const Product_name = d.replace(/\s+/g, "-");
                     return (
                       <Link to={`/product/${Product_name}`}>
-                        <div className="w-full flex items-start-py-3" >
+                        <div className="w-full flex items-start-py-3">
                           <img
                             src={i.image_Url[0].url}
                             alt=""
@@ -114,7 +114,7 @@ const Header = ({ activeHeading }) => {
           className={`${styles.section} relative ${styles.noramlFlex} justify-between`}
         >
           {/* categories */}
-          <div  onClick={() => setDropDown(!dropDown)}>
+          <div onClick={() => setDropDown(!dropDown)}>
             <div className="relative h-[60px] mt-[10px] w-[270px] hidden 1000px:block">
               <BiMenuAltLeft size={30} className="absolute top-3 left-2" />
               <button
@@ -142,7 +142,10 @@ const Header = ({ activeHeading }) => {
           </div>
           <div className="flex">
             <div className={`${styles.noramlFlex}`}>
-              <div className="relative cursor-pointer mr-[15px]">
+              <div
+                className="relative cursor-pointer mr-[15px]"
+                onClick={() => setOpenWhishlist(true)}
+              >
                 <AiOutlineHeart size={30} color="rgb(255 255 255 / 83%)" />
                 <span className="absolute right-0 top-0 rounded-full bg-[#3bc177] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
                   0
@@ -151,11 +154,10 @@ const Header = ({ activeHeading }) => {
             </div>
 
             <div className={`${styles.noramlFlex}`}>
-              <div className="relative cursor-pointer mr-[15px]"
-              onClick={()=>setOpenCart(true)}
+              <div
+                className="relative cursor-pointer mr-[15px]"
+                onClick={() => setOpenCart(true)}
               >
-                
-
                 <AiOutlineShoppingCart
                   size={30}
                   color="rgb(255 255 255 / 83%)"
@@ -169,25 +171,24 @@ const Header = ({ activeHeading }) => {
               <div className="relative cursor-pointer mr-[15px]">
                 {isAuthenticated ? (
                   <Link to="/profile">
-                  <img src={`${backend_url}${user.avatar}`}
-                  className="w-[40px] h-[40px] rounded-full" alt="" />
-               </Link> 
-                ):(
+                    <img
+                      src={`${backend_url}${user.avatar}`}
+                      className="w-[40px] h-[40px] rounded-full"
+                      alt=""
+                    />
+                  </Link>
+                ) : (
                   <Link to="/login">
-                 
-                 <CgProfile size={30} color="rgb(255 255 255 / 83%)" />
-               </Link> 
+                    <CgProfile size={30} color="rgb(255 255 255 / 83%)" />
+                  </Link>
                 )}
-               
               </div>
             </div>
             {/* cart popup */}
-            {
-              openCart ? (
-                <Cart setOpenCart={setOpenCart}/>
-              ): null
-            }
+            {openCart ? <Cart setOpenCart={setOpenCart} /> : null}
 
+            {/* whishlist popup */}
+            {openWishlist ? <Wishlist setOpenWishlist={setOpenWhishlist} /> : null}
           </div>
         </div>
       </div>
