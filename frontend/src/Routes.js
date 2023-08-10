@@ -8,6 +8,8 @@ import EventsPage from '../src/pages/EventsPage.jsx'
 import SolutionsPage from '../src/pages/SolutionsPage.jsx'
 import FaqsPage from '../src/pages/FaqsPage.jsx'
 import ProductDetailsPage from '../src/pages/ProductDetailsPage.jsx'
+import ProfilePage from '../src/pages/ProfilePage.jsx'
+
 export {
     LoginPage,
     SignupPage,
@@ -19,5 +21,6 @@ export {
     SolutionsPage,
     FaqsPage,
     ProductDetailsPage,
+    ProfilePage,
 
 }

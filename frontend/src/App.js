@@ -12,6 +12,9 @@ import {
   SolutionsPage,
   FaqsPage,
   ProductDetailsPage,
+  // CheckoutPage,
+  // PaymentPage,
+  ProfilePage,
 } from "./Routes.js";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -47,6 +50,11 @@ const App = () => {
             <Route path="/events" element={<EventsPage />} />
             <Route path="/solutions" element={<SolutionsPage />} />
             <Route path="/faq" element={<FaqsPage />} />
+            {/* <Route path="/checkout" element={<CheckoutPage />} /> */}
+            {/* <Route path="/payment" element={<PaymentPage />} /> */}
+
+            {/* <Route path="/order/success/:id" element={<OrderSuccessPage />} /> */}
+            <Route path="/profile" element={<ProfilePage />} />
           </Routes>
           <ToastContainer
             position="bottom-center"
