@@ -19,9 +19,9 @@ const ProductDetailsCard = ({ setOpen, data }) => {
 
   const handleMessageSubmit = () => {};
  const decrementCount = () => {
-    if (count > 1) {
-      setCount(count - 1);
-    }
+   
+      setCount(count === 1 ? 1: count - 1);
+    
   };
 
   const incrementCount = () => {
