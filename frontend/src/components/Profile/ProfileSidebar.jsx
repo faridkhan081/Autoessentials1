@@ -3,13 +3,13 @@ import { AiOutlineLogin, AiOutlineMessage } from "react-icons/ai";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { HiOutlineReceiptRefund, HiOutlineShoppingBag } from "react-icons/hi";
 import {
-  MdOutlineAdminPanelSettings,
+
   MdOutlineCreditCard,
   MdOutlineTrackChanges,
 } from "react-icons/md";
 import { TbAddressBook } from "react-icons/tb";
 import { RxPerson } from "react-icons/rx";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 const ProfileSidebar = ({ setActive, active }) => {
   const navigate = useNavigate();
