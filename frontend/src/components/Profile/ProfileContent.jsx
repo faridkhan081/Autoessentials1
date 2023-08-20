@@ -5,7 +5,7 @@ import { AiOutlineArrowRight, AiOutlineCamera } from "react-icons/ai";
 import styles from "../../styles/styles";
 import { Link } from 'react-router-dom';
 import { Button } from "@material-ui/core";
-
+import {DataGrid} from '@material-ui/data-grid'
 
 
 function ProfileContent({ active, setActive }) {
@@ -142,7 +142,6 @@ function ProfileContent({ active, setActive }) {
 
 const AllOrders = () => {
 
-
   const orders = [
     {
       __id:'7463hvbfbhfbrtr28820221',
@@ -157,7 +156,7 @@ const AllOrders = () => {
     },
   
   ];
-  
+
 
   const columns = [
     { field: "id", headerName: "Order ID", minWidth: 150, flex: 0.7 },
@@ -199,7 +198,7 @@ const AllOrders = () => {
       renderCell: (params) => {
         return (
           <>
-            <Link to={`/user/order/${params.id}`}>
+            <Link to={`/order/${params.id}`}>
              
                <Button>
                <AiOutlineArrowRight size={20} />
@@ -213,19 +212,24 @@ const AllOrders = () => {
 
   const row = [];
 
-  orders &&
-    orders.forEach((item) => {
+  orders && orders.forEach((item) => {
       row.push({
-        id: item._id,
-        itemsQty: item.cart.length,
+        id: item.__id,
+        itemsQty: item.orderItems.length,
         total: "US$ " + item.totalPrice,
-        status: item.status,
+        status: item.orderStatus,
       });
     });
 
   return (
     <div className="pl-8 pt-1">
-  
+       <DataGrid
+        rows={row}
+        columns={columns}
+        pageSize={10}
+        disableSelectionOnClick
+        autoHeight
+      />
     </div>
   );
 };
