@@ -55,7 +55,10 @@ const Header = ({ activeHeading }) => {
         <div className="hidden 800px:h-[50px] 800px:my-[20px] 800px:flex items-center justify-between">
           <div>
             <Link to="/">
-              <img src={mainlogo} alt="autoessentials-logo" />
+            <div style={{display:'flex'}}>
+            <h5 className="text-xl" style={{padding:'8px',margin:'8px',color: 'white', backgroundColor: '#000',fontWeight:'lighter'}}> Auto </h5>
+            <h3 className="text-xl" style={{color: '#000',marginTop:'16px'}}>Essentails</h3>
+          </div>
             </Link>
           </div>
           {/* search box */}
@@ -191,6 +194,14 @@ const Header = ({ activeHeading }) => {
             {openWishlist ? <Wishlist setOpenWishlist={setOpenWhishlist} /> : null}
           </div>
         </div>
+      </div>
+
+
+
+      {/* mobile header */}
+
+      <div className="w-full h-[70px] fixed bg-[#fff] z-50 top-0 left-0 shadow-sm 800px:hidden">
+
       </div>
     </>
   );

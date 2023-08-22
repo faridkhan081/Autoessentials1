@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import "./App.css";
+
+import ProtectedRoute from "./ProtectedRoute";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
   LoginPage,
@@ -26,7 +28,7 @@ import { loadUser } from "./redux/actions/user";
 import { useSelector } from "react-redux";
 
 const App = () => {
-  const { loading } = useSelector((state) => state.user);
+  const { loading ,isAuthenticated} = useSelector((state) => state.user);
 
   useEffect(() => {
     Store.dispatch(loadUser());
@@ -54,7 +56,11 @@ const App = () => {
             {/* <Route path="/payment" element={<PaymentPage />} /> */}
 
             {/* <Route path="/order/success/:id" element={<OrderSuccessPage />} /> */}
-            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/profile" element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <ProfilePage />
+              </ProtectedRoute>
+            } />
           </Routes>
           <ToastContainer
             position="bottom-center"
