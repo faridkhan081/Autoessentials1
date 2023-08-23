@@ -34,6 +34,7 @@ const Header = ({ activeHeading }) => {
 
   // console.log(user)
 
+  
   const handleSearchChange = (e) => {
     const term = e.target.value;
      setSearchTerm(term)
@@ -41,15 +42,14 @@ const Header = ({ activeHeading }) => {
     const filteredProducts = productData.filter((product) =>
       product.name.toLowerCase().includes(term.toLowerCase())
     );
-
-   
       setSearchData(filteredProducts);
-      
-     
-    
   };
 
+  
   useEffect(() => {
+     
+
+
     if (!searchTerm) {
      setSearchData([])
      setSearchTerm("") // Clear search term
@@ -105,7 +105,7 @@ const Header = ({ activeHeading }) => {
           <div className="w-[50%] relative">
             <input
               type="text"
-              placeholder="Search Product..."
+              placeholder="Search product..."
               value={searchTerm}
               onChange={handleSearchChange}
               className="h-[40px] w-full px-2 border-[#6366F1] border-[2px] rounded-md"
@@ -121,7 +121,7 @@ const Header = ({ activeHeading }) => {
                 {searchData &&
                   searchData.map((i, index) => {
                     const d = i.name;
-
+                    
                     const Product_name = d.replace(/\s+/g, "-");
                     return (
                       <Link to={`/product/${Product_name}`}>
@@ -241,7 +241,10 @@ const Header = ({ activeHeading }) => {
 
       {/* mobile header */}
 
-      <div className={`${active===true ? "shadow-sm fixed top-0 left-0 z-10" : null} w-full h-[70px] fixed bg-[#fff] z-50 top-0 left-0 shadow-sm 800px:hidden`}>
+      <div className={`${
+          active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
+        }
+      w-full h-[60px] bg-[#fff] z-50 top-0 left-0 shadow-sm 800px:hidden`}>
         <div className="w-full flex items-center justify-between">
           <div>
             <HiMenuAlt2
@@ -253,7 +256,7 @@ const Header = ({ activeHeading }) => {
 
           <div>
             <Link to="/">
-              <div style={{ display: "flex", marginTop: "5px" }}>
+              <div style={{ display: "flex" }}>
                 <h5
                   className="text-xl"
                   style={{
@@ -278,7 +281,7 @@ const Header = ({ activeHeading }) => {
           </div>
 
           <div>
-            <div className="relative mr-[20px]">
+            <div className="relative mr-[20px] cursor-pointer"  onClick={() => setOpenCart(true)}>
               <AiOutlineShoppingCart size={28} />
               <span className="absolute right-0 top-0 rounded-full bg-[#3bc177] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
                 1
@@ -314,7 +317,7 @@ const Header = ({ activeHeading }) => {
                   className="h-[40px] w-full px-2 border-[#2957db] border-[2px] rounded-md"
                   value={searchTerm}
                   onChange={handleSearchChange}
-                      // onBlur={(e) => (e.target.value = "")}
+                     
 
                 />
                    {searchData && searchData.length !== 0 ? (
@@ -340,6 +343,48 @@ const Header = ({ activeHeading }) => {
               </div>
             ) : null}
               </div>
+
+              {/* nav-bar */}
+
+              <Navbar active={activeHeading}/>
+              <div className={`${styles.button} ml-4 !rounded-[4px]`}>
+            <Link to="/seller">
+              <h1 className="text-[#fff] flex items-center">
+                Become Seller
+                <IoIosArrowForward className="ml-1" />
+              </h1>
+            </Link>
+
+          
+          </div>
+
+          <br />
+         
+
+  <div className="flex w-full justify-center">          
+{
+  isAuthenticated ? (
+  
+  <Link to='/profile'>
+  <img src={`${backend_url}${user.avatar}`}
+      className="w-[100px] h-[100px] rounded-full
+      border-[3px] border-[#0eae88]" alt="" />
+ 
+  </Link>
+  ):(
+    <div>
+     
+         <Link to="/login" className="text-[18px] pr-[10px] text-[#000000b7] ">
+Login /
+</Link>
+<Link to='/sign-up' className="text-[18px] pr-[10px] text-[#000000b7]">Sign up</Link>
+    </div>
+  )
+}
+
+
+
+</div>
             </div>
           </div>
         )}

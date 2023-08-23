@@ -25,7 +25,7 @@ function Cart({setOpenCart}) {
         },
     ]
   return (
-    <div className='fixed top-0 left-0 w-full bg-[#0000004b] h-screen z-10'>
+    <div className='fixed top-0 left-0 w-full bg-[#0000004b] h-screen z-10 '>
     <div className="fixed top-0 right-0 h-full w-[80%] 800px:w-[25%] bg-white flex flex-col overflow-y-scroll justify-between shadow-sm">
     <div>
         <div className="flex w-full justify-between pt-5 pr-5">
