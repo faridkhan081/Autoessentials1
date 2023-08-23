@@ -1,20 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../../styles/styles";
 import { Link } from "react-router-dom";
 import mainlogo from "../../Assets/images/main-logo.svg";
 import { productData, categoriesData } from "../../static/data";
-import { AiOutlineSearch, AiOutlineShoppingCart } from "react-icons/ai";
+import {
+  AiOutlineClose,
+  AiOutlineSearch,
+  AiOutlineShoppingCart,
+} from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
 import { IoIosArrowForward } from "react-icons/io";
 import { BiMenuAltLeft } from "react-icons/bi";
 import { IoIosArrowDown } from "react-icons/io";
-import { CgProfile } from "react-icons/cg";
+import { CgMenuLeft, CgProfile } from "react-icons/cg";
 import DropDown from "./DropDown.jsx";
 import Navbar from "./Navbar.jsx";
 import { useSelector } from "react-redux";
 import { backend_url } from "../../server";
 import Cart from "../cart/Cart";
 import Wishlist from "../wishlist/Wishlist.jsx";
+import { HiMenuAlt2 } from "react-icons/hi";
 
 const Header = ({ activeHeading }) => {
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -23,24 +28,38 @@ const Header = ({ activeHeading }) => {
   const [active, setActive] = useState(false);
   const [dropDown, setDropDown] = useState(false);
   const [openCart, setOpenCart] = useState(false);
+  const [open, setOpen] = useState(false);
   const [openWishlist, setOpenWhishlist] = useState(false);
+
+
   // console.log(user)
 
   const handleSearchChange = (e) => {
     const term = e.target.value;
-    term ? setSearchTerm(term) : setSearchTerm("");
+     setSearchTerm(term)
 
     const filteredProducts = productData.filter((product) =>
       product.name.toLowerCase().includes(term.toLowerCase())
     );
 
-    if (filteredProducts) {
+   
       setSearchData(filteredProducts);
-    } else {
-      setSearchData("");
-    }
+      
+     
+    
   };
 
+  useEffect(() => {
+    if (!searchTerm) {
+     setSearchData([])
+     setSearchTerm("") // Clear search term
+    }
+
+
+  }, [searchTerm]);
+
+
+  
   window.addEventListener("scroll", () => {
     if (window.scrollY > 70) {
       setActive(true);
@@ -49,16 +68,37 @@ const Header = ({ activeHeading }) => {
     }
   });
 
+
+
+
+
   return (
     <>
       <div className={`${styles.section}`}>
         <div className="hidden 800px:h-[50px] 800px:my-[20px] 800px:flex items-center justify-between">
           <div>
             <Link to="/">
-            <div style={{display:'flex'}}>
-            <h5 className="text-xl" style={{padding:'8px',margin:'8px',color: 'white', backgroundColor: '#000',fontWeight:'lighter'}}> Auto </h5>
-            <h3 className="text-xl" style={{color: '#000',marginTop:'16px'}}>Essentails</h3>
-          </div>
+              <div style={{ display: "flex" }}>
+                <h5
+                  className="text-xl"
+                  style={{
+                    padding: "8px",
+                    margin: "8px",
+                    color: "white",
+                    backgroundColor: "#000",
+                    fontWeight: "lighter",
+                  }}
+                >
+                  {" "}
+                  Auto{" "}
+                </h5>
+                <h3
+                  className="text-xl"
+                  style={{ color: "#000", marginTop: "16px" }}
+                >
+                  Essentails
+                </h3>
+              </div>
             </Link>
           </div>
           {/* search box */}
@@ -69,11 +109,12 @@ const Header = ({ activeHeading }) => {
               value={searchTerm}
               onChange={handleSearchChange}
               className="h-[40px] w-full px-2 border-[#6366F1] border-[2px] rounded-md"
-              onBlur={(e) => (e.target.value = "")}
+             
             />
             <AiOutlineSearch
               size={30}
               className="absolute right-2 top-1.5 cursor-pointer"
+             
             />
             {searchData && searchData.length !== 0 ? (
               <div className="absolute min-h-[30vh] bg-slate-50 shadow-sm-2 z-[9] p-4">
@@ -191,17 +232,117 @@ const Header = ({ activeHeading }) => {
             {openCart ? <Cart setOpenCart={setOpenCart} /> : null}
 
             {/* whishlist popup */}
-            {openWishlist ? <Wishlist setOpenWishlist={setOpenWhishlist} /> : null}
+            {openWishlist ? (
+              <Wishlist setOpenWishlist={setOpenWhishlist} />
+            ) : null}
           </div>
         </div>
       </div>
 
-
-
       {/* mobile header */}
 
-      <div className="w-full h-[70px] fixed bg-[#fff] z-50 top-0 left-0 shadow-sm 800px:hidden">
+      <div className={`${active===true ? "shadow-sm fixed top-0 left-0 z-10" : null} w-full h-[70px] fixed bg-[#fff] z-50 top-0 left-0 shadow-sm 800px:hidden`}>
+        <div className="w-full flex items-center justify-between">
+          <div>
+            <HiMenuAlt2
+              size={28}
+              className="ml-4 cursor-pointer"
+              onClick={() => setOpen(true)}
+            />
+          </div>
 
+          <div>
+            <Link to="/">
+              <div style={{ display: "flex", marginTop: "5px" }}>
+                <h5
+                  className="text-xl"
+                  style={{
+                    padding: "8px",
+                    margin: "8px",
+                    color: "white",
+                    backgroundColor: "#000",
+                    fontWeight: "lighter",
+                  }}
+                >
+                  {" "}
+                  Auto{" "}
+                </h5>
+                <h3
+                  className="text-xl"
+                  style={{ color: "#000", marginTop: "16px" }}
+                >
+                  Essentails
+                </h3>
+              </div>
+            </Link>
+          </div>
+
+          <div>
+            <div className="relative mr-[20px]">
+              <AiOutlineShoppingCart size={28} />
+              <span className="absolute right-0 top-0 rounded-full bg-[#3bc177] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
+                1
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* header sidebar popup */}
+        {open && (
+          <div className={` fixed w-full bg-[#0000005f] z-20 h-full top-0 left-0`}>
+            <div className="fixed w-[60%] bg-[#fff] h-screen top-0 left-0 z-10 overflow-y-scroll">
+              <div className="w-full flex justify-between pr-3 ">
+                <div>
+                  <div className="relative mr-[15px]">
+                    <AiOutlineHeart size={28} className="mt-5 ml-3" />
+                    <span className="absolute right-0 top-0 rounded-full bg-[#3bc177] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
+                      0
+                    </span>
+                  </div>
+                </div>
+
+                <AiOutlineClose
+                  size={28}
+                  onClick={()=> setOpen(false)}
+                  className="mt-5 ml-4 cursor-pointer"
+                />
+              </div>
+
+              <div className="my-8 w-[92%] m-auto h-[40px] relative">
+                <input type="search"
+                  placeholder="Search Product..."
+                  className="h-[40px] w-full px-2 border-[#2957db] border-[2px] rounded-md"
+                  value={searchTerm}
+                  onChange={handleSearchChange}
+                      // onBlur={(e) => (e.target.value = "")}
+
+                />
+                   {searchData && searchData.length !== 0 ? (
+              <div className="absolute min-h-[30vh] bg-slate-50 shadow-sm-2 z-[9] p-4">
+                {searchData &&
+                  searchData.map((i, index) => {
+                    const d = i.name;
+
+                    const Product_name = d.replace(/\s+/g, "-");
+                    return (
+                      <Link to={`/product/${Product_name}`}>
+                        <div className="w-full flex items-start-py-3">
+                          <img
+                            src={i.image_Url[0].url}
+                            alt=""
+                            className="w-[40px] h-[40px] mr-[10px]"
+                          />
+                          <h1>{i.name}</h1>
+                        </div>
+                      </Link>
+                    );
+                  })}
+              </div>
+            ) : null}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
