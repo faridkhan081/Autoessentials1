@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 const shopSchema = new mongoose.Schema({
   name: {
@@ -18,28 +19,27 @@ const shopSchema = new mongoose.Schema({
   },
   phoneNumber: {
     type: Number,
-    required: true, 
+    required: true,
   },
   address: {
     type: String,
-    required : true
-    },
-  
-    description: {
-        type: String,
-        required : true
-        },
+    required: true,
+  },
+
+  description: {
+    type: String,
+  },
   role: {
     type: String,
     default: "seller",
   },
   avatar: {
     type: String,
-    required: true, 
+    required: true,
   },
   zipCode: {
     type: Number,
-    required: true, 
+    required: true,
   },
 
   createdAt: {
@@ -49,31 +49,27 @@ const shopSchema = new mongoose.Schema({
 
   resetPasswordToken: String,
   resetPasswordTime: Date,
-  
 });
 
-
 //  Hash password
-userSchema.pre("save", async function (next) {
-    if (!this.isModified("password")) {
-      next();
-    }
-  
-    this.password = await bcrypt.hash(this.password, 10);
+shopSchema.pre("save", async function (next) {
+  if (!this.isModified("password")) {
+    next();
+  }
+
+  this.password = await bcrypt.hash(this.password, 10);
+});
+
+// jwt token
+shopSchema.methods.getJwtToken = function () {
+  return jwt.sign({ id: this._id }, process.env.JWT_SECRET_KEY, {
+    expiresIn: process.env.JWT_EXPIRES,
   });
-  
-  // jwt token
-  userSchema.methods.getJwtToken = function () {
-    return jwt.sign({ id: this._id }, process.env.JWT_SECRET_KEY, {
-      expiresIn: process.env.JWT_EXPIRES,
-    });
-  };
-  
-  // compare password
-  userSchema.methods.comparePassword = async function (enteredPassword) {
-    return await bcrypt.compare(enteredPassword, this.password);
-  };
+};
 
-
+// compare password
+shopSchema.methods.comparePassword = async function (enteredPassword) {
+  return await bcrypt.compare(enteredPassword, this.password);
+};
 
 module.exports = mongoose.model("Shop", shopSchema);

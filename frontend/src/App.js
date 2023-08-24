@@ -14,9 +14,10 @@ import {
   SolutionsPage,
   FaqsPage,
   ProductDetailsPage,
-  // CheckoutPage,
+  ShopCreatePage,
   // PaymentPage,
   ProfilePage,
+  SellerActivationPage,
 } from "./Routes.js";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -26,9 +27,10 @@ import "react-toastify/dist/ReactToastify.css";
 import Store from "./redux/store";
 import { loadUser } from "./redux/actions/user";
 import { useSelector } from "react-redux";
+import CheckoutPage from "./pages/CheckoutPage";
 
 const App = () => {
-  const { loading ,isAuthenticated} = useSelector((state) => state.user);
+  const { loading, isAuthenticated } = useSelector((state) => state.user);
 
   useEffect(() => {
     Store.dispatch(loadUser());
@@ -46,21 +48,40 @@ const App = () => {
               path="/activation/:activation_token"
               element={<ActivationPage />}
             />
+
+<Route
+              path="/seller/activation/:activation_token"  
+              element={<SellerActivationPage />}
+            />
             <Route path="/products" element={<ProductsPage />} />
             <Route path="/product/:name" element={<ProductDetailsPage />} />
             <Route path="/best-selling" element={<BestSellingPage />} />
             <Route path="/events" element={<EventsPage />} />
             <Route path="/solutions" element={<SolutionsPage />} />
             <Route path="/faq" element={<FaqsPage />} />
-            {/* <Route path="/checkout" element={<CheckoutPage />} /> */}
+
+            <Route
+              path="/checkout"
+              element={
+                <ProtectedRoute isAuthenticated={isAuthenticated}>
+                  <CheckoutPage />
+                </ProtectedRoute>
+              }
+            />
+           
             {/* <Route path="/payment" element={<PaymentPage />} /> */}
 
             {/* <Route path="/order/success/:id" element={<OrderSuccessPage />} /> */}
-            <Route path="/profile" element={
-              <ProtectedRoute isAuthenticated={isAuthenticated}>
-                <ProfilePage />
-              </ProtectedRoute>
-            } />
+            <Route
+              path="/profile"
+              element={
+                <ProtectedRoute isAuthenticated={isAuthenticated}>
+                  <ProfilePage />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route path="/shop-create" element={<ShopCreatePage/>}/>
           </Routes>
           <ToastContainer
             position="bottom-center"

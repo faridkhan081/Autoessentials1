@@ -36,7 +36,8 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
 
 
   app.use('/api/v2/user', user);
-  app.use('/api/v2/shop', shop);
+ 
+  app.use("/api/v2/shop", shop);
 
   // its for Error Handling
   app.use(ErrorHandler);
