@@ -1,17 +1,18 @@
-import LoginPage from '../src/pages/LoginPage.jsx'
-import SignupPage from '../src/pages/SignupPage.jsx'
-import ActivationPage from '../src/pages/ActivationPage.jsx'
-import SellerActivationPage from '../src/pages/SellerActivationPage.jsx'
-import HomePage from '../src/pages/HomePage.jsx'
-import ProductsPage from '../src/pages/ProductsPage.jsx'
-import BestSellingPage from '../src/pages/BestSellingPage.jsx'
-import EventsPage from '../src/pages/EventsPage.jsx'
-import SolutionsPage from '../src/pages/SolutionsPage.jsx'
-import FaqsPage from '../src/pages/FaqsPage.jsx'
-import ProductDetailsPage from '../src/pages/ProductDetailsPage.jsx'
-import ProfilePage from '../src/pages/ProfilePage.jsx'
-import ShopCreatePage from './pages/ShopCreatePage.jsx'
-import CheckoutPage from './pages/CheckoutPage.jsx'
+import LoginPage from '../src/pages/LoginPage'
+import SignupPage from '../src/pages/SignupPage'
+import ActivationPage from '../src/pages/ActivationPage'
+import SellerActivationPage from '../src/pages/SellerActivationPage'
+import HomePage from '../src/pages/HomePage'
+import ProductsPage from '../src/pages/ProductsPage'
+import BestSellingPage from '../src/pages/BestSellingPage'
+import EventsPage from '../src/pages/EventsPage'
+import SolutionsPage from '../src/pages/SolutionsPage'
+import FaqsPage from '../src/pages/FaqsPage'
+import ProductDetailsPage from '../src/pages/ProductDetailsPage'
+import ProfilePage from '../src/pages/ProfilePage'
+import ShopCreatePage from './pages/ShopCreatePage'
+import ShopLoginPage from './pages/ShopLoginPage'
+import CheckoutPage from './pages/CheckoutPage'
 export {
     LoginPage,
     SignupPage,
@@ -26,6 +27,8 @@ export {
     ProfilePage,
     CheckoutPage,
     ShopCreatePage,
-    SellerActivationPage
+    ShopLoginPage,
+    SellerActivationPage,
+    
 
 }

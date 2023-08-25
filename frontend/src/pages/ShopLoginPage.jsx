@@ -1,12 +1,9 @@
 import React, { useEffect } from 'react'
-import ShopCreate from '../components/Shop/ShopCreate'
+import ShopLogin from '../components/Shop/ShopLogin.jsx'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-
-
-function ShopCreatePage() {
-  const navigate = useNavigate()
-
+const ShopLoginPage = () => {
+  const navigate = useNavigate();
   const { isSeller,seller } = useSelector((state) => state.seller);
 
   useEffect(() => {
@@ -14,10 +11,9 @@ function ShopCreatePage() {
       navigate(`/shop/${seller._id}`);
     }
   }, [])
-  
   return (
-    <div><ShopCreate/></div>
+    <div><ShopLogin/></div>
   )
 }
 
-export default ShopCreatePage
+export default ShopLoginPage

@@ -2,7 +2,13 @@ import React, { useEffect } from "react";
 import "./App.css";
 
 import ProtectedRoute from "./ProtectedRoute";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useNavigate,
+  Navigate,
+} from "react-router-dom";
 import {
   LoginPage,
   SignupPage,
@@ -14,10 +20,12 @@ import {
   SolutionsPage,
   FaqsPage,
   ProductDetailsPage,
+  CheckoutPage,
   ShopCreatePage,
   // PaymentPage,
   ProfilePage,
   SellerActivationPage,
+  ShopLoginPage,
 } from "./Routes.js";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -25,20 +33,26 @@ import "react-toastify/dist/ReactToastify.css";
 // import {server} from './server';
 // import { toast } from 'react-toastify';
 import Store from "./redux/store";
-import { loadUser } from "./redux/actions/user";
+import { loadSeller, loadUser } from "./redux/actions/user";
 import { useSelector } from "react-redux";
-import CheckoutPage from "./pages/CheckoutPage";
-
+import { ShopHomePage } from "./ShopRoutes.js";
+import SellerProtectedRoute from "./SellerProtectedRoute";
 const App = () => {
   const { loading, isAuthenticated } = useSelector((state) => state.user);
+  const { isLoading, isSeller } = useSelector((state) => state.seller);
 
   useEffect(() => {
     Store.dispatch(loadUser());
+    Store.dispatch(loadSeller());
+
+    // if(isSeller === true){
+    //   return <Navigate to="/shop" />
+    // }
   }, []);
 
   return (
     <>
-      {loading ? null : (
+      {loading || isLoading ? null : (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -49,8 +63,8 @@ const App = () => {
               element={<ActivationPage />}
             />
 
-<Route
-              path="/seller/activation/:activation_token"  
+            <Route
+              path="/seller/activation/:activation_token"
               element={<SellerActivationPage />}
             />
             <Route path="/products" element={<ProductsPage />} />
@@ -68,7 +82,7 @@ const App = () => {
                 </ProtectedRoute>
               }
             />
-           
+
             {/* <Route path="/payment" element={<PaymentPage />} /> */}
 
             {/* <Route path="/order/success/:id" element={<OrderSuccessPage />} /> */}
@@ -80,8 +94,17 @@ const App = () => {
                 </ProtectedRoute>
               }
             />
-
-            <Route path="/shop-create" element={<ShopCreatePage/>}/>
+            {/* shop routes */}
+            <Route path="/shop-create" element={<ShopCreatePage />} />
+            <Route path="/shop-login" element={<ShopLoginPage />} />
+            <Route
+              path="/shop/:id"
+              element={
+                <SellerProtectedRoute isSeller={isSeller}>
+                  <ShopHomePage />
+                </SellerProtectedRoute>
+              }
+            />
           </Routes>
           <ToastContainer
             position="bottom-center"

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import mainlogo from "../../Assets/images/main-logo.svg";
 import { productData, categoriesData } from "../../static/data";
 import {
+  AiFillShop,
   AiOutlineClose,
   AiOutlineSearch,
   AiOutlineShoppingCart,
@@ -20,6 +21,7 @@ import { backend_url } from "../../server";
 import Cart from "../cart/Cart";
 import Wishlist from "../wishlist/Wishlist.jsx";
 import { HiMenuAlt2 } from "react-icons/hi";
+import { BsShop } from "react-icons/bs";
 
 const Header = ({ activeHeading }) => {
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -30,7 +32,7 @@ const Header = ({ activeHeading }) => {
   const [openCart, setOpenCart] = useState(false);
   const [open, setOpen] = useState(false);
   const [openWishlist, setOpenWhishlist] = useState(false);
-
+  const { isSeller,seller } = useSelector((state) => state.seller);
 
   // console.log(user)
 
@@ -139,7 +141,16 @@ const Header = ({ activeHeading }) => {
               </div>
             ) : null}
           </div>
-          <div className={`${styles.button}`}>
+          {
+            isSeller ? (
+             
+              
+              <Link to='/shop-create'><AiFillShop size={30}/></Link>
+             
+            
+            ): (
+              <>
+              <div className={`${styles.button}`}>
             <Link to="/shop-create">
               <h1 className="text-[#fff] flex items-center">
                 Become Seller
@@ -147,6 +158,9 @@ const Header = ({ activeHeading }) => {
               </h1>
             </Link>
           </div>
+              </>
+            )
+          }
         </div>
       </div>
       <div
