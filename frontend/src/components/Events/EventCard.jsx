@@ -7,8 +7,10 @@ const EventCard = ({active}) => {
 
 
   return (
+    
     <div
       className={`w-full block bg-white rounded-lg ${active ? "unset" : "mb-12"} lg:flex p-2`}>
+      
       <div className="w-full lg:-w[50%] m-auto">
         <img src="https://klbtheme.com/partdo/wp-content/uploads/sites/2/2022/10/1-4-500x500.jpg" alt="" />
       </div>

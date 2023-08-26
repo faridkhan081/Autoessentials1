@@ -82,12 +82,12 @@ const Header = ({ activeHeading }) => {
             <Link to="/">
               <div style={{ display: "flex" }}>
                 <h5
-                  className="text-xl"
+                  className="text-xl bg-rose-600"
                   style={{
                     padding: "8px",
                     margin: "8px",
                     color: "white",
-                    backgroundColor: "#000",
+                   
                     fontWeight: "lighter",
                   }}
                 >
@@ -106,11 +106,11 @@ const Header = ({ activeHeading }) => {
           {/* search box */}
           <div className="w-[50%] relative">
             <input
-              type="text"
+              type="search"
               placeholder="Search product..."
               value={searchTerm}
               onChange={handleSearchChange}
-              className="h-[40px] w-full px-2 border-[#6366F1] border-[2px] rounded-md"
+              className="h-[40px] w-full px-2 border-[#fff] rounded-md focus:border-rose-200 focus:ring-0"
              
             />
             <AiOutlineSearch
@@ -150,8 +150,8 @@ const Header = ({ activeHeading }) => {
             
             ): (
               <>
-              <div className={`${styles.button}`}>
-            <Link to="/shop-create">
+              <div className={`${styles.button} bg-rose-600 !rounded-md`}>
+            <Link to="/shop-login">
               <h1 className="text-[#fff] flex items-center">
                 Become Seller
                 <IoIosArrowForward className="ml-1" />
@@ -166,7 +166,7 @@ const Header = ({ activeHeading }) => {
       <div
         className={`${
           active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
-        } transition hidden 800px:flex items-center justify-between w-full bg-[#4338CA] h-[70px]`}
+        } transition hidden 800px:flex items-center justify-between w-full bg-[#000] h-[70px]`}
       >
         <div
           className={`${styles.section} relative ${styles.noramlFlex} justify-between`}
@@ -205,7 +205,7 @@ const Header = ({ activeHeading }) => {
                 onClick={() => setOpenWhishlist(true)}
               >
                 <AiOutlineHeart size={30} color="rgb(255 255 255 / 83%)" />
-                <span className="absolute right-0 top-0 rounded-full bg-[#3bc177] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
+                <span className="absolute right-0 top-0 rounded-full bg-rose-500  w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
                   0
                 </span>
               </div>
@@ -220,7 +220,7 @@ const Header = ({ activeHeading }) => {
                   size={30}
                   color="rgb(255 255 255 / 83%)"
                 />
-                <span className="absolute right-0 top-0 rounded-full bg-[#3bc177] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
+                <span className="absolute right-0 top-0 rounded-full bg-rose-500  w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
                   1
                 </span>
               </div>
@@ -272,12 +272,12 @@ const Header = ({ activeHeading }) => {
             <Link to="/">
               <div style={{ display: "flex" }}>
                 <h5
-                  className="text-xl"
+                  className="text-xl bg-rose-500"
                   style={{
                     padding: "8px",
                     margin: "8px",
                     color: "white",
-                    backgroundColor: "#000",
+                    
                     fontWeight: "lighter",
                   }}
                 >
@@ -297,7 +297,7 @@ const Header = ({ activeHeading }) => {
           <div>
             <div className="relative mr-[20px] cursor-pointer"  onClick={() => setOpenCart(true)}>
               <AiOutlineShoppingCart size={28} />
-              <span className="absolute right-0 top-0 rounded-full bg-[#3bc177] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
+              <span className="absolute right-0 top-0 rounded-full bg-rose-500  w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
                 1
               </span>
             </div>
@@ -312,7 +312,7 @@ const Header = ({ activeHeading }) => {
                 <div>
                   <div className="relative mr-[15px]">
                     <AiOutlineHeart size={28} className="mt-5 ml-3" />
-                    <span className="absolute right-0 top-0 rounded-full bg-[#3bc177] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
+                    <span className="absolute right-0 top-0 rounded-full bg-rose-500  w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
                       0
                     </span>
                   </div>
@@ -328,7 +328,7 @@ const Header = ({ activeHeading }) => {
               <div className="my-8 w-[92%] m-auto h-[40px] relative">
                 <input type="search"
                   placeholder="Search Product..."
-                  className="h-[40px] w-full px-2 border-[#2957db] border-[2px] rounded-md"
+                  className="h-[40px] w-full px-2 border-[#fff] rounded-md focus:border-rose-200 focus:ring-0"
                   value={searchTerm}
                   onChange={handleSearchChange}
                      
@@ -361,8 +361,8 @@ const Header = ({ activeHeading }) => {
               {/* nav-bar */}
 
               <Navbar active={activeHeading}/>
-              <div className={`${styles.button} ml-4 !rounded-[4px]`}>
-            <Link to="/shop-create">
+              <div className={`${styles.button} ml-4 !rounded-[4px] bg-rose-600`}>
+            <Link to="/shop-login">
               <h1 className="text-[#fff] flex items-center">
                 Become Seller
                 <IoIosArrowForward className="ml-1" />
