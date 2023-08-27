@@ -2,13 +2,7 @@ import React, { useEffect } from "react";
 import "./App.css";
 
 import ProtectedRoute from "./ProtectedRoute";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  useNavigate,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
   LoginPage,
   SignupPage,
@@ -52,7 +46,7 @@ const App = () => {
 
   return (
     <>
-      {loading || isLoading ? null : (
+  
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -62,7 +56,6 @@ const App = () => {
               path="/activation/:activation_token"
               element={<ActivationPage />}
             />
-
             <Route
               path="/seller/activation/:activation_token"
               element={<SellerActivationPage />}
@@ -119,7 +112,7 @@ const App = () => {
             theme="dark"
           />
         </BrowserRouter>
-      )}
+   
     </>
   );
 };

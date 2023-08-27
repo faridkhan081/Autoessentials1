@@ -8,13 +8,14 @@ import ProductCard from "../components/Route/ProductCard/ProductCard";
 function BestSellingPage() {
  
 
-  const [data, setData] = useState();
+  const [data, setData] = useState('');
 
   useEffect(() => {
+    console.log('useEffect is called');
     const d = productData && productData.sort((a,b)=> b.total_sell - a.total_sell)
     setData(d)
     
-    // window.scrollTo(0,0);
+    
   }, []);
 
   return (

@@ -9,6 +9,7 @@ const ActivationPage = () => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
+    console.log('activation page mounted');
     if (activation_token) {
       const sendRequest = async () => {
         await axios

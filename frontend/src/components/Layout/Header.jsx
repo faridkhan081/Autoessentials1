@@ -258,13 +258,14 @@ const Header = ({ activeHeading }) => {
       <div className={`${
           active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
         }
-      w-full h-[60px] bg-[#fff] z-50 top-0 left-0 shadow-sm 800px:hidden`}>
+      w-full h-[60px] bg-[#000] z-50 top-0 left-0 shadow-sm 800px:hidden`}>
         <div className="w-full flex items-center justify-between">
           <div>
             <HiMenuAlt2
               size={28}
               className="ml-4 cursor-pointer"
               onClick={() => setOpen(true)}
+              color="white"
             />
           </div>
 
@@ -286,7 +287,7 @@ const Header = ({ activeHeading }) => {
                 </h5>
                 <h3
                   className="text-xl"
-                  style={{ color: "#000", marginTop: "16px" }}
+                  style={{ color: "#fff", marginTop: "16px" }}
                 >
                   Essentails
                 </h3>
@@ -296,7 +297,7 @@ const Header = ({ activeHeading }) => {
 
           <div>
             <div className="relative mr-[20px] cursor-pointer"  onClick={() => setOpenCart(true)}>
-              <AiOutlineShoppingCart size={28} />
+              <AiOutlineShoppingCart color="white" size={28} />
               <span className="absolute right-0 top-0 rounded-full bg-rose-500  w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
                 1
               </span>
@@ -325,10 +326,10 @@ const Header = ({ activeHeading }) => {
                 />
               </div>
 
-              <div className="my-8 w-[92%] m-auto h-[40px] relative">
+              <div className="my-8 w-[92%] m-auto h-[40px] relative ">
                 <input type="search"
                   placeholder="Search Product..."
-                  className="h-[40px] w-full px-2 border-[#fff] rounded-md focus:border-rose-200 focus:ring-0"
+                  className="h-[40px] w-full px-2 bg-red-100 border-[#fff] rounded-md focus:border-rose-200 focus:ring-0"
                   value={searchTerm}
                   onChange={handleSearchChange}
                      
