@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import styles from "../../styles/styles";
 import { Link } from "react-router-dom";
-import mainlogo from "../../Assets/images/main-logo.svg";
+
 import { productData, categoriesData } from "../../static/data";
 import {
   AiFillShop,
   AiOutlineClose,
-  AiOutlineSearch,
+ 
   AiOutlineShoppingCart,
 } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
 import { IoIosArrowForward } from "react-icons/io";
 import { BiMenuAltLeft } from "react-icons/bi";
 import { IoIosArrowDown } from "react-icons/io";
-import { CgMenuLeft, CgProfile } from "react-icons/cg";
+import { CgProfile } from "react-icons/cg";
 import DropDown from "./DropDown.jsx";
 import Navbar from "./Navbar.jsx";
 import { useSelector } from "react-redux";
@@ -21,7 +21,7 @@ import { backend_url } from "../../server";
 import Cart from "../cart/Cart";
 import Wishlist from "../wishlist/Wishlist.jsx";
 import { HiMenuAlt2 } from "react-icons/hi";
-import { BsShop } from "react-icons/bs";
+
 
 const Header = ({ activeHeading }) => {
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -104,20 +104,21 @@ const Header = ({ activeHeading }) => {
             </Link>
           </div>
           {/* search box */}
+          
           <div className="w-[50%] relative">
+        
             <input
               type="search"
-              placeholder="Search product..."
+              placeholder="Explore..."
               value={searchTerm}
               onChange={handleSearchChange}
               className="h-[40px] w-full px-2 border-[#fff] rounded-md focus:border-rose-200 focus:ring-0"
              
             />
-            <AiOutlineSearch
-              size={30}
-              className="absolute right-2 top-1.5 cursor-pointer"
-             
-            />
+
+
+
+         
             {searchData && searchData.length !== 0 ? (
               <div className="absolute min-h-[30vh] bg-slate-50 shadow-sm-2 z-[9] p-4">
                 {searchData &&

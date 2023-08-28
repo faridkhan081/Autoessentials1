@@ -11,7 +11,7 @@ import Footer from '../components/Layout/Footer.jsx'
 
 function HomePage() {
   return (
-    <div>
+    <>
     <Header activeHeading={1}/>
     <Hero  />
     <Categories/>
@@ -21,7 +21,7 @@ function HomePage() {
     <Sponsored/>
     <Footer/>
     
-    </div>
+    </>
   )
 }
 

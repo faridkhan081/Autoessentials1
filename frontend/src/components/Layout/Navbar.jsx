@@ -25,7 +25,7 @@ const Navbar = ({active}) => {
          }
 
 
-         <div className="dropdown ">
+         <div className="dropdown lg:ml-5">
         <button
           className="text-black bg-white rounded-lg font-medium text-sm px-4 py-2.5 text-center inline-flex items-center btn-dropdown"
           onClick={handleDropDown}
@@ -66,6 +66,8 @@ const Navbar = ({active}) => {
           </ul>
         </div>
       </div>
+
+      
 
     </div>
   )

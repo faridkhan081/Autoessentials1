@@ -10,7 +10,7 @@ const EventCard = ({ active }) => {
         active ? "unset" : "mb-12"
       } lg:flex p-2`}
     >
-      <div className="w-full  m-auto">
+      <div className="w-full m-auto">
         <img
           src="https://ic.carid.com/bfgoodrich/items/bfgoodrich-g-force-comp-2-a-s_1.jpg"
           alt=""

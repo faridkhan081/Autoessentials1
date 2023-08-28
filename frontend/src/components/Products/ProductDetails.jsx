@@ -3,7 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 import styles from "../../styles/styles";
 import { AiFillHeart, AiOutlineHeart, AiOutlineMessage, AiOutlineMinus, AiOutlinePlus, AiOutlineShoppingCart } from "react-icons/ai";
 import Ratings from "./Rating";
-function ProductDetails({ data }) {
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
+function ProductDetails({ data,isLoading }) {
   const [count, setCount] = useState(1);
   const [click, setClick] = useState(false);
   const [select, setSelect] = useState(0);
@@ -22,19 +24,23 @@ function ProductDetails({ data }) {
   return (
     <>
       <div className="bg-white ">
-        {data ? (
+      
+    {
+      isLoading ? (
+        <>
+        {data  ? (
           <div className={`${styles.section} w-[90%] 800px:w-[80%] `}>
             <div className="w-full py-5">
-              <div className="block w-full 800px:flex">
+              <div className="block w-full 800px:flex mt-5">
             
-                <div className="w-full 800px:w-[50%]">
-                <img src={data?.image_Url[select].url} alt=""
-              className="w-[80%]" />
-                  <div className="w-full flex">
+                <div className="w-full 800px:w-[50%]  cursor-pointer">
+                <img src={data?.image_Url[select].url } alt=""
+              className="w-[80%] h-[400px] overflow-hidden hover:scale-105 " />
+                  <div className="w-full flex mt-3">
                     <div
                       className={`${
                         select === 0 ? "border" : "null"
-                      } cursor-pointer`}
+                      } cursor-pointer `}
                     >
                         <img  src={data?.image_Url[0].url} alt="" 
                             className="h-[200px] overflow-hidden mr-3 mt-3"
@@ -142,6 +148,24 @@ function ProductDetails({ data }) {
             <br />
           </div>
         ) : null}
+        </>
+
+      ): (
+        <>
+  <div className="loader">
+  <p className="heading mt-[10%]">Products details are loading...</p>
+  <div className="loading">
+    <div className="load" />
+    <div className="load" />
+    <div className="load" />
+    <div className="load" />
+  </div>
+</div>
+
+
+        </>
+      )
+    }
       </div>
     </>
   );
