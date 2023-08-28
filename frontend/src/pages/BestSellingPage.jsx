@@ -4,6 +4,7 @@ import styles from "../styles/styles";
 
 import { productData } from "../static/data";
 import ProductCard from "../components/Route/ProductCard/ProductCard";
+import HeadBanner from "../components/Banner/HeadBanner";
 
 function BestSellingPage() {
  
@@ -21,6 +22,8 @@ function BestSellingPage() {
   return (
     <div>
       <Header activeHeading={2} />
+      <HeadBanner title="Best Selling Products" list='Best selling' imageUrl="https://media.wired.com/photos/5e62cc45ac94e900085c0f2c/master/pass/Science_goodyear_163751952.jpg"/>
+
       <br />
       <br />
       <div className={`${styles.section}`}>

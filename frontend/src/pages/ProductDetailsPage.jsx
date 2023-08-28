@@ -21,7 +21,7 @@ function ProductDetailsPage() {
         const data = productData.find((i) => i.name === productName)
         setData(data)
        setIsLoading(true)
-      },1000)
+      },500)
       window.scrollTo(0,0);
    
         

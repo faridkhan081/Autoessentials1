@@ -33,7 +33,7 @@ function ProductDetails({ data,isLoading }) {
             <div className="w-full py-5">
               <div className="block w-full 800px:flex mt-5">
             
-                <div className="w-full 800px:w-[50%]  cursor-pointer">
+                <div className="w-full 800px:w-[50%]  cursor-zoom-in">
                 <img src={data?.image_Url[select].url } alt=""
               className="w-[80%] h-[400px] overflow-hidden hover:scale-105 " />
                   <div className="w-full flex mt-3">
