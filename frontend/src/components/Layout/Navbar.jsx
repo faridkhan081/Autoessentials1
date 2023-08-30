@@ -11,7 +11,7 @@ const Navbar = ({active}) => {
     setOpen(!isOpen);
   };
   return (
-    <div className={`block 800px:${styles.noramlFlex}`}>
+    <div className={`block 800px:${styles.noramlFlex} font-Poppins text-[14px] `}>
          {
             navItems && navItems.map((i,index) => (
                 <div className="flex">

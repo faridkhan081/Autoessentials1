@@ -18,11 +18,7 @@ function HeadBanner({title,list,imageUrl}) {
           <header>
             <h2 className="text-xl font-bold text-white sm:text-3xl">{title}</h2>
 
-          {/*
-  Heads up! 👋
 
-  This component comes with some `rtl` classes. Please remove them if they are not needed in your project.
-*/}
 
 <nav aria-label="Breadcrumb">
   <ol className="flex items-center justify-center gap-1 text-sm text-white mt-2" >

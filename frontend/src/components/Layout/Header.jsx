@@ -6,10 +6,12 @@ import { productData, categoriesData } from "../../static/data";
 import {
   AiFillShop,
   AiOutlineClose,
- 
-  AiOutlineShoppingCart,
+
 } from "react-icons/ai";
-import { AiOutlineHeart } from "react-icons/ai";
+import { AlignLeft } from 'lucide-react';
+import { Heart } from 'lucide-react';
+import { ShoppingCart } from 'lucide-react';
+
 import { IoIosArrowForward } from "react-icons/io";
 import { BiMenuAltLeft } from "react-icons/bi";
 import { IoIosArrowDown } from "react-icons/io";
@@ -21,6 +23,7 @@ import { backend_url } from "../../server";
 import Cart from "../cart/Cart";
 import Wishlist from "../wishlist/Wishlist.jsx";
 import { HiMenuAlt2 } from "react-icons/hi";
+// import Head from "./Head";
 
 
 const Header = ({ activeHeading }) => {
@@ -76,8 +79,10 @@ const Header = ({ activeHeading }) => {
 
   return (
     <>
+    {/* <Head /> */}
       <div className={`${styles.section}`}>
-        <div className="hidden 800px:h-[50px] 800px:my-[20px] 800px:flex items-center justify-between">
+      
+        <div className="hidden 800px:h-[50px] 800px:my-[20px] 800px:flex items-center justify-between ">
           <div>
             <Link to="/">
               <div style={{ display: "flex" }}>
@@ -96,7 +101,7 @@ const Header = ({ activeHeading }) => {
                 </h5>
                 <h3
                   className="text-xl"
-                  style={{ color: "#000", marginTop: "16px" }}
+                  style={{ color: "#000", marginTop: "16px"}}
                 >
                   Essentails
                 </h3>
@@ -154,7 +159,7 @@ const Header = ({ activeHeading }) => {
               <div className={`${styles.button} bg-rose-600 !rounded-md`}>
             <Link to="/shop-login">
               <h1 className="text-[#fff] flex items-center">
-                Become Seller
+                Seller Zone
                 <IoIosArrowForward className="ml-1" />
               </h1>
             </Link>
@@ -167,7 +172,7 @@ const Header = ({ activeHeading }) => {
       <div
         className={`${
           active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
-        } transition hidden 800px:flex items-center justify-between w-full bg-[#000] h-[70px]`}
+        } transition hidden 800px:flex items-center justify-between w-full bg-[#000000cd] h-[70px]`}
       >
         <div
           className={`${styles.section} relative ${styles.noramlFlex} justify-between`}
@@ -205,7 +210,7 @@ const Header = ({ activeHeading }) => {
                 className="relative cursor-pointer mr-[15px]"
                 onClick={() => setOpenWhishlist(true)}
               >
-                <AiOutlineHeart size={30} color="rgb(255 255 255 / 83%)" />
+                <Heart size={25} color="rgb(255 255 255 / 83%)" />
                 <span className="absolute right-0 top-0 rounded-full bg-rose-500  w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
                   0
                 </span>
@@ -217,8 +222,8 @@ const Header = ({ activeHeading }) => {
                 className="relative cursor-pointer mr-[15px]"
                 onClick={() => setOpenCart(true)}
               >
-                <AiOutlineShoppingCart
-                  size={30}
+                <ShoppingCart
+                  size={25}
                   color="rgb(255 255 255 / 83%)"
                 />
                 <span className="absolute right-0 top-0 rounded-full bg-rose-500  w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
@@ -298,7 +303,7 @@ const Header = ({ activeHeading }) => {
 
           <div>
             <div className="relative mr-[20px] cursor-pointer"  onClick={() => setOpenCart(true)}>
-              <AiOutlineShoppingCart color="white" size={28} />
+              <ShoppingCart color="white" size={28} />
               <span className="absolute right-0 top-0 rounded-full bg-rose-500  w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
                 1
               </span>
@@ -313,7 +318,7 @@ const Header = ({ activeHeading }) => {
               <div className="w-full flex justify-between pr-3 ">
                 <div>
                   <div className="relative mr-[15px]">
-                    <AiOutlineHeart size={28} className="mt-5 ml-3" />
+                    <Heart size={25} className="mt-5 ml-3" />
                     <span className="absolute right-0 top-0 rounded-full bg-rose-500  w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
                       0
                     </span>
@@ -366,7 +371,7 @@ const Header = ({ activeHeading }) => {
               <div className={`${styles.button} ml-4 !rounded-[4px] bg-rose-600`}>
             <Link to="/shop-login">
               <h1 className="text-[#fff] flex items-center">
-                Become Seller
+                Seller Zone
                 <IoIosArrowForward className="ml-1" />
               </h1>
             </Link>

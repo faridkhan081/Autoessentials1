@@ -6,12 +6,13 @@ import {
   AiFillHeart,
   AiFillStar,
   AiOutlineEye,
-  AiOutlineHeart,
-  AiOutlineShoppingCart,
+  
   AiOutlineStar,
 } from "react-icons/ai";
+import { Eye } from 'lucide-react';
+import { Heart } from 'lucide-react';     
 import ProductDetailsCard from "../ProductDetailsCard/ProductDetailsCard.jsx";
-
+import { ShoppingCart } from 'lucide-react';
 function ProductCard({ data }) {
   const [click, setClick] = useState(false);
   const [open, setOpen] = useState(false);
@@ -20,7 +21,7 @@ function ProductCard({ data }) {
   const product_name = d.replace(/\s+/g, "-");
 
   return (
-    <div className="w-full h-[370px] bg-white rounded-lg shadow-sm p-3 relative cursor-pointer">
+    <div className="w-full h-[370px] bg-white rounded-lg p-3 relative cursor-pointer shadow-sm hover:shadow-lg hover:shadow-gray-200">
       <div className="flex justify-end"></div>
 
       <Link to={`/product/${product_name}`}>
@@ -83,15 +84,16 @@ function ProductCard({ data }) {
 
       <div>
         {click ? (
-          <AiFillHeart
+          <Heart
             size={22}
             className="cursor-pointer absolute right-2 top-5"
             onClick={() => setClick(!click)}
             color={click ? "red" : "#333"}
             title="Remove from wishlist"
+            fill="red"
           />
         ) : (
-          <AiOutlineHeart
+          <Heart
             size={22}
             className="cursor-pointer absolute right-2 top-5"
             onClick={() => setClick(!click)}
@@ -100,14 +102,14 @@ function ProductCard({ data }) {
           />
         )}
 
-        <AiOutlineEye
+        <Eye
           size={22}
           className="cursor-pointer absolute right-2 top-14"
           onClick={() => setOpen(!open)}
           color="#333"
           title="Quick view"
         />
-        <AiOutlineShoppingCart
+        <ShoppingCart
           size={25}
           className="cursor-pointer absolute right-2 top-24"
           onClick={() => setOpen(!open)}

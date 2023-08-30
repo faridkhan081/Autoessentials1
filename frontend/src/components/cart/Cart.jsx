@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { RxCross1 } from 'react-icons/rx'
 import styles from '../../styles/styles'
-import { IoBagHandleOutline } from 'react-icons/io5';
+
+import { ShoppingBag } from 'lucide-react';
 import { HiOutlineMinus, HiPlus } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
 
@@ -38,7 +39,7 @@ function Cart({setOpenCart}) {
         </div>
         {/* items length */}
         <div className={`${styles.noramlFlex} p-4`}>
-            <IoBagHandleOutline
+            <ShoppingBag
                 size={25}
             />
             <h5 className='pl-2 text-[20px] font-[500]'>

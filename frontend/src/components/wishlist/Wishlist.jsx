@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { RxCross1 } from 'react-icons/rx'
 import styles from '../../styles/styles'
-import { IoBagHandleOutline } from 'react-icons/io5';
-import { HiOutlineMinus, HiPlus } from 'react-icons/hi';
-import { Link } from 'react-router-dom';
+import { X } from 'lucide-react';
+
 import { BsCartPlus } from 'react-icons/bs';
-import { AiOutlineHeart } from 'react-icons/ai';
+import { Heart } from 'lucide-react';
 
 function Wishlist({setOpenWishlist}) {
     const cartData =[
@@ -42,8 +41,10 @@ function Wishlist({setOpenWishlist}) {
        
         {/* items length */}
         <div className={`${styles.noramlFlex} p-4`}>
-            <AiOutlineHeart
-                size={25}/> 
+            <Heart
+                fill='red'
+                    color='red'
+                /> 
             <h5 className='pl-2 text-[20px] font-[500]'>
                 3 items
             </h5>
@@ -78,7 +79,7 @@ const CartSingle = ({data,key}) =>{
         <>
            <div className="border-b p-4">
             <div className="w-full flex items-center">
-            <RxCross1 className='cursor-pointer'/>
+            <X size={50} className='cursor-pointer'/>
             <img
           src='https://klbtheme.com/chakta/wp-content/uploads/sites/2/2021/01/08-450x450.jpg.webp'
           alt=""
