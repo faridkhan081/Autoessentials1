@@ -26,7 +26,7 @@ const Footer = () => {
           />
 
           <button
-            className="absolute  border border-rose-600 end-1 top-1/2 -translate-y-1/2 rounded-full bg-rose-600  px-5 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-rose-600  focus:outline-none focus:ring active:text-rose-600 "
+            className="absolute  border border-rose-600 end-1 top-1/2 -translate-y-1/2 rounded-full bg-rose-500  px-5 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-rose-600  focus:outline-none focus:ring active:text-rose-600 "
           >
             Subscribe
           </button>
@@ -277,22 +277,9 @@ const Footer = () => {
 
     <div className="mt-16 border-t border-gray-100 pt-8">
       <p className="text-center text-xs/relaxed text-gray-500">
-        © Company 2022. All rights reserved.
+        © autoessentials 2023-24. All rights reserved.
 
-        <br />
-
-        Created with
-        <a
-          href=""
-          className="text-gray-700 underline transition hover:text-gray-700/75"
-          >Laravel</a
-        >
-        and
-        <a
-          href=""
-          className="text-gray-700 underline transition hover:text-gray-700/75"
-          >Laravel Livewire</a
-        >.
+       
       </p>
     </div>
   </div>

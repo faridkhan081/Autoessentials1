@@ -24,6 +24,28 @@ body {
     background: #F5F5F5;
     scroll-behavior: smooth;
 }
+
+
+
+.primary-dark{
+background-color:rgb(225,29,72);
+}
+
+.primary-light{
+  background-color:rgb(244,63,94);
+}
+
+.primary-dark-text{
+  color:rgb(225,29,72);
+  }
+  
+  .primary-light-text{
+    color:rgb(244,63,94);
+  }
+  
+
+
+
 input,select{
   outline: none;
 }

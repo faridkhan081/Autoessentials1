@@ -59,11 +59,11 @@ const Login = () => {
     
   >
     <div className="max-w-xl lg:max-w-3xl mt-2">
-      <a className="block text-blue-600" href="/">
+      <a className="block" href="/">
         <span className="sr-only">Home</span>
         <Link
             to="/"
-            className="text-blue-600 return-home-link "
+            className="primary-light-text hover:text-rose-600 "
           >
             <BsFillArrowLeftSquareFill size={30} />
           </Link>
@@ -144,7 +144,7 @@ const Login = () => {
                     type="checkbox"
                     name="remember-me"
                     id="remember-me"
-                    className="h-4 w-4 text-blue-600 focus:ring-0 border-gray-300 rounded focus:outline-none"
+                    className="h-4 w-4 text-green-600 focus:ring-0 border-gray-300 rounded focus:outline-none"
                   />
                   <label
                     htmlFor="remember-me"
@@ -156,7 +156,7 @@ const Login = () => {
                 <div className="text-sm ">
                   <a
                     href="/forgot-password"
-                    className="font-medium text-blue-600 hover:text-blue-500"
+                    className="font-medium text-rose-600 hover:text-rose-500"
                   >
                     Forgot your password?
                   </a>
@@ -179,7 +179,7 @@ const Login = () => {
 
         <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
           <button
-            className="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
+            className="inline-block shrink-0 rounded-md border border-rose-600 bg-rose-500 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-rose-600 focus:outline-none focus:ring active:text-rose-500"
           >
             Sign in
           </button>

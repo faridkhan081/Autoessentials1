@@ -389,11 +389,11 @@ const ShopCreate = () => {
       style={{background:'url(https://www.toptal.com/designers/subtlepatterns/uploads/topography.png)'}}
     >
       <div className="max-w-xl lg:max-w-3xl">
-        <a className="block text-blue-600" href="/">
+        <a className="block text-rose-600" href="/">
           <span className="sr-only">Home</span>
           <Link
               to="/"
-              className="text-blue-600 return-home-link "
+              className="text-rose-500 hover:text-rose-600 "
             >
               <BsFillArrowLeftSquareFill size={30} />
             </Link>
@@ -588,7 +588,7 @@ const ShopCreate = () => {
 
           <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
             <button
-              className="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
+              className="inline-block shrink-0 rounded-md border border-rose-600 bg-rose-500 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-rose-600 focus:outline-none focus:ring active:text-rose-500"
             >
               Create an account
             </button>

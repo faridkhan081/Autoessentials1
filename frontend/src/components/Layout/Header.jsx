@@ -87,7 +87,7 @@ const Header = ({ activeHeading }) => {
             <Link to="/">
               <div style={{ display: "flex" }}>
                 <h5
-                  className="text-xl bg-rose-600"
+                  className="text-xl primary-dark"
                   style={{
                     padding: "8px",
                     margin: "8px",
@@ -150,7 +150,7 @@ const Header = ({ activeHeading }) => {
           {
             isSeller ? (
              
-              <div className={`${styles.button} bg-rose-600 !rounded-md`}>
+              <div className={`${styles.button} primary-dark !rounded-md`}>
               <Link to="/seller-dashboard">
               <h1 className="text-[#fff] flex items-center">
                 Start selling now
@@ -162,7 +162,7 @@ const Header = ({ activeHeading }) => {
             
             ): (
               <>
-              <div className={`${styles.button} bg-rose-600 !rounded-md`}>
+              <div className={`${styles.button} primary-dark !rounded-md`}>
             <Link to="/shop-login">
               <h1 className="text-[#fff] flex items-center">
                 Seller Zone
@@ -217,7 +217,7 @@ const Header = ({ activeHeading }) => {
                 onClick={() => setOpenWhishlist(true)}
               >
                 <Heart size={25} color="rgb(255 255 255 / 83%)" />
-                <span className="absolute right-0 top-0 rounded-full bg-rose-500  w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
+                <span className="absolute right-0 top-0 rounded-full primary-dark  w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
                   0
                 </span>
               </div>
@@ -232,7 +232,7 @@ const Header = ({ activeHeading }) => {
                   size={25}
                   color="rgb(255 255 255 / 83%)"
                 />
-                <span className="absolute right-0 top-0 rounded-full bg-rose-500  w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
+                <span className="absolute right-0 top-0 rounded-full primary-dark  w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
                   1
                 </span>
               </div>
@@ -285,7 +285,7 @@ const Header = ({ activeHeading }) => {
             <Link to="/">
               <div style={{ display: "flex" }}>
                 <h5
-                  className="text-xl bg-rose-500"
+                  className="text-xl primary-dark"
                   style={{
                     padding: "8px",
                     margin: "8px",
@@ -310,7 +310,7 @@ const Header = ({ activeHeading }) => {
           <div>
             <div className="relative mr-[20px] cursor-pointer"  onClick={() => setOpenCart(true)}>
               <ShoppingCart color="white" size={28} />
-              <span className="absolute right-0 top-0 rounded-full bg-rose-500  w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
+              <span className="absolute right-0 top-0 rounded-full primary-dark  w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
                 1
               </span>
             </div>
@@ -325,7 +325,7 @@ const Header = ({ activeHeading }) => {
                 <div>
                   <div className="relative mr-[15px]">
                     <Heart size={25} className="mt-5 ml-3" />
-                    <span className="absolute right-0 top-0 rounded-full bg-rose-500  w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
+                    <span className="absolute right-0 top-0 rounded-full primary-dark  w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
                       0
                     </span>
                   </div>
@@ -374,7 +374,7 @@ const Header = ({ activeHeading }) => {
               {/* nav-bar */}
 
               <Navbar active={activeHeading}/>
-              <div className={`${styles.button} ml-4 !rounded-[4px] bg-rose-600`}>
+              <div className={`${styles.button} ml-4 !rounded-[4px] primary-dark`}>
             <Link to="/shop-login">
               <h1 className="text-[#fff] flex items-center">
                 Seller Zone
