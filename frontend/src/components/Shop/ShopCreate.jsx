@@ -379,7 +379,7 @@ const ShopCreate = () => {
       <img
       
         alt="Pattern"
-        src="https://drive.google.com/uc?export=download&id=18kTPNR37wJuCD0SiPJ5QVfBs1Yju8U3T"
+        src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
         className="absolute inset-0 h-full w-full object-cover filter brightness-50 "
       />
     </aside>

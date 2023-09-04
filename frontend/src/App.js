@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./App.css";
 
-import ProtectedRoute from "./ProtectedRoute";
+import ProtectedRoute from "./routes/ProtectedRoute";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
   LoginPage,
@@ -20,7 +20,14 @@ import {
   ProfilePage,
   SellerActivationPage,
   ShopLoginPage,
-} from "./Routes.js";
+} from "./routes/Routes.js";
+
+//shop imports
+
+import {ShopDashboardPage} from './routes/ShopRoutes'
+
+
+
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // import axios from 'axios';
@@ -28,91 +35,91 @@ import "react-toastify/dist/ReactToastify.css";
 // import { toast } from 'react-toastify';
 import Store from "./redux/store";
 import { loadSeller, loadUser } from "./redux/actions/user";
-import { useSelector } from "react-redux";
-import { ShopHomePage } from "./ShopRoutes.js";
-import SellerProtectedRoute from "./SellerProtectedRoute";
-const App = () => {
-  const { loading, isAuthenticated } = useSelector((state) => state.user);
-  const { isLoading, isSeller } = useSelector((state) => state.seller);
 
+import { ShopHomePage } from "./ShopRoutes.js";
+import SellerProtectedRoute from "./routes/SellerProtectedRoute";
+const App = () => {
   useEffect(() => {
     Store.dispatch(loadUser());
     Store.dispatch(loadSeller());
-
-    // if(isSeller === true){
-    //   return <Navigate to="/shop" />
-    // }
   }, []);
 
   return (
     <>
-  
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/sign-up" element={<SignupPage />} />
-            <Route
-              path="/activation/:activation_token"
-              element={<ActivationPage />}
-            />
-            <Route
-              path="/seller/activation/:activation_token"
-              element={<SellerActivationPage />}
-            />
-            <Route path="/products" element={<ProductsPage />} />
-            <Route path="/product/:name" element={<ProductDetailsPage />} />
-            <Route path="/best-selling" element={<BestSellingPage />} />
-            <Route path="/events" element={<EventsPage />} />
-            <Route path="/solutions" element={<SolutionsPage />} />
-            <Route path="/faq" element={<FaqsPage />} />
-
-            <Route
-              path="/checkout"
-              element={
-                <ProtectedRoute isAuthenticated={isAuthenticated}>
-                  <CheckoutPage />
-                </ProtectedRoute>
-              }
-            />
-
-            {/* <Route path="/payment" element={<PaymentPage />} /> */}
-
-            {/* <Route path="/order/success/:id" element={<OrderSuccessPage />} /> */}
-            <Route
-              path="/profile"
-              element={
-                <ProtectedRoute isAuthenticated={isAuthenticated}>
-                  <ProfilePage />
-                </ProtectedRoute>
-              }
-            />
-            {/* shop routes */}
-            <Route path="/shop-create" element={<ShopCreatePage />} />
-            <Route path="/shop-login" element={<ShopLoginPage />} />
-            <Route
-              path="/shop/:id"
-              element={
-                <SellerProtectedRoute isSeller={isSeller}>
-                  <ShopHomePage />
-                </SellerProtectedRoute>
-              }
-            />
-          </Routes>
-          <ToastContainer
-            position="bottom-center"
-            autoClose={2000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="dark"
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/sign-up" element={<SignupPage />} />
+          <Route
+            path="/activation/:activation_token"
+            element={<ActivationPage />}
           />
-        </BrowserRouter>
-   
+          <Route
+            path="/seller/activation/:activation_token"
+            element={<SellerActivationPage />}
+          />
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/product/:name" element={<ProductDetailsPage />} />
+          <Route path="/best-selling" element={<BestSellingPage />} />
+          <Route path="/events" element={<EventsPage />} />
+          <Route path="/solutions" element={<SolutionsPage />} />
+          <Route path="/faq" element={<FaqsPage />} />
+
+          <Route
+            path="/checkout"
+            element={
+              <ProtectedRoute>
+                <CheckoutPage />
+              </ProtectedRoute>
+            }
+          />
+
+          {/* <Route path="/payment" element={<PaymentPage />} /> */}
+
+          {/* <Route path="/order/success/:id" element={<OrderSuccessPage />} /> */}
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <ProfilePage />
+              </ProtectedRoute>
+            }
+          />
+          {/* shop routes */}
+          <Route path="/shop-create" element={<ShopCreatePage />} />
+          <Route path="/shop-login" element={<ShopLoginPage />} />
+          <Route
+            path="/shop/:id"
+            element={
+              <SellerProtectedRoute>
+                <ShopHomePage />
+              </SellerProtectedRoute>
+            }
+          />
+
+<Route
+            path="/seller-dashboard"
+            element={
+              <SellerProtectedRoute>
+                <ShopDashboardPage />
+              </SellerProtectedRoute>
+            }
+          />
+        </Routes>
+        <ToastContainer
+          position="bottom-center"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
+      </BrowserRouter>
     </>
   );
 };

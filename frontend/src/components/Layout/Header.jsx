@@ -150,8 +150,14 @@ const Header = ({ activeHeading }) => {
           {
             isSeller ? (
              
-              
-              <Link to='/shop-create'><AiFillShop size={30}/></Link>
+              <div className={`${styles.button} bg-rose-600 !rounded-md`}>
+              <Link to="/seller-dashboard">
+              <h1 className="text-[#fff] flex items-center">
+                Start selling now
+                <IoIosArrowForward className="ml-1" />
+              </h1>
+            </Link>
+            </div>
              
             
             ): (
