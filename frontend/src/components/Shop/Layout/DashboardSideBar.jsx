@@ -17,7 +17,7 @@ const DashboardSideBar = ({ active }) => {
     <div className=" w-full h-[90vh] bg-white shadow-sm  sticky top-0 left-0 z-10">
       {/* single item */}
       <div className="ml-2 w-full flex items-center p-4">
-        <Link to="/dashboard" className="w-full flex items-center">
+        <Link to="/seller-dashboard" className="w-full flex items-center">
           <LayoutDashboard 
             size={30}
             color={`${active === 1 ? "crimson" : "#555"}`}

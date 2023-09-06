@@ -87,9 +87,9 @@ const Header = ({ activeHeading }) => {
             <Link to="/">
               <div style={{ display: "flex" }}>
                 <h5
-                  className="text-xl primary-dark"
+                  className="text-xl primary-dark !rounded-sm "
                   style={{
-                    padding: "8px",
+                    padding: "5px",
                     margin: "8px",
                     color: "white",
                    
