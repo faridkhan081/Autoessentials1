@@ -25,10 +25,12 @@ const CreateProduct = () => {
   useEffect(() => {
     if (error) {
       toast.error(error);
+     
     }
     if (success) {
       toast.success("Product created successfully!");
       navigate("/seller-dashboard");
+      window.location.reload()
   
     }
   }, [dispatch, error, success]);
@@ -36,20 +38,20 @@ const CreateProduct = () => {
   const handleImageChange = (e) => {
     e.preventDefault();
 
-    const files = Array.from(e.target.files);
+    let files = Array.from(e.target.files);
 
-    setImages((prevImages)=> [...prevImages,...files]);
+    setImages((prevImages)=> [...prevImages, ...files]);
 
-    files.forEach((file) => {
-      const reader = new FileReader();
+    // files.forEach((file) => {
+    //   const reader = new FileReader();
 
-      reader.onload = () => {
-        if (reader.readyState === 2) {
-          setImages((old) => [...old, reader.result]);
-        }
-      };
-      reader.readAsDataURL(file);
-    });
+    //   reader.onload = () => {
+    //     if (reader.readyState === 2) {
+    //       setImages((old) => [...old, reader.result]);
+    //     }
+    //   };
+    //   reader.readAsDataURL(file);
+    // });
   };
 
   const handleSubmit = (e) => {
@@ -58,7 +60,7 @@ const CreateProduct = () => {
     const newForm = new FormData();
 
     images.forEach((image) => {
-      newForm.set("images", image);
+      newForm.append("images", image);
     });
 
     newForm.append("name", name);
