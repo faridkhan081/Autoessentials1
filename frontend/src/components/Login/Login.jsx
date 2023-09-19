@@ -7,7 +7,7 @@ import axios from "axios";
 import { server } from "../../server";
 import mainlogo from "../../Assets/images/main-logo.svg";
 import { toast } from "react-toastify";
-
+import '../Login/Login.css'
 const Login = () => {
   const [visible, setVisible] = useState(false);
   const [password, setPassword] = useState("");
@@ -189,7 +189,13 @@ const Login = () => {
             <Link to="/sign-up" className="text-gray-700 underline">Sign up</Link>.
           </p>
         </div>
+
+
+
       </form>
+
+      
+
     </div>
   </main>
 </div>
