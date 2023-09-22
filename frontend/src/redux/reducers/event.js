@@ -20,40 +20,40 @@ export const eventReducer = createReducer(initialState, {
   },
 
   // get all events of shop
-  getAlleventsShopRequest: (state) => {
+  getAllEventsShopRequest: (state) => {
     state.isLoading = true;
   },
-  getAlleventsShopSuccess: (state, action) => {
+  getAllEventsShopSuccess: (state, action) => {
     state.isLoading = false;
     state.events = action.payload;
   },
-  getAlleventsShopFailed: (state, action) => {
+  getAllEventsShopFailed: (state, action) => {
     state.isLoading = false;
     state.error = action.payload;
   },
 
   // delete event of a shop
-  deleteeventRequest: (state) => {
+  deleteEventRequest: (state) => {
     state.isLoading = true;
   },
-  deleteeventSuccess: (state, action) => {
+  deleteEventSuccess: (state, action) => {
     state.isLoading = false;
     state.message = action.payload;
   },
-  deleteeventFailed: (state, action) => {
+  deleteEventFailed: (state, action) => {
     state.isLoading = false;
     state.error = action.payload;
   },
 
   // get all events 
-  getAlleventsRequest: (state) => {
+  getAllEventsRequest: (state) => {
     state.isLoading = true;
   },
-  getAlleventsSuccess: (state, action) => {
+  getAllEventsSuccess: (state, action) => {
     state.isLoading = false;
     state.allEvents = action.payload;
   },
-  getAlleventsFailed: (state, action) => {
+  getAllEventsFailed: (state, action) => {
     state.isLoading = false;
     state.error = action.payload;
   },

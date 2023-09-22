@@ -29,7 +29,7 @@ const CreateProduct = () => {
     }
     if (success) {
       toast.success("Product created successfully!");
-      navigate("/seller-dashboard");
+      navigate("/dashboard-products");
       window.location.reload()
   
     }

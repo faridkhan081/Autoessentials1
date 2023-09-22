@@ -51,7 +51,7 @@ const handleStartDateChange = (e) => {
     }
     if (success) {
       toast.success("Event created successfully!");
-    //   navigate("/dashboard-events");
+      navigate("/dashboard-events");
       window.location.reload();
     }
   }, [dispatch, error, success]);
