@@ -42,7 +42,7 @@ function DashboardHeader() {
           </div>
         <div className="flex items-center">
         <div className="flex items-center mr-4">
-          <Link to="/dashboard/cupouns" className="800px:block hidden">
+          <Link to="/dashboard-coupouns" className="800px:block hidden">
             <Gift
               color="#555"
             
