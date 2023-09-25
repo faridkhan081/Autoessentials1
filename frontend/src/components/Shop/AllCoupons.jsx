@@ -9,6 +9,7 @@ import styles from "../../styles/styles";
 import Loader from "../Layout/Loader";
 import { server } from "../../server";
 import { toast } from "react-toastify";
+import { getAllProductsShop } from "../../redux/actions/product";
 
 const AllCoupons = () => {
   const [open, setOpen] = useState(false);
@@ -21,21 +22,28 @@ const AllCoupons = () => {
   const [value, setValue] = useState(null);
   const { seller } = useSelector((state) => state.seller);
   const { products } = useSelector((state) => state.products);
+  
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     setIsLoading(true);
+    dispatch(getAllProductsShop(seller._id));
+
+  
     axios
       .get(`${server}/coupon/get-coupon/${seller._id}`, {
         withCredentials: true,
       })
       .then((res) => {
         setIsLoading(false);
+      
         setCoupouns(res.data.couponCodes);
+
       })
       .catch((error) => {
         setIsLoading(false);
+        
       });
   }, [dispatch]);
 

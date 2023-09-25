@@ -4,11 +4,13 @@ import ShopAllProducts from './pages/Shop/ShopAllProducts.jsx'
 import ShopCreateEvents from './pages/Shop/ShopCreateEvents.jsx'
 import ShopAllEvents from './pages/Shop/ShopAllEvents.jsx'
 import ShopAllCoupouns from './pages/Shop/ShopAllCoupons.jsx'
+import ShopPreviewPage from "./pages/Shop/ShopPreviewPage";
 export {
     ShopHomePage,
     ShopCreateProduct,
     ShopAllProducts,
     ShopCreateEvents,
     ShopAllEvents,
-    ShopAllCoupouns 
+    ShopAllCoupouns,
+    ShopPreviewPage,
 }

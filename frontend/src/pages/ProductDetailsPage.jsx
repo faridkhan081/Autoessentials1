@@ -7,7 +7,9 @@ import { productData } from '../static/data'
 import SuggestedProduct from '../components/Products/SuggestedProduct.jsx'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
+import { useSelector } from 'react-redux'
 function ProductDetailsPage() {
+  const {allProducts} = useSelector((state) => state.products)
     const {name} = useParams();
     const [data,setData] = useState(null);
     const [isLoading,setIsLoading] = useState(false);
@@ -18,7 +20,7 @@ function ProductDetailsPage() {
     useEffect(() =>{
 
       setTimeout(()=>{
-        const data = productData.find((i) => i.name === productName)
+        const data = allProducts && allProducts.find((i) => i.name === productName)
         setData(data)
        setIsLoading(true)
       },500)

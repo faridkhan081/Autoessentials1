@@ -40,13 +40,17 @@ import {
   ShopAllProducts,
   ShopCreateEvents,
   ShopAllEvents,
-  ShopAllCoupouns 
+  ShopAllCoupouns,
+  ShopPreviewPage, 
 } from "./ShopRoutes.js";
 import SellerProtectedRoute from "./routes/SellerProtectedRoute";
+import { getAllProducts } from "./redux/actions/product";
 const App = () => {
   useEffect(() => {
     Store.dispatch(loadUser());
     Store.dispatch(loadSeller());
+    Store.dispatch(getAllProducts());
+
   }, []);
 
   return (
@@ -92,6 +96,7 @@ const App = () => {
             }
           />
           {/* shop routes */}
+          <Route path="/shop/preview/:id" element={<ShopPreviewPage />} />
           <Route path="/shop-create" element={<ShopCreatePage />} />
           <Route path="/shop-login" element={<ShopLoginPage />} />
           <Route

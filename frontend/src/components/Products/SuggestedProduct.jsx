@@ -5,11 +5,11 @@ import styles from "../../styles/styles";
 import ProductCard from "../Route/ProductCard/ProductCard";
 
 const SuggestedProduct = ({ data }) => {
-//   const {allProducts} = useSelector((state) => state.products);
+  const {allProducts} = useSelector((state) => state.products);
   const [products,setProducts] = useState();
 
   useEffect(() => {
-    const d = productData && productData.filter((i) => i.category === data.category);
+    const d = allProducts && allProducts.filter((i) => i.category === data.category);
     setProducts(d);
   }, []);
 

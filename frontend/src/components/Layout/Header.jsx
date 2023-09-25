@@ -28,6 +28,8 @@ import { HiMenuAlt2 } from "react-icons/hi";
 
 const Header = ({ activeHeading }) => {
   const { isAuthenticated, user } = useSelector((state) => state.user);
+  const { products } = useSelector((state) => state.products);
+
   const [searchTerm, setSearchTerm] = useState("");
   const [searchData, setSearchData] = useState(null);
   const [active, setActive] = useState(false);

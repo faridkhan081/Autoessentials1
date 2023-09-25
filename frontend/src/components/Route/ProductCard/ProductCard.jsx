@@ -3,17 +3,20 @@ import React, { useState } from "react";
 import styles from "../../../styles/styles";
 import { Link } from "react-router-dom";
 import {
-  AiFillHeart,
-  AiFillStar,
-  AiOutlineEye,
-  
+  AiFillStar,  
   AiOutlineStar,
 } from "react-icons/ai";
 import { Eye } from 'lucide-react';
 import { Heart } from 'lucide-react';     
 import ProductDetailsCard from "../ProductDetailsCard/ProductDetailsCard.jsx";
 import { ShoppingCart } from 'lucide-react';
+
+import { backend_url } from "../../../server";
+import { useDispatch } from "react-redux";
+
 function ProductCard({ data }) {
+  
+
   const [click, setClick] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -26,18 +29,18 @@ function ProductCard({ data }) {
 
       <Link to={`/product/${product_name}`}>
         <img
-          src={data.image_Url[0].url}
+          src={`${backend_url}${data.images && data.images[0]}`}
           alt=""
           className="w-full h-[170px] object-contain"
         />
       </Link>
-      <Link to="/">
-        <h5 className={`${styles.shop_name}`}>{data.shop.name}</h5>
-      </Link>
-      <Link to={`/product/${product_name}`}>
-        <h4 className="pb-3 font-[500]">
-          {data.name.length > 40 ? data.name.slice(0, 40) + "..." : data.name}
-        </h4>
+      <Link to={`/shop/preview/${data?.shop._id}`}>
+          <h5 className={`${styles.shop_name}`}>{data.shop.name}</h5>
+        </Link>
+       <Link to={`/product/${data._id}`}>
+          <h4 className="pb-3 font-[500]">
+            {data.name.length > 40 ? data.name.slice(0, 40) + "..." : data.name}
+          </h4>
         <div className="flex">
           <AiFillStar
             className="mr-2 cursor-pointer"
@@ -69,14 +72,17 @@ function ProductCard({ data }) {
         <div className="py-2 flex items-center justify-between">
           <div className="flex">
             <h5 className={`${styles.productDiscountPrice}`}>
-              {data.price === 0 ? data.price : data.discount_price}$
+            {data.originalPrice === 0
+                  ? data.originalPrice
+                  : data.discountPrice}
+                $
             </h5>
             <h4 className={`${styles.price}`}>
-              {data.price ? data.price + " $" : null}
+            {data.originalPrice ? data.originalPrice + " $" : null}
             </h4>
           </div>
           <span className="font-[400] text-[17px] text-[#68d284]">
-            {data.total_sell} sold
+          {data?.sold_out} sold
           </span>
         </div>
       </Link>
@@ -123,3 +129,4 @@ function ProductCard({ data }) {
 }
 
 export default ProductCard;
+
