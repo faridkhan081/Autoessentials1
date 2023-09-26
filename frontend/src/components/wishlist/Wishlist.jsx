@@ -10,17 +10,17 @@ function Wishlist({setOpenWishlist}) {
     const cartData =[
       
         {
-            name:'Iphone 14 pro max 256 gb ssd and 8gb ram silver colour ',
+            name:'SKP® - Timing Set with all essential parts',
             description: 'test',
             price: 700,
         },
         {
-            name:'Iphone 14 pro max 256 gb ssd and 8gb ram silver colour ',
+            name:'SKP® - Timing Set with all essential parts',
             description: 'test',
             price: 800,
         },
         {
-            name:'Iphone 14 pro max 256 gb ssd and 8gb ram silver colour ',
+            name:'SKP® - Timing Set with all essential parts',
             description: 'test',
             price: 800,
         },
@@ -81,7 +81,7 @@ const CartSingle = ({data,key}) =>{
             <div className="w-full flex items-center">
             <X size={50} className='cursor-pointer'/>
             <img
-          src='https://klbtheme.com/chakta/wp-content/uploads/sites/2/2021/01/08-450x450.jpg.webp'
+          src='https://ic.carid.com/icons/replacement-timing-gears-chains-and-covers_ic_5.jpg'
           alt=""
           className="w-[130px] h-min ml-2 mr-2 rounded-[5px]"
         />

@@ -251,7 +251,7 @@ const ProductDetailsInfo = ({ data,
       {active === 3 && (
         <div className="w-full block 800px:flex p-5">
           <div className="w-full 800px:w-[50%]">
-          <Link to={`/shop/preview/${id}`}>
+          <Link to={`/shop/preview/${data?.shop._id}`}>
               <div className="flex items-center">
                 <img
                   src={`${backend_url}${data?.shop?.avatar}`}
@@ -283,7 +283,7 @@ const ProductDetailsInfo = ({ data,
               <h5 className="font-[600] pt-3">
                 Total Reviews: <span className="font-[500]">234</span>
               </h5>
-              <Link to="/">
+              <Link to={`/shop/preview/${data?.shop._id}`}>
                 <div
                   className={`${styles.button} !rounded-[4px] !h-[39.5px] mt-3`}
                 >

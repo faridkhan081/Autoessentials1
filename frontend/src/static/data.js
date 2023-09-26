@@ -197,7 +197,7 @@ export const categoriesData = [
     title: "Air Filters",
     subTitle: "",
     image_Url:
-      "https://b.cdnbrm.com/autoanything-website-images/website4/homepage/category_images/air_filters.png",
+      "https://ic.carid.com/icons/air-intakes_ic_5.jpg",
   },
   {
     id: 2,
