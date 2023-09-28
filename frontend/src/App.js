@@ -45,6 +45,7 @@ import {
 } from "./ShopRoutes.js";
 import SellerProtectedRoute from "./routes/SellerProtectedRoute";
 import { getAllProducts } from "./redux/actions/product";
+import AboutPage from "./pages/AboutPage";
 const App = () => {
   useEffect(() => {
     Store.dispatch(loadUser());
@@ -58,6 +59,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/sign-up" element={<SignupPage />} />
           <Route
