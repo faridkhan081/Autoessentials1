@@ -31,6 +31,20 @@ export const productReducer = createReducer(initialState, {
     state.isLoading = false;
     state.error = action.payload;
   },
+    // get all products of shop
+    getSingleProductShopRequest: (state) => {
+      state.isLoading = true;
+    },
+    getSingleProductsShopSuccess: (state, action) => {
+      state.isLoading = false;
+      state.singleProduct = action.payload;
+    },
+    getSingleProductsShopFailed: (state, action) => {
+      state.isLoading = false;
+      state.error = action.payload;
+    },
+
+
 
   // delete product of a shop
   deleteProductRequest: (state) => {

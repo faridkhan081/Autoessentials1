@@ -1,9 +1,9 @@
 import { Button } from "@material-ui/core";
 import { DataGrid } from "@material-ui/data-grid";
 import React, { useEffect } from "react";
-import { AiOutlineDelete, AiOutlineEye } from "react-icons/ai";
+import { AiOutlineDelete, AiOutlineEdit, AiOutlineEye } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getAllProductsShop } from "../../redux/actions/product";
 import { deleteProduct } from "../../redux/actions/product";
 import Loader from "../Layout/Loader";
@@ -12,7 +12,7 @@ import { getAllProducts } from "../../redux/actions/product";
 const AllProducts = () => {
   const { products, isLoading } = useSelector((state) => state.products);
   const { seller } = useSelector((state) => state.seller);
-
+const navigate = useNavigate()
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -21,8 +21,16 @@ const AllProducts = () => {
 // console.log(products && products);
   const handleDelete = (id) => {
     dispatch(deleteProduct(id));
-    window.location.reload();
+    window.location.reload(true);
   };
+
+
+  const handleUpdate =(id)=>{
+    navigate(`/dashboard-update-product/${id}`)
+  
+
+  
+  }
 
   const columns = [
     { field: "id", headerName: "Product Id", minWidth: 150, flex: 0.7 },
@@ -36,27 +44,27 @@ const AllProducts = () => {
       field: "price",
       headerName: "Price",
       minWidth: 100,
-      flex: 0.6,
+      flex: 0.4,
     },
     {
       field: "Stock",
       headerName: "Stock",
       type: "number",
       minWidth: 80,
-      flex: 0.5,
+      flex: 0.4,
     },
 
     {
       field: "sold",
       headerName: "Sold out",
       type: "number",
-      minWidth: 130,
-      flex: 0.6,
+      minWidth: 90,
+      flex: 0.4,
     },
     {
       field: "Preview",
-      flex: 0.8,
-      minWidth: 100,
+      flex: 0.5,
+      minWidth: 90,
       headerName: "",
       type: "number",
       sortable: false,
@@ -77,7 +85,7 @@ const AllProducts = () => {
     },
     {
       field: "Delete",
-      flex: 0.8,
+      flex: 0.5,
       minWidth: 120,
       headerName: "",
       type: "number",
@@ -92,6 +100,25 @@ const AllProducts = () => {
         );
       },
     },
+    {
+      field: "Update",
+      flex: 0.5,
+      minWidth: 50,
+      headerName: "",
+      type: "number",
+      sortable: false,
+      renderCell: (params) => {
+        return (
+          <>
+            <Button onClick={()=>handleUpdate(params.id)}>
+              <AiOutlineEdit size={20} />
+            </Button>
+          </>
+        );
+      },
+    },
+
+
   ];
 
   const row = [];

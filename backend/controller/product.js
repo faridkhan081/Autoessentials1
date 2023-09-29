@@ -37,6 +37,54 @@ router.post(
   })
 );
 
+
+//update product by id
+
+router.put("/update-product-info/:id",
+upload.array("images"),
+catchAsyncError(async(req,res,next)=>{
+  try {
+
+    const {   
+      name,
+      description,
+      category,
+      tags,
+      originalPrice,
+      discountPrice,
+      stock} = req.body;
+     
+      
+      const productId = req.params.id;
+      const product = await Product.findById(productId)
+      
+
+    if(!product){
+      return next (new ErrorHandler("Product not found with this id",500))
+    }
+    product.name = name;
+    product.description = description;
+    product.category = category;
+    product.tags = tags;
+    product.originalPrice = originalPrice;
+    product.discountPrice = discountPrice;
+    product.stock = stock;
+    
+
+    await product.save()
+    res.status(201).json({
+      success: true,
+      product,
+    });
+
+
+    
+  } catch (error) {
+    return next(new ErrorHandler(error,400))
+  }
+}))
+
+
 //get all products
 
 router.get(
@@ -87,6 +135,9 @@ router.delete('/delete-shop-product/:id',isSeller, catchAsyncError(async(req,res
 }))
 
 
+
+
+
 // get all products
 router.get(
   "/get-all-products",
@@ -97,6 +148,24 @@ router.get(
       res.status(201).json({
         success: true,
         products,
+      });
+    } catch (error) {
+      return next(new ErrorHandler(error, 400));
+    }
+  })
+);
+
+router.get(
+  "/get-product/:id",
+  catchAsyncError(async (req, res, next) => {
+    try {
+    const productId = req.params.id;
+      
+      const singleProduct = await Product.findById(productId)
+
+      res.status(201).json({
+        success: true,
+        singleProduct,
       });
     } catch (error) {
       return next(new ErrorHandler(error, 400));

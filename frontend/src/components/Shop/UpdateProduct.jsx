@@ -1,39 +1,46 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { createProduct } from "../../redux/actions/product";
+import { useNavigate, useParams } from "react-router-dom";
+import { getSingleProduct } from "../../redux/actions/product";
 import { categoriesData } from "../../static/data";
 import { toast } from "react-toastify";
 import { FileUp, Upload } from "lucide-react";
-
-const CreateProduct = () => {
+import axios from "axios";
+import { server } from "../../server";
+const UpdateProduct = () => {
   const { seller } = useSelector((state) => state.seller);
   const { success, error } = useSelector((state) => state.products);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const [images, setImages] = useState([]);
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
-  const [category, setCategory] = useState("");
-  const [tags, setTags] = useState("");
-  const [originalPrice, setOriginalPrice] = useState();
-  const [discountPrice, setDiscountPrice] = useState();
-  const [stock, setStock] = useState();
+const [data,setData] = useState()
+  const {id} = useParams()
+
+  const { singleProduct, isLoading } = useSelector((state) => state.products);
+
+ 
 
   useEffect(() => {
-    if (error) {
-      toast.error(error);
-     
-    }
-    if (success) {
-      toast.success("Product created successfully!");
-      navigate("/dashboard-products");
-      window.location.reload()
+
+  dispatch(getSingleProduct(id));
   
-    }
-  }, [dispatch, error, success]);
+  
+  }, [dispatch,id]);
+
+
+
+
+  const [images, setImages] = useState([]);
+  const [name, setName] = useState(singleProduct && singleProduct.name);
+  const [description, setDescription] = useState(singleProduct && singleProduct.description);
+  const [category, setCategory] = useState(singleProduct && singleProduct.category ? singleProduct.category: "");
+  const [tags, setTags] = useState(singleProduct && singleProduct.tags);
+  const [originalPrice, setOriginalPrice] = useState(singleProduct && singleProduct.originalPrice);
+  const [discountPrice, setDiscountPrice] = useState(singleProduct && singleProduct.discountPrice);
+  const [stock, setStock] = useState(singleProduct && singleProduct.stock);
+
+
 
   const handleImageChange = (e) => {
     e.preventDefault();
@@ -54,33 +61,35 @@ const CreateProduct = () => {
     // });
   };
 
-  const handleSubmit = (e) => {
+  const formData = new FormData();
+
+  const updateHandler = async (e) => {
     e.preventDefault();
+    
+    await axios.put(`${server}/product/update-product-info/${id}`, {
+        name,
+        description,
+        category,
+        tags,
+        originalPrice,
+        discountPrice,
+        stock,
 
-    const newForm = new FormData();
-
-    images.forEach((image) => {
-      newForm.append("images", image);
-    });
-
-    newForm.append("name", name);
-    newForm.append("description", description);
-    newForm.append("category", category);
-    newForm.append("tags", tags);
-    newForm.append("originalPrice", originalPrice);
-    newForm.append("discountPrice", discountPrice);
-    newForm.append("stock", stock);
-    newForm.append("shopId", seller._id);
-    dispatch(
-      createProduct(newForm)
-    );
+    }, {withCredentials: true}).then((res) => {
+        toast.success("Product info updated succesfully!");
+        // dispatch(loadSeller());
+    }).catch((error)=> {
+        toast.error(error.response.data.message);
+    })
   };
 
+
+
   return (
-    <div className="w-[90%] 800px:w-[60%] bg-white shadow h-[80vh] rounded-[4px] p-3 overflow-y-scroll">
-      <h5 className="text-[30px] font-Poppins text-center">Create Product</h5>
+    <div className="mt-[30px] w-[90%] 800px:w-[60%] bg-white shadow h-[80vh] rounded-[4px] p-3 overflow-y-scroll">
+      <h5 className="text-[30px] font-Poppins text-center">Update Product</h5>
       {/* create product form */}
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={updateHandler}>
         <br />
         <div>
           <label className="pb-2">
@@ -90,9 +99,11 @@ const CreateProduct = () => {
             type="text"
             name="name"
             value={name}
+            placeholder={singleProduct?.name}
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setName(e.target.value)}
-            placeholder="Enter your product name..."
+            
+           
           />
         </div>
         <br />
@@ -107,9 +118,10 @@ const CreateProduct = () => {
             type="text"
             name="description"
             value={description}
+            placeholder={singleProduct?.description}
             className="mt-2 appearance-none block w-full pt-2 px-3 border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setDescription(e.target.value)}
-            placeholder="Enter your product description..."
+            
           ></textarea>
         </div>
         <br />
@@ -138,9 +150,10 @@ const CreateProduct = () => {
             type="text"
             name="tags"
             value={tags}
+            placeholder={singleProduct?.tags}
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setTags(e.target.value)}
-            placeholder="Enter your product tags..."
+           
           />
         </div>
         <br />
@@ -150,9 +163,10 @@ const CreateProduct = () => {
             type="number"
             name="price"
             value={originalPrice}
+            placeholder={singleProduct?.originalPrice}
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setOriginalPrice(e.target.value)}
-            placeholder="Enter your product price..."
+          
           />
         </div>
         <br />
@@ -164,9 +178,10 @@ const CreateProduct = () => {
             type="number"
             name="price"
             value={discountPrice}
+            placeholder={singleProduct?.discountPrice}
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setDiscountPrice(e.target.value)}
-            placeholder="Enter your product price with discount..."
+          
           />
         </div>
         <br />
@@ -178,9 +193,11 @@ const CreateProduct = () => {
             type="number"
             name="price"
             value={stock}
+            placeholder={singleProduct?.stock}
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setStock(e.target.value)}
-            placeholder="Enter your product stock..."
+            
+            
           />
         </div>
         <br />
@@ -189,6 +206,7 @@ const CreateProduct = () => {
             Upload Images <span className="text-red-500">*</span>
           </label>
           <input
+     
             type="file"
             name=""
             id="upload"
@@ -214,7 +232,7 @@ const CreateProduct = () => {
           <div>
             <input
               type="submit"
-              value="Create"
+              value="Update"
               className="mt-2 border block w-full px-3 h-[35px] border-green-600 rounded-[3px] bg-green-500 text-sm font-medium text-white transition hover:bg-transparent hover:text-green-600 focus:outline-none focus:ring active:text-green-600 cursor-pointer "
             />
           </div>
@@ -224,4 +242,4 @@ const CreateProduct = () => {
   );
 };
 
-export default CreateProduct;
+export default UpdateProduct;

@@ -39,12 +39,13 @@ import {
   ShopCreateProduct,
   ShopAllProducts,
   ShopCreateEvents,
+  ShopUpdateProduct,
   ShopAllEvents,
   ShopAllCoupouns,
   ShopPreviewPage, 
 } from "./ShopRoutes.js";
 import SellerProtectedRoute from "./routes/SellerProtectedRoute";
-import { getAllProducts } from "./redux/actions/product";
+import { getAllProducts, getSingleProduct } from "./redux/actions/product";
 import AboutPage from "./pages/AboutPage";
 import { getAllEvents } from "./redux/actions/event";
 const App = () => {
@@ -53,6 +54,7 @@ const App = () => {
     Store.dispatch(loadSeller());
     Store.dispatch(getAllProducts());
     Store.dispatch(getAllEvents());
+    Store.dispatch(getSingleProduct())
 
   }, []);
 
@@ -126,6 +128,14 @@ const App = () => {
             element={
               <SellerProtectedRoute>
                 <ShopCreateProduct />
+              </SellerProtectedRoute>
+            }
+          />
+             <Route
+            path="/dashboard-update-product/:id"
+            element={
+              <SellerProtectedRoute>
+                <ShopUpdateProduct />
               </SellerProtectedRoute>
             }
           />

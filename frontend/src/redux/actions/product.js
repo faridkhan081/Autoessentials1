@@ -49,6 +49,27 @@ export const getAllProductsShop = (id) => async (dispatch) => {
   }
 };
 
+// get all products
+export const getSingleProduct = (id) => async (dispatch) => {
+  try {
+    dispatch({
+      type: "getSingleProductShopRequest",
+    });
+
+    const { data } = await axios.get(`${server}/product/get-product/${id}`,
+    );
+    dispatch({
+      type: "getSingleProductsShopSuccess",
+      payload: data.singleProduct,
+    });
+  } catch (error) {
+    dispatch({
+      type: "getSingleProductShopFailed",
+      payload: error.response.data.message,
+    });
+  }
+};
+
 // delete product of a shop
 export const deleteProduct = (id) => async (dispatch) => {
   try {
@@ -94,3 +115,4 @@ export const getAllProducts = () => async (dispatch) => {
     });
   }
 };
+
