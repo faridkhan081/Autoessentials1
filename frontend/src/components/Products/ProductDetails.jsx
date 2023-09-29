@@ -24,8 +24,8 @@ function ProductDetails({ data, isLoading }) {
   const { products } = useSelector((state) => state.products);
 const {id} = useParams()
   useEffect(() => {
-    dispatch(getAllProductsShop(id));
-  }, [data]);
+    dispatch(getAllProductsShop(data && data.shop._id));
+  }, [dispatch,data]);
 
   const navigate = useNavigate();
   const incrementCount = () => {
@@ -80,7 +80,7 @@ const {id} = useParams()
                       <p>{data.description}</p>
                       <div className="flex pt-3">
                         <h4 className={`${styles.productDiscountPrice}`}>
-                          {data.discountPrice}$
+                          {data.discountPrice}Rs
                         </h4>
                         <h3 className={`${styles.price}`}>
                         {data.originalPrice ? data.originalPrice + "$" : null}
@@ -163,7 +163,7 @@ const {id} = useParams()
                   </div>
                 </div>
 
-                <ProductDetailsInfo data={data} />
+                <ProductDetailsInfo data={data} products={products}/>
                 <br />
                 <br />
               </div>
@@ -238,7 +238,7 @@ const ProductDetailsInfo = ({ data,
       </div>
       {active === 1 ? (
         <>
-         <p>{data.description}</p>
+         <p className="py-2 text-[18px] leading-8 pb-10 whitespace-pre-line">{data.description}</p>
         </>
       ) : null}
 

@@ -46,11 +46,13 @@ import {
 import SellerProtectedRoute from "./routes/SellerProtectedRoute";
 import { getAllProducts } from "./redux/actions/product";
 import AboutPage from "./pages/AboutPage";
+import { getAllEvents } from "./redux/actions/event";
 const App = () => {
   useEffect(() => {
     Store.dispatch(loadUser());
     Store.dispatch(loadSeller());
     Store.dispatch(getAllProducts());
+    Store.dispatch(getAllEvents());
 
   }, []);
 

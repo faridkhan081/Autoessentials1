@@ -28,7 +28,7 @@ import { HiMenuAlt2 } from "react-icons/hi";
 
 const Header = ({ activeHeading }) => {
   const { isAuthenticated, user } = useSelector((state) => state.user);
-  const { products } = useSelector((state) => state.products);
+  
 
   const [searchTerm, setSearchTerm] = useState("");
   const [searchData, setSearchData] = useState(null);
@@ -38,6 +38,7 @@ const Header = ({ activeHeading }) => {
   const [open, setOpen] = useState(false);
   const [openWishlist, setOpenWhishlist] = useState(false);
   const { isSeller,seller } = useSelector((state) => state.seller);
+  const { allProducts } = useSelector((state) => state.products);
 
   // console.log(user)
 
@@ -46,7 +47,7 @@ const Header = ({ activeHeading }) => {
     const term = e.target.value;
      setSearchTerm(term)
 
-    const filteredProducts = productData.filter((product) =>
+    const filteredProducts = allProducts && allProducts.filter((product) =>
       product.name.toLowerCase().includes(term.toLowerCase())
     );
       setSearchData(filteredProducts);
@@ -137,7 +138,7 @@ const Header = ({ activeHeading }) => {
                       <Link to={`/product/${Product_name}`}>
                         <div className="w-full flex items-start-py-3">
                           <img
-                            src={i.image_Url[0].url}
+                            src={`${backend_url}/${i.images[0]}`}
                             alt=""
                             className="w-[40px] h-[40px] mr-[10px]"
                           />

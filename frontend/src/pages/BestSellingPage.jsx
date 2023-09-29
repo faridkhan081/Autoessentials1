@@ -5,19 +5,19 @@ import styles from "../styles/styles";
 import { productData } from "../static/data";
 import ProductCard from "../components/Route/ProductCard/ProductCard";
 import HeadBanner from "../components/Banner/HeadBanner";
+import { useSelector } from "react-redux";
 
 function BestSellingPage() {
- 
+ const {allProducts}= useSelector((state)=> state.products)
 
   const [data, setData] = useState('');
 
+
   useEffect(() => {
-    console.log('useEffect is called');
-    const d = productData && productData.sort((a,b)=> b.total_sell - a.total_sell)
-    setData(d)
-    
-    
-  }, []);
+    const allProductsData = allProducts ? [...allProducts] : [];
+    const sortedData = allProductsData?.sort((a,b) => b.sold_out - a.sold_out); 
+    setData(sortedData);
+  }, [allProducts]);
 
   return (
     <div>

@@ -39,7 +39,7 @@ router.post(
   })
 );
 
-//get all events
+//get all events of a shop
 
 router.get(
   "/get-all-events/:id",
@@ -57,7 +57,21 @@ router.get(
   })
 );
 
-// delete product
+
+router.get('/get-all-events', catchAsyncError(async(req,res,next)=>{
+  try {
+    const events = await Event.find();
+    res.status(201).json({
+      success: true,
+      events
+    })
+    
+  } catch (error) {
+    return next(new ErrorHandler(error,400))
+  }
+}))
+
+// delete event product
 router.delete('/delete-shop-event/:id',isSeller, catchAsyncError(async(req,res,next)=>{
   try {
     const productId = req.params.id;

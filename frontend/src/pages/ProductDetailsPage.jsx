@@ -32,7 +32,7 @@ function ProductDetailsPage() {
     <div>
         <Header/>
         
-        <ProductDetails data={data } isLoading={isLoading} />
+        <ProductDetails data={data} isLoading={isLoading} />
         {
           data && <SuggestedProduct data={data}/> 
         }

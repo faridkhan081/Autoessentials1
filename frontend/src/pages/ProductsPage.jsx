@@ -14,13 +14,15 @@ function ProductsPage() {
 
   const [data, setData] = useState();
 
+
   useEffect(() => {
+    
     if (categoryData === null) {
       const d = allProducts;
       setData(d);
     } else {
       const d =
-        allProducts && allProducts.filter((i) => i.category === categoryData);
+      allProducts && allProducts.filter((i) => i.category === categoryData);
       setData(d);
     }
     //    window.scrollTo(0,0);
