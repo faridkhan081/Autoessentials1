@@ -48,6 +48,7 @@ router.post("/create-user", upload.single("file"), async (req, res, next) => {
         email: user.email,
         subject: "Activate your account",
         message: `Hello ${user.name}, please click on the link to activate your account: ${activationUrl}`,
+      
       });
       res.status(201).json({
         success: true,
