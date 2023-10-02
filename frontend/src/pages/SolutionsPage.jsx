@@ -4,13 +4,14 @@ import Header from "../components/Layout/Header";
 import styles from "../styles/styles";
 import axios from "axios";
 import "../App.css";
+import Layout from "../components/Layout/Layout";
 const SolutionsPage = () => {
   return (
-    <div>
+    <Layout title={"Solutions"}>
       <Header activeHeading={6} />
       <Solution />
       <Footer />
-    </div>
+    </Layout>
   );
 };
 

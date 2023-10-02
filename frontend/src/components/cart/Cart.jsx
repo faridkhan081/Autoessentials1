@@ -5,6 +5,7 @@ import styles from '../../styles/styles'
 import { ShoppingBag } from 'lucide-react';
 import { HiOutlineMinus, HiPlus } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
+import Layout from '../Layout/Layout';
 
 function Cart({setOpenCart}) {
     const cartData =[
@@ -26,6 +27,7 @@ function Cart({setOpenCart}) {
         },
     ]
   return (
+    <Layout title={"My Cart"}>
     <div className='fixed top-0 left-0 w-full bg-[#0000004b] h-screen z-10 '>
     <div className="fixed top-0 right-0 h-full w-[80%] 800px:w-[25%] bg-white flex flex-col overflow-y-scroll justify-between shadow-sm">
     <div>
@@ -73,6 +75,7 @@ function Cart({setOpenCart}) {
     </div>
 
     </div>
+    </Layout>
   )
 }
 

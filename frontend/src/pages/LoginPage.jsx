@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import Login from '../components/Login/Login.jsx'
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import Layout from '../components/Layout/Layout.jsx';
 
 
 
@@ -14,7 +15,7 @@ if(isAuthenticated === true){
 }
   },[])
   return (
-    <div><Login/></div>
+    <Layout title={"User - Login"}><Login/></Layout>
   )
 }
 

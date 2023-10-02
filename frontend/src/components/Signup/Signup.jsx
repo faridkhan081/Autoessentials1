@@ -240,7 +240,7 @@ const Signup = () => {
         </form>
 
               
-<div>
+{/* <div>
   <div className="mt-5 separator">
     <hr className="line" />
     <span>Or</span>
@@ -264,7 +264,7 @@ const Signup = () => {
  Continue with  Google 
 </button>
 
-</div>
+</div> */}
       </div>
     </main>
   </div>

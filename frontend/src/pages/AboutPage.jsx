@@ -1,20 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../components/Layout/Header'
 import Footer from '../components/Layout/Footer';
+import Layout from '../components/Layout/Layout';
 
 function AboutPage() {
   return (
-    <div>
+    <Layout title={"About"}>
 
     <Header/>
     <About/>
     <Footer/>
-    </div>
+    </Layout>
   )
 }
 
 
 const About = () => {
+    useEffect(()=>{
+        window.scrollTo(0,0);
+    },[])
     return (
         <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4">
             <p className="font-normal text-sm leading-3 text-indigo-700 hover:text-indigo-800 cursor-pointer pb-2">About</p>

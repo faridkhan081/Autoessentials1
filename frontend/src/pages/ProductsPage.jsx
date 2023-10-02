@@ -6,6 +6,7 @@ import { productData } from "../static/data";
 import ProductCard from "../components/Route/ProductCard/ProductCard";
 import HeadBanner from "../components/Banner/HeadBanner";
 import { useSelector } from "react-redux";
+import Layout from "../components/Layout/Layout";
 
 function ProductsPage() {
   const [searchParams] = useSearchParams();
@@ -29,7 +30,7 @@ function ProductsPage() {
   }, [allProducts]);
 
   return (
-    <div>
+    <Layout title={"All Products"}>
       <Header activeHeading={3} />
 
       <HeadBanner
@@ -51,7 +52,7 @@ function ProductsPage() {
           </h1>
         ) : null}
       </div>
-    </div>
+    </Layout>
   );
 }
 

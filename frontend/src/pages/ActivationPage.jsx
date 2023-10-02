@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { server } from "../server";
+import Layout from "../components/Layout/Layout";
 
 const ActivationPage = () => {
   const { activation_token } = useParams();
@@ -28,7 +29,7 @@ const ActivationPage = () => {
   }, []);
 
   return (
-    <div
+    <Layout title={"User Account Activation"}
       style={{
         width: "100%",
         height: "100vh",
@@ -42,7 +43,7 @@ const ActivationPage = () => {
       ) : (
         <p>Your account has been created suceessfully!</p>
       )}
-    </div>
+    </Layout>
   );
 };
 

@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { server } from "../server";
+import Layout from "../components/Layout/Layout";
 
 const SellerActivationPage = () => {
   const { activation_token } = useParams();
@@ -27,7 +28,7 @@ const SellerActivationPage = () => {
   }, []);
 
   return (
-    <div
+    <Layout title={"Seller Activation"}
       style={{
         width: "100%",
         height: "100vh",
@@ -41,7 +42,7 @@ const SellerActivationPage = () => {
       ) : (
         <p>Your shop has been created suceessfully!</p>
       )}
-    </div>
+    </Layout>
   );
 };
 

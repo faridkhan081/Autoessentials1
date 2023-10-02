@@ -104,9 +104,9 @@ const Header = ({ activeHeading }) => {
                 </h5>
                 <h3
                   className="text-xl"
-                  style={{ color: "#000", marginTop: "16px"}}
+                  style={{ color: "#000", marginTop: "13px"}}
                 >
-                  Essentails
+                  Essentials
                 </h3>
               </div>
             </Link>

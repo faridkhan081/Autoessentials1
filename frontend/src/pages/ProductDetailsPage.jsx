@@ -8,6 +8,7 @@ import SuggestedProduct from '../components/Products/SuggestedProduct.jsx'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import { useSelector } from 'react-redux'
+import Layout from '../components/Layout/Layout'
 function ProductDetailsPage() {
   const {allProducts} = useSelector((state) => state.products)
     const {name} = useParams();
@@ -29,7 +30,7 @@ function ProductDetailsPage() {
         
     },[productName])
   return (
-    <div>
+    <Layout title={"Product Details..."}>
         <Header/>
         
         <ProductDetails data={data} isLoading={isLoading} />
@@ -41,7 +42,7 @@ function ProductDetailsPage() {
       
     
         <Footer/>
-    </div>
+    </Layout>
   )
 }
 

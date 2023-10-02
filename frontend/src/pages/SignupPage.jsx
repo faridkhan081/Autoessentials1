@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import Signup from '../components/Signup/Signup.jsx';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import Layout from '../components/Layout/Layout.jsx';
 const SignupPage = () => {
   const { isAuthenticated} = useSelector((state) => state.user);
   const navigate = useNavigate()
@@ -11,7 +12,7 @@ const SignupPage = () => {
  }
    },[])
   return (
-    <div><Signup/></div>
+    <Layout title={"User - Sign-up"}><Signup/></Layout>
   )
 }
 

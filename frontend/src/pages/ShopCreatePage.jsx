@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import ShopCreate from '../components/Shop/ShopCreate'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import Layout from '../components/Layout/Layout'
 
 
 function ShopCreatePage() {
@@ -16,7 +17,7 @@ function ShopCreatePage() {
   }, [])
   
   return (
-    <div><ShopCreate/></div>
+    <Layout title={"Shop Sign-up"}><ShopCreate/></Layout>
   )
 }
 

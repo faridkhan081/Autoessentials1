@@ -7,11 +7,12 @@ import FeaturedProduct from '../components/Route/FeaturedProduct/FeaturedProduct
 import Events from '../components/Events/Events.jsx'
 import Sponsored from '../components/Route/Sponsored.jsx'
 import Footer from '../components/Layout/Footer.jsx'
+import Layout from '../components/Layout/Layout.jsx'
 
 
 function HomePage() {
   return (
-    <>
+    <Layout >
     <Header activeHeading={1}/>
     <Hero  />
     <Categories/>
@@ -21,7 +22,7 @@ function HomePage() {
     <Sponsored/>
     <Footer/>
     
-    </>
+    </Layout>
   )
 }
 

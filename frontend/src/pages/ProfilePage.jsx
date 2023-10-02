@@ -3,11 +3,12 @@ import Header from '../components/Layout/Header'
 import styles from '../styles/styles';
 import ProfileSidebar from '../components/Profile/ProfileSidebar';
 import ProfileContent from '../components/Profile/ProfileContent';
+import Layout from '../components/Layout/Layout';
 
 function ProfilePage() {
     const [active,setActive] = useState(1)
   return (
-    <div>
+    <Layout title={"User Profile"}>
         <Header/>
 
         <div className={`${styles.section} flex bg-[#f5f5f5] py-10`}>
@@ -16,7 +17,7 @@ function ProfilePage() {
             </div>
             <ProfileContent active={active} setActive={setActive}/>
         </div>
-    </div>
+    </Layout>
   )
 }
 
