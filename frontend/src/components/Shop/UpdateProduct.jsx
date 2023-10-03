@@ -77,6 +77,8 @@ const [data,setData] = useState()
 
     }, {withCredentials: true}).then((res) => {
         toast.success("Product info updated succesfully!");
+        navigate("/dashboard-products");
+        window.location.reload()
         // dispatch(loadSeller());
     }).catch((error)=> {
         toast.error(error.response.data.message);

@@ -12,32 +12,7 @@ const Footer = () => {
 
 <footer className="bg-white">
   <div className="mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8">
-    <div className="mx-auto max-w-md">
-      <strong
-        className="block text-center text-xl font-bold text-gray-900 sm:text-3xl"
-      >
-        Want us to email you with the latest blockbuster news?
-      </strong>
-
-      <form className="mt-6">
-        <div className="relative max-w-lg">
-          <label className="sr-only" htmlFor="email"> Email </label>
-
-          <input
-            className="w-full rounded-full border-gray-200 bg-gray-100 p-4 pe-32 text-sm font-medium focus:border-rose-500 focus:ring-0"
-            id="email"
-            type="email"
-            placeholder="abc@gmail.com"
-          />
-
-          <button
-            className="absolute  border border-rose-600 end-1 top-1/2 -translate-y-1/2 rounded-full bg-rose-500  px-5 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-rose-600  focus:outline-none focus:ring active:text-rose-600 "
-          >
-            Subscribe
-          </button>
-        </div>
-      </form>
-    </div>
+  
 
     <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-32">
       <div className="mx-auto max-w-sm lg:max-w-none">

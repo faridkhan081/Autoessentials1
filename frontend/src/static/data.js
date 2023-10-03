@@ -222,7 +222,7 @@ export const categoriesData = [
   },
   {
     id: 5,
-    title: "Wheels & Tires",
+    title: "Wheel and Tires",
     subTitle: "",
     image_Url:
       "https://ic.carid.com/icons/wheels-and-rims_ic_5.jpg",

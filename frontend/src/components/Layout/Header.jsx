@@ -156,7 +156,7 @@ const Header = ({ activeHeading }) => {
               <div className={`${styles.button} primary-dark !rounded-md`}>
               <Link to="/seller-dashboard">
               <h1 className="text-[#fff] flex items-center">
-                Start selling now
+                Shop Dashboard
                 <IoIosArrowForward className="ml-1" />
               </h1>
             </Link>
