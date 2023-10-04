@@ -4,6 +4,8 @@ import Footer from '../components/Layout/Footer';
 import Layout from '../components/Layout/Layout';
 import { brandingData, categoriesData } from "../static/data";
 import styles from "../styles/styles";
+import product from '../Assets/images/company1.jpeg'
+
 function AboutPage() {
   return (
     <Layout title={"About"}>
@@ -35,7 +37,7 @@ const About = () => {
                     <p className='font-normal text-base leading-6 text-gray-600 mt-6 text-justify'>Behind AutoEssentials, there's a passionate team dedicated to making your shopping experience exceptional. From our founders to our customer support specialists, we're here to serve you.</p>
                 </div>
                 <div className="w-full lg:w-6/12 ">
-                    <img className="lg:block hidden w-full rounded-lg" src="https://images.unsplash.com/photo-1599747645972-73c841de6e9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="people discussing on board" />
+                    <img className="lg:block hidden w-full rounded-lg" src={product} alt="people discussing on board" />
                   
                 </div>
             </div>

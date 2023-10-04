@@ -5,10 +5,14 @@ import styles from "../styles/styles";
 import axios from "axios";
 import "../App.css";
 import Layout from "../components/Layout/Layout";
+import HeadBanner from "../components/Banner/HeadBanner";
+import product from '../Assets/images/tire.jpg'
+
 const SolutionsPage = () => {
   return (
     <Layout title={"Solutions"}>
       <Header activeHeading={6} />
+      <HeadBanner title="Inspect Your Tire" list='solutions' imageUrl={product}/>
       <Solution />
       <Footer />
     </Layout>
@@ -63,6 +67,7 @@ const Solution = () => {
 
   return (
     <div className={`${styles.section} my-8 `}>
+   
       <h1 className="font-medium text-[30px] text-[#231e1e]">
         Tire Inspection Tool
       </h1>

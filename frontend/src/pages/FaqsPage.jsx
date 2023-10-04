@@ -3,11 +3,15 @@ import Footer from "../components/Layout/Footer";
 import Header from "../components/Layout/Header";
 import styles from "../styles/styles";
 import Layout from "../components/Layout/Layout";
+import HeadBanner from "../components/Banner/HeadBanner";
+import product from '../Assets/images/question.jpeg'
 
 const FaqsPage = () => {
   return (
     <Layout title={"FAQ'S"}>
       <Header activeHeading={5} />
+      <HeadBanner title="Frequently Ask Questions" list='Faqs' imageUrl={product}/>
+
       <Faq />
       <Footer />
     </Layout>

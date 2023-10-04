@@ -7,6 +7,7 @@ import ProductCard from "../components/Route/ProductCard/ProductCard";
 import HeadBanner from "../components/Banner/HeadBanner";
 import { useSelector } from "react-redux";
 import Layout from "../components/Layout/Layout";
+import product from '../Assets/images/productsHeader.jpg'
 
 function BestSellingPage() {
  const {allProducts}= useSelector((state)=> state.products)
@@ -23,7 +24,7 @@ function BestSellingPage() {
   return (
     <Layout title={"Best Selling"}>
       <Header activeHeading={2} />
-      <HeadBanner title="Best Selling Products" list='Best selling' imageUrl="https://media.wired.com/photos/5e62cc45ac94e900085c0f2c/master/pass/Science_goodyear_163751952.jpg"/>
+      <HeadBanner title="Best Selling Products" list='Best selling' imageUrl={product}/>
 
       <br />
       <br />

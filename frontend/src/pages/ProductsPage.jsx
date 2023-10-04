@@ -7,7 +7,7 @@ import ProductCard from "../components/Route/ProductCard/ProductCard";
 import HeadBanner from "../components/Banner/HeadBanner";
 import { useSelector } from "react-redux";
 import Layout from "../components/Layout/Layout";
-
+import product from '../Assets/images/productsHeader.jpg'
 function ProductsPage() {
   const [searchParams] = useSearchParams();
   const categoryData = searchParams.get("category");
@@ -36,7 +36,7 @@ function ProductsPage() {
       <HeadBanner
         title="Shop Your Favourite Products"
         list="products"
-        imageUrl="https://media.wired.com/photos/5e62cc45ac94e900085c0f2c/master/pass/Science_goodyear_163751952.jpg"
+        imageUrl={product}
       />
 
       <br />
