@@ -13,6 +13,7 @@ import ProfilePage from '../pages/ProfilePage'
 import ShopCreatePage from '../pages/ShopCreatePage'
 import ShopLoginPage from '../pages/ShopLoginPage'
 import CheckoutPage from '../pages/CheckoutPage'
+import PageNotFound from '../pages/PageNotFound.jsx'
 export {
     LoginPage,
     SignupPage,
@@ -29,6 +30,7 @@ export {
     ShopCreatePage,
     ShopLoginPage,
     SellerActivationPage,
+    PageNotFound,
     
 
 }

@@ -14,13 +14,13 @@ const Hero = () => {
   ></div>
 
   <div
-    className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8"
+    className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:justify-between lg:px-8"
   >
     <div className="max-w-xl text-center lg:text-left sm:text-right">
-      <h1 className="text-3xl font-extrabold sm:text-5xl">
+      <h1 className="bg-gradient-to-r from-rose-600 via-red-800 to-black bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl">
       Rev Up Your Ride with  
 
-        <strong className="block font-extrabold text-rose-700">
+        <strong className="mt-3 block font-bold text-black">
        AutoEssentials
         </strong>
       </h1>
@@ -45,6 +45,78 @@ const Hero = () => {
         </Link>
       </div>
     </div>
+
+    <div className="hidden animate-duration-[8000ms] animate-bounce lg:block glass w-[500px] text-center rounded-lg" style={{background:'rgba(255,255,255,0.6)',backdropFilter:'blur(2px)',WebkitBackdropFilter:'blur(2px)'}}><section>
+  <div class="p-5">
+    <div class="mx-auto max-w-3xl text-center">
+      <h2 class="text-[30px] font-bold text-gray-900">
+        Trusted by eCommerce Businesses
+      </h2>
+
+      <p class="mt-4 text-gray-500 sm:text-xl ">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione dolores
+        laborum labore provident impedit.
+      </p>
+    </div>
+
+    <div class="mt-6 sm:mt-6">
+      <dl class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div
+          class="flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center"
+        >
+          <dt class="order-last text-lg font-medium text-gray-500">
+            Total Sales
+            {/* <div
+    class="inline-flex gap-2 self-end rounded bg-black p-1 text-white"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-4 w-4"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >g
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+      />
+    </svg>
+
+    
+    
+  </div> */}
+          </dt>
+
+          <dd class="text-[35px] font-extrabold text-rose-600 ">
+            $4.8m
+          </dd>
+        </div>
+
+        <div
+          class="flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center"
+        >
+          <dt class="order-last text-lg font-medium text-gray-500">
+            Active Sellers
+          </dt>
+
+          <dd class="text-[35px] font-extrabold text-rose-600 ">24</dd>
+        </div>
+
+        <div
+          class="flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center"
+        >
+          <dt class="order-last text-lg font-medium text-gray-500">
+            Total Users
+          </dt>
+
+          <dd class="text-[35px] font-extrabold text-rose-600 ">86</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section></div>
   </div>
 </section>
   );

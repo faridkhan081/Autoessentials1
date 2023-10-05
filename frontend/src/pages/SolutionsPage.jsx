@@ -6,7 +6,7 @@ import axios from "axios";
 import "../App.css";
 import Layout from "../components/Layout/Layout";
 import HeadBanner from "../components/Banner/HeadBanner";
-import product from '../Assets/images/tire.jpg'
+import product from '../Assets/images/tire.jpeg'
 
 const SolutionsPage = () => {
   return (

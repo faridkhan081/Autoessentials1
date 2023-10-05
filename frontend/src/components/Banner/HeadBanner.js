@@ -5,6 +5,8 @@ function HeadBanner({title,list,imageUrl}) {
 
     const backgroundStyles = {
         backgroundImage: `url(${imageUrl})`,
+       
+        
       };
     
   return (
@@ -13,7 +15,7 @@ function HeadBanner({title,list,imageUrl}) {
   <div className="w-full ">
     <div className="grid  ">
       <div className="grid place-content-center sm:p-8 h-[300px]
-       bg-fixed bg-cover bg-center bg-no-repeat" style={backgroundStyles}>
+       bg-fixed bg-cover w-full bg-center bg-no-repeat" style={backgroundStyles}>
         <div className="max-w-md mx-auto text-center lg:text-center">
           <header>
             <h2 className="text-xl font-bold text-white sm:text-3xl">{title}</h2>

@@ -4,12 +4,13 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 import { Link, useNavigate } from "react-router-dom";
 import { RxAvatar } from "react-icons/rx";
-import mainlogo from "../../Assets/images/main-logo.svg";
+
 import axios from "axios";
 
 import { server } from "./../../server";
 import { toast } from 'react-toastify';
 import { BsFillArrowLeftSquareFill } from "react-icons/bs";
+import '../Signup/Signup.css'
 
 const Signup = () => {
   const [visible, setVisible] = useState(false);
@@ -18,6 +19,7 @@ const Signup = () => {
   const [name, setName] = useState("");
   const [avatar, setAvatar] = useState(null);
   const navigate = useNavigate();
+  const [loading,setLoading] = useState(false)
 
 
   function handleFileInputChange(e) {
@@ -26,6 +28,7 @@ const Signup = () => {
   }
 
   const handleSubmit = async (e) => {
+    setLoading(true)
     e.preventDefault();
     const config = { headers: { "Content-Type":  "multipart/form-data" } };
    
@@ -37,6 +40,7 @@ const Signup = () => {
 
     axios.post(`${server}/user/create-user`, newForm, config)
       .then((res) => {
+        setLoading(false)
         toast.success(res.data.message);
         setName('');
         setEmail('');
@@ -226,11 +230,22 @@ const Signup = () => {
           </div>
 
           <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
-            <button type="submit"
-              className="inline-block shrink-0 rounded-md border border-rose-600 bg-rose-500 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-rose-600 focus:outline-none focus:ring active:text-rose-500"
-            >
-              Create an account
-            </button>
+          {
+        loading ? (
+          <button
+          style={{width:'142px'}}
+            className="inline-block shrink-0 rounded-md border border-rose-600 bg-tansparent px-12 py-3 text-sm font-medium text-white transition  focus:outline-none focus:ring active:text-rose-500"
+          >
+          <div className="lds-hourglass" />
+
+          </button>
+        ):(   <button
+         style={{width:'142px'}}
+            className="inline-block shrink-0 rounded-md border border-rose-600 bg-rose-500 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-rose-600 focus:outline-none focus:ring active:text-rose-500"
+          >
+           Register
+          </button>)
+       }
 
             <p className="mt-4 text-sm text-gray-500 sm:mt-0">
               Already have an account?

@@ -20,6 +20,7 @@ import {
   ProfilePage,
   SellerActivationPage,
   ShopLoginPage,
+  PageNotFound
 } from "./routes/Routes.js";
 
 //shop imports
@@ -66,6 +67,7 @@ const App = () => {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/sign-up" element={<SignupPage />} />
+          <Route path="*" element={<PageNotFound/>} />
           <Route
             path="/activation/:activation_token"
             element={<ActivationPage />}

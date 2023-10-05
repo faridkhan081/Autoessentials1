@@ -13,8 +13,9 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
-
+const [loading,setLoading] = useState(false)
   const handleSubmit = async (e) => {
+setLoading(true)
     e.preventDefault();
     await axios
       .post(
@@ -24,8 +25,10 @@ const Login = () => {
           password,
         },
         { withCredentials: true }
+       
       )
       .then((res) => {
+        setLoading(false)
         toast.success("Login Success!");
         navigate("/");
         window.location.reload(true);
@@ -178,11 +181,22 @@ const Login = () => {
         </div>
 
         <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
+       {
+        loading ? (
           <button
+          style={{width:'142px'}}
+            className="inline-block shrink-0 rounded-md border border-rose-600 bg-tansparent px-12 py-3 text-sm font-medium text-white transition  focus:outline-none focus:ring active:text-rose-500"
+          >
+          <div className="lds-hourglass" />
+
+          </button>
+        ):(   <button
+         style={{width:'142px'}}
             className="inline-block shrink-0 rounded-md border border-rose-600 bg-rose-500 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-rose-600 focus:outline-none focus:ring active:text-rose-500"
           >
             Sign in
-          </button>
+          </button>)
+       }
 
           <p className="mt-4 text-sm text-gray-500 sm:mt-0">
             No account?
