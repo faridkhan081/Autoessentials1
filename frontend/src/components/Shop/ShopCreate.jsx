@@ -21,6 +21,7 @@ const ShopCreate = () => {
   const [zipCode, setZipCode] = useState();
   const [avatar, setAvatar] = useState();
   const [email, setEmail] = useState("");
+  const [description,setDescription] = useState("")
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -36,6 +37,7 @@ const ShopCreate = () => {
     newForm.append("zipCode", zipCode);
     newForm.append("address", address);
     newForm.append("phoneNumber", phoneNumber);
+    newForm.append("description", description);
 
     axios
       .post(`${server}/shop/create-shop`, newForm, config)
@@ -49,6 +51,8 @@ const ShopCreate = () => {
         setZipCode("");
         setPhoneNumber();
         setAddress("");
+        setAddress("");
+        setDescription("");
 
         if (res.data.success === true) {
           navigate("/shop-login");
@@ -235,7 +239,31 @@ const ShopCreate = () => {
                 )}
               </div>
 
+
               <div className="col-span-6 sm:col-span-3">
+                <label
+                  htmlFor="FirstName"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Describe Your Bussiness
+                </label>
+
+                <textarea
+                
+                  type="text"
+                  name="description"
+                  autoComplete="description"
+
+                  required
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                  className="mt-1 w-full h-[100px] rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                />
+              </div>
+
+
+
+              <div className="col-span-6 lg:mt-[30px] sm:col-span-3">
                 <div>
                   <label
                     htmlFor="avatar"
@@ -272,19 +300,7 @@ const ShopCreate = () => {
                 </div>
               </div>
 
-              <div className="col-span-6">
-                <p className="text-sm text-gray-500">
-                  By creating an account, you agree to our
-                  <a href="#" className="text-gray-700 underline">
-                    terms and conditions
-                  </a>
-                  and
-                  <Link to="#" className="text-gray-700 underline">
-                    privacy policy
-                  </Link>
-                  .
-                </p>
-              </div>
+     
 
               <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
                 {loading ? (

@@ -41,6 +41,7 @@ router.post("/create-shop", upload.single("file"), async (req, res, next) => {
       address: req.body.address,
       phoneNumber: req.body.phoneNumber,
       zipCode: req.body.zipCode,
+      description: req.body.description,
     };
 
     const activationToken = createActivationToken(seller);
@@ -87,7 +88,7 @@ router.post(
       if (!newSeller) {
         return next(new ErrorHandler("Invalid token", 400));
       }
-      const { name, email, password, avatar, zipCode, address, phoneNumber } = newSeller;
+      const { name, email, password, avatar, zipCode, address, phoneNumber ,description} = newSeller;
 
       let seller = await Shop.findOne({ email });
 
@@ -103,6 +104,7 @@ router.post(
         zipCode,
         address,
         phoneNumber,
+        description,
       });
 
       sendShopToken(seller,201,res)

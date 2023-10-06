@@ -87,6 +87,7 @@ const Header = ({ activeHeading }) => {
       toast.success(res.data.message);
      
       navigate('/')
+      window.location.reload(true)
      
     }).catch((error) =>{
       console.log(error.response.data.message);
@@ -302,7 +303,7 @@ const Header = ({ activeHeading }) => {
           className="text-white px-4 py-2.5 text-center inline-flex items-center btn-dropdown"
           onClick={handleDropDown}
         >
-          <RxAvatar size={35}/>
+          <CgProfile size={30}/>
   
         </div>
 
