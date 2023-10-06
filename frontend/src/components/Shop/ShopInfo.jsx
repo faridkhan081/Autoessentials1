@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import { backend_url } from "../../server";
 import Loader from "../Layout/Loader";
 
-  const ShopInfo = ({ isOwner }) => {
+const ShopInfo = ({ isOwner }) => {
   const [data, setData] = useState({});
   const { products } = useSelector((state) => state.products);
   const [isLoading, setIsLoading] = useState(false);
@@ -77,19 +77,22 @@ import Loader from "../Layout/Loader";
             </h4>
           </div>
           {isOwner && (
-        <div className="py-3 px-4">
-           <Link to="/settings">
-           <div className={`${styles.button} !w-full !h-[42px] !rounded-[5px]`}>
-            <span className="text-white">Edit Shop</span>
-          </div>
-           </Link>
-          <div className={`${styles.button} !w-full bg-rose-500 !h-[42px] !rounded-[5px]`}
-            onClick={logoutHandler}
-          >
-            <span className="text-white">Log Out</span>
-          </div>
-        </div>
-      )}
+            <div className="py-3 px-4">
+              <Link to="/settings">
+                <div
+                  className={`${styles.button} !w-full !h-[42px] !rounded-[5px]`}
+                >
+                  <span className="text-white">Edit Shop</span>
+                </div>
+              </Link>
+              <div
+                className={`${styles.button} !w-full bg-rose-500 !h-[42px] !rounded-[5px]`}
+                onClick={logoutHandler}
+              >
+                <span className="text-white">Log Out</span>
+              </div>
+            </div>
+          )}
         </div>
       )}
     </>

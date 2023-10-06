@@ -12,25 +12,21 @@ import { getAllProducts } from "../../redux/actions/product";
 const AllProducts = () => {
   const { products, isLoading } = useSelector((state) => state.products);
   const { seller } = useSelector((state) => state.seller);
-const navigate = useNavigate()
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getAllProductsShop(seller._id));
   }, [dispatch]);
-// console.log(products && products);
+  // console.log(products && products);
   const handleDelete = (id) => {
     dispatch(deleteProduct(id));
     window.location.reload(true);
   };
 
-
-  const handleUpdate =(id)=>{
-    navigate(`/dashboard-update-product/${id}`)
-  
-
-  
-  }
+  const handleUpdate = (id) => {
+    navigate(`/dashboard-update-product/${id}`);
+  };
 
   const columns = [
     { field: "id", headerName: "Product Id", minWidth: 150, flex: 0.7 },
@@ -70,7 +66,7 @@ const navigate = useNavigate()
       sortable: false,
       renderCell: (params) => {
         const d = params.row.name;
-        const product_name=d.replace(/\s+/g,"-")
+        const product_name = d.replace(/\s+/g, "-");
 
         return (
           <>
@@ -93,7 +89,7 @@ const navigate = useNavigate()
       renderCell: (params) => {
         return (
           <>
-            <Button onClick={()=>handleDelete(params.id)}>
+            <Button onClick={() => handleDelete(params.id)}>
               <AiOutlineDelete size={20} />
             </Button>
           </>
@@ -110,15 +106,13 @@ const navigate = useNavigate()
       renderCell: (params) => {
         return (
           <>
-            <Button onClick={()=>handleUpdate(params.id)}>
+            <Button onClick={() => handleUpdate(params.id)}>
               <AiOutlineEdit size={20} />
             </Button>
           </>
         );
       },
     },
-
-
   ];
 
   const row = [];
@@ -144,7 +138,8 @@ const navigate = useNavigate()
             rows={row}
             columns={columns}
             pageSize={10}
-            disableSelection OnClick
+            disableSelection
+            OnClick
             autoHeight
           />
         </div>

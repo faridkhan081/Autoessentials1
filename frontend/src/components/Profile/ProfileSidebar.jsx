@@ -2,37 +2,36 @@ import React from "react";
 
 import { RiLockPasswordLine } from "react-icons/ri";
 
+import { Radar } from "lucide-react";
 
-import { Radar } from 'lucide-react';
-
-import {  useNavigate } from "react-router-dom";
-import  axios  from 'axios';
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import { server } from "../../server";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
-import { User } from 'lucide-react';
-import { MessagesSquare } from 'lucide-react';
-import { ShoppingBag } from 'lucide-react';
-import { CreditCard } from 'lucide-react';
-import { BookPlus } from 'lucide-react';
-import { Receipt } from 'lucide-react';
-import { LogOut } from 'lucide-react';
-
+import { User } from "lucide-react";
+import { MessagesSquare } from "lucide-react";
+import { ShoppingBag } from "lucide-react";
+import { CreditCard } from "lucide-react";
+import { BookPlus } from "lucide-react";
+import { Receipt } from "lucide-react";
+import { LogOut } from "lucide-react";
 
 const ProfileSidebar = ({ setActive, active }) => {
   const navigate = useNavigate();
 
-
-  const logoutHandler = () =>{
-    axios.get(`${server}/user/logout`,{withCredentials: true}).then((res) => {
-      toast.success(res.data.message);
-      window.location.reload(true);
-      navigate('/');
-     
-    }).catch((error) =>{
-      console.log(error.response.data.message);
-    })
-  }
+  const logoutHandler = () => {
+    axios
+      .get(`${server}/user/logout`, { withCredentials: true })
+      .then((res) => {
+        toast.success(res.data.message);
+        window.location.reload(true);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error.response.data.message);
+      });
+  };
 
   return (
     <div className="w-full bg-white shadow-sm rounded-[10px] p-4 pt-8">
@@ -66,7 +65,7 @@ const ProfileSidebar = ({ setActive, active }) => {
         className="flex items-center cursor-pointer w-full mb-8"
         onClick={() => setActive(3)}
       >
-        <Receipt  size={20} color={active === 3 ? "red" : "black"} />
+        <Receipt size={20} color={active === 3 ? "red" : "black"} />
         <span
           className={`pl-3 ${
             active === 3 ? "text-[red]" : ""
@@ -104,7 +103,6 @@ const ProfileSidebar = ({ setActive, active }) => {
         </span>
       </div>
 
-      
       <div
         className="flex items-center cursor-pointer w-full mb-8"
         onClick={() => setActive(6)}
@@ -146,32 +144,9 @@ const ProfileSidebar = ({ setActive, active }) => {
         </span>
       </div>
 
-    
-
-      {/* {user && user?.role === "Admin" && (
-        <Link to="/admin/dashboard">
-          <div
-            className="flex items-center cursor-pointer w-full mb-8"
-            onClick={() => setActive(8)}
-          >
-            <MdOutlineAdminPanelSettings
-              size={20}
-              color={active === 7 ? "red" : ""}
-            />
-            <span
-              className={`pl-3 ${
-                active === 8 ? "text-[red]" : ""
-              } 800px:block hidden`}
-            >
-              Admin Dashboard
-            </span>
-          </div>
-        </Link>
-      )} */}
       <div
         className="single_item flex items-center cursor-pointer w-full mb-8"
-        onClick={() => setActive(9) || logoutHandler() }
-        // onClick={logoutHandler}
+        onClick={() => setActive(9) || logoutHandler()}
       >
         <LogOut size={20} color={active === 9 ? "red" : "black"} />
         <span

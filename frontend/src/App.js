@@ -21,7 +21,7 @@ import {
   SellerActivationPage,
   ShopLoginPage,
   PageNotFound,
-  ContactPage
+  ContactPage,
 } from "./routes/Routes.js";
 
 //shop imports
@@ -30,9 +30,7 @@ import { ShopDashboardPage } from "./routes/ShopRoutes";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import axios from 'axios';
-// import {server} from './server';
-// import { toast } from 'react-toastify';
+
 import Store from "./redux/store";
 import { loadSeller, loadUser } from "./redux/actions/user";
 
@@ -44,7 +42,7 @@ import {
   ShopUpdateProduct,
   ShopAllEvents,
   ShopAllCoupouns,
-  ShopPreviewPage, 
+  ShopPreviewPage,
 } from "./ShopRoutes.js";
 import SellerProtectedRoute from "./routes/SellerProtectedRoute";
 import { getAllProducts, getSingleProduct } from "./redux/actions/product";
@@ -57,8 +55,7 @@ const App = () => {
     Store.dispatch(loadSeller());
     Store.dispatch(getAllProducts());
     Store.dispatch(getAllEvents());
-    Store.dispatch(getSingleProduct())
-
+    Store.dispatch(getSingleProduct());
   }, []);
 
   return (
@@ -70,7 +67,7 @@ const App = () => {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/sign-up" element={<SignupPage />} />
-          <Route path="*" element={<PageNotFound/>} />
+          <Route path="*" element={<PageNotFound />} />
           <Route
             path="/activation/:activation_token"
             element={<ActivationPage />}
@@ -95,9 +92,6 @@ const App = () => {
             }
           />
 
-          {/* <Route path="/payment" element={<PaymentPage />} /> */}
-
-          {/* <Route path="/order/success/:id" element={<OrderSuccessPage />} /> */}
           <Route
             path="/profile"
             element={
@@ -136,7 +130,7 @@ const App = () => {
               </SellerProtectedRoute>
             }
           />
-             <Route
+          <Route
             path="/dashboard-update-product/:id"
             element={
               <SellerProtectedRoute>
@@ -161,7 +155,7 @@ const App = () => {
               </SellerProtectedRoute>
             }
           />
-              <Route
+          <Route
             path="/dashboard-events"
             element={
               <SellerProtectedRoute>
@@ -169,7 +163,7 @@ const App = () => {
               </SellerProtectedRoute>
             }
           />
-           <Route
+          <Route
             path="/dashboard-coupouns"
             element={
               <SellerProtectedRoute>

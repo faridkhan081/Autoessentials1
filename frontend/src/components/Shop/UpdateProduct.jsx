@@ -14,40 +14,38 @@ const UpdateProduct = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-const [data,setData] = useState()
-  const {id} = useParams()
+  const [data, setData] = useState();
+  const { id } = useParams();
 
   const { singleProduct, isLoading } = useSelector((state) => state.products);
 
- 
-
   useEffect(() => {
-
-  dispatch(getSingleProduct(id));
-  
-  
-  }, [dispatch,id]);
-
-
-
+    dispatch(getSingleProduct(id));
+  }, [dispatch, id]);
 
   const [images, setImages] = useState([]);
   const [name, setName] = useState(singleProduct && singleProduct.name);
-  const [description, setDescription] = useState(singleProduct && singleProduct.description);
-  const [category, setCategory] = useState(singleProduct && singleProduct.category ? singleProduct.category: "");
+  const [description, setDescription] = useState(
+    singleProduct && singleProduct.description
+  );
+  const [category, setCategory] = useState(
+    singleProduct && singleProduct.category ? singleProduct.category : ""
+  );
   const [tags, setTags] = useState(singleProduct && singleProduct.tags);
-  const [originalPrice, setOriginalPrice] = useState(singleProduct && singleProduct.originalPrice);
-  const [discountPrice, setDiscountPrice] = useState(singleProduct && singleProduct.discountPrice);
+  const [originalPrice, setOriginalPrice] = useState(
+    singleProduct && singleProduct.originalPrice
+  );
+  const [discountPrice, setDiscountPrice] = useState(
+    singleProduct && singleProduct.discountPrice
+  );
   const [stock, setStock] = useState(singleProduct && singleProduct.stock);
-
-
 
   const handleImageChange = (e) => {
     e.preventDefault();
 
     let files = Array.from(e.target.files);
 
-    setImages((prevImages)=> [...prevImages, ...files]);
+    setImages((prevImages) => [...prevImages, ...files]);
 
     // files.forEach((file) => {
     //   const reader = new FileReader();
@@ -65,27 +63,31 @@ const [data,setData] = useState()
 
   const updateHandler = async (e) => {
     e.preventDefault();
-    
-    await axios.put(`${server}/product/update-product-info/${id}`, {
-        name,
-        description,
-        category,
-        tags,
-        originalPrice,
-        discountPrice,
-        stock,
 
-    }, {withCredentials: true}).then((res) => {
+    await axios
+      .put(
+        `${server}/product/update-product-info/${id}`,
+        {
+          name,
+          description,
+          category,
+          tags,
+          originalPrice,
+          discountPrice,
+          stock,
+        },
+        { withCredentials: true }
+      )
+      .then((res) => {
         toast.success("Product info updated succesfully!");
         navigate("/dashboard-products");
-        window.location.reload()
+        window.location.reload();
         // dispatch(loadSeller());
-    }).catch((error)=> {
+      })
+      .catch((error) => {
         toast.error(error.response.data.message);
-    })
+      });
   };
-
-
 
   return (
     <div className="mt-[30px] w-[90%] 800px:w-[60%] bg-white shadow h-[80vh] rounded-[4px] p-3 overflow-y-scroll">
@@ -104,8 +106,6 @@ const [data,setData] = useState()
             placeholder={singleProduct?.name}
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setName(e.target.value)}
-            
-           
           />
         </div>
         <br />
@@ -123,7 +123,6 @@ const [data,setData] = useState()
             placeholder={singleProduct?.description}
             className="mt-2 appearance-none block w-full pt-2 px-3 border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setDescription(e.target.value)}
-            
           ></textarea>
         </div>
         <br />
@@ -136,10 +135,10 @@ const [data,setData] = useState()
             value={category}
             onChange={(e) => setCategory(e.target.value)}
           >
-            <option  value="Choose a category">Choose a category</option>
+            <option value="Choose a category">Choose a category</option>
             {categoriesData &&
               categoriesData.map((i) => (
-                <option  value={i.title} key={i.title}>
+                <option value={i.title} key={i.title}>
                   {i.title}
                 </option>
               ))}
@@ -155,7 +154,6 @@ const [data,setData] = useState()
             placeholder={singleProduct?.tags}
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setTags(e.target.value)}
-           
           />
         </div>
         <br />
@@ -168,7 +166,6 @@ const [data,setData] = useState()
             placeholder={singleProduct?.originalPrice}
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setOriginalPrice(e.target.value)}
-          
           />
         </div>
         <br />
@@ -183,7 +180,6 @@ const [data,setData] = useState()
             placeholder={singleProduct?.discountPrice}
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setDiscountPrice(e.target.value)}
-          
           />
         </div>
         <br />
@@ -198,8 +194,6 @@ const [data,setData] = useState()
             placeholder={singleProduct?.stock}
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setStock(e.target.value)}
-            
-            
           />
         </div>
         <br />
@@ -208,7 +202,6 @@ const [data,setData] = useState()
             Upload Images <span className="text-red-500">*</span>
           </label>
           <input
-     
             type="file"
             name=""
             id="upload"

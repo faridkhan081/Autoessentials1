@@ -6,13 +6,17 @@ import axios from "axios";
 import "../App.css";
 import Layout from "../components/Layout/Layout";
 import HeadBanner from "../components/Banner/HeadBanner";
-import product from '../Assets/images/tire.jpeg'
+import product from "../Assets/images/tire.jpeg";
 
 const SolutionsPage = () => {
   return (
     <Layout title={"Solutions"}>
       <Header activeHeading={6} />
-      <HeadBanner title="Inspect Your Tire" list='solutions' imageUrl={product}/>
+      <HeadBanner
+        title="Inspect Your Tire"
+        list="solutions"
+        imageUrl={product}
+      />
       <Solution />
       <Footer />
     </Layout>
@@ -67,7 +71,6 @@ const Solution = () => {
 
   return (
     <div className={`${styles.section} my-8 `}>
-   
       <h1 className="font-medium text-[30px] text-[#231e1e]">
         Tire Inspection Tool
       </h1>
@@ -142,38 +145,45 @@ const Solution = () => {
           {response && (
             <div className="relative flex w-80 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
               <div className="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600">
-              {imageUrl && (
-            <div className="image-container"> 
-            
-              <img src={imageUrl} alt="Uploaded" className="uploaded-image h-full w-full object-cover" />
-            </div>
-            
-          )}
-          
+                {imageUrl && (
+                  <div className="image-container">
+                    <img
+                      src={imageUrl}
+                      alt="Uploaded"
+                      className="uploaded-image h-full w-full object-cover"
+                    />
+                  </div>
+                )}
               </div>
-              
+
               <div className="p-6">
                 <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
-                <ul>
-            {response.predicted_classes.map((predictedClass, index) => (
-              <li key={index}>It is a {predictedClass == 1 ? "Defective": "Normal"} Tire</li>
-            ))}
-          </ul>
+                  <ul>
+                    {response.predicted_classes.map((predictedClass, index) => (
+                      <li key={index}>
+                        It is a {predictedClass == 1 ? "Defective" : "Normal"}{" "}
+                        Tire
+                      </li>
+                    ))}
+                  </ul>
                 </h5>
                 <p className="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
-                <ul>
-            {Object.keys(response.predictions).map((prediction, index) => (
-              <li key={index}>
-                <strong>{prediction}:</strong> Confidence: {response.predictions[prediction].confidence}
-              </li>
-            ))}
-          </ul>
+                  <ul>
+                    {Object.keys(response.predictions).map(
+                      (prediction, index) => (
+                        <li key={index}>
+                          <strong>{prediction}:</strong> Confidence:{" "}
+                          {response.predictions[prediction].confidence}
+                        </li>
+                      )
+                    )}
+                  </ul>
                 </p>
               </div>
               <div className="p-6 pt-0">
-              <p>
-            <strong>Response Time:</strong> {response.time} seconds
-          </p>
+                <p>
+                  <strong>Response Time:</strong> {response.time} seconds
+                </p>
               </div>
             </div>
           )}

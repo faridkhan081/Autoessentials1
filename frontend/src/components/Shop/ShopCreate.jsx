@@ -21,7 +21,7 @@ const ShopCreate = () => {
   const [zipCode, setZipCode] = useState();
   const [avatar, setAvatar] = useState();
   const [email, setEmail] = useState("");
-  const [description,setDescription] = useState("")
+  const [description, setDescription] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -239,7 +239,6 @@ const ShopCreate = () => {
                 )}
               </div>
 
-
               <div className="col-span-6 sm:col-span-3">
                 <label
                   htmlFor="FirstName"
@@ -249,19 +248,15 @@ const ShopCreate = () => {
                 </label>
 
                 <textarea
-                
                   type="text"
                   name="description"
                   autoComplete="description"
-
                   required
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                   className="mt-1 w-full h-[100px] rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                 />
               </div>
-
-
 
               <div className="col-span-6 lg:mt-[30px] sm:col-span-3">
                 <div>
@@ -299,8 +294,6 @@ const ShopCreate = () => {
                   </div>
                 </div>
               </div>
-
-     
 
               <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
                 {loading ? (

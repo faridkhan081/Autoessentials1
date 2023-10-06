@@ -25,13 +25,11 @@ const CreateProduct = () => {
   useEffect(() => {
     if (error) {
       toast.error(error);
-     
     }
     if (success) {
       toast.success("Product created successfully!");
       navigate("/dashboard-products");
-      window.location.reload()
-  
+      window.location.reload();
     }
   }, [dispatch, error, success]);
 
@@ -40,7 +38,7 @@ const CreateProduct = () => {
 
     let files = Array.from(e.target.files);
 
-    setImages((prevImages)=> [...prevImages, ...files]);
+    setImages((prevImages) => [...prevImages, ...files]);
 
     // files.forEach((file) => {
     //   const reader = new FileReader();
@@ -71,9 +69,7 @@ const CreateProduct = () => {
     newForm.append("discountPrice", discountPrice);
     newForm.append("stock", stock);
     newForm.append("shopId", seller._id);
-    dispatch(
-      createProduct(newForm)
-    );
+    dispatch(createProduct(newForm));
   };
 
   return (
@@ -122,10 +118,10 @@ const CreateProduct = () => {
             value={category}
             onChange={(e) => setCategory(e.target.value)}
           >
-            <option  value="Choose a category">Choose a category</option>
+            <option value="Choose a category">Choose a category</option>
             {categoriesData &&
               categoriesData.map((i) => (
-                <option  value={i.title} key={i.title}>
+                <option value={i.title} key={i.title}>
                   {i.title}
                 </option>
               ))}

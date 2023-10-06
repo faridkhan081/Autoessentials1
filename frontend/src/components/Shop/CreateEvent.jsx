@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 import { createEvent } from "../../redux/actions/event";
 import { Upload } from "lucide-react";
 
-const CreateEvent= () => {
+const CreateEvent = () => {
   const { seller } = useSelector((state) => state.seller);
   const { success, error } = useSelector((state) => state.events);
   const navigate = useNavigate();
@@ -26,14 +26,14 @@ const CreateEvent= () => {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
 
-
-
-const handleStartDateChange = (e) => {
+  const handleStartDateChange = (e) => {
     const startDate = new Date(e.target.value);
     const minEndDate = new Date(startDate.getTime() + 3 * 24 * 60 * 60 * 1000);
     setStartDate(startDate);
     setEndDate(null);
-    document.getElementById("end-date").min = minEndDate.toISOString().slice(0,10);
+    document.getElementById("end-date").min = minEndDate
+      .toISOString()
+      .slice(0, 10);
   };
 
   const handleEndDateChange = (e) => {
@@ -43,7 +43,11 @@ const handleStartDateChange = (e) => {
 
   const today = new Date().toISOString().slice(0, 10);
 
-  const minEndDate = startDate ? new Date(startDate.getTime() + 3 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10) : today;
+  const minEndDate = startDate
+    ? new Date(startDate.getTime() + 3 * 24 * 60 * 60 * 1000)
+        .toISOString()
+        .slice(0, 10)
+    : today;
 
   useEffect(() => {
     if (error) {
@@ -56,13 +60,12 @@ const handleStartDateChange = (e) => {
     }
   }, [dispatch, error, success]);
 
-
   const handleImageChange = (e) => {
     e.preventDefault();
 
     let files = Array.from(e.target.files);
 
-    setImages((prevImages)=> [...prevImages, ...files]);
+    setImages((prevImages) => [...prevImages, ...files]);
 
     // files.forEach((file) => {
     //   const reader = new FileReader();
@@ -95,9 +98,7 @@ const handleStartDateChange = (e) => {
     newForm.append("shopId", seller._id);
     newForm.append("start_Date", startDate.toISOString());
     newForm.append("Finish_Date", endDate.toISOString());
-    dispatch(
-      createEvent(newForm)
-    );
+    dispatch(createEvent(newForm));
   };
 
   return (
@@ -146,10 +147,10 @@ const handleStartDateChange = (e) => {
             value={category}
             onChange={(e) => setCategory(e.target.value)}
           >
-            <option  value="Choose a category">Choose a category</option>
+            <option value="Choose a category">Choose a category</option>
             {categoriesData &&
               categoriesData.map((i) => (
-                <option  value={i.title} key={i.title}>
+                <option value={i.title} key={i.title}>
                   {i.title}
                 </option>
               ))}
@@ -216,7 +217,7 @@ const handleStartDateChange = (e) => {
             type="date"
             name="price"
             id="start-date"
-            value={startDate ? startDate.toISOString().slice(0,10) : ""}
+            value={startDate ? startDate.toISOString().slice(0, 10) : ""}
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={handleStartDateChange}
             min={today}
@@ -232,7 +233,7 @@ const handleStartDateChange = (e) => {
             type="date"
             name="price"
             id="end-date"
-            value={endDate ? endDate.toISOString().slice(0,10) : ""}
+            value={endDate ? endDate.toISOString().slice(0, 10) : ""}
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={handleEndDateChange}
             min={minEndDate}
