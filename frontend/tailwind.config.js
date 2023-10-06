@@ -19,6 +19,8 @@ module.exports = {
     },
   },
   plugins: [
+    require('flowbite/plugin'),
+    
     plugin(function ({ matchUtilities, theme }) {
       matchUtilities(
         {
@@ -49,8 +51,9 @@ module.exports = {
         { values: theme('transitionTimingFunction') }
       )
     }),
+    
     require('@tailwindcss/forms'),
-    require('flowbite/plugin')
+   
     // ...
   ],
 }

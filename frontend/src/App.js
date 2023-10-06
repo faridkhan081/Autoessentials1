@@ -20,7 +20,8 @@ import {
   ProfilePage,
   SellerActivationPage,
   ShopLoginPage,
-  PageNotFound
+  PageNotFound,
+  ContactPage
 } from "./routes/Routes.js";
 
 //shop imports
@@ -49,6 +50,7 @@ import SellerProtectedRoute from "./routes/SellerProtectedRoute";
 import { getAllProducts, getSingleProduct } from "./redux/actions/product";
 import AboutPage from "./pages/AboutPage";
 import { getAllEvents } from "./redux/actions/event";
+
 const App = () => {
   useEffect(() => {
     Store.dispatch(loadUser());
@@ -65,6 +67,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/sign-up" element={<SignupPage />} />
           <Route path="*" element={<PageNotFound/>} />

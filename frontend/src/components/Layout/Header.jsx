@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import styles from "../../styles/styles";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-import { productData, categoriesData } from "../../static/data";
+import {  categoriesData } from "../../static/data";
 import {
-  AiFillShop,
+  
   AiOutlineClose,
 
 } from "react-icons/ai";
-import { AlignLeft } from 'lucide-react';
+
 import { Heart } from 'lucide-react';
 import { ShoppingCart } from 'lucide-react';
 
@@ -23,8 +23,10 @@ import { backend_url } from "../../server";
 import Cart from "../cart/Cart";
 import Wishlist from "../wishlist/Wishlist.jsx";
 import { HiMenuAlt2 } from "react-icons/hi";
-// import Head from "./Head";
-
+import { RxAvatar } from "react-icons/rx";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { server } from "../../server";
 
 const Header = ({ activeHeading }) => {
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -39,9 +41,13 @@ const Header = ({ activeHeading }) => {
   const [openWishlist, setOpenWhishlist] = useState(false);
   const { isSeller,seller } = useSelector((state) => state.seller);
   const { allProducts } = useSelector((state) => state.products);
-
+  const navigate = useNavigate()
   // console.log(user)
+  const [isOpen, setIsOpen] = useState(false);
 
+  const handleDropDown = () => {
+    setIsOpen(!isOpen);
+  };
   
   const handleSearchChange = (e) => {
     const term = e.target.value;
@@ -76,13 +82,22 @@ const Header = ({ activeHeading }) => {
     }
   });
 
-
+  const logoutHandler = () =>{
+    axios.get(`${server}/user/logout`,{withCredentials: true}).then((res) => {
+      toast.success(res.data.message);
+     
+      navigate('/')
+     
+    }).catch((error) =>{
+      console.log(error.response.data.message);
+    })
+  }
 
 
 
   return (
     <>
-    {/* <Head /> */}
+  
       <div className={`${styles.section}`}>
       
         <div className="hidden 800px:h-[50px] 800px:my-[20px] 800px:flex items-center justify-between ">
@@ -242,19 +257,78 @@ const Header = ({ activeHeading }) => {
             </div>
             <div className={`${styles.noramlFlex}`}>
               <div className="relative cursor-pointer mr-[15px]">
-                {isAuthenticated ? (
-                  <Link to="/profile">
+        
+
+                {
+                  isAuthenticated ? (
+                    
+                <div className="dropdown ">
+        <div
+          className="text-white px-4 py-2.5 text-center inline-flex items-center btn-dropdown"
+          onClick={handleDropDown}
+        >
+       
                     <img
                       src={`${backend_url}${user.avatar}`}
                       className="w-[35px] h-[35px] rounded-full"
                       alt=""
                     />
-                  </Link>
-                ) : (
-                  <Link to="/login">
-                    <CgProfile size={30} color="rgb(255 255 255 / 83%)" />
-                  </Link>
-                )}
+                 
+        </div>
+
+        <div
+          id="dropdown"
+          className={`absolute my-2 z-10 right-5 w-[150px] bg-white rounded  divide-y divide-gray-100 shadow ${
+            isOpen ? "block" : "hidden"
+          }`} 
+        >
+          <ul className=" btn-dropdowned z-10 w-[150px]  bg-white rounded divide-y divide-gray-100 shadow ">
+            <li>
+              <Link to="/profile" className=" block py-2 px-4 hover:bg-gray-100 hover:rounded ">
+              Profile
+              </Link>
+             
+              <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700"></hr>
+              <div onClick={logoutHandler} className=" block py-2 px-4 hover:bg-gray-100 hover:rounded ">
+               Logout
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+                  ):(
+                <div className="dropdown ">
+        <div
+          className="text-white px-4 py-2.5 text-center inline-flex items-center btn-dropdown"
+          onClick={handleDropDown}
+        >
+          <RxAvatar size={35}/>
+  
+        </div>
+
+        <div
+          id="dropdown"
+          className={`absolute my-2 z-10 right-5 w-[150px] bg-white rounded  divide-y divide-gray-100 shadow ${
+            isOpen ? "block" : "hidden"
+          }`} 
+        >
+          <ul className=" btn-dropdowned z-10 w-[150px]  bg-white rounded divide-y divide-gray-100 shadow ">
+            <li>
+              <Link to="/login" className=" block py-2 px-4 hover:bg-gray-100 hover:rounded ">
+               Login
+              </Link>
+              <Link to="/sign-up" className=" block py-2 px-4 hover:bg-gray-100 hover:rounded ">
+                Register
+              </Link>
+             
+              <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700"></hr>
+           
+            </li>
+          </ul>
+        </div>
+      </div>)
+                }
+                
               </div>
             </div>
             {/* cart popup */}
