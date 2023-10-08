@@ -114,10 +114,10 @@ const CartSingle = ({data,key}) =>{
             <div className="pl-[5px]">
           <h1>{data.name}</h1>
           <h4 className="font-[400] text-[15px] text-[#00000082]">
-            ${data.price} * {value}
+            RS.{data.price} * {value}
           </h4>
           <h4 className="font-[600] text-[17px] pt-[3px] text-[#d02222] font-Roboto">
-            US${totalPrice}
+          RS.{totalPrice}
           </h4>
         </div>
         <RxCross1

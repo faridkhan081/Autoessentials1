@@ -2,7 +2,8 @@ import React from 'react'
 import Header from '../components/Layout/Header'
 import Footer from '../components/Layout/Footer'
 import Layout from '../components/Layout/Layout'
-import {linkdein} from "../Assets/images/linkedin.svg"
+import { FloatingWhatsApp } from 'react-floating-whatsapp'
+
 import { Linkedin } from 'lucide-react'
 function ContactPage() {
   return (
@@ -183,11 +184,15 @@ function ContactPage() {
                     </div>
                 </div>
             </div>
+
+
         </div>
 
 
 
-
+ <FloatingWhatsApp  phoneNumber="+923056577134"
+        accountName="Autoessentials"
+        avatar="https://avatars.githubusercontent.com/u/102407219?v=4"  />
 <Footer/>
     </Layout>
   )

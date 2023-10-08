@@ -44,7 +44,7 @@ setLoading(true)
 
 
 <section className="min-h-screen bg-gray-50">
-<div className="lg:grid lg:min-h-screen lg:grid-cols-12">
+<div className="lg:grid lg:min-h-screen lg:grid-cols-12 ">
   <aside
   
     className="relative block h-[100px]  lg:col-span-5 lg:h-full xl:col-span-6"

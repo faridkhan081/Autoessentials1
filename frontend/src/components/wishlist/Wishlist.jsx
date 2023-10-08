@@ -92,7 +92,7 @@ const CartSingle = ({data,key}) =>{
           <h1>{data.name}</h1>
          
           <h4 className="font-[600] text-[17px] pt-[3px] text-[#d02222] font-Roboto">
-            US${totalPrice}
+            RS.{totalPrice}
           </h4>
         </div>
         <div>

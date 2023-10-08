@@ -116,7 +116,7 @@ function ProfileContent({ active, setActive }) {
                 </div>
               </div>
               <input
-                className={`w-[250px] h-[40px] border border-[#3a24db] text-center text-[#3a24db] rounded-[3px] mt-8 cursor-pointer`}
+                className={`w-[150px] h-[40px] border border-[#3ad132] border-500 bg-[#3ad132]  text-sm  text-white transition hover:bg-transparent hover:text-[#3ad132] focus:outline-none focus:ring active:test-rose-500 rounded-[3px] mt-8 cursor-pointer`}
                 required
                 value="Update"
                 type="submit"

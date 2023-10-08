@@ -1,10 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  footercompanyLinks,
-  footerProductLinks,
-  footerSupportLinks,
-} from "../../static/data";
+
 const Footer = () => {
   return (
     <div>
@@ -189,9 +185,9 @@ const Footer = () => {
                     </svg>
                   </Link>
                 </div>
-                <div className="mt-5 sm:block flex items-center justify-center w-full">
+                <div className="mt-5 sm:block 400px:w-[150px] 400px:ml-[150px] lg:ml-0 flex items-center justify-center lg:w-full">
                   <img
-                    src="https://hamart-shop.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffooter-payment.a37c49ac.png&w=640&q=75"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMqpeGd-RaDRk5Z-kFPIQSHIj_WzueVbt3zh1pzVP_Pqh26_uat2sTGoTZts2SHDEurA&usqp=CAU"
                     alt=""
                   />
                 </div>

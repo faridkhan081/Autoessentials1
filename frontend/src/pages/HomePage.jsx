@@ -8,7 +8,7 @@ import Events from '../components/Events/Events.jsx'
 import Sponsored from '../components/Route/Sponsored.jsx'
 import Footer from '../components/Layout/Footer.jsx'
 import Layout from '../components/Layout/Layout.jsx'
-
+import ScrollToTop from "react-scroll-to-top";
 
 function HomePage() {
   return (
@@ -21,7 +21,11 @@ function HomePage() {
     <FeaturedProduct/>
     <Sponsored/>
     <Footer/>
-    
+    <ScrollToTop 
+   style={{display:'flex', justifyContent:'center', alignItems:'center'}}
+    smooth color="#E11D48" />
+   
+     
     </Layout>
   )
 }

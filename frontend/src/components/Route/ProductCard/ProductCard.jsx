@@ -74,11 +74,11 @@ function ProductCard({ data }) {
             <h5 className={`${styles.productDiscountPrice}`}>
             {data.originalPrice === 0
                   ? data.originalPrice
-                  : data.discountPrice}
-                $
+                  : "RS."+data.discountPrice}
+               
             </h5>
             <h4 className={`${styles.price}`}>
-            {data.originalPrice ? data.originalPrice + " $" : null}
+            {data.originalPrice ? data.originalPrice + " RS" : null}
             </h4>
           </div>
           <span className="font-[400] text-[17px] text-[#68d284]">
