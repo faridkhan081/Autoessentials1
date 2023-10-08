@@ -249,7 +249,7 @@ export const categoriesData = [
   },
   {
     id: 9,
-    title: "Batteries & Power",
+    title: "Batteries and Power",
     subTitle: "",
     image_Url:
       "https://www.carid.com/images/icons/batteries-power_ic.jpg",
