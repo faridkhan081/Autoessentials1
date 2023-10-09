@@ -10,11 +10,11 @@ import product from "../Assets/images/tire.jpg";
 
 const SolutionsPage = () => {
   return (
-    <Layout title={"Solutions"}>
+    <Layout title={"Tools"}>
       <Header activeHeading={6} />
       <HeadBanner
         title="Inspect Your Tire"
-        list="solutions"
+        list="tools"
         imageUrl={product}
       />
       <Solution />

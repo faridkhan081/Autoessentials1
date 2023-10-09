@@ -35,7 +35,7 @@ const Navbar = ({ active }) => {
           className="text-black bg-white rounded-lg font-medium text-sm px-4 py-2.5 text-center inline-flex items-center btn-dropdown"
           onClick={handleDropDown}
         >
-          Solutions
+          Tools
           <svg
             className="ml-2 w-4 h-4"
             aria-hidden="true"
@@ -67,9 +67,7 @@ const Navbar = ({ active }) => {
               >
                 Tire Inspection
               </Link>
-              <Link to="#" className=" block py-2 px-4 hover:bg-gray-100">
-                Recomended Products
-              </Link>
+             
             </li>
           </ul>
         </div>

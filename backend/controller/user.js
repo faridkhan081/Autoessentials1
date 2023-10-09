@@ -175,6 +175,7 @@ router.get("/logout", isAuthenticated, catchAsyncError(async(req,res,next) =>{
 res.status(201).json({
   success: true,
   message: "Logout Successful!"
+  
 })
     
   } catch (error) {
