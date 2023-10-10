@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "../../styles/styles";
 import { Link, useNavigate } from "react-router-dom";
-
+import Cart from "../cart/Cart";
 import { categoriesData } from "../../static/data";
 import { AiOutlineClose } from "react-icons/ai";
 
@@ -16,7 +16,6 @@ import DropDown from "./DropDown.jsx";
 import Navbar from "./Navbar.jsx";
 import { useSelector } from "react-redux";
 import { backend_url } from "../../server";
-import Cart from "../cart/Cart";
 import Wishlist from "../wishlist/Wishlist.jsx";
 import { HiMenuAlt2 } from "react-icons/hi";
 
@@ -36,6 +35,8 @@ const Header = ({ activeHeading }) => {
   const [openWishlist, setOpenWhishlist] = useState(false);
   const { isSeller, seller } = useSelector((state) => state.seller);
   const { allProducts } = useSelector((state) => state.products);
+  const { cart } = useSelector((state) => state.cart);
+  const { wishlist } = useSelector((state) => state.wishlist);
   const navigate = useNavigate();
   // console.log(user)
   const [isOpen, setIsOpen] = useState(false);
@@ -129,11 +130,11 @@ const Header = ({ activeHeading }) => {
               <div className="absolute min-h-[30vh] bg-slate-50 shadow-sm-2 z-[9] p-4">
                 {searchData &&
                   searchData.map((i, index) => {
-                    const d = i.name;
+                
 
-                    const Product_name = d.replace(/\s+/g, "-");
+                  
                     return (
-                      <Link to={`/product/${Product_name}`}>
+                      <Link to={`/product/${i._id}`}>
                         <div className="w-full flex items-start-py-3">
                           <img
                             src={`${backend_url}/${i.images[0]}`}
@@ -214,7 +215,7 @@ const Header = ({ activeHeading }) => {
               >
                 <Heart size={25} color="rgb(255 255 255 / 83%)" />
                 <span className="absolute right-0 top-0 rounded-full primary-dark  w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
-                  0
+                {wishlist && wishlist.length}
                 </span>
               </div>
             </div>
@@ -226,7 +227,7 @@ const Header = ({ activeHeading }) => {
               >
                 <ShoppingCart size={25} color="rgb(255 255 255 / 83%)" />
                 <span className="absolute right-0 top-0 rounded-full primary-dark  w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
-                  1
+                {cart && cart.length}
                 </span>
               </div>
             </div>
@@ -371,7 +372,7 @@ const Header = ({ activeHeading }) => {
             >
               <ShoppingCart color="white" size={28} />
               <span className="absolute right-0 top-0 rounded-full primary-dark  w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
-                1
+              {cart && cart.length}
               </span>
             </div>
           </div>
@@ -388,7 +389,8 @@ const Header = ({ activeHeading }) => {
                   <div className="relative mr-[15px]">
                     <Heart size={25} className="mt-5 ml-3" />
                     <span className="absolute right-0 top-0 rounded-full primary-dark  w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
-                      0
+                  {wishlist && wishlist.length}
+                     
                     </span>
                   </div>
                 </div>

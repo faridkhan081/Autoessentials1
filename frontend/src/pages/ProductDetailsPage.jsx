@@ -11,24 +11,24 @@ import { useSelector } from 'react-redux'
 import Layout from '../components/Layout/Layout'
 function ProductDetailsPage() {
   const {allProducts} = useSelector((state) => state.products)
-    const {name} = useParams();
+    const {id} = useParams();
     const [data,setData] = useState(null);
     const [isLoading,setIsLoading] = useState(false);
-    const productName = name.replace(/-/g," ");
+  
     
 
 
     useEffect(() =>{
 
       setTimeout(()=>{
-        const data = allProducts && allProducts.find((i) => i.name === productName)
+        const data = allProducts && allProducts.find((i) => i._id === id)
         setData(data)
        setIsLoading(true)
       },500)
       window.scrollTo(0,0);
    
         
-    },[productName])
+    },[data,allProducts,id])
   return (
     <Layout title={"Product Details..."}>
         <Header/>

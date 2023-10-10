@@ -9,9 +9,9 @@ import {
   AiOutlinePlus,
   AiOutlineShoppingCart,
 } from "react-icons/ai";
-import Ratings from "./Rating";
 
-import { backend_url, server } from "../../server";
+
+import { backend_url, } from "../../server";
 
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProductsShop } from "../../redux/actions/product";
