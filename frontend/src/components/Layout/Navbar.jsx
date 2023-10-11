@@ -30,7 +30,7 @@ const Navbar = ({ active }) => {
           </div>
         ))}
 
-      <div className="dropdown lg:ml-5">
+      {/* <div className="dropdown lg:ml-5">
         <button
           className="text-black bg-white rounded-lg font-medium text-sm px-4 py-2.5 text-center inline-flex items-center btn-dropdown"
           onClick={handleDropDown}
@@ -71,7 +71,44 @@ const Navbar = ({ active }) => {
             </li>
           </ul>
         </div>
-      </div>
+      </div> */}
+
+
+
+
+
+      <div className="group relative text-[15px] ml-5">
+    
+    <button className=" text-white mt-[1px] py-2 px-2 rounded inline-flex items-center group">
+      <span className="mr-1">Tools</span>
+      <svg
+        className="fill-current h-4 w-4 group-hover:rotate-180 transition-transform"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+      >
+        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+      </svg>
+    </button>
+    
+    {/* menu list */}
+    <ul className="rounded absolute hidden text-black pt-[16px] group-hover:block w-40 z-10">
+     
+<Link to="/solutions">
+ <li className="bg-gray-200 hover:text-white hover:bg-black py-4 px-4 cursor-pointer">
+          Tire Inspection
+        </li>
+
+        </Link>
+        <hr class="h-px bg-black border-0 "></hr>
+        <Link to="/solutions">
+ <li className="bg-gray-200 hover:text-white hover:bg-black py-4 px-4 cursor-pointer">
+          Rim Inspection
+        </li>
+        </Link>
+      </ul>
+      
+    </div>
+
     </div>
   );
 };

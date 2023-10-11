@@ -5,7 +5,7 @@ import Cart from "../cart/Cart";
 import { categoriesData } from "../../static/data";
 import { AiOutlineClose } from "react-icons/ai";
 
-import { Heart } from "lucide-react";
+import { Heart, Menu } from "lucide-react";
 import { ShoppingCart } from "lucide-react";
 
 import { IoIosArrowForward } from "react-icons/io";
@@ -22,6 +22,7 @@ import { HiMenuAlt2 } from "react-icons/hi";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { server } from "../../server";
+import { RxAvatar } from "react-icons/rx";
 
 const Header = ({ activeHeading }) => {
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -130,9 +131,6 @@ const Header = ({ activeHeading }) => {
               <div className="absolute min-h-[30vh] bg-slate-50 shadow-sm-2 z-[9] p-4">
                 {searchData &&
                   searchData.map((i, index) => {
-                
-
-                  
                     return (
                       <Link to={`/product/${i._id}`}>
                         <div className="w-full flex items-start-py-3">
@@ -215,7 +213,7 @@ const Header = ({ activeHeading }) => {
               >
                 <Heart size={25} color="rgb(255 255 255 / 83%)" />
                 <span className="absolute right-0 top-0 rounded-full primary-dark  w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
-                {wishlist && wishlist.length}
+                  {wishlist && wishlist.length}
                 </span>
               </div>
             </div>
@@ -227,87 +225,69 @@ const Header = ({ activeHeading }) => {
               >
                 <ShoppingCart size={25} color="rgb(255 255 255 / 83%)" />
                 <span className="absolute right-0 top-0 rounded-full primary-dark  w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
-                {cart && cart.length}
+                  {cart && cart.length}
                 </span>
               </div>
             </div>
             <div className={`${styles.noramlFlex}`}>
               <div className="relative cursor-pointer mr-[15px]">
-                {isAuthenticated ? (
-                  <div className="dropdown ">
-                    <div
-                      className="text-white px-4 py-2.5 text-center inline-flex items-center btn-dropdown"
-                      onClick={handleDropDown}
-                    >
-                      <img
+               {
+                isAuthenticated ? (<>
+
+                  <div className="group relative text-[16px] ml-5">
+                  <button className=" text-white py-2 px-2 rounded inline-flex items-center group">
+                    <span className="mr-1">
+                    <img
                         src={`${backend_url}${user.avatar}`}
                         className="w-[35px] h-[35px] rounded-full"
                         alt=""
                       />
-                    </div>
+                    </span>
+                  </button>
 
-                    <div
-                      id="dropdown"
-                      className={`absolute my-2 z-10 right-5 w-[150px] bg-white rounded  divide-y divide-gray-100 shadow ${
-                        isOpen ? "block" : "hidden"
-                      }`}
-                    >
-                      <ul className=" btn-dropdowned z-10 w-[150px]  bg-white rounded divide-y divide-gray-100 shadow ">
-                        <li>
-                          <Link
-                            to="/profile"
-                            className=" block py-2 px-4 hover:bg-gray-100 hover:rounded "
-                          >
-                            Profile
-                          </Link>
+                  {/* menu list */}
+                  <ul className="rounded absolute hidden text-black pt-[10px] group-hover:block w-[133px] z-10">
+                    <Link to="/profile">
+                      <li className="bg-gray-200 hover:text-white hover:bg-black py-4 px-4 cursor-pointer">
+                        Dashboard
+                      </li>
+                    </Link>
+                    <hr class="h-px bg-black border-0 "></hr>
+                      <li className="bg-gray-200 hover:text-white hover:bg-black py-4 px-4 cursor-pointer" onClick={logoutHandler}>
+                        Logout
+                      </li>
+                    
+                  </ul>
+                </div>
 
-                          <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700"></hr>
-                          <div
-                            onClick={logoutHandler}
-                            className=" block py-2 px-4 hover:bg-gray-100 hover:rounded "
-                          >
-                            Logout
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="dropdown ">
-                    <div
-                      className="text-white px-4 py-2.5 text-center inline-flex items-center btn-dropdown"
-                      onClick={handleDropDown}
-                    >
-                      <CgProfile size={30} />
-                    </div>
 
-                    <div
-                      id="dropdown"
-                      className={`absolute my-2 z-10 right-5 w-[150px] bg-white rounded  divide-y divide-gray-100 shadow ${
-                        isOpen ? "block" : "hidden"
-                      }`}
-                    >
-                      <ul className=" btn-dropdowned z-10 w-[150px]  bg-white rounded divide-y divide-gray-100 shadow ">
-                        <li>
-                          <Link
-                            to="/login"
-                            className=" block py-2 px-4 hover:bg-gray-100 hover:rounded "
-                          >
-                            Login
-                          </Link>
-                          <Link
-                            to="/sign-up"
-                            className=" block py-2 px-4 hover:bg-gray-100 hover:rounded "
-                          >
-                            Register
-                          </Link>
+                </>) : (<>
+ <div className="group relative text-[17px] ml-5">
+                  <button className=" text-white py-2 px-2 rounded inline-flex items-center group">
+                    <span className="mr-1">
+                      <RxAvatar size={30} />
+                    </span>
+                  </button>
 
-                          <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700"></hr>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                )}
+                  {/* menu list */}
+                  <ul className="rounded absolute hidden text-black pt-[13px] group-hover:block w-[128px] z-10">
+                    <Link to="/login">
+                      <li className="bg-gray-200 hover:text-white hover:bg-black py-4 px-4 cursor-pointer">
+                        Login
+                      </li>
+                    </Link>
+                    <Link to="/sign-up">
+                      <li className="bg-gray-200 hover:text-white hover:bg-black py-4 px-4 cursor-pointer">
+                        Register
+                      </li>
+                    </Link>
+                  </ul>
+                </div>
+
+                </>)
+               }
+
+
               </div>
             </div>
             {/* cart popup */}
@@ -372,7 +352,7 @@ const Header = ({ activeHeading }) => {
             >
               <ShoppingCart color="white" size={28} />
               <span className="absolute right-0 top-0 rounded-full primary-dark  w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
-              {cart && cart.length}
+                {cart && cart.length}
               </span>
             </div>
           </div>
@@ -389,8 +369,7 @@ const Header = ({ activeHeading }) => {
                   <div className="relative mr-[15px]">
                     <Heart size={25} className="mt-5 ml-3" />
                     <span className="absolute right-0 top-0 rounded-full primary-dark  w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
-                  {wishlist && wishlist.length}
-                     
+                      {wishlist && wishlist.length}
                     </span>
                   </div>
                 </div>
