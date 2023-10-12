@@ -15,25 +15,62 @@ import { backend_url, } from "../../server";
 
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProductsShop } from "../../redux/actions/product";
+import { toast } from "react-toastify";
+import { addToWishlist, removeFromWishlist } from "../../redux/actions/wishlist";
+import { addTocart } from "../../redux/actions/cart";
 
 function ProductDetails({ data, isLoading }) {
+  const { wishlist } = useSelector((state) => state.wishlist);
+  const { cart } = useSelector((state) => state.cart);
+  const { user, isAuthenticated } = useSelector((state) => state.user);
+  const { products } = useSelector((state) => state.products);
   const [count, setCount] = useState(1);
   const [click, setClick] = useState(false);
   const [select, setSelect] = useState(0);
-  const dispatch = useDispatch();
-  const { products } = useSelector((state) => state.products);
-const {id} = useParams()
-  useEffect(() => {
-    dispatch(getAllProductsShop(data && data.shop._id));
-  }, [dispatch,data]);
-
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getAllProductsShop(data && data?.shop._id));
+    if (wishlist && wishlist.find((i) => i._id === data?._id)) {
+      setClick(true);
+    } else {
+      setClick(false);
+    }
+  }, [data, wishlist]);
+
   const incrementCount = () => {
     setCount(count + 1);
   };
 
   const decrementCount = () => {
-    setCount(count === 1 ? 1 : count - 1);
+    if (count > 1) {
+      setCount(count - 1);
+    }
+  };
+
+  const removeFromWishlistHandler = (data) => {
+    setClick(!click);
+    dispatch(removeFromWishlist(data));
+  };
+
+  const addToWishlistHandler = (data) => {
+    setClick(!click);
+    dispatch(addToWishlist(data));
+  };
+
+  const addToCartHandler = (id) => {
+    const isItemExists = cart && cart.find((i) => i._id === id);
+    if (isItemExists) {
+      toast.error("Item already in cart!");
+    } else {
+      if (data.stock < 1) {
+        toast.error("Product stock limited!");
+      } else {
+        const cartData = { ...data, qty: count };
+        dispatch(addTocart(cartData));
+        toast.success("Item added to cart successfully!");
+      }
+    }
   };
   const handleMessageSubmit = () => {
     navigate("/inbox?conversation=507ebjver884ehfdjeriv84");
@@ -47,18 +84,18 @@ const {id} = useParams()
               <div className={`${styles.section} w-[90%] 800px:w-[80%] `}>
                 <div className="w-full py-5">
                   <div className="block w-full 800px:flex mt-5">
-                    <div className="w-full 800px:w-[50%]  cursor-zoom-in">
+                    <div className="w-full 800px:w-[50%] cursor-zoom-in">
                       <img
                         src={`${backend_url}${data && data.images[select]}`}
                         alt=""
-                        className="w-[80%] h-[400px] overflow-hidden hover:scale-105 "
+                        className="w-[80%] h-[400px] overflow-hidden hover:scale-105 duration-500"
                       />
                       <div className="w-full flex mt-3">
                         {data &&
                           data.images.map((i, index) => (
                             <div
                               className={`${
-                                select === 0 ? "border" : "null"
+                                select === 0 ? "border" : "border"
                               } cursor-pointer`}
                             >
                               <img
@@ -110,7 +147,8 @@ const {id} = useParams()
                             <AiFillHeart
                               size={30}
                               className="cursor-pointer"
-                              onClick={() => setClick(!click)}
+                        onClick={() => removeFromWishlistHandler(data)}
+                             
                               color={click ? "red" : "#333"}
                               title="Remove from wishlist"
                             />
@@ -118,7 +156,8 @@ const {id} = useParams()
                             <AiOutlineHeart
                               size={30}
                               className="cursor-pointer"
-                              onClick={() => setClick(!click)}
+                              onClick={() => addToWishlistHandler(data)}
+
                               title="Add to wishlist"
                             />
                           )}
@@ -126,6 +165,7 @@ const {id} = useParams()
                       </div>
                       <div
                         className={`${styles.button} !mt-6 !rounded !h-11 flex items-center`}
+                        onClick={() => addToCartHandler(data._id)}
                       >
                         <span className="text-white flex items-center">
                           Add to cart <AiOutlineShoppingCart className="ml-1" />
