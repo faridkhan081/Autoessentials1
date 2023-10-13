@@ -96,13 +96,13 @@ export const updateUserAddress =
           zipCode,
           addressType,
         },
-        { withCredentials: true }
+        { withCredentials: true } 
       );
 
       dispatch({
         type: "updateUserAddressSuccess",
         payload: {
-          updateAddressSuccessMessage: "User address updated succesfully!",
+          successMessage: "User address updated succesfully!",
           user: data.user,
         },
       });

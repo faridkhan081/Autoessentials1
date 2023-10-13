@@ -1,5 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
+import { Elements } from "@stripe/react-stripe-js";
+
 
 import ProtectedRoute from "./routes/ProtectedRoute";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -16,13 +18,12 @@ import {
   ProductDetailsPage,
   CheckoutPage,
   ShopCreatePage,
-  // PaymentPage,
+  PaymentPage,
   ProfilePage,
   SellerActivationPage,
   ShopLoginPage,
   PageNotFound,
   ContactPage,
-  
 } from "./routes/Routes.js";
 
 //shop imports
@@ -51,6 +52,8 @@ import AboutPage from "./pages/AboutPage";
 import { getAllEvents } from "./redux/actions/event";
 
 const App = () => {
+  const [stripeApikey, setStripeApiKey] = useState("");
+
   useEffect(() => {
     Store.dispatch(loadUser());
     Store.dispatch(loadSeller());
@@ -92,6 +95,21 @@ const App = () => {
               </ProtectedRoute>
             }
           />
+
+{stripeApikey && (
+        <Elements >
+          <Routes>
+            <Route
+              path="/payment"
+              element={
+                <ProtectedRoute>
+                  <PaymentPage />
+                </ProtectedRoute>
+              }
+            />
+          </Routes>
+        </Elements>
+      )}
 
           <Route
             path="/profile"

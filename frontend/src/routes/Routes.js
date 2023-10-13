@@ -14,6 +14,8 @@ import ShopCreatePage from '../pages/ShopCreatePage'
 import ShopLoginPage from '../pages/ShopLoginPage'
 import CheckoutPage from '../pages/CheckoutPage'
 import PageNotFound from '../pages/PageNotFound.jsx'
+import PaymentPage from "../pages/PaymentPage.jsx";
+
 import ContactPage from './../pages/ContactPage';
 export {
     LoginPage,
@@ -32,7 +34,7 @@ export {
     ShopLoginPage,
     SellerActivationPage,
     PageNotFound,
-    ContactPage
-    
+    ContactPage,
+    PaymentPage,
 
 }

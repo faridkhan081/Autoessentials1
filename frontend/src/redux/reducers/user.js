@@ -39,7 +39,7 @@ export const userReducer = createReducer(initialState, {
   },
   updateUserAddressSuccess: (state, action) => {
     state.addressloading = false;
-    state.updateAddressSuccessMessage = action.payload;
+    state.successMessage = action.payload.successMessage;
     state.user = action.payload.user;
   },
   updateUserAddressFailed: (state, action) => {
@@ -57,9 +57,13 @@ export const userReducer = createReducer(initialState, {
   },
   deleteUserAddressFailed: (state, action) => {
     state.addressloading = false;
+   
     state.error = action.payload;
   },
 
+  clearMessages: (state) => {
+    state.successMessage = null;
+  },
   clearErrors: (state) => {
     state.error = null;
   },

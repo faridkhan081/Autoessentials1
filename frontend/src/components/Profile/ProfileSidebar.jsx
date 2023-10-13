@@ -103,7 +103,7 @@ const ProfileSidebar = ({ setActive, active }) => {
         </span>
       </div>
 
-      <div
+      {/* <div
         className="flex items-center cursor-pointer w-full mb-8"
         onClick={() => setActive(6)}
       >
@@ -115,15 +115,15 @@ const ProfileSidebar = ({ setActive, active }) => {
         >
           Payment Methods
         </span>
-      </div>
+      </div> */}
       <div
         className="flex items-center cursor-pointer w-full mb-8"
-        onClick={() => setActive(7)}
+        onClick={() => setActive(6)}
       >
-        <BookPlus size={20} color={active === 7 ? "red" : "black"} />
+        <BookPlus size={20} color={active === 6 ? "red" : "black"} />
         <span
           className={`pl-3 ${
-            active === 7 ? "text-[red]" : ""
+            active === 6 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
           Address
@@ -132,12 +132,12 @@ const ProfileSidebar = ({ setActive, active }) => {
 
       <div
         className="flex items-center cursor-pointer w-full mb-8"
-        onClick={() => setActive(8)}
+        onClick={() => setActive(7)}
       >
-        <RiLockPasswordLine size={20} color={active === 8 ? "red" : ""} />
+        <RiLockPasswordLine size={20} color={active === 7 ? "red" : ""} />
         <span
           className={`pl-3 ${
-            active === 8 ? "text-[red]" : ""
+            active === 7 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
           Change Password
@@ -146,12 +146,12 @@ const ProfileSidebar = ({ setActive, active }) => {
 
       <div
         className="single_item flex items-center cursor-pointer w-full mb-8"
-        onClick={() => setActive(9) || logoutHandler()}
+        onClick={() => setActive(8) || logoutHandler()}
       >
-        <LogOut size={20} color={active === 9 ? "red" : "black"} />
+        <LogOut size={20} color={active === 8 ? "red" : "black"} />
         <span
           className={`pl-3 ${
-            active === 9 ? "text-[red]" : ""
+            active === 8 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
           Log out
