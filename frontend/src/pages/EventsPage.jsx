@@ -12,7 +12,7 @@ import product from '../Assets/images/sale2.jpeg'
 const EventsPage = () => {
   const { allEvents, isLoading } = useSelector((state) => state.events);
   return (
-    <>
+  
      
         <Layout title={"Running Events"}>
           <Header activeHeading={4} />
@@ -23,7 +23,7 @@ const EventsPage = () => {
        
         </Layout>
    
-    </>
+ 
   );
 };
 

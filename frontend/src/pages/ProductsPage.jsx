@@ -157,8 +157,8 @@ const ProductsPage = () => {
   <Layout title={"Products"}>
  
       <div>
-      <Header activeHeading={2} />
-      <HeadBanner title="Best Selling Products" list='Best selling' imageUrl={product}/>
+      <Header activeHeading={3} />
+      <HeadBanner title="All Products" list='Products' imageUrl={product}/>
 
       <br />
       <br />
