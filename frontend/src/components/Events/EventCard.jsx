@@ -122,20 +122,20 @@ const EventCard = ({ active, data }) => {
         <div className="flex py-2 justify-between">
           <div className="flex">
             <h5 className="font-[500] text-[18px] text-[#d55b45] pr-3 line-through">
-              RS.{data.originalPrice}
+              RS.{data && data.originalPrice ? data.originalPrice : "N/A"}
             </h5>
             <h5 className="font-bold text-[20px] text-[#333] font-Roboto">
-              RS.{data.discountPrice}
+              RS.{data && data.discountPrice ? data.discountPrice : "N/A"}
             </h5>
           </div>
           <span className="pr-3 font-[400] text-[17px] text-[#44a55e]">
-            120 sold
+            {data && data.soldCount ? data.soldCount + " sold" : "Sold Count N/A"}
           </span>
         </div>
         <CountDown data={data} />
         <br />
         <div className="flex items-center">
-          <Link to={`/product/${data._id}?isEvent=true`}>
+          <Link to={`/product/${data && data._id ? data._id : ''}?isEvent=true`}>
             <div className={`${styles.button} text-[#fff]`}>See Details</div>
           </Link>
           <div className={`${styles.button} text-[#fff] ml-5`} onClick={() => addToCartHandler(data)}>Add to cart</div>
