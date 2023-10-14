@@ -106,7 +106,7 @@ const EventCard = ({ active, data }) => {
   return (
     <div className={`w-full block bg-white rounded-lg ${active ? "unset" : "mb-12"} lg:flex p-2`}>
       <div className="w-full m-auto">
-        {data.images.length > 0 ? (
+        {data && data.images && data.images.length > 0 ? (
           <img src={`${backend_url}${data.images[0]}`} alt="" />
         ) : (
           <p>No image found</p>
@@ -114,10 +114,10 @@ const EventCard = ({ active, data }) => {
       </div>
       <div className="w-full lg:[w-50%] flex flex-col justify-center">
         <h2 className={`${styles.productTitle}`}>
-          {data.name}
+          {data && data.name ? data.name : "Product Name Not Available"}
         </h2>
         <p>
-          {data.description}
+          {data && data.description ? data.description : "Product Description Not Available"}
         </p>
         <div className="flex py-2 justify-between">
           <div className="flex">
