@@ -15,6 +15,7 @@ import axios from "axios";
 import { server } from "../../server";
 import { toast } from "react-toastify";
 import { RxCross1 } from "react-icons/rx";
+import Layout from "../Layout/Layout";
 
 const Payment = () => {
   const [orderData, setOrderData] = useState([]);
@@ -87,11 +88,11 @@ const Payment = () => {
       .post(`${server}/order/create-order`, order, config)
       .then((res) => {
         setOpen(false);
-        navigate("/order/success");
+        // navigate("/order/success");
         toast.success("Order successful!");
         localStorage.setItem("cartItems", JSON.stringify([]));
         localStorage.setItem("latestOrder", JSON.stringify([]));
-        window.location.reload();
+        // window.location.reload();
       });
   };
 
@@ -137,11 +138,11 @@ const Payment = () => {
             .post(`${server}/order/create-order`, order, config)
             .then((res) => {
               setOpen(false);
-              navigate("/order/success");
+              // navigate("/order/success");
               toast.success("Order successful!");
               localStorage.setItem("cartItems", JSON.stringify([]));
               localStorage.setItem("latestOrder", JSON.stringify([]));
-              window.location.reload();
+              // window.location.reload();
             });
         }
       }
@@ -167,15 +168,16 @@ const Payment = () => {
     .post(`${server}/order/create-order`, order, config)
     .then((res) => {
       setOpen(false);
-      navigate("/order/success");
+      // navigate("/order/success");
       toast.success("Order successful!");
       localStorage.setItem("cartItems", JSON.stringify([]));
       localStorage.setItem("latestOrder", JSON.stringify([]));
-      window.location.reload();
+      // window.location.reload();
     });
   };
 
   return (
+    <Layout title={"Payment"}>
     <div className="w-full flex flex-col items-center py-8">
       <div className="w-[90%] 1000px:w-[70%] block 800px:flex">
         <div className="w-full 800px:w-[65%]">
@@ -194,6 +196,7 @@ const Payment = () => {
         </div>
       </div>
     </div>
+    </Layout>
   );
 };
 
@@ -410,17 +413,21 @@ const PaymentInfo = ({
 };
 
 const CartData = ({ orderData }) => {
+ let subTotal = orderData?.subTotalPrice;
+ let newPrice = subTotal/280;
+ let TotalPri = (orderData?.totalPrice)
+/280
   const shipping = orderData?.shipping?.toFixed(2);
   return (
     <div className="w-full bg-[#fff] rounded-md p-5 pb-8">
       <div className="flex justify-between">
         <h3 className="text-[16px] font-[400] text-[#000000a4]">subtotal:</h3>
-        <h5 className="text-[18px] font-[600]">${orderData?.subTotalPrice}</h5>
+        <h5 className="text-[18px] font-[600]">${newPrice}</h5>
       </div>
       <br />
       <div className="flex justify-between">
         <h3 className="text-[16px] font-[400] text-[#000000a4]">shipping:</h3>
-        <h5 className="text-[18px] font-[600]">${shipping}</h5>
+        <h5 className="text-[18px] font-[600]">Rs. {shipping}</h5>
       </div>
       <br />
       <div className="flex justify-between border-b pb-3">
@@ -428,7 +435,7 @@ const CartData = ({ orderData }) => {
         <h5 className="text-[18px] font-[600]">{orderData?.discountPrice? "$" + orderData.discountPrice : "-"}</h5>
       </div>
       <h5 className="text-[18px] font-[600] text-end pt-3">
-        ${orderData?.totalPrice}
+        ${TotalPri}
       </h5>
       <br />
     </div>

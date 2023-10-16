@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import { Elements } from "@stripe/react-stripe-js";
 
-
+import { loadStripe } from "@stripe/stripe-js";
+import {server} from './server'
 import ProtectedRoute from "./routes/ProtectedRoute";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
@@ -50,9 +51,16 @@ import SellerProtectedRoute from "./routes/SellerProtectedRoute";
 import { getAllProducts, getSingleProduct } from "./redux/actions/product";
 import AboutPage from "./pages/AboutPage";
 import { getAllEvents } from "./redux/actions/event";
+import axios from "axios";
 
 const App = () => {
   const [stripeApikey, setStripeApiKey] = useState("");
+
+  async function getStripeApikey() {
+    const { data } = await axios.get(`${server}/payment/stripeapikey`);
+    setStripeApiKey(data.stripeApikey);
+  }
+
 
   useEffect(() => {
     Store.dispatch(loadUser());
@@ -60,11 +68,26 @@ const App = () => {
     Store.dispatch(getAllProducts());
     Store.dispatch(getAllEvents());
     Store.dispatch(getSingleProduct());
+    getStripeApikey()
   }, []);
 
   return (
     <>
       <BrowserRouter>
+      {stripeApikey && (
+        <Elements  stripe={loadStripe(stripeApikey)}>
+          <Routes>
+            <Route
+              path="/payment"
+              element={
+                <ProtectedRoute>
+                  <PaymentPage />
+                </ProtectedRoute>
+              }
+            />
+          </Routes>
+        </Elements>
+      )}
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
@@ -96,20 +119,7 @@ const App = () => {
             }
           />
 
-{stripeApikey && (
-        <Elements >
-          <Routes>
-            <Route
-              path="/payment"
-              element={
-                <ProtectedRoute>
-                  <PaymentPage />
-                </ProtectedRoute>
-              }
-            />
-          </Routes>
-        </Elements>
-      )}
+
 
           <Route
             path="/profile"

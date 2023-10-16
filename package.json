@@ -24,6 +24,7 @@
     "nodemailer": "^6.9.4",
     "nodemon": "^3.0.1",
     "path": "^0.12.7",
-    "react-lottie": "^1.2.3"
+    "react-lottie": "^1.2.3",
+    "stripe": "^13.10.0"
   }
 }
