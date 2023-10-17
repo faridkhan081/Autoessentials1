@@ -167,10 +167,27 @@ function ProductDetails({ data, isLoading }) {
                         className={`${styles.button} !mt-6 !rounded !h-11 flex items-center`}
                         onClick={() => addToCartHandler(data._id)}
                       >
-                        <span className="text-white flex items-center">
+
+
+                      {
+                        cart && cart.find((i) => i._id === data._id) ? (
+                          <>
+                          <span className= {`${styles.button} !bg-[#d54343] text-white !rounded !h-11 flex items-center`} >
+                          Remove from cart
+                        </span>
+                          </>
+                        ):(
+                          <>
+                          <span className="text-white flex items-center">
                           Add to cart <AiOutlineShoppingCart className="ml-1" />
                         </span>
+                          </>
+                        )
+                      }
+                       
+                       
                       </div>
+                      
                       <div className="flex items-center pt-8">
                       <Link to={`/shop/preview/${data?.shop._id}`}>
                     <img

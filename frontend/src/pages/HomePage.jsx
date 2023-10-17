@@ -21,9 +21,12 @@ function HomePage() {
     <FeaturedProduct/>
     <Sponsored/>
     <Footer/>
+
+
     <ScrollToTop 
-   style={{display:'flex', justifyContent:'center', alignItems:'center'}}
-    smooth color="#E11D48" />
+    
+   style={{display:'flex', justifyContent:'center', alignItems:'center',background:'#9A9A9A'}}
+    smooth color="white" height='20'/>
    
      
     </Layout>
