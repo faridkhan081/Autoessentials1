@@ -36,7 +36,7 @@ function ProductDetails({ data, isLoading }) {
     } else {
       setClick(false);
     }
-  }, [data, wishlist]);
+  }, [data, wishlist]); 
 
   const incrementCount = () => {
     setCount(count + 1);
@@ -78,7 +78,7 @@ function ProductDetails({ data, isLoading }) {
   return (
     <>
       <div className="bg-white ">
-        {isLoading ? (
+        {!isLoading ? (
           <>
             {data ? (
               <div className={`${styles.section} w-[90%] 800px:w-[80%] `}>

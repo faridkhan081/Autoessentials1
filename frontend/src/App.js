@@ -17,6 +17,7 @@ import {
   SolutionsPage,
   FaqsPage,
   ProductDetailsPage,
+
   CheckoutPage,
   ShopCreatePage,
   PaymentPage,
@@ -25,10 +26,11 @@ import {
   ShopLoginPage,
   PageNotFound,
   ContactPage,
+  OrderSuccessPage,
 } from "./routes/Routes.js";
 
 //shop imports
-
+ 
 import { ShopDashboardPage } from "./routes/ShopRoutes";
 
 import { ToastContainer } from "react-toastify";
@@ -105,11 +107,12 @@ const App = () => {
           />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/product/:id" element={<ProductDetailsPage />} />
+         
           <Route path="/best-selling" element={<BestSellingPage />} />
           <Route path="/events" element={<EventsPage />} />
           <Route path="/solutions" element={<SolutionsPage />} />
           <Route path="/faq" element={<FaqsPage />} />
-
+          <Route path="/order/success" element={<OrderSuccessPage />} />
           <Route
             path="/checkout"
             element={

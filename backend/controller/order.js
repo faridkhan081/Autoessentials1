@@ -49,4 +49,26 @@ router.post(
     })
   );
   
+
+// get all orders of seller
+router.get(
+  "/get-seller-all-orders/:shopId",
+  catchAsyncError(async (req, res, next) => {
+    try {
+      const orders = await Order.find({
+        "cart.shopId": req.params.shopId,
+      }).sort({
+        createdAt: -1,
+      });
+
+      res.status(200).json({
+        success: true,
+        orders,
+      });
+    } catch (error) {
+      return next(new ErrorHandler(error.message, 500));
+    }
+  })
+);
+
 module.exports = router;

@@ -9,6 +9,7 @@ import EventsPage from '../pages/EventsPage'
 import SolutionsPage from '../pages/SolutionsPage'
 import FaqsPage from '../pages/FaqsPage'
 import ProductDetailsPage from '../pages/ProductDetailsPage'
+
 import ProfilePage from '../pages/ProfilePage'
 import ShopCreatePage from '../pages/ShopCreatePage'
 import ShopLoginPage from '../pages/ShopLoginPage'
@@ -17,6 +18,7 @@ import PageNotFound from '../pages/PageNotFound.jsx'
 import PaymentPage from "../pages/PaymentPage.jsx";
 
 import ContactPage from './../pages/ContactPage';
+import OrderSuccessPage from './../pages/OrderSuccessPage.jsx';
 export {
     LoginPage,
     SignupPage,
@@ -28,6 +30,7 @@ export {
     SolutionsPage,
     FaqsPage,
     ProductDetailsPage,
+   
     ProfilePage,
     CheckoutPage,
     ShopCreatePage,
@@ -36,5 +39,6 @@ export {
     PageNotFound,
     ContactPage,
     PaymentPage,
+    OrderSuccessPage,
 
 }

@@ -88,11 +88,11 @@ const Payment = () => {
       .post(`${server}/order/create-order`, order, config)
       .then((res) => {
         setOpen(false);
-        // navigate("/order/success");
+        navigate("/order/success");
         toast.success("Order successful!");
         localStorage.setItem("cartItems", JSON.stringify([]));
         localStorage.setItem("latestOrder", JSON.stringify([]));
-        // window.location.reload();
+        window.location.reload();
       });
   };
 
@@ -138,11 +138,11 @@ const Payment = () => {
             .post(`${server}/order/create-order`, order, config)
             .then((res) => {
               setOpen(false);
-              // navigate("/order/success");
+              navigate("/order/success");
               toast.success("Order successful!");
               localStorage.setItem("cartItems", JSON.stringify([]));
               localStorage.setItem("latestOrder", JSON.stringify([]));
-              // window.location.reload();
+              window.location.reload();
             });
         }
       }
@@ -168,16 +168,16 @@ const Payment = () => {
     .post(`${server}/order/create-order`, order, config)
     .then((res) => {
       setOpen(false);
-      // navigate("/order/success");
+      navigate("/order/success");
       toast.success("Order successful!");
       localStorage.setItem("cartItems", JSON.stringify([]));
       localStorage.setItem("latestOrder", JSON.stringify([]));
-      // window.location.reload();
+      window.location.reload();
     });
   };
 
   return (
-    <Layout title={"Payment"}>
+    <>
     <div className="w-full flex flex-col items-center py-8">
       <div className="w-[90%] 1000px:w-[70%] block 800px:flex">
         <div className="w-full 800px:w-[65%]">
@@ -196,7 +196,7 @@ const Payment = () => {
         </div>
       </div>
     </div>
-    </Layout>
+    </>
   );
 };
 

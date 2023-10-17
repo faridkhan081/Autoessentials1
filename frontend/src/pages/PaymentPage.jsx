@@ -8,7 +8,7 @@ import Layout from '../components/Layout/Layout.jsx';
 const PaymentPage = () => {
   return (
 
-    <Layout title={"Payment"}>
+    <Layout title={"Payment "}>
     <div className='w-full min-h-screen bg-[#f6f9fc]'>
        <Header />
        <br />
