@@ -86,10 +86,7 @@ const Solution = () => {
           <button onClick={handleUpload} class="btnsol">
             Inspect
           </button>
-          {/* <button>Upload</button> */}
-          {/* <p className="mt-3 text-xs text-gray-500 dark:text-gray-400">
-              SVG, PNG, JPG or GIF (MAX. 800x400px)
-            </p> */}
+        
         </div>
       </div>
       <div className="flex mt-[50px] gap-3">

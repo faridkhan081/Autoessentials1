@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import styles from "../../styles/styles";
 
 const Footer = () => {
   return (
     <div>
       <footer className="bg-white">
-        <div className="mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8">
+        <div  className={`${styles.section} mx-auto max-w-auto px-4 pb-8 pt-16 sm:px-6 lg:px-8`}>
           <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-32">
             <div className="mx-auto max-w-sm lg:max-w-none">
               <p className="mt-4 text-center text-gray-500 lg:text-left lg:text-lg">

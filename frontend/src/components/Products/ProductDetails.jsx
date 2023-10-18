@@ -164,7 +164,7 @@ function ProductDetails({ data, isLoading }) {
                         </div>
                       </div>
                       <div
-                        className={`${styles.button} !mt-6 !rounded !h-11 flex items-center`}
+                        className={`${styles.button} !w-[142px] !mt-6 !rounded !h-11 flex items-center`}
                         onClick={() => addToCartHandler(data._id)}
                       >
 

@@ -27,7 +27,7 @@ html {
 }
 
 *::-webkit-scrollbar-track {
-  background: #000814;
+  background: #ffffff;
 }
 
 *::-webkit-scrollbar-thumb {
@@ -42,6 +42,14 @@ html {
   visibility: visible;
 }
 
+
+
+.check-out {
+  box-shadow: 0 0.3125rem 0.625rem -0.125rem #E11D48;
+}
+.check-out:hover {
+  opacity: 70%;
+}
 
 
 *{

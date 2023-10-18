@@ -56,18 +56,20 @@ function ProductCard({ data }) {
       }
     }
   };
- 
 
   return (
     <div className="w-full h-[370px] bg-white rounded-lg p-3 relative cursor-pointer shadow-sm hover:shadow-lg hover:shadow-gray-200">
       <div className="flex justify-end"></div>
 
       <Link to={`/product/${data._id}`}>
+      <div className="w-full flex justify-center" >
         <img
+        
           src={`${backend_url}${data.images && data.images[0]}`}
           alt=""
-          className="w-full h-[170px] object-contain"
+          className="w-90% h-[170px] object-contain "
         />
+        </div>
       </Link>
       <Link to={`/shop/preview/${data?.shop._id}`}>
         <h5 className={`${styles.shop_name}`}>{data.shop.name}</h5>
@@ -149,14 +151,41 @@ function ProductCard({ data }) {
           color="#333"
           title="Quick view"
         />
-        <ShoppingCart
+
+        {cart && cart.find((i) => i._id === data._id) ? (
+          <>
+          <ShoppingCart
+            size={22}
+            className="cursor-pointer absolute right-2 top-24"
+            onClick={() => addToCartHandler(data._id)}
+            
+            title="Remove from Cart"
+            fill="black"
+          />
+          </>
+        ) : (
+          <>
+          <ShoppingCart
+            size={22}
+            className="cursor-pointer absolute right-2 top-24"
+            onClick={() => addToCartHandler(data._id)}
+           
+            title="Remove from Cart"
+            
+          />
+          </>
+        )}
+
+        
+
+        {/* <ShoppingCart
           size={25}
           className="cursor-pointer absolute right-2 top-24"
           onClick={() => addToCartHandler(data._id)}
-         
+        
           color="#444"
           title="Add to cart"
-        />
+        /> */}
         {open ? <ProductDetailsCard setOpen={setOpen} data={data} /> : null}
       </div>
     </div>
