@@ -127,55 +127,73 @@ import { useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import Footer from "../components/Layout/Footer";
 import Header from "../components/Layout/Header";
-import Loader from "../components/Layout/Loader";
 import ProductCard from "../components/Route/ProductCard/ProductCard";
 import styles from "../styles/styles";
 import HeadBanner from "../components/Banner/HeadBanner";
 import Layout from "../components/Layout/Layout";
-import product from '../Assets/images/productsHeader.jpg'
+import product from '../Assets/images/productsHeader.jpg';
+import SortBy from "../components/Layout/SortBy";
 
 const ProductsPage = () => {
   const [searchParams] = useSearchParams();
   const categoryData = searchParams.get("category");
-  const {allProducts,isLoading} = useSelector((state) => state.products);
+  const { allProducts } = useSelector((state) => state.products);
   const [data, setData] = useState([]);
+  const [sortCriteria, setSortCriteria] = useState('');
 
   useEffect(() => {
-    
     if (categoryData === null) {
-      const d = allProducts;
-      setData(d);
+      setData(allProducts);
     } else {
-      const d =
-      allProducts && allProducts.filter((i) => i.category === categoryData);
-      setData(d);
+      const filteredData = allProducts.filter((i) => i.category === categoryData);
+      setData(filteredData);
     }
-       window.scrollTo(0,0);
-  }, [allProducts]);
+  }, [allProducts, categoryData]);
+
+  const handleSortChange = (selectedValue) => {
+    setSortCriteria(selectedValue);
+  };
+
+  const sortProducts = (criteria) => {
+    if (criteria === 'bestselling') {
+      // Sort by best selling (sold_out in descending order)
+      return data.slice().sort((a, b) => b.sold_out - a.sold_out);
+    } else if (criteria === 'lowestprice') {
+      return data.slice().sort((a,b)=> a.originalPrice - b.originalPrice);
+      
+    } else if (criteria === 'highestprice') {
+       return data.slice().sort((a,b)=>b.originalPrice - a.originalPrice);
+     
+    }
+    else if(criteria === 'clearfilter'){
+    return data
+    }
+    return data; // Return unsorted data if no valid sorting criteria is selected
+  };
+
+  const sortedData = sortProducts(sortCriteria);
 
   return (
-  <Layout title={"Products"}>
- 
+    <Layout title={"Products"}>
       <div>
-      <Header activeHeading={3} />
-      <HeadBanner title="All Products" list='Products' imageUrl={product}/>
-
-      <br />
-      <br />
-      <div className={`${styles.section}`}>
-        <div className="grid grid-cols-1 gap-[20px] md:grid-cols-2 md:gap-[25px] lg:grid-cols-4 lg:gap-[25px] xl:grid-cols-5 xl:gap-[30px] mb-12">
-          {data && data.map((i, index) => <ProductCard data={i} key={index} />)}
+        <Header activeHeading={3} />
+        <HeadBanner title="All Products" list='Products' imageUrl={product} />
+        <br />
+      
+        <SortBy onSortChange={handleSortChange} />
+        <div className={`${styles.section}`}>
+          <div className="grid grid-cols-1 gap-[20px] md:grid-cols-2 md:gap-[25px] lg:grid-cols-4 lg:gap-[25px] xl:grid-cols-5 xl:gap-[30px] mb-12">
+            {sortedData && sortedData.map((i, index) => <ProductCard data={i} key={index} />)}
+          </div>
+          {sortedData && sortedData.length === 0 ? (
+            <h1 className="text-center w-full pb-[100px] text-[20px]">
+              No products Found!
+            </h1>
+          ) : null}
         </div>
-        {data && data.length === 0 ? (
-          <h1 className="text-center w-full pb-[100px] text-[20px]">
-            No products Found!
-          </h1>
-        ) : null}
+        <Footer />
       </div>
-      <Footer />
-    </div>
-  
-  </Layout>
+    </Layout>
   );
 };
 

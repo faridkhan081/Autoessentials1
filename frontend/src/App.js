@@ -12,7 +12,7 @@ import {
   ActivationPage,
   HomePage,
   ProductsPage,
-  BestSellingPage,
+  // BestSellingPage,
   EventsPage,
   SolutionsPage,
   FaqsPage,
@@ -108,7 +108,7 @@ const App = () => {
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/product/:id" element={<ProductDetailsPage />} />
          
-          <Route path="/best-selling" element={<BestSellingPage />} />
+          {/* <Route path="/best-selling" element={<BestSellingPage />} /> */}
           <Route path="/events" element={<EventsPage />} />
           <Route path="/solutions" element={<SolutionsPage />} />
           <Route path="/faq" element={<FaqsPage />} />

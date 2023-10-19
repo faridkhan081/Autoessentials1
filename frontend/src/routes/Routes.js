@@ -4,7 +4,7 @@ import ActivationPage from '../pages/ActivationPage'
 import SellerActivationPage from '../pages/SellerActivationPage'
 import HomePage from '../pages/HomePage'
 import ProductsPage from '../pages/ProductsPage'
-import BestSellingPage from '../pages/BestSellingPage'
+// import BestSellingPage from '../pages/BestSellingPage'
 import EventsPage from '../pages/EventsPage'
 import SolutionsPage from '../pages/SolutionsPage'
 import FaqsPage from '../pages/FaqsPage'
@@ -25,7 +25,7 @@ export {
     ActivationPage,
     HomePage,
     ProductsPage,
-    BestSellingPage,
+    // BestSellingPage,
     EventsPage,
     SolutionsPage,
     FaqsPage,
