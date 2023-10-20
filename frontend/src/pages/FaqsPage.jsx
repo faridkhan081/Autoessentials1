@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../components/Layout/Footer";
 import Header from "../components/Layout/Header";
 import styles from "../styles/styles";
@@ -7,6 +7,10 @@ import HeadBanner from "../components/Banner/HeadBanner";
 import product from '../Assets/images/question.jpeg'
 
 const FaqsPage = () => {
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+
+  },[])
   return (
     <Layout title={"FAQ'S"}>
       <Header activeHeading={5} />

@@ -27,6 +27,7 @@ import {
   PageNotFound,
   ContactPage,
   OrderSuccessPage,
+  OrderDetailsPage
 } from "./routes/Routes.js";
 
 //shop imports
@@ -48,6 +49,8 @@ import {
   ShopAllEvents,
   ShopAllCoupouns,
   ShopPreviewPage,
+  ShopAllOrders,
+  ShopOrderDetails,
 } from "./ShopRoutes.js";
 import SellerProtectedRoute from "./routes/SellerProtectedRoute";
 import { getAllProducts, getSingleProduct } from "./redux/actions/product";
@@ -132,6 +135,15 @@ const App = () => {
               </ProtectedRoute>
             }
           />
+
+<Route
+          path="/user/order/:id"
+          element={
+            <ProtectedRoute>
+              <OrderDetailsPage />
+            </ProtectedRoute>
+          }
+        />
           {/* shop routes */}
           <Route path="/shop/preview/:id" element={<ShopPreviewPage />} />
           <Route path="/shop-create" element={<ShopCreatePage />} />
@@ -153,6 +165,24 @@ const App = () => {
               </SellerProtectedRoute>
             }
           />
+           <Route
+            path="/dashboard-orders"
+            element={
+              <SellerProtectedRoute>
+                <ShopAllOrders />
+              </SellerProtectedRoute>
+            }
+          />
+
+
+<Route
+          path="/order/:id"
+          element={
+            <SellerProtectedRoute>
+              <ShopOrderDetails />
+            </SellerProtectedRoute>
+          }
+        />
 
           <Route
             path="/dashboard-create-product"

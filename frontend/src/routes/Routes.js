@@ -19,6 +19,7 @@ import PaymentPage from "../pages/PaymentPage.jsx";
 
 import ContactPage from './../pages/ContactPage';
 import OrderSuccessPage from './../pages/OrderSuccessPage.jsx';
+import OrderDetailsPage from './../pages/OrderDetailsPage.jsx';
 export {
     LoginPage,
     SignupPage,
@@ -40,5 +41,6 @@ export {
     ContactPage,
     PaymentPage,
     OrderSuccessPage,
+    OrderDetailsPage
 
 }

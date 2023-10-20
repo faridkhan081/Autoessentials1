@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../components/Layout/Header'
 import Footer from '../components/Layout/Footer'
 import Layout from '../components/Layout/Layout'
@@ -6,6 +6,10 @@ import { FloatingWhatsApp } from 'react-floating-whatsapp'
 
 import { Linkedin } from 'lucide-react'
 function ContactPage() {
+    useEffect(()=>{
+    window.scrollTo(0, 0);
+
+    },[])
   return (
     <Layout title={"Contact Us"}>
     

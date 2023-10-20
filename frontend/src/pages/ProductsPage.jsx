@@ -148,6 +148,9 @@ const ProductsPage = () => {
       const filteredData = allProducts.filter((i) => i.category === categoryData);
       setData(filteredData);
     }
+    window.scrollTo(0, 0);
+
+   
   }, [allProducts, categoryData]);
 
   const handleSortChange = (selectedValue) => {

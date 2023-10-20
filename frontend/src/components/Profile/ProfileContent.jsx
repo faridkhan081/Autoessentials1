@@ -262,22 +262,36 @@ const AllOrders = () => {
     },
   ];
 
-  const row = [];
+  let rows = [];
 
-  orders &&
+  if (orders) {
     orders.forEach((item) => {
-      row.push({
+      // Initialize itemsQty to 0
+      let itemsQty = 0;
+  
+      // Check if 'cart' property exists and it's an array
+      if (item.cart && Array.isArray(item.cart)) {
+        // Loop through the cart array and sum up the quantities
+        item.cart.forEach((cartItem) => {
+          if (cartItem.qty) {
+            itemsQty += cartItem.qty;
+          }
+        });
+      }
+  
+      rows.push({
         id: item._id,
-        itemsQty: item.cart.length,
-        total: "US$ " + item.totalPrice,
+        itemsQty: itemsQty, // Assign the calculated itemsQty
+        total: "RS. " + item.totalPrice,
         status: item.status,
       });
     });
+  }
 
   return (
-    <div className="pl-8 pt-1">
+    <div className="pl-8 pt-1 min-h-[88vh]">
       <DataGrid
-        rows={row}
+        rows={rows}
         columns={columns}
         pageSize={10}
         disableSelectionOnClick

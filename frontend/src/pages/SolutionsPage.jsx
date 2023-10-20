@@ -9,6 +9,10 @@ import HeadBanner from "../components/Banner/HeadBanner";
 import product from "../Assets/images/tire.jpg";
 
 const SolutionsPage = () => {
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+
+  },[])
   return (
     <Layout title={"Tools"}>
       <Header activeHeading={6} />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 
 import Header from "../components/Layout/Header";
@@ -10,6 +10,11 @@ import product from '../Assets/images/sale2.jpeg'
 
 
 const EventsPage = () => {
+
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+
+  },[])
   const { allEvents, isLoading } = useSelector((state) => state.events);
   return (
   
