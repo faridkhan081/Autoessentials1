@@ -14,7 +14,7 @@ function SortBy({ onSortChange }) {
       <div className="800px:mr-[67px] mr-[25px] mb-5">
         <label>Filter Products:</label>
         <select value={sortValue} onChange={(e) => handleChange(e)} className="rounded ml-2 p-2">
-          <option value='' disabled>Select Filter</option> {/* Set value to an empty string */}
+          <option value='' disabled>Recently Added</option> {/* Set value to an empty string */}
           <option value="bestselling">Best Selling</option>
           <option value="lowestprice">Lowest to Highest</option>
           <option value="highestprice">Highest to Lowest</option>

@@ -145,7 +145,7 @@ const ProductsPage = () => {
     if (categoryData === null) {
       setData(allProducts);
     } else {
-      const filteredData = allProducts.filter((i) => i.category === categoryData);
+      const filteredData =allProducts && allProducts.filter((i) => i.category === categoryData);
       setData(filteredData);
     }
     window.scrollTo(0, 0);

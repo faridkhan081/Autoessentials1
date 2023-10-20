@@ -30,15 +30,15 @@ const Hero = () => {
       </p>
 
       <div className="mt-8 flex flex-wrap gap-4 text-center">
-        <Link
-          to="#"
-          className="block w-full rounded bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
+        <div onClick={()=> window.scrollTo(0,1200)}
+        
+          className="block w-full rounded cursor-pointer bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
         >
           Shop Now
-        </Link>
+        </div>
 
         <Link
-          to="#"
+          to="/products"
           className="block w-full rounded bg-transparent px-12 py-3 text-sm font-medium text-rose-600 shadow hover:text-rose-700 focus:outline-none focus:ring active:text-rose-500 sm:w-auto border-white border-[2px] hover:bg-white"
         >
           Explore
