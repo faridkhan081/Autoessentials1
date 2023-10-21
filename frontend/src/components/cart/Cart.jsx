@@ -77,10 +77,10 @@ function Cart({setOpenCart}) {
                 {/* checkout buttons */}
                 <Link to="/checkout">
                   <div
-                    className={`h-[45px] flex items-center justify-center w-[100%] bg-[#e44343] rounded-[5px] check-out`}
+                    className={`h-[45px] flex items-center justify-center w-[100%] bg-[#e44343] rounded-[5px]`}
                   >
                     <h1 className="text-[#fff] text-[18px] font-[600] ">
-                      Checkout Now (RS.{totalPrice})
+                      Checkout Now (RS. {totalPrice})
                     </h1>
                   </div>
                 </Link>
@@ -114,7 +114,7 @@ function Cart({setOpenCart}) {
   
     return (
       <div className="border-b p-4">
-        <div className="w-full flex items-center">
+        <div className="w-full flex items-center justify-between">
           <div>
             <div
               className={`bg-[#e44343] border border-[#e4434373] rounded-full w-[25px] h-[25px] ${styles.noramlFlex} justify-center cursor-pointer`}
@@ -133,7 +133,7 @@ function Cart({setOpenCart}) {
           <img
             src={`${backend_url}${data?.images[0]}`}
             alt=""
-            className="w-[130px] h-min ml-2 mr-2 rounded-[5px]"
+            className="w-[100px] h-min ml-2 mr-2 rounded-[5px]"
           />
           <div className="pl-[5px]">
             <h1>{data.name}</h1>
@@ -144,8 +144,10 @@ function Cart({setOpenCart}) {
               RS.{totalPrice}
             </h4>
           </div>
+
           <RxCross1
-            className="cursor-pointer"
+            className="cursor-pointer "
+            size={17}
             onClick={() => removeFromCartHandler(data)}
           />
         </div>

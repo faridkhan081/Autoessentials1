@@ -78,7 +78,7 @@ const CartSingle = ({ data,removeFromWishlistHandler,addToCartHandler }) => {
 
   return (
     <div className="border-b p-4">
-      <div className="w-full 800px:flex items-center">
+      <div className="w-full 800px:flex items-center justify-between">
         <RxCross1 className="cursor-pointer 800px:mb-['unset'] 800px:ml-['unset'] mb-2 ml-2"
         onClick={() => removeFromWishlistHandler(data)}
         />

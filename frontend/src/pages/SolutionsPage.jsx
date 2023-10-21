@@ -79,22 +79,28 @@ const Solution = () => {
         Tire Inspection Tool
       </h1>
 
-      <div className="flex items-center justify-center w-full mt-[30px]">
-        <div className="flex items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg ">
-          <input
-            accept="image/"
+
+      <fieldset className="w-full space-y-1 dark:text-gray-100 flex justify-center mt-[50px] mb-[50px]">
+	
+	<div className="border-2 border-dashed rounded-md dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800 " >
+		<input type="file" name="files" accept="image/"
             id="dropzone-file"
-            type="file"
-            onChange={handleFileChange}
-          />
-          <button onClick={handleUpload} class="btnsol">
+          
+            onChange={handleFileChange} className="px-8 py-8" />
+            
+            <button onClick={handleUpload} class="btnsol mr-3" style={{padding:'10px',height:'50px',}}>
             Inspect
           </button>
-        
-        </div>
-      </div>
-      <div className="flex mt-[50px] gap-3">
-        <h1 className="font-medium text-[24px] text-[#231e1e]">Result: </h1>
+            
+	</div>
+
+ 
+ 
+</fieldset>
+
+
+      <div className="flex mt-[50px] gap-3 mb-[50px]">
+        <h1 className="font-medium text-[30px] text-[#231e1e]">Result: </h1>
       </div>
 
       {isLoading ? (
@@ -168,7 +174,7 @@ const Solution = () => {
                     ))}
                   </ul>
                 </h5>
-                <p className="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+                {/* <p className="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
                   <ul>
                     {Object.keys(response.predictions).map(
                       (prediction, index) => (
@@ -179,9 +185,9 @@ const Solution = () => {
                       )
                     )}
                   </ul>
-                </p>
+                </p> */}
               </div>
-              <div className="p-6 pt-0">
+              <div className="p-6">
                 <p>
                   <strong>Response Time:</strong> {response.time} seconds
                 </p>
