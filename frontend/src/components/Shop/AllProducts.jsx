@@ -121,9 +121,9 @@ const AllProducts = () => {
       row.push({
         id: item._id,
         name: item.name,
-        price: "US$ " + item.discountPrice,
+        price: "RS. " + item.discountPrice,
         Stock: item.stock,
-        sold: 10,
+        sold: item.sold_out,
       });
     });
 

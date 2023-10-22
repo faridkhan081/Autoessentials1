@@ -4,9 +4,9 @@ import { Link, useParams } from "react-router-dom";
 import { getAllProductsShop } from "../../redux/actions/product";
 import styles from "../../styles/styles";
 import ProductCard from "../Route/ProductCard/ProductCard";
-// import { backend_url } from "../../server";
+import { backend_url } from "../../server";
 // import Loader from "../Layout/Loader";
-// import Ratings from "../Products/Ratings";
+import Ratings from "../Products/Rating";
 // import { getAllEventsShop } from "../../redux/actions/event";
 import { getAllEventsShop } from "../../redux/actions/event";
 
@@ -25,8 +25,8 @@ const ShopProfileData = ({ isOwner }) => {
 
   const [active, setActive] = useState(1);
 
-  // const allReviews =
-  //   products && products.map((product) => product.reviews).flat();
+  const allReviews =
+    products && products.map((product) => product.reviews).flat();
 
   return (
     <>
@@ -114,10 +114,38 @@ const ShopProfileData = ({ isOwner }) => {
           </div>
         )}
 
-        {active === 3 && <></>}
+        {active === 3 && (
+        <div className="w-full">
+          {allReviews &&
+            allReviews.map((item, index) => (
+              <div className="w-full flex my-4">
+                <img
+                  src={`${backend_url}/${item.user.avatar}`}
+                  className="w-[50px] h-[50px] rounded-full"
+                  alt=""
+                />
+                <div className="pl-2">
+                  <div className="flex w-full items-center">
+                    <h1 className="font-[600] pr-2">{item.user.name}</h1>
+                    <Ratings rating={item.rating} />
+                  </div>
+                  <p className="font-[400] text-[#000000a7]">{item?.comment}</p>
+                  <p className="font-[400] text-[13px] text-[#000000a7]"> Reviewed on {new Date(item.createdAt).toLocaleDateString()}</p>
+                </div>
+              </div>
+            ))}
+          {allReviews && allReviews.length === 0 && (
+            <h5 className="w-full text-center py-5 text-[18px]">
+              No Reviews have for this shop!
+            </h5>
+          )}
+        </div>
+      )}
       </div>
     </>
   );
 };
 
 export default ShopProfileData;
+
+

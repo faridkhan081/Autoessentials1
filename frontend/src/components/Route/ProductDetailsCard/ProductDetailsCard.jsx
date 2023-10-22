@@ -20,14 +20,33 @@ import {
   addToWishlist,
   removeFromWishlist,
 } from "../../../redux/actions/wishlist";
+import Ratings from "../../Products/Rating";
+
 const ProductDetailsCard = ({ setOpen, data }) => {
   const [count, setCount] = useState(1);
   const [click, setClick] = useState(false);
-  const {cart} = useSelector((state)=> state.cart) 
+  const { cart } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const { wishlist } = useSelector((state) => state.wishlist);
+  const { products } = useSelector((state) => state.products);
 
   // const [select, setSelect] = useState(false);
+
+  const totalReviewsLength =
+    products &&
+    products.reduce((acc, product) => acc + product.reviews.length, 0);
+
+  const totalRatings =
+    products &&
+    products.reduce(
+      (acc, product) =>
+        acc + product.reviews.reduce((sum, review) => sum + review.rating, 0),
+      0
+    );
+
+  const avg = totalRatings / totalReviewsLength || 0;
+
+  const averageRating = avg.toFixed(2);
 
   const handleMessageSubmit = () => {};
   const decrementCount = () => {
@@ -52,7 +71,6 @@ const ProductDetailsCard = ({ setOpen, data }) => {
       }
     }
   };
-
 
   useEffect(() => {
     if (wishlist && wishlist.find((i) => i._id === data._id)) {
@@ -99,7 +117,11 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                       <h3 className={`${styles.shop_name}`}>
                         {data.shop.name}
                       </h3>
-                      <h5 className="pb-3 text-[15px]">(4.5) Ratings</h5>
+                      <h5 className="pb-3 text-[15px]">
+                        {data.ratings
+                          ? `(${data.ratings}) Ratings`
+                          : "(0) Ratings"}
+                      </h5>
                     </div>
                   </Link>
                 </div>
@@ -112,7 +134,10 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                     Send Message <AiOutlineMessage className="ml-1" />
                   </span>
                 </div>
-                <h5 className="text-[16px] text-[red] mt-5">(50) Sold out</h5>
+                <h5 className="text-[16px] text-[red] mt-5">
+                  {" "}
+                  {data?.sold_out} sold
+                </h5>
               </div>
 
               <div className="w-full 800px:w-[50%] pt-5 pl-[5px] pr-[5px]">
@@ -123,10 +148,10 @@ const ProductDetailsCard = ({ setOpen, data }) => {
 
                 <div className="flex pt-3 ">
                   <h4 className={`${styles.productDiscountPrice}`}>
-                  RS.{data.discountPrice}
+                    RS.{data.discountPrice}
                   </h4>
                   <h3 className={`${styles.price}`}>
-                  {data.originalPrice ? "RS."+ data.originalPrice  : null}
+                    {data.originalPrice ? "RS." + data.originalPrice : null}
                   </h3>
                 </div>
                 <div className="flex items-center mt-12 justify-between pr-3">
@@ -155,9 +180,7 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                         className="cursor-pointer"
                         onClick={() => removeFromWishlistHandler(data)}
                         color={click ? "red" : "#333"}
-                        
                         title="Remove from wishlist"
-                        
                       />
                     ) : (
                       <AiOutlineHeart
@@ -170,12 +193,24 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                   </div>
                 </div>
                 <div
-                  className={`${styles.button} mt-6 !rounded-[4px] h-11 flex items-center`}
-                    onClick={() => addToCartHandler(data._id)}
+                  className={`${styles.button} !w-[142px] !mt-6 !rounded !h-11 flex items-center`}
+                  onClick={() => addToCartHandler(data._id)}
                 >
-                  <span className="text-[#fff] flex items-center">
-                    Add to cart <AiOutlineShoppingCart className="ml-1" />
-                  </span>
+                  {cart && cart.find((i) => i._id === data._id) ? (
+                    <>
+                      <span
+                        className={`${styles.button} !bg-[#d54343] text-white !rounded !h-11 flex items-center`}
+                      >
+                        Remove from cart
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="text-white flex items-center">
+                        Add to cart <AiOutlineShoppingCart className="ml-1" />
+                      </span>
+                    </>
+                  )}
                 </div>
               </div>
             </div>

@@ -82,7 +82,7 @@ const AllOrders = () => {
           if (cartItem.qty) {
             itemsQty += cartItem.qty;
           }
-        });
+        }); 
       }
   
       rows.push({

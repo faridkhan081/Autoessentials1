@@ -8,6 +8,7 @@ import { useParams } from 'react-router-dom';
 import { backend_url } from "../../server";
 import axios from 'axios';
 import { server } from "../../server";
+import { Book, Mail } from 'lucide-react';
 
 const ShopPreviewPage = () => {
 
@@ -62,13 +63,17 @@ const ShopPreviewPage = () => {
   <div className="mt-10 flex flex-col items-start justify-center space-y-4 py-8 px-4 sm:flex-row sm:space-y-0 md:justify-between lg:px-0">
     <div className="max-w-lg">
       <h1 className="text-2xl font-bold text-gray-800">{data.name}</h1>
-      <p className="mt-2 text-gray-600">  {data.address}</p>
+      <p className="mt-2 text-gray-600"> 
+      
+       {data.address}</p>
       <p className="mt-1 text-gray-600 text-[14px]"> Joined on: {data?.createdAt?.slice(0, 10)}</p>
 
       <p  className="mt-1 text-gray-600 text-[14px]">Total Products: {products && products?.length}</p>
-      <p className='mt-1 text-gray-600 text-[14px]'>Ratings: 4/5</p>
+      <p className='mt-1 text-gray-600 text-[14px] flex items-center gap-1'>
+      <Mail size={14}/>
+       {data && data?.email} </p>
 
-    </div>
+    </div> 
     <div className>
       <button className={`${styles.button} flex whitespace-nowrap !rounded bg-green-600 text-white transition hover:translate-y-1`}>
         <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 inline h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -84,7 +89,7 @@ const ShopPreviewPage = () => {
       </p>
     </div>
   </div>
-  <main className="800px:w-[100%] mt-5 800px:mt-['unset'] rounded-[4px] ">
+  <main className="800px:w-[100%] w-[80%] 800px:ml-0 ml-[50px] mt-5 800px:mt-['unset'] rounded-[4px] ">
   <ShopProfileData isOwner={false} />
   </main>
 </div>
