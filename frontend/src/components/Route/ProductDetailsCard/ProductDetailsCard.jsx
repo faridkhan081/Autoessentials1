@@ -21,6 +21,7 @@ import {
   removeFromWishlist,
 } from "../../../redux/actions/wishlist";
 import Ratings from "../../Products/Rating";
+import { Expand } from "lucide-react";
 
 const ProductDetailsCard = ({ setOpen, data }) => {
   const [count, setCount] = useState(1);
@@ -173,6 +174,7 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                     </button>
                   </div>
 
+                 
                   <div>
                     {click ? (
                       <AiFillHeart
@@ -193,7 +195,7 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                   </div>
                 </div>
                 <div
-                  className={`${styles.button} !w-[142px] !mt-6 !rounded !h-11 flex items-center`}
+                  className={`!w-[142px] !mt-6 !rounded !h-11 flex items-center`}
                   onClick={() => addToCartHandler(data._id)}
                 >
                   {cart && cart.find((i) => i._id === data._id) ? (
@@ -206,7 +208,7 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                     </>
                   ) : (
                     <>
-                      <span className="text-white flex items-center">
+                      <span className="flex items-center justify-center shrink-0 rounded-md border border-black bg-black px-[25px] py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-black focus:outline-none focus:ring active:test-black ">
                         Add to cart <AiOutlineShoppingCart className="ml-1" />
                       </span>
                     </>

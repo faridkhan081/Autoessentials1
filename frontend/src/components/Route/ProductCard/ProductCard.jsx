@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import styles from "../../../styles/styles";
 import { Link } from "react-router-dom";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
-import { Eye } from "lucide-react";
+import { Expand, Eye } from "lucide-react";
 import { Heart } from "lucide-react";
 import ProductDetailsCard from "../ProductDetailsCard/ProductDetailsCard.jsx";
 import { ShoppingCart } from "lucide-react";
@@ -104,6 +104,7 @@ function ProductCard({ data }) {
       </Link>
       {/* side options */}
 
+
       <div>
         {click ? (
           <Heart
@@ -124,9 +125,9 @@ function ProductCard({ data }) {
           />
         )}
 
-        <Eye
-          size={22}
-          className="cursor-pointer absolute right-2 top-14"
+        <Expand
+          size={20}
+          className="cursor-pointer absolute right-2 top-16"
           onClick={() => setOpen(!open)}
           color="#333"
           title="Quick view"
@@ -136,7 +137,7 @@ function ProductCard({ data }) {
           <>
           <ShoppingCart
             size={22}
-            className="cursor-pointer absolute right-2 top-24"
+            className="cursor-pointer absolute right-2 top-28"
             onClick={() => addToCartHandler(data._id)}
             
             title="Remove from Cart"
@@ -147,7 +148,7 @@ function ProductCard({ data }) {
           <>
           <ShoppingCart
             size={22}
-            className="cursor-pointer absolute right-2 top-24"
+            className="cursor-pointer absolute right-2 top-28"
             onClick={() => addToCartHandler(data._id)}
            
             title="Remove from Cart"

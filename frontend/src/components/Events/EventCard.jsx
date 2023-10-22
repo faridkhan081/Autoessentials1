@@ -83,6 +83,7 @@ import { backend_url } from "../../server";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { addTocart } from './../../redux/actions/cart';
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const EventCard = ({ active, data }) => {
   const { cart } = useSelector((state) => state.cart);
@@ -129,16 +130,38 @@ const EventCard = ({ active, data }) => {
             </h5>
           </div>
           <span className="pr-3 font-[400] text-[17px] text-[#44a55e]">
-            {data && data.soldCount ? data.soldCount + " sold" : "Sold Count N/A"}
+            {data && data.soldCount ? data.soldCount + " sold" : "Sold(0)"}
           </span>
         </div>
         {/* <CountDown data={data} /> */}
         <br />
         <div className="flex items-center">
           <Link to={`/product/${data && data._id ? data._id : ''}?isEvent=true`}>
-            <div className={`${styles.button} text-[#fff]`}>See Details</div>
+            <div className="inline-block shrink-0 rounded-md border border-rose-500 bg-rose-500 px-8 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-rose-500 focus:outline-none focus:ring active:test-rose-500">See Details</div>
           </Link>
-          <div className={`${styles.button} text-[#fff] ml-5`} onClick={() => addToCartHandler(data)}>Add to cart</div>
+         
+        
+          <div
+                  className="ml-5 cursor-pointer"
+                  onClick={() => addToCartHandler(data)}
+                >
+                  {cart && cart.find((i) => i._id === data._id) ? (
+                    <>
+                      <span
+                        className={`${styles.button} !bg-[#d54343] text-white !rounded !h-11 flex items-center`}
+                      >
+                        Remove from cart
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="flex items-center justify-center shrink-0 rounded-md border border-black bg-black px-[25px] py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-black focus:outline-none focus:ring active:test-black">
+                        Add to cart <AiOutlineShoppingCart className="ml-1" />
+                      </span>
+                    </>
+                  )}
+                </div>
+        
         </div>
       </div>
     </div>

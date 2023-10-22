@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import CheckoutSteps from '../components/Checkout/CheckoutSteps.jsx'
 import Footer from '../components/Layout/Footer'
 import Header from '../components/Layout/Header'
@@ -6,6 +6,7 @@ import Payment from "../components/Payment/Payment.jsx";
 import Layout from '../components/Layout/Layout.jsx';
 
 const PaymentPage = () => {
+ 
   return (
 
     <Layout title={"Payment "}>

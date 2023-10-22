@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import { server } from "../../server";
 import { toast } from "react-toastify";
+import { ListFilter, Menu } from "lucide-react";
 
 const Checkout = () => {
   const { user } = useSelector((state) => state.user);
@@ -50,7 +51,10 @@ const Checkout = () => {
 
     // update local storage with the updated orders array
     localStorage.setItem("latestOrder", JSON.stringify(orderData));
+    
+  
     navigate("/payment");
+    window.location.reload(true)
    }
   };
 
@@ -135,10 +139,10 @@ const Checkout = () => {
         </div>
       </div>
       <div
-        className={`${styles.button} w-[150px] 800px:w-[280px] mt-10`}
+        className={`cursor-pointer flex items-center justify-center shrink-0 rounded-md border border-black bg-black px-[25px] py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-black focus:outline-none focus:ring active:test-black 800px:w-[260px] mt-10`}
         onClick={paymentSubmit}
       >
-        <h5 className="text-white">Go to Payment</h5>
+        <h5 className="">Go to Payment</h5>
       </div>
     </div>
   );
@@ -159,6 +163,7 @@ const ShippingInfo = ({
   zipCode,
   setZipCode,
 }) => {
+  
   return (
     <div className="w-full 800px:w-[95%] bg-white rounded-md p-5 pb-8">
       <h5 className="text-[18px] font-[500]">Shipping Address</h5>
@@ -272,16 +277,17 @@ const ShippingInfo = ({
         <div></div>
       </form>
       <h5
-        className="text-[18px] cursor-pointer inline-block"
+        className="text-[18px] cursor-pointer flex items-center gap-2"
         onClick={() => setUserInfo(!userInfo)}
       >
+      <Menu/>
         Choose From saved address
       </h5>
       {userInfo && (
-        <div>
+        <div className="ml-1">
           {user &&
             user.addresses.map((item, index) => (
-              <div className="w-full flex mt-1">
+              <div className="w-full flex mt-1 items-center">
                 <input
                   type="checkbox"
                   className="mr-3"
@@ -316,21 +322,21 @@ const CartData = ({
     <div className="w-full bg-[#fff] rounded-md p-5 pb-8">
       <div className="flex justify-between">
         <h3 className="text-[16px] font-[400] text-[#000000a4]">subtotal:</h3>
-        <h5 className="text-[18px] font-[600]">RS.{subTotalPrice}</h5>
+        <h5 className="text-[18px] font-[600]">RS. {subTotalPrice}</h5>
       </div>
       <br />
       <div className="flex justify-between">
         <h3 className="text-[16px] font-[400] text-[#000000a4]">shipping:</h3>
-        <h5 className="text-[18px] font-[600]">RS.{shipping.toFixed(2)}</h5>
+        <h5 className="text-[18px] font-[600]">RS. {shipping.toFixed(2)}</h5>
       </div>
       <br />
       <div className="flex justify-between border-b pb-3">
         <h3 className="text-[16px] font-[400] text-[#000000a4]">Discount:</h3>
         <h5 className="text-[18px] font-[600]">
-          - {discountPercentenge ? "Rs." + discountPercentenge.toString() : null}
+          - {discountPercentenge ? "Rs. " + discountPercentenge.toString() : null}
         </h5>
       </div>
-      <h5 className="text-[18px] font-[600] text-end pt-3">RS.{totalPrice}</h5>
+      <h5 className="text-[18px] font-[600] text-end pt-3">RS. {totalPrice}</h5>
       <br />
       <form onSubmit={handleSubmit}>
         <input
@@ -342,7 +348,7 @@ const CartData = ({
           required
         />
         <input
-          className={`w-full h-[40px] border border-[#f63b60] text-center text-[#f63b60] rounded-[3px] mt-8 cursor-pointer`}
+          className={`flex items-center justify-center shrink-0 rounded-md border border-rose-500 bg-rose-500 w-full px-[25px] py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-rose-500 focus:outline-none focus:ring active:test-black mt-8 cursor-pointer`}
           required
           value="Apply code"
           type="submit"

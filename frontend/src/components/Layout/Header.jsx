@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "../../styles/styles";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import Cart from "../cart/Cart";
 import { categoriesData } from "../../static/data";
 import { AiOutlineClose } from "react-icons/ai";
@@ -39,15 +39,18 @@ const Header = ({ activeHeading }) => {
   const { cart } = useSelector((state) => state.cart);
   const { wishlist } = useSelector((state) => state.wishlist);
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+
   // console.log(user)
   const [isOpen, setIsOpen] = useState(false);
 
   const handleDropDown = () => {
     setIsOpen(!isOpen);
   };
-
+const {id} = useParams()
   const handleSearchChange = (e) => {
     const term = e.target.value;
+   
     setSearchTerm(term);
 
     const filteredProducts =
@@ -55,13 +58,15 @@ const Header = ({ activeHeading }) => {
       allProducts.filter((product) =>
         product.name.toLowerCase().includes(term.toLowerCase())
       );
+
     setSearchData(filteredProducts);
+   
   };
 
   useEffect(() => {
     if (!searchTerm) {
       setSearchData([]);
-      setSearchTerm(""); // Clear search term
+      // setSearchTerm(""); // Clear search term
     }
   }, [searchTerm]);
 
@@ -118,7 +123,7 @@ const Header = ({ activeHeading }) => {
           </div>
           {/* search box */}
 
-          <div className="w-[50%] relative">
+          <div className="w-[30%] relative">
             <input
               type="search"
               placeholder="Explore..."
@@ -148,24 +153,28 @@ const Header = ({ activeHeading }) => {
             ) : null}
           </div>
           {isSeller ? (
+            <Link to="/seller-dashboard">
             <div className={`${styles.button} primary-dark !rounded-md`}>
-              <Link to="/seller-dashboard">
+             
                 <h1 className="text-[#fff] flex items-center">
-                  Shop Dashboard
+                  Dashboard
                   <IoIosArrowForward className="ml-1" />
                 </h1>
-              </Link>
+             
             </div>
+            </Link>
           ) : (
             <>
+            <Link to="/shop-login">
               <div className={`${styles.button} primary-dark !rounded-md`}>
-                <Link to="/shop-login">
+                
                   <h1 className="text-[#fff] flex items-center">
                     Seller Zone
                     <IoIosArrowForward className="ml-1" />
                   </h1>
-                </Link>
+                
               </div>
+              </Link>
             </>
           )}
         </div>
@@ -248,12 +257,12 @@ const Header = ({ activeHeading }) => {
                   {/* menu list */}
                   <ul className="rounded absolute hidden text-black pt-[10px] group-hover:block w-[133px] z-10">
                     <Link to="/profile">
-                      <li className="bg-gray-200 hover:text-white hover:bg-black py-4 px-4 cursor-pointer">
+                      <li className="bg-white hover:text-white hover:bg-black py-4 px-4 cursor-pointer">
                         Dashboard
                       </li>
                     </Link>
                     <hr class="h-px bg-black border-0 "></hr>
-                      <li className="bg-gray-200 hover:text-white hover:bg-black py-4 px-4 cursor-pointer" onClick={logoutHandler}>
+                      <li className="bg-white hover:text-white hover:bg-black py-4 px-4 cursor-pointer" onClick={logoutHandler}>
                         Logout
                       </li>
                     

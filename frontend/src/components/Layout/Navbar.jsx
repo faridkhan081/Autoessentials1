@@ -94,14 +94,14 @@ const Navbar = ({ active }) => {
     <ul className="rounded absolute hidden text-black pt-[16px] group-hover:block w-40 z-10">
      
 <Link to="/solutions">
- <li className="bg-gray-200 hover:text-white hover:bg-black py-4 px-4 cursor-pointer">
+ <li className="bg-white hover:text-white hover:bg-black py-4 px-4 cursor-pointer">
           Tire Inspection
         </li>
 
         </Link>
         <hr class="h-px bg-black border-0 "></hr>
         <Link to="/solutions">
- <li className="bg-gray-200 hover:text-white hover:bg-black py-4 px-4 cursor-pointer">
+ <li className="bg-white hover:text-white hover:bg-black py-4 px-4 cursor-pointer">
           Rim Inspection
         </li>
         </Link>

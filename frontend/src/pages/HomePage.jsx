@@ -17,8 +17,9 @@ function HomePage() {
     <Hero  />
     <Categories/>
     <BestDeals/>
-    <Events/>
+
     <FeaturedProduct/>
+    <Events/>
     <Sponsored/>
     <Footer/>
 

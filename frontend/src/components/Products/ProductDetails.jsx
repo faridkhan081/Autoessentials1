@@ -182,7 +182,7 @@ function ProductDetails({ data, isLoading }) {
                         </div>
                       </div>
                       <div
-                        className={`${styles.button} !w-[142px] !mt-6 !rounded !h-11 flex items-center`}
+                        className={`cursor-pointer !w-[142px] !mt-6 !rounded !h-11 flex items-center`}
                         onClick={() => addToCartHandler(data._id)}
                       >
                         {cart && cart.find((i) => i._id === data._id) ? (
@@ -195,7 +195,7 @@ function ProductDetails({ data, isLoading }) {
                           </>
                         ) : (
                           <>
-                            <span className="text-white flex items-center">
+                            <span className="flex items-center justify-center shrink-0 rounded-md border border-black bg-black px-[25px] py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-black focus:outline-none focus:ring active:test-black ">
                               Add to cart{" "}
                               <AiOutlineShoppingCart className="ml-1" />
                             </span>

@@ -77,9 +77,9 @@ function Cart({setOpenCart}) {
                 {/* checkout buttons */}
                 <Link to="/checkout">
                   <div
-                    className={`h-[45px] flex items-center justify-center w-[100%] bg-[#e44343] rounded-[5px]`}
+                    className={`flex items-center justify-center shrink-0 rounded-md border border-black bg-black px-[25px] py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-black focus:outline-none focus:ring active:test-black`}
                   >
-                    <h1 className="text-[#fff] text-[18px] font-[600] ">
+                    <h1 className="text-[15px] font-[600] ">
                       Checkout Now (RS. {totalPrice})
                     </h1>
                   </div>

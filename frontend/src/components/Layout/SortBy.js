@@ -12,7 +12,7 @@ function SortBy({ onSortChange }) {
   return (
     <div className='flex items-center justify-end'>
       <div className="800px:mr-[67px] mr-[25px] mb-5">
-        <label>Filter Products:</label>
+        <label> Filter Products:</label>
         <select value={sortValue} onChange={(e) => handleChange(e)} className="rounded ml-2 p-2">
           <option value='' disabled>Recently Added</option> {/* Set value to an empty string */}
           <option value="bestselling">Best Selling</option>
