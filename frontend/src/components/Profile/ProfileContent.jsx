@@ -302,18 +302,15 @@ const AllOrders = () => {
 };
 
 const AllRefundOrders = () => {
-  const orders = [
-    {
-      __id: "7463hvbfbhfbrtr28820221",
-      orderItems: [
-        {
-          name: "Iphone 14 pro max",
-        },
-      ],
-      totalPrice: 120,
-      orderStatus: "Processing",
-    },
-  ];
+  const { user } = useSelector((state) => state.user);
+  const { orders } = useSelector((state) => state.order);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllOrdersOfUser(user._id));
+  }, []);
+
+  const eligibleOrders = orders && orders.filter((item) => item.status === "Processing refund");
 
   const columns = [
     { field: "id", headerName: "Order ID", minWidth: 150, flex: 0.7 },
@@ -355,7 +352,7 @@ const AllRefundOrders = () => {
       renderCell: (params) => {
         return (
           <>
-            <Link to={`/order/${params.id}`}>
+            <Link to={`/user/order/${params.id}`}>
               <Button>
                 <AiOutlineArrowRight size={20} />
               </Button>
@@ -365,45 +362,59 @@ const AllRefundOrders = () => {
       },
     },
   ];
-  const row = [];
 
-  orders &&
-    orders.forEach((item) => {
-      row.push({
-        id: item.__id,
-        itemsQty: item.orderItems.length,
-        total: "US$ " + item.totalPrice,
-        status: item.orderStatus,
+
+
+
+  let rows = [];
+
+  if (eligibleOrders) {
+     eligibleOrders.forEach((item) => {
+      // Initialize itemsQty to 0
+      let itemsQty = 0;
+  
+      // Check if 'cart' property exists and it's an array
+      if (item.cart && Array.isArray(item.cart)) {
+        // Loop through the cart array and sum up the quantities
+        item.cart.forEach((cartItem) => {
+          if (cartItem.qty) {
+            itemsQty += cartItem.qty;
+          }
+        });
+      }
+  
+      rows.push({
+        id: item._id,
+        itemsQty: itemsQty, // Assign the calculated itemsQty
+        total: "RS. " + item.totalPrice,
+        status: item.status,
       });
     });
+  }
+
+
+
   return (
-    <>
-      <div className="pl-8 pt-1">
-        <DataGrid
-          rows={row}
-          columns={columns}
-          pageSize={10}
-          autoHeight
-          disableSelectionOnClick
-        />
-      </div>
-    </>
+    <div className="pl-8 pt-1">
+      <DataGrid
+        rows={rows}
+        columns={columns}
+        pageSize={10}
+        autoHeight
+        disableSelectionOnClick
+      />
+    </div>
   );
 };
 
 const TrackOrder = () => {
-  const orders = [
-    {
-      __id: "7463hvbfbhfbrtr28820221",
-      orderItems: [
-        {
-          name: "Iphone 14 pro max",
-        },
-      ],
-      totalPrice: 120,
-      orderStatus: "Processing",
-    },
-  ];
+  const { user } = useSelector((state) => state.user);
+  const { orders } = useSelector((state) => state.order);
+  const dispatch = useDispatch();
+
+  useEffect(() => { 
+    dispatch(getAllOrdersOfUser(user._id));
+  }, []);
 
   const columns = [
     { field: "id", headerName: "Order ID", minWidth: 150, flex: 0.7 },
@@ -445,7 +456,7 @@ const TrackOrder = () => {
       renderCell: (params) => {
         return (
           <>
-            <Link to={`/order/${params.id}`}>
+            <Link to={`/user/track/order/${params.id}`}>
               <Button>
                 <MdOutlineTrackChanges size={20} />
               </Button>
@@ -456,22 +467,38 @@ const TrackOrder = () => {
     },
   ];
 
-  const row = [];
-  orders &&
+  let rows = [];
+
+  if (orders) {
     orders.forEach((item) => {
-      row.push({
-        id: item.__id,
-        itemsQty: item.orderItems.length,
-        total: "US$ " + item.totalPrice,
-        status: item.orderStatus,
+      // Initialize itemsQty to 0
+      let itemsQty = 0;
+  
+      // Check if 'cart' property exists and it's an array
+      if (item.cart && Array.isArray(item.cart)) {
+        // Loop through the cart array and sum up the quantities
+        item.cart.forEach((cartItem) => {
+          if (cartItem.qty) {
+            itemsQty += cartItem.qty;
+          }
+        });
+      }
+  
+      rows.push({
+        id: item._id,
+        itemsQty: itemsQty, // Assign the calculated itemsQty
+        total: "RS. " + item.totalPrice,
+        status: item.status,
       });
     });
+  }
+
   return (
-    <div className="pl-8 pt-1">
+    <div className="pl-8 pt-1 min-h-[88vh]">
       <DataGrid
-        rows={row}
+        rows={rows}
         columns={columns}
-        pageSize={20}
+        pageSize={10}
         disableSelectionOnClick
         autoHeight
       />

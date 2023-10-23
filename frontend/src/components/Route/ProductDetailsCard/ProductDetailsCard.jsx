@@ -174,7 +174,6 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                     </button>
                   </div>
 
-                 
                   <div>
                     {click ? (
                       <AiFillHeart

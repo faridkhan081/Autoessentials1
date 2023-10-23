@@ -3,7 +3,7 @@ import "./App.css";
 import { Elements } from "@stripe/react-stripe-js";
 
 import { loadStripe } from "@stripe/stripe-js";
-import {server} from './server'
+import { server } from "./server";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
@@ -17,7 +17,6 @@ import {
   SolutionsPage,
   FaqsPage,
   ProductDetailsPage,
-
   CheckoutPage,
   ShopCreatePage,
   PaymentPage,
@@ -27,11 +26,12 @@ import {
   PageNotFound,
   ContactPage,
   OrderSuccessPage,
-  OrderDetailsPage
+  OrderDetailsPage,
+  TrackOrderPage,
 } from "./routes/Routes.js";
 
 //shop imports
- 
+
 import { ShopDashboardPage } from "./routes/ShopRoutes";
 
 import { ToastContainer } from "react-toastify";
@@ -51,6 +51,8 @@ import {
   ShopPreviewPage,
   ShopAllOrders,
   ShopOrderDetails,
+  ShopAllRefunds,
+  ShopSettingsPage
 } from "./ShopRoutes.js";
 import SellerProtectedRoute from "./routes/SellerProtectedRoute";
 import { getAllProducts, getSingleProduct } from "./redux/actions/product";
@@ -66,33 +68,32 @@ const App = () => {
     setStripeApiKey(data.stripeApikey);
   }
 
-
   useEffect(() => {
     Store.dispatch(loadUser());
     Store.dispatch(loadSeller());
     Store.dispatch(getAllProducts());
     Store.dispatch(getAllEvents());
     Store.dispatch(getSingleProduct());
-    getStripeApikey()
+    getStripeApikey();
   }, []);
 
   return (
     <>
       <BrowserRouter>
-      {stripeApikey && (
-        <Elements  stripe={loadStripe(stripeApikey)}>
-          <Routes>
-            <Route
-              path="/payment"
-              element={
-                <ProtectedRoute>
-                  <PaymentPage />
-                </ProtectedRoute>
-              }
-            />
-          </Routes>
-        </Elements>
-      )}
+        {stripeApikey && (
+          <Elements stripe={loadStripe(stripeApikey)}>
+            <Routes>
+              <Route
+                path="/payment"
+                element={
+                  <ProtectedRoute>
+                    <PaymentPage />
+                  </ProtectedRoute>
+                }
+              />
+            </Routes>
+          </Elements>
+        )}
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
@@ -110,7 +111,7 @@ const App = () => {
           />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/product/:id" element={<ProductDetailsPage />} />
-         
+
           {/* <Route path="/best-selling" element={<BestSellingPage />} /> */}
           <Route path="/events" element={<EventsPage />} />
           <Route path="/solutions" element={<SolutionsPage />} />
@@ -125,8 +126,6 @@ const App = () => {
             }
           />
 
-
-
           <Route
             path="/profile"
             element={
@@ -136,14 +135,22 @@ const App = () => {
             }
           />
 
-<Route
-          path="/user/order/:id"
-          element={
-            <ProtectedRoute>
-              <OrderDetailsPage />
-            </ProtectedRoute>
-          }
-        />
+          <Route
+            path="/user/order/:id"
+            element={
+              <ProtectedRoute>
+                <OrderDetailsPage />
+              </ProtectedRoute>
+            }
+          />
+           <Route
+            path="/user/track/order/:id"
+            element={
+              <ProtectedRoute>
+                <TrackOrderPage />
+              </ProtectedRoute>
+            }
+          />
           {/* shop routes */}
           <Route path="/shop/preview/:id" element={<ShopPreviewPage />} />
           <Route path="/shop-create" element={<ShopCreatePage />} />
@@ -157,6 +164,8 @@ const App = () => {
             }
           />
 
+
+
           <Route
             path="/seller-dashboard"
             element={
@@ -165,7 +174,7 @@ const App = () => {
               </SellerProtectedRoute>
             }
           />
-           <Route
+          <Route
             path="/dashboard-orders"
             element={
               <SellerProtectedRoute>
@@ -174,15 +183,14 @@ const App = () => {
             }
           />
 
-
-<Route
-          path="/order/:id"
-          element={
-            <SellerProtectedRoute>
-              <ShopOrderDetails />
-            </SellerProtectedRoute>
-          }
-        />
+          <Route
+            path="/order/:id"
+            element={
+              <SellerProtectedRoute>
+                <ShopOrderDetails />
+              </SellerProtectedRoute>
+            }
+          />
 
           <Route
             path="/dashboard-create-product"
@@ -233,6 +241,24 @@ const App = () => {
               </SellerProtectedRoute>
             }
           />
+
+<Route
+          path="/dashboard-refunds"
+          element={
+            <SellerProtectedRoute>
+              <ShopAllRefunds />
+            </SellerProtectedRoute>
+          }
+        />
+
+<Route
+          path="/settings"
+          element={
+            <SellerProtectedRoute>
+              <ShopSettingsPage />
+            </SellerProtectedRoute>
+          }
+        />
         </Routes>
         <ToastContainer
           position="bottom-center"
