@@ -77,7 +77,7 @@ function ProductDetails({ data, isLoading }) {
     }
   };
 
-  const totalReviewsLength =
+  const totalReviewsLength = 
     products &&
     products.reduce((acc, product) => acc + product.reviews.length, 0);
 

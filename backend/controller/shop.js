@@ -227,4 +227,71 @@ router.get(
   })
 );
 
+// update shop avatar
+router.put(
+  "/update-shop-avatar",
+  isSeller,
+  upload.single("image"),
+  catchAsyncError(async (req, res, next) => {
+    try {
+      const existsUser = await Shop.findById(req.seller._id);
+
+      console.log(existsUser.avatar);
+      const existAvatarPath = path.join(existsUser.avatar); // Use path.join to create an absolute path
+
+      if (fs.existsSync(existAvatarPath)) {
+        fs.unlinkSync(existAvatarPath);
+      }
+
+      const fileUrl = path.join( req.file.filename); // Use path.join for the new avatar path
+
+      const user = await Shop.findByIdAndUpdate(req.seller._id, {
+        avatar: fileUrl,
+      });
+
+      res.status(200).json({
+        success: true,
+        user,
+      });
+    } catch (error) {
+      return next(new ErrorHandler(error.message, 500));
+    }
+  })
+);
+
+
+//update shop/seller profile information
+router.put('/update-seller-info',isSeller,catchAsyncError(async(req,res,next)=>{
+  try {
+    const {name,description,address,phoneNumber,zipCode} = req.body;
+    const shop = await Shop.findOne(req.seller._id)
+    if(!shop){
+      return next(new ErrorHandler("shop doesn't exists", 400));
+    }
+    // const isPasswordValid = await shop.comparePassword(password);
+  
+    // if (!isPasswordValid) {
+    //   return next(
+    //     new ErrorHandler("Please provide the correct information", 400)
+    //   );
+    // }
+  
+    shop.name = name
+    shop.address = address
+    shop.phoneNumber = phoneNumber
+    shop.description = description
+    shop.zipCode = zipCode
+    await shop.save()
+  
+    res.status(201).json({
+      success:true,
+      shop
+    })
+  
+  
+  } catch (error) {
+    return next(new ErrorHandler(error.message,500))
+  }
+  }))
+
 module.exports = router;

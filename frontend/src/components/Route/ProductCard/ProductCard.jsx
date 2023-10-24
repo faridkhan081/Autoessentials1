@@ -18,7 +18,7 @@ import { addTocart } from "../../../redux/actions/cart";
 import { toast } from "react-toastify";
 import Ratings from "../../Products/Rating";
 
-function ProductCard({ data }) {
+function ProductCard({ data,isEvent }) {
   const [click, setClick] = useState(false);
   const [open, setOpen] = useState(false);
   const { wishlist } = useSelector((state) => state.wishlist);
@@ -64,7 +64,7 @@ function ProductCard({ data }) {
     
     >
   
-      <Link to={`/product/${data._id}`}>
+  <Link to={`${isEvent === true ? `/product/${data._id}?isEvent=true` : `/product/${data._id}`}`}>
       <div className="w-full flex justify-center" >
         <img
         

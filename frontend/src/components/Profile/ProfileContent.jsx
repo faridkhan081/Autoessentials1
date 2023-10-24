@@ -60,9 +60,9 @@ function ProfileContent({ active, setActive }) {
         withCredentials: true,
       })
       .then((response) => {
-        //  dispatch(loadUser());
-        //  toast.success("avatar updated successfully!");
-        window.location.reload();
+         dispatch(loadUser());
+         toast.success("avatar updated successfully!");
+        // window.location.reload();
       })
       .catch((error) => {
         toast.error(error);

@@ -19,7 +19,7 @@ import { Link } from "react-router-dom";
 
 const DashboardSideBar = ({ active }) => {
   return (
-    <div className=" w-full h-[90vh] bg-white shadow-sm  sticky top-0 left-0 z-10">
+    <div className=" w-full min-h-[90vh] bg-white shadow-sm  sticky top-0 left-0 z-10">
       {/* single item */}
       <div className="ml-2 w-full flex items-center p-4">
         <Link to="/seller-dashboard" className="w-full flex items-center">

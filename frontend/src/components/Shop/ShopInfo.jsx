@@ -13,6 +13,24 @@ const ShopInfo = ({ isOwner }) => {
   const [isLoading, setIsLoading] = useState(false);
   const { id } = useParams();
 
+
+  const totalReviewsLength =
+  products &&
+  products.reduce((acc, product) => acc + product.reviews.length, 0);
+
+const totalRatings =
+  products &&
+  products.reduce(
+    (acc, product) =>
+      acc + product.reviews.reduce((sum, review) => sum + review.rating, 0),
+    0
+  );
+
+const avg = totalRatings / totalReviewsLength || 0;
+
+const averageRating = avg.toFixed(2);
+
+
   const logoutHandler = async () => {
     axios.get(`${server}/shop/logout`, {
       withCredentials: true,
@@ -33,6 +51,8 @@ const ShopInfo = ({ isOwner }) => {
         console.log(error);
         setIsLoading(false);
       });
+
+      window.scrollTo(0,0)
   }, []);
 
   return (
@@ -68,7 +88,8 @@ const ShopInfo = ({ isOwner }) => {
           </div>
           <div className="p-3">
             <h5 className="font-[600]">Shop Ratings</h5>
-            <h4 className="text-[#000000b0]">5/5</h4>
+            <h4 className="text-[#000000b0]">({averageRating}
+                            /5) Ratings</h4>
           </div>
           <div className="p-3">
             <h5 className="font-[600]">Joined On</h5>
