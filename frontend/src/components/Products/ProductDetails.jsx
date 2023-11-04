@@ -12,7 +12,7 @@ import {
 
 import Ratings from "../Products/Rating";
 
-import { backend_url } from "../../server";
+import { backend_url,server } from "../../server";
 
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProductsShop } from "../../redux/actions/product";
@@ -22,6 +22,7 @@ import {
   removeFromWishlist,
 } from "../../redux/actions/wishlist";
 import { addTocart } from "../../redux/actions/cart";
+import axios from "axios";
 
 function ProductDetails({ data, isLoading }) {
   const { wishlist } = useSelector((state) => state.wishlist);
@@ -93,8 +94,22 @@ function ProductDetails({ data, isLoading }) {
 
   const averageRating = avg.toFixed(2);
 
-  const handleMessageSubmit = () => {
-    navigate("/inbox?conversation=507ebjver884ehfdjeriv84");
+  const handleMessageSubmit = async () => {
+   if(isAuthenticated){
+    const groupTitle = data._id + user._id;
+    const userId = user._id;
+    const sellerId = data.shop._id
+   await axios.post(`${server}/conversation/create-new-conversation`,{
+    groupTitle,userId, sellerId
+   }).then((res)=>{
+    navigate(`/conversation/${res.data.conversation._id}`)
+   }).catch((error)=>{
+    toast.error(error.response.data.message)
+   })
+
+   }else{
+    toast.error("Please login to create a conversation")
+   }
   };
   return (
     <>
@@ -218,7 +233,7 @@ function ProductDetails({ data, isLoading }) {
                             </h3>
                           </Link>
                           <h5 className="pb-3 text-[15px]">
-                            {/* ({data.shop.ratings}) Rating */}({averageRating}
+                         ({averageRating}
                             /5) Ratings
                           </h5>
                         </div>

@@ -18,43 +18,24 @@ function ProductDetailsPage() {
   const eventData = searchParams.get("isEvent");
   const { allEvents } = useSelector((state) => state.events);
 
-
   useEffect(() => {
-   
-      if (eventData !== null) {
-          
-            const data = allEvents && allEvents.find((i) => i._id === id);
-            setData(data);
-          
-      
-      }else {
-            const data = allProducts && allProducts.find((i) => i._id === id);
-            setData(data);
-          
-      }
-  
+    if (eventData !== null) {
+      const data = allEvents && allEvents.find((i) => i._id === id);
+      setData(data);
+    } else {
+      const data = allProducts && allProducts.find((i) => i._id === id);
+      setData(data);
+    }
+
     window.scrollTo(0, 0);
-  }, [data, allProducts, id,allEvents]);
-
-
-
-
-
+  }, [data, allProducts, id, allEvents]);
 
   return (
     <Layout title={"Product Details..."}>
-  
       <Header />
       <ProductDetails data={data} />
-        {
-          !eventData && (
-            <>
-            {data && <SuggestedProduct data={data} />}
-            </>
-          )
-        }
+      {!eventData && <>{data && <SuggestedProduct data={data} />}</>}
       <Footer />
-   
     </Layout>
   );
 }

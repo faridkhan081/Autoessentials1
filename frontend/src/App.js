@@ -54,6 +54,7 @@ import {
   ShopAllRefunds,
   ShopSettingsPage,
   ShopWithDrawMoneyPage,
+  ShopInboxPage 
 } from "./ShopRoutes.js";
 import SellerProtectedRoute from "./routes/SellerProtectedRoute";
 import { getAllProducts, getSingleProduct } from "./redux/actions/product";
@@ -254,6 +255,14 @@ const App = () => {
             element={
               <SellerProtectedRoute>
                 <ShopWithDrawMoneyPage />
+              </SellerProtectedRoute>
+            }
+          />
+           <Route
+            path="/dashboard-messages"
+            element={
+              <SellerProtectedRoute>
+                <ShopInboxPage />
               </SellerProtectedRoute>
             }
           />

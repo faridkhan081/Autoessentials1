@@ -45,8 +45,15 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
  
   const order = require("./controller/order");
 
+  const conversation = require("./controller/conversation");
+  const message = require("./controller/message");
 
-  
+
+
+
+
+  app.use("/api/v2/conversation", conversation);
+  app.use("/api/v2/message", message);
   app.use('/api/v2/user', user);
   app.use("/api/v2/shop", shop);
   app.use("/api/v2/product", product);
@@ -54,6 +61,7 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
   app.use("/api/v2/coupon", coupon);
   app.use("/api/v2/payment", payment);
   app.use("/api/v2/order", order);
+
 
   // its for Error Handling
   app.use(ErrorHandler);
