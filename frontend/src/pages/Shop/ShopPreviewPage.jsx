@@ -4,19 +4,45 @@ import ShopInfo from "../../components/Shop/ShopInfo";
 import ShopProfileData from "../../components/Shop/ShopProfileData";
 import { RxAvatar } from 'react-icons/rx';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { backend_url } from "../../server";
 import axios from 'axios';
 import { server } from "../../server";
 import { Book, Mail } from 'lucide-react';
 import Layout from '../../components/Layout/Layout';
+import { toast } from 'react-toastify';
 
 const ShopPreviewPage = () => {
 
   const [data, setData] = useState({});
   const { products } = useSelector((state) => state.products);
+  const { user,isAuthenticated } = useSelector((state) => state.user);
   const [isLoading, setIsLoading] = useState(false);
   const { id } = useParams();
+
+const navigate = useNavigate()
+
+  const handleMessageSubmit = async () => {
+    if (isAuthenticated) {
+      const groupTitle = data._id + user._id;
+      const userId = user._id;
+      const sellerId = data._id;
+      await axios
+        .post(`${server}/conversation/create-new-conversation`, {
+          groupTitle,
+          userId,
+          sellerId,
+        })
+        .then((res) => {
+          navigate(`/inbox?${res.data.conversation._id}`);
+        })
+        .catch((error) => {
+          toast.error(error);
+        });
+    } else {
+      toast.error("Please login to create a conversation");
+    }
+  };
 
   useEffect(() => {
     setIsLoading(true);
@@ -36,16 +62,7 @@ const ShopPreviewPage = () => {
     window.scrollTo(0,0);
   },[])
   return (
-    // <div className={`${styles.section} bg-[#f5f5f5]`}>
-    //      <div className="w-full 800px:flex py-10 justify-between">
-    //       <div className="800px:w-[25%] bg-[#fff] rounded-[4px] shadow-sm 800px:overflow-y-scroll 800px:h-[90vh] 800px:sticky top-10 left-0 z-10">
-    //         <ShopInfo isOwner={false} />
-    //       </div>
-    //       <div className="800px:w-[72%] mt-5 800px:mt-['unset'] rounded-[4px]">
-    //         <ShopProfileData isOwner={false} />
-    //       </div>
-    //      </div>
-    // </div>
+ 
 
     <Layout title={'Shop Preview'}>
    <div className="mx-auto max-w-screen-xl">
@@ -76,7 +93,7 @@ const ShopPreviewPage = () => {
 
     </div> 
     <div className>
-      <button className={`${styles.button} flex whitespace-nowrap !rounded bg-green-600 text-white transition hover:translate-y-1`}>
+      <button className={`${styles.button} flex whitespace-nowrap !rounded bg-green-600 text-white transition hover:translate-y-1`}   onClick={handleMessageSubmit}>
         <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 inline h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
         </svg>

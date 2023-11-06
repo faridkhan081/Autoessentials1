@@ -21,6 +21,7 @@ import ContactPage from "./../pages/ContactPage";
 import OrderSuccessPage from "./../pages/OrderSuccessPage.jsx";
 import OrderDetailsPage from "./../pages/OrderDetailsPage.jsx";
 import TrackOrderPage from "./../pages/TrackOrderPage.jsx";
+import UserInbox from "./../pages/UserInbox.jsx";
 export {
   LoginPage,
   SignupPage,
@@ -43,4 +44,5 @@ export {
   OrderSuccessPage,
   OrderDetailsPage,
   TrackOrderPage,
+  UserInbox
 };

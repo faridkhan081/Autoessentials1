@@ -49,7 +49,7 @@ const ProductDetailsCard = ({ setOpen, data }) => {
 
   const averageRating = avg.toFixed(2);
 
-  const handleMessageSubmit = () => {};
+
   const decrementCount = () => {
     setCount(count === 1 ? 1 : count - 1);
   };
@@ -127,14 +127,7 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                   </Link>
                 </div>
 
-                <div
-                  className={`${styles.button} bg-rose-500 mt-4 !rounded-[4px] h-11`}
-                  onClick={handleMessageSubmit}
-                >
-                  <span className="text-[#fff] flex items-center">
-                    Send Message <AiOutlineMessage className="ml-1" />
-                  </span>
-                </div>
+            
                 <h5 className="text-[16px] text-[red] mt-5">
                   {" "}
                   {data?.sold_out} sold

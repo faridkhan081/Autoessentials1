@@ -216,30 +216,6 @@ try {
 }))
 
 
-//update user avatar
-
-// router.put('/update-avatar',isAuthenticated,upload.single("image"), catchAsyncError(async(req,res,next)=>{
-//   try {
-//     const existsUser = await User.findById(req.user.id);
-//     if(!existsUser){
-//       return next(new ErrorHandler("User does not exists",500))
-//     }
-
-//     const existAvatarPath = `uploads/${existsUser.avatar}`;
-//     fs.unlinkSync(existAvatarPath)
-//     const fileUrl = path.join(req.file.filename)
-//     const user = await User.findByIdAndUpdate(req.user.id,{avatar:fileUrl})
-
-//     res.status(200).json({
-//       success:true,
-//       user
-//     })
-    
-//   } catch (error) {
-//     return next(new ErrorHandler(error.message,500))
-//   }
-// }))
-
 // update user avatar
 router.put(
   "/update-avatar",
@@ -375,6 +351,23 @@ router.put(
   })
 );
 
+
+// find user infoormation with the userId
+router.get(
+  "/user-info/:id",
+  catchAsyncError(async (req, res, next) => {
+    try {
+      const user = await User.findById(req.params.id);
+
+      res.status(201).json({
+        success: true,
+        user,
+      });
+    } catch (error) {
+      return next(new ErrorHandler(error.message, 500));
+    }
+  })
+);
 
 
 

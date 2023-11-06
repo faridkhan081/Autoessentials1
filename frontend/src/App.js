@@ -28,6 +28,7 @@ import {
   OrderSuccessPage,
   OrderDetailsPage,
   TrackOrderPage,
+  UserInbox,
 } from "./routes/Routes.js";
 
 //shop imports
@@ -145,6 +146,15 @@ const App = () => {
               </ProtectedRoute>
             }
           />
+
+<Route
+          path="/inbox"
+          element={
+            <ProtectedRoute>
+              <UserInbox />
+            </ProtectedRoute>
+          }
+        />
           <Route
             path="/user/track/order/:id"
             element={
