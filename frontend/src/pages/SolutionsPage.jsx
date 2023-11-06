@@ -14,6 +14,7 @@ const SolutionsPage = () => {
 
   },[])
   return (
+    
     <Layout title={"Tools"}>
       <Header activeHeading={6} />
       <HeadBanner
@@ -74,21 +75,21 @@ const Solution = () => {
   }, [response, file]);
 
   return (
-    <div className={`${styles.section} my-8 `}>
+    <div className={`${styles.section} my-8`}>
       <h1 className="font-medium text-[30px] text-[#231e1e]">
         Tire Inspection Tool
       </h1>
 
 
-      <fieldset className="w-full space-y-1 dark:text-gray-100 flex justify-center mt-[50px] mb-[50px]">
+      <fieldset className=" w-full space-y-1 dark:text-gray-100 flex justify-center mt-[50px] mb-[50px]">
 	
-	<div className="border-2 border-dashed rounded-md dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800 " >
+	<div className=" border-2 border-dashed rounded-md dark:border-gray-700 p-3 dark:text-gray-400 dark:bg-gray-800 " >
 		<input type="file" name="files" accept="image/"
             id="dropzone-file"
           
             onChange={handleFileChange} className="px-8 py-8" />
             
-            <button onClick={handleUpload} class="btnsol mr-3" style={{padding:'10px',height:'50px',}}>
+            <button onClick={handleUpload} class="400px:m-5 btnsol  " style={{padding:'10px',height:'40px',borderRadius:'none',lineHeight:'40px',display:'flex',alignItems:'center'}}>
             Inspect
           </button>
             

@@ -247,9 +247,8 @@ height: 5px !important;
 
 .btnsol {
   position: relative;
-  padding: 10px 22px;
-  border-radius: 6px;
-  border: none;
+  
+  
   color: #fff;
   cursor: pointer;
   background-color: #E11D48;
