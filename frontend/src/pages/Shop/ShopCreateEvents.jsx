@@ -2,10 +2,11 @@ import React from 'react'
 import DashboardHeader from '../../components/Shop/Layout/DashboardHeader'
 import CreateEvent from "../../components/Shop/CreateEvent.jsx";
 import DashboardSideBar from '../../components/Shop/Layout/DashboardSideBar';
+import Layout from '../../components/Layout/Layout.jsx';
 
 const ShopCreateEvents = () => {
   return (
-    <div>
+    <Layout title={'Create Events'}>
         <DashboardHeader />
         <div className="flex items-center justify-between w-full">
       <div className="w-[80px] 800px:w-[330px]">
@@ -15,7 +16,7 @@ const ShopCreateEvents = () => {
         <CreateEvent />
       </div>
     </div>
-    </div>
+    </Layout>
   )
 }
 

@@ -9,6 +9,7 @@ import { backend_url } from "../../server";
 import axios from 'axios';
 import { server } from "../../server";
 import { Book, Mail } from 'lucide-react';
+import Layout from '../../components/Layout/Layout';
 
 const ShopPreviewPage = () => {
 
@@ -46,7 +47,7 @@ const ShopPreviewPage = () => {
     //      </div>
     // </div>
 
-    <>
+    <Layout title={'Shop Preview'}>
    <div className="mx-auto max-w-screen-xl">
   <div className="relative h-56 rounded-b-lg bg-cover bg-center bg-no-repeat shadow-lg" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1472851294608-062f824d29cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80)'}}>
     <div className="px-4 pt-8 pb-10">
@@ -95,7 +96,7 @@ const ShopPreviewPage = () => {
 </div>
 
 
-    </>
+    </Layout>
   )
 }
 

@@ -2,10 +2,11 @@ import React from 'react'
 import DashboardHeader from '../../components/Shop/Layout/DashboardHeader'
 import DashboardSideBar from '../../components/Shop/Layout/DashboardSideBar'
 import AllCoupons from "../../components/Shop/AllCoupons.jsx";
+import Layout from '../../components/Layout/Layout.jsx';
 
 function ShopAllCoupons() {
   return (
-    <div>
+    <Layout title={'Coupon Code'}>
     <DashboardHeader />
     <div className="flex justify-between w-full">
         <div className="w-[80px] 800px:w-[330px]">
@@ -15,7 +16,7 @@ function ShopAllCoupons() {
             <AllCoupons />
         </div>
       </div>
-</div>
+</Layout>
   )
 }
 

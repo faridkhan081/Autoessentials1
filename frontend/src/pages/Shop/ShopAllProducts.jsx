@@ -2,10 +2,11 @@ import React from 'react'
 import DashboardHeader from '../../components/Shop/Layout/DashboardHeader'
 import DashboardSideBar from '../../components/Shop/Layout/DashboardSideBar'
 import AllProducts from "../../components/Shop/AllProducts.jsx";
+import Layout from '../../components/Layout/Layout.jsx';
 
 const ShopAllProducts = () => {
   return (
-    <div>
+    <Layout title={'All Products'}>
         <DashboardHeader />
         <div className="flex justify-between w-full">
             <div className="w-[80px] 800px:w-[330px]">
@@ -15,7 +16,7 @@ const ShopAllProducts = () => {
                 <AllProducts />
             </div>
           </div>
-    </div>
+    </Layout>
   )
 }
 
