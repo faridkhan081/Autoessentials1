@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllSellers } from "../../../redux/actions/sellers";
+import { getAllUsers } from "../../../redux/actions/user";
 
 
 const Hero = () => {
+  const dispatch = useDispatch();
+  const { sellers } = useSelector((state) => state.seller);
+  const { users } = useSelector((state) => state.user)
+
+  
+  useEffect(() => {
+    dispatch(getAllUsers());
+    dispatch(getAllSellers());
+  }, []);
+  
+
   return (
 
     <section
@@ -101,7 +114,7 @@ const Hero = () => {
             Active Sellers
           </dt>
 
-          <dd class="text-[35px] font-extrabold text-rose-600 ">24</dd>
+          <dd class="text-[35px] font-extrabold text-rose-600 ">{sellers ? sellers.length: '...'}</dd>
         </div>
 
         <div
@@ -111,7 +124,7 @@ const Hero = () => {
             Total Users
           </dt>
 
-          <dd class="text-[35px] font-extrabold text-rose-600 ">86</dd>
+          <dd class="text-[35px] font-extrabold text-rose-600 ">{users ? users.length : '...'}</dd>
         </div>
       </dl>
     </div>

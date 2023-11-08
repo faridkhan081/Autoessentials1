@@ -1,127 +1,3 @@
-// import React, { useEffect, useState } from "react";
-// import Header from "../components/Layout/Header";
-// import styles from "../styles/styles";
-// import { useSearchParams } from "react-router-dom";
-// import { productData } from "../static/data";
-// import ProductCard from "../components/Route/ProductCard/ProductCard";
-// import HeadBanner from "../components/Banner/HeadBanner";
-// import { useSelector } from "react-redux";
-// import Layout from "../components/Layout/Layout";
-// import product from '../Assets/images/productsHeader.jpg';
-
-// function ProductsPage() {
-//   const [searchParams] = useSearchParams();
-//   const categoryData = searchParams.get("category");
-//   const { allProducts } = useSelector((state) => state.products);
-//   const [sortBy, setSortBy] = useState("default"); // default sorting option
-//   const [data, setData] = useState(allProducts);
-
-//   useEffect(() => {
-//     if (categoryData !== null) {
-//       const filteredData = allProducts.filter((i) => i.category === categoryData);
-//       setData(filteredData);
-//     }
-//   }, [allProducts, categoryData]);
-
-//   const handleSortChange = (event) => {
-//     const value = event.target.value;
-//     setSortBy(value);
-//     let sortedData = [...allProducts];
-
-//     switch (value) {
-//       case "bestSelling":
-//         sortedData = sortedData.sort((a, b) => b.sold_out - a.sold_out);
-//         break;
-//       case "highPrice":
-//         sortedData = sortedData.sort((a, b) => b.originalPrice - a.originalPrice);
-//         break;
-//       case "lowPrice":
-//         sortedData = sortedData.sort((a, b) => a.originalPrice - b.originalPrice);
-//         break;
-//       default:
-//         break;
-//     }
-
-//     setData(sortedData);
-//   };
-
-//   const clearFilters = () => {
-//     setSortBy("default"); // Reset the sorting option to the default
-//     setData(allProducts); // Reset the data to the original condition
-//   };
-
-//   return (
-//     <Layout title={"All Products"}>
-//       <Header activeHeading={3} />
-//       <HeadBanner title="Shop Your Favorite Products" list="products" imageUrl={product} />
-//       <br />
-//       <br />
-//       <div className="min-h-screen flex flex-col md:flex-row">
-//         {/* Sidebar */}
-//         <nav className="ml-5 mr-5 md:w-56 xl:w-60 bg-white md:h-screen h-[100px] rounded mb-2">
-//           <div className="flex md:block rounded border-black">
-//             <div className="flex p-5 items-center gap-3">
-//               <input
-//                 type="radio"
-//                 name="sortOption"
-//                 id="bestSelling"
-//                 value="bestSelling"
-//                 checked={sortBy === "bestSelling"}
-//                 onChange={handleSortChange}
-//               />
-//               <label htmlFor="bestSelling">Best Selling</label>
-//             </div>
-//             <div className="flex p-5 items-center gap-3">
-//               <input
-//                 type="radio"
-//                 name="sortOption"
-//                 id="highPrice"
-//                 value="highPrice"
-//                 checked={sortBy === "highPrice"}
-//                 onChange={handleSortChange}
-//               />
-//               <label htmlFor="highPrice">Price high to low</label>
-//             </div>
-//             <div className="flex p-5 items-center gap-3">
-//               <input
-//                 type="radio"
-//                 name="sortOption"
-//                 id="lowPrice"
-//                 value="lowPrice"
-//                 checked={sortBy === "lowPrice"}
-//                 onChange={handleSortChange}
-//               />
-//               <label htmlFor="lowPrice">Price low to high</label>
-//             </div>
-//             <div className=" flex p-5 items-center gap-3">
-//               <button onClick={clearFilters} className="cursor-pointer bg-black text-white p-2 rounded hover:bg-rose-600">
-//                 Clear Filters
-//               </button>
-//             </div>
-//           </div>
-//         </nav>
-//         {/* Main content */}
-//         <main className="flex-1 min-w-0 overflow-auto">
-//           {/* Product cards */}
-//           <div className={`${styles.section}`}>
-//             <div className="grid grid-cols-1 gap-[20px] md:grid-cols-2 md:gap-[25px] lg:grid-cols-4 lg:gap-[25px] xl:grid-cols-4 xl:gap-[30px] mb-12">
-//               {data && data.map((i, index) => <ProductCard data={i} key={index} />)}
-//             </div>
-//             {data && data.length === 0 ? (
-//               <h1 className="text-center w-full pb-[100px] text-[20px]">
-//                 No products Found!
-//               </h1>
-//             ) : null}
-//           </div>
-//         </main>
-//       </div>
-//     </Layout>
-//   );
-// }
-
-// export default ProductsPage;
-
-
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
@@ -138,6 +14,8 @@ const ProductsPage = () => {
   const [searchParams] = useSearchParams();
   const categoryData = searchParams.get("category");
   const { allProducts } = useSelector((state) => state.products);
+  const [displayCount, setDisplayCount] = useState(5); // Control number of products displayed
+  const [loadIncrement, setLoadIncrement] = useState(5); // Increment products on Load More
   const [data, setData] = useState([]);
   const [sortCriteria, setSortCriteria] = useState('');
 
@@ -145,12 +23,10 @@ const ProductsPage = () => {
     if (categoryData === null) {
       setData(allProducts);
     } else {
-      const filteredData =allProducts && allProducts.filter((i) => i.category === categoryData);
+      const filteredData = allProducts && allProducts.filter((i) => i.category === categoryData);
       setData(filteredData);
     }
     window.scrollTo(0, 0);
-
-   
   }, [allProducts, categoryData]);
 
   const handleSortChange = (selectedValue) => {
@@ -162,19 +38,20 @@ const ProductsPage = () => {
       // Sort by best selling (sold_out in descending order)
       return data.slice().sort((a, b) => b.sold_out - a.sold_out);
     } else if (criteria === 'lowestprice') {
-      return data.slice().sort((a,b)=> a.originalPrice - b.originalPrice);
-      
+      return data.slice().sort((a, b) => a.originalPrice - b.originalPrice);
     } else if (criteria === 'highestprice') {
-       return data.slice().sort((a,b)=>b.originalPrice - a.originalPrice);
-     
-    }
-    else if(criteria === 'clearfilter'){
-    return data
+      return data.slice().sort((a, b) => b.originalPrice - a.originalPrice);
+    } else if (criteria === 'clearfilter') {
+      return data;
     }
     return data; // Return unsorted data if no valid sorting criteria is selected
   };
 
   const sortedData = sortProducts(sortCriteria);
+
+  const loadMore = () => {
+    setDisplayCount(displayCount + loadIncrement); // Increase the number of displayed products
+  };
 
   return (
     <Layout title={"Products"}>
@@ -182,17 +59,37 @@ const ProductsPage = () => {
         <Header activeHeading={3} />
         <HeadBanner title="All Products" list='Products' imageUrl={product} />
         <br />
-      
         <SortBy onSortChange={handleSortChange} />
         <div className={`${styles.section}`}>
           <div className="grid grid-cols-1 gap-[20px] md:grid-cols-2 md:gap-[25px] lg:grid-cols-4 lg:gap-[25px] xl:grid-cols-5 xl:gap-[30px] mb-12">
-            {sortedData && sortedData.map((i, index) => <ProductCard data={i} key={index} />)}
+            {sortedData && sortedData.slice(0, displayCount).map((i, index) => (
+              <ProductCard data={i} key={index} />
+            ))}
           </div>
           {sortedData && sortedData.length === 0 ? (
             <h1 className="text-center w-full pb-[100px] text-[20px]">
               No products Found!
             </h1>
           ) : null}
+          {displayCount < sortedData.length && ( // Show Load More button if there are more products to display
+            <div className="flex justify-center mb-[50px]">
+              <button className="butto" type="button" onClick={loadMore}>
+                <span className="butto__text">Load More</span>
+                <span className="butto__icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={48}
+                    viewBox="0 0 48 48"
+                    height={48}
+                    className="svg"
+                  >
+                    <path d="M35.3 12.7c-2.89-2.9-6.88-4.7-11.3-4.7-8.84 0-15.98 7.16-15.98 16s7.14 16 15.98 16c7.45 0 13.69-5.1 15.46-12h-4.16c-1.65 4.66-6.07 8-11.3 8-6.63 0-12-5.37-12-12s5.37-12 12-12c3.31 0 6.28 1.38 8.45 3.55l-6.45 6.45h14v-14l-4.7 4.7z" />
+                    <path fill="none" d="M0 0h48v48h-48z" />
+                  </svg>
+                </span>
+              </button>
+            </div>
+          )}
         </div>
         <Footer />
       </div>

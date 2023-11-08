@@ -27,6 +27,9 @@ const UpdateProduct = () => {
   const [name, setName] = useState(singleProduct && singleProduct.name);
   const [description, setDescription] = useState(
     singleProduct && singleProduct.description
+  ); 
+  const [details, setDetails] = useState(
+    singleProduct && singleProduct.details
   );
   const [category, setCategory] = useState(
     singleProduct && singleProduct.category ? singleProduct.category : ""
@@ -75,6 +78,7 @@ const UpdateProduct = () => {
           originalPrice,
           discountPrice,
           stock,
+          details
         },
         { withCredentials: true }
       )
@@ -123,6 +127,23 @@ const UpdateProduct = () => {
             placeholder={singleProduct?.description}
             className="mt-2 appearance-none block w-full pt-2 px-3 border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setDescription(e.target.value)}
+          ></textarea>
+        </div>
+        <br />
+        <div>
+          <label className="pb-2">
+            Details <span className="text-red-500">*</span>
+          </label>
+          <textarea
+            cols="30"
+            required
+            rows="8"
+            type="text"
+            name="details"
+            value={details}
+            placeholder={singleProduct?.details}
+            className="mt-2 appearance-none block w-full pt-2 px-3 border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+            onChange={(e) => setDetails(e.target.value)}
           ></textarea>
         </div>
         <br />

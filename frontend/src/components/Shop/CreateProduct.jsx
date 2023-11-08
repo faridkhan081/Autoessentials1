@@ -16,6 +16,7 @@ const CreateProduct = () => {
   const [images, setImages] = useState([]);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+  const [details, setDetails] = useState("");
   const [category, setCategory] = useState("");
   const [tags, setTags] = useState("");
   const [originalPrice, setOriginalPrice] = useState();
@@ -63,6 +64,7 @@ const CreateProduct = () => {
 
     newForm.append("name", name);
     newForm.append("description", description);
+    newForm.append("details", details);
     newForm.append("category", category);
     newForm.append("tags", tags);
     newForm.append("originalPrice", originalPrice);
@@ -106,6 +108,23 @@ const CreateProduct = () => {
             className="mt-2 appearance-none block w-full pt-2 px-3 border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Enter your product description..."
+          ></textarea>
+        </div>
+        <br />
+        <div>
+          <label className="pb-2">
+            Details <span className="text-red-500">*</span>
+          </label>
+          <textarea
+            cols="30"
+            required
+            rows="8"
+            type="text"
+            name="description"
+            value={details}
+            className="mt-2 appearance-none block w-full pt-2 px-3 border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+            onChange={(e) => setDetails(e.target.value)}
+            placeholder="Enter your product details..."
           ></textarea>
         </div>
         <br />

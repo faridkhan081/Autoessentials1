@@ -5,7 +5,7 @@ const fs = require("fs");
 const jwt = require("jsonwebtoken");
 const sendMail = require("../utils/sendMail");
 
-const { isAuthenticated, isSeller } = require("../middleware/auth");
+const { isAuthenticated, isSeller,isAdmin } = require("../middleware/auth");
 const Shop = require("../model/shop");
 const { upload } = require("../multer");
 const catchAsyncError = require("../middleware/catchAsyncError");
@@ -294,4 +294,27 @@ router.put('/update-seller-info',isSeller,catchAsyncError(async(req,res,next)=>{
   }
   }))
 
+
+
+
+  // all sellers --- for users
+  router.get(
+    "/all-sellers",
+  isAuthenticated,
+    
+    catchAsyncError(async (req, res, next) => {
+      try {
+        const sellers = await Shop.find().sort({
+          createdAt: -1,
+        });
+        res.status(201).json({
+          success: true,
+          sellers,
+        });
+      } catch (error) {
+        return next(new ErrorHandler(error.message, 500));
+      }
+    })
+  );
+  
 module.exports = router;

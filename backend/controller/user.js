@@ -9,7 +9,8 @@ const fs = require("fs");
 const jwt = require("jsonwebtoken");
 const sendMail = require("../utils/sendMail");
 const sendToken = require("../utils/jwtToken");
-const { isAuthenticated } = require("../middleware/auth");
+
+const { isAuthenticated, isAdmin } = require("../middleware/auth");
 
 
 router.post("/create-user", upload.single("file"), async (req, res, next) => {
@@ -370,6 +371,27 @@ router.get(
 );
 
 
+
+// all users --- for admin
+router.get(
+  "/all-users",
+  isAuthenticated,
+  
+  catchAsyncError(async (req, res, next) => {
+    try {
+      const users = await User.find().sort({
+        createdAt: -1,
+      });
+      res.status(201).json({
+        success: true,
+        users,
+      });
+   
+    } catch (error) {
+      return next(new ErrorHandler(error.message, 500));
+    }
+  })
+);
 
 
 

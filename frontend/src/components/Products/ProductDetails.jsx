@@ -336,7 +336,7 @@ const ProductDetailsInfo = ({ data, products, id, totalReviewsLength,
       {active === 1 ? (
         <>
           <p className="py-2 leading-8 pb-10 whitespace-pre-line">
-            {data.description}
+            {data.details}
           </p>
         </>
       ) : null}

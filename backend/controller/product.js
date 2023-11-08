@@ -53,6 +53,7 @@ catchAsyncError(async(req,res,next)=>{
       tags,
       originalPrice,
       discountPrice,
+      details,
       stock} = req.body;
      
       
@@ -70,6 +71,7 @@ catchAsyncError(async(req,res,next)=>{
     product.originalPrice = originalPrice;
     product.discountPrice = discountPrice;
     product.stock = stock;
+    product.details = details;
     
 
     await product.save()

@@ -418,5 +418,62 @@ height: 5px !important;
 
 
 
+.butto{
+  position: relative;
+  width: 160px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: #E11D48;
+  overflow: hidden;
+}
 
+.butto, .butto__icon, .butto__text {
+  transition: all 0.3s;
+}
+
+.butto .butto__text {
+  transform: translateX(30px);
+  color: #fff;
+  font-weight: 600;
+}
+
+.butto .butto__icon {
+  position: absolute;
+  transform: translateX(122px);
+  height: 100%;
+  width: 39px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.butto .svg {
+  width: 20px;
+  fill: #fff;
+}
+
+.butto:hover {
+  background: #E4355B;
+}
+
+.butto:hover .butto__text {
+  color: transparent;
+}
+
+.butto:hover .butto__icon {
+  width: 160px;
+  transform: translateX(0);
+}
+
+.butto:active .butto__icon {
+  background-color: #E11D48;
+}
+
+.butto:active {
+  border: 1px solid #E11D48;
+}
 
