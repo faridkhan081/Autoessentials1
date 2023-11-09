@@ -26,17 +26,22 @@ const Categories = () => {
               };
               return (
                 <div
-                  className="w-full h-[100px] flex flex-col items-center justify-between cursor-pointer overflow-hidden hover:shadow-sm"
+                  className="relative  w-full bg-white rounded-lg overflow-hidden hover:shadow flex flex-col justify-center items-center"
+                style={{minHeight:'160px'}}
                   key={i.id}
                   onClick={() => handleSubmit(i)}
                 >
                  
-                  <img
+                
+                <div className="w-16 h-16 rounded-lg" >
+                <img
                     src={i.image_Url}
-                    className="w-[80px] object-cover"
+                    className="object-cover"
                     alt=""
                   />
-                   <h5 className={`text-[18px] leading-[1.3] ` }>{i.title}</h5>
+                </div>
+
+                   <h5 className="mt-2 text-gray-800 text-sm font-semibold line-clamp-1">{i.title}</h5>
                 </div>
               );
             })}

@@ -23,6 +23,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { server } from "../../server";
 import { RxAvatar } from "react-icons/rx";
+import logo from '../../Assets/images/logo1.png'
 
 const Header = ({ activeHeading }) => {
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -98,27 +99,9 @@ const {id} = useParams()
         <div className="hidden 800px:h-[50px] 800px:my-[20px] 800px:flex items-center justify-between ">
           <div>
             <Link to="/">
-              <div style={{ display: "flex" }}>
-                <h5
-                  className="text-xl primary-dark !rounded-sm "
-                  style={{
-                    padding: "5px",
-                    margin: "8px",
-                    color: "white",
-
-                    fontWeight: "lighter",
-                  }}
-                >
-                  {" "}
-                  Auto{" "}
-                </h5>
-                <h3
-                  className="text-xl"
-                  style={{ color: "#000", marginTop: "13px" }}
-                >
-                  Essentials
-                </h3>
-              </div>
+            <img src={logo} alt="" 
+              className="h-[200px]"
+            />
             </Link>
           </div>
           {/* search box */}

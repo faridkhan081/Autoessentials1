@@ -21,7 +21,7 @@ function ProductDetailsPage() {
   useEffect(() => {
     if (eventData !== null) {
       const data = allEvents && allEvents.find((i) => i._id === id);
-      setData(data);
+      setData(data); 
     } else {
       const data = allProducts && allProducts.find((i) => i._id === id);
       setData(data);

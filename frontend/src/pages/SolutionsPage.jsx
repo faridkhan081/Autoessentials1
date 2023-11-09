@@ -7,21 +7,16 @@ import "../App.css";
 import Layout from "../components/Layout/Layout";
 import HeadBanner from "../components/Banner/HeadBanner";
 import product from "../Assets/images/tire2.jpeg";
+import RecommendedProduct from "./../components/Products/RecommendedProduct.jsx";
 
 const SolutionsPage = () => {
-  useEffect(()=>{
+  useEffect(() => {
     window.scrollTo(0, 0);
-
-  },[])
+  }, []);
   return (
-    
     <Layout title={"Tools"}>
       <Header activeHeading={6} />
-      <HeadBanner
-        title="Inspect Your Tire"
-        list="tools"
-        imageUrl={product}
-      />
+      <HeadBanner title="Inspect Your Tire" list="tools" imageUrl={product} />
       <Solution />
       <Footer />
     </Layout>
@@ -33,6 +28,8 @@ const Solution = () => {
   const [response, setResponse] = useState(null);
   const [imageUrl, setImageUrl] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [predictedClasss, setPredictedClasss] = useState(null); // New state for predicted class
+
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
   };
@@ -64,15 +61,22 @@ const Solution = () => {
         console.error(error.message);
       });
   };
-
   useEffect(() => {
     if (response) {
-      // Create an object URL for the image file
       const imageBlob = new Blob([file], { type: "image/*" });
       const imageUrl = URL.createObjectURL(imageBlob);
       setImageUrl(imageUrl);
+
+      if (response.predicted_classes) {
+        setPredictedClasss(response.predicted_classes[0] == 1 ? "Defective" : "Normal");
+      }
+
+      // Log the predicted class to the console
+      if (predictedClasss) {
+        console.log("Predicted Class:", predictedClasss);
+      }
     }
-  }, [response, file]);
+  }, [response, file, predictedClasss]);
 
   return (
     <div className={`${styles.section} my-8`}>
@@ -80,25 +84,33 @@ const Solution = () => {
         Tire Inspection Tool
       </h1>
 
-
       <fieldset className=" w-full space-y-1 dark:text-gray-100 flex justify-center mt-[50px] mb-[50px]">
-	
-	<div className=" border-2 border-dashed rounded-md dark:border-gray-700 p-3 dark:text-gray-400 dark:bg-gray-800 " >
-		<input type="file" name="files" accept="image/"
+        <div className=" border-2 border-dashed rounded-md dark:border-gray-700 p-3 dark:text-gray-400 dark:bg-gray-800 ">
+          <input
+            type="file"
+            name="files"
+            accept="image/"
             id="dropzone-file"
-          
-            onChange={handleFileChange} className="px-8 py-8" />
-            
-            <button onClick={handleUpload} class="400px:m-5 btnsol  " style={{padding:'10px',height:'40px',borderRadius:'none',lineHeight:'40px',display:'flex',alignItems:'center'}}>
+            onChange={handleFileChange}
+            className="px-8 py-8"
+          />
+
+          <button
+            onClick={handleUpload}
+            class="400px:m-5 btnsol  "
+            style={{
+              padding: "10px",
+              height: "40px",
+              borderRadius: "none",
+              lineHeight: "40px",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
             Inspect
           </button>
-            
-	</div>
-
- 
- 
-</fieldset>
-
+        </div>
+      </fieldset>
 
       <div className="flex mt-[50px] gap-3 mb-[50px]">
         <h1 className="font-medium text-[30px] text-[#231e1e]">Result: </h1>
@@ -171,34 +183,38 @@ const Solution = () => {
                       <li key={index}>
                         It is a {predictedClass == 1 ? "Defective" : "Normal"}{" "}
                         Tire
+                      
                       </li>
                     ))}
                   </ul>
                 </h5>
-                {/* <p className="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
-                  <ul>
-                    {Object.keys(response.predictions).map(
-                      (prediction, index) => (
-                        <li key={index}>
-                          <strong>{prediction}:</strong> Confidence:{" "}
-                          {response.predictions[prediction].confidence}
-                        </li>
-                      )
-                    )}
-                  </ul>
-                </p> */}
               </div>
               <div className="p-6">
                 <p>
                   <strong>Response Time:</strong> {response.time} seconds
                 </p>
               </div>
+
+             
             </div>
+
+        
+            
           )}
         </div>
       )}
+
+      {
+        predictedClasss === "Defective" && (<>
+<RecommendedProduct/>
+        </>)
+      }
+   
     </div>
+
+   
   );
 };
 
 export default SolutionsPage;
+

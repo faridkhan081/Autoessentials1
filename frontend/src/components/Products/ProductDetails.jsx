@@ -125,26 +125,28 @@ function ProductDetails({ data, isLoading }) {
               <div className={`${styles.section} w-[90%] 800px:w-[80%] `}>
                 <div className="w-full py-5">
                   <div className="block w-full 800px:flex mt-5">
-                    <div className="w-full 800px:w-[50%] cursor-zoom-in">
+                    <div className="w-full 800px:w-[50%] ">
                       <img
                         src={`${backend_url}${data && data.images[select]}`}
                         alt=""
-                        className="w-[80%] h-[400px] overflow-hidden hover:scale-105 duration-500"
+                        className="w-[80%] cursor-zoom-in h-[400px] overflow-hidden hover:scale-105 duration-500"
                       />
-                      <div className="w-full flex mt-3">
+                      <div className="flex mt-[70px] items-center gap-3 cursor-pointer w-[257px]"  >
                         {data &&
                           data.images.map((i, index) => (
+                            <div  className="p-5 flex items-center justify-center" style={{border:'1px solid gray'}}>
                             <div
-                              className={`${
-                                select === 0 ? "border" : "border"
-                              } cursor-pointer`}
-                            >
+                              className={`cursor-pointer h-20 md:h-20 rounded-l  `}
+                             >
                               <img
                                 src={`${backend_url}${i}`}
                                 alt=""
-                                className="h-[200px] overflow-hidden mr-3 mt-3"
+                                className="h-20 "
+                                style={{minWidth:'100px'}}
                                 onClick={() => setSelect(index)}
+                              
                               />
+                            </div>
                             </div>
                           ))}
                       </div>
@@ -152,6 +154,7 @@ function ProductDetails({ data, isLoading }) {
 
                     <div className="w-full 800px:w-[50%] pt-5">
                       <h1 className={`${styles.productTitle}`}>{data.name}</h1>
+                      
                       <p>{data.description}</p>
                       <div className="flex pt-3">
                         <h4 className={`${styles.productDiscountPrice}`}>

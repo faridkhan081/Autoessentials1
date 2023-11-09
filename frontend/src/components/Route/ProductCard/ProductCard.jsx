@@ -24,6 +24,14 @@ function ProductCard({ data,isEvent }) {
   const { wishlist } = useSelector((state) => state.wishlist);
   const { cart } = useSelector((state) => state.cart);
 
+  const calculateDiscountPercentage = (originalPrice, discountedPrice) => {
+    if (originalPrice && discountedPrice) {
+      const discount = ((originalPrice - discountedPrice) / originalPrice) * 100;
+      return `${Math.round(discount)}% OFF`;
+    }
+    return 'No OFF'; // If there's no discount
+  };
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -60,7 +68,7 @@ function ProductCard({ data,isEvent }) {
   };
 
   return (
-    <div className="w-full h-[370px] bg-white rounded-lg p-3 relative cursor-pointer shadow-sm hover:shadow-lg hover:shadow-gray-200  hover:border"
+    <div className="w-full h-[370px] bg-white rounded-lg p-3 relative shadow-sm hover:shadow-lg hover:shadow-gray-200  hover:border"
     
     >
   
@@ -70,23 +78,26 @@ function ProductCard({ data,isEvent }) {
         
           src={`${backend_url}${data.images && data.images[0]}`}
           alt=""
-          className="w-90% h-[170px] object-contain   "
+          className="w-90% h-[170px] object-contain  mt-5 "
         />
+         <span className="absolute top-0 left-0 m-2 rounded-full bg-rose-600 px-2 text-center text-[11px] text-white">
+         {calculateDiscountPercentage(data.originalPrice, data.discountPrice)}
+         </span>
         </div>
       </Link>
       <Link to={`/shop/preview/${data?.shop._id}`}>
-        <h5 className={`${styles.shop_name}`}>{data.shop.name}</h5>
+        <h5 className={`${styles.shop_name} hover:underline` }>{data.shop.name}</h5>
       </Link>
       <Link to={`/product/${data._id}`}>
-        <h4 className="pb-3 font-[500]">
+        <h4 className="h-[50px]  font-[500]" >
           {data.name.length > 40 ? data.name.slice(0, 40) + "..." : data.name}
         </h4>
-        <div className="flex">
+        <div className="flex mb-1" >
         <Ratings rating={data?.ratings} />
          
         </div>
 
-        <div className="py-2 flex items-center justify-between">
+        <div className="py-2 flex items-center justify-between" >
           <div className="flex">
             <h5 className={`${styles.productDiscountPrice}`}>
               {data.originalPrice === 0
