@@ -178,7 +178,7 @@ const Footer = () => {
                     </svg>
                   </Link>
                 </div>
-                <div className="mt-5 sm:block 385px:w-[150px] 385px:ml-[87px] lg:ml-0 flex items-center justify-center lg:w-full">
+                <div className="mt-5 sm:block 370px:w-[150px] 370px:ml-[82px] lg:ml-0 flex items-center justify-center lg:w-full">
                   <img
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMqpeGd-RaDRk5Z-kFPIQSHIj_WzueVbt3zh1pzVP_Pqh26_uat2sTGoTZts2SHDEurA&usqp=CAU"
                     alt=""

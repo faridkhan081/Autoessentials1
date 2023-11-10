@@ -81,7 +81,7 @@ const Solution = () => {
   return (
     <div className={`my-8`}>
     <div className={``}>
-      <div className="gbtn !w-[200px] ml-5 flex items-center justify-center">
+      <div className="gbtn !w-[240px] ml-5 flex items-center justify-center">
         <h1>Tire Inspection Tool</h1>
       </div>
 
@@ -98,7 +98,7 @@ const Solution = () => {
 
           <button
             onClick={handleUpload}
-            class="385px:m-5 btnsol  "
+            class="370px:m-5 btnsol  "
             style={{
               padding: "10px",
               height: "40px",
