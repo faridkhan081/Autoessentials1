@@ -100,7 +100,7 @@ const {id} = useParams()
           <div>
             <Link to="/">
             <img src={logo} alt="" 
-              className="h-[200px]"
+              className="h-[150px] ml-1"
             />
             </Link>
           </div>
@@ -407,9 +407,9 @@ const {id} = useParams()
 
               {/* nav-bar */}
 
-              <Navbar active={activeHeading} />
+           
               <div
-                className={`${styles.button} ml-4 !rounded-[4px] primary-dark`}
+                className={`w-[120px] p-2 mb-5 ml-4 !rounded-[4px] primary-dark`}
               >
                 <Link to="/shop-login">
                   <h1 className="text-[#fff] flex items-center">
@@ -418,10 +418,10 @@ const {id} = useParams()
                   </h1>
                 </Link>
               </div>
-
+              <Navbar active={activeHeading} />
               <br />
 
-              <div className="flex w-full justify-center">
+              <div className="flex w-full justify-center mt-5">
                 {isAuthenticated ? (
                   <Link to="/profile">
                     <img

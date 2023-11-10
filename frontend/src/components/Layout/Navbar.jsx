@@ -79,7 +79,7 @@ const Navbar = ({ active }) => {
 
       <div className="group relative text-[15px] ml-5">
     
-    <button className=" text-white mt-[1px] py-2 px-2 rounded inline-flex items-center group">
+    <button className=" text-white mt-[1px] py-2 px-2 rounded inline-flex items-center group 385px:bg-rose-600 lg:bg-transparent">
       <span className="mr-1">Tools</span>
       <svg
         className="fill-current h-4 w-4 group-hover:rotate-180 transition-transform"
@@ -91,7 +91,7 @@ const Navbar = ({ active }) => {
     </button>
     
     {/* menu list */}
-    <ul className="rounded absolute hidden text-black pt-[16px] group-hover:block w-40 z-10">
+    <ul className="rounded absolute hidden text-black lg:pt-[16px] 385px:pt-2 group-hover:block w-40 z-10">
      
 <Link to="/solutions">
  <li className="bg-white hover:text-white hover:bg-black py-4 px-4 cursor-pointer">

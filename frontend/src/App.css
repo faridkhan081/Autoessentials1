@@ -477,3 +477,18 @@ height: 5px !important;
   border: 1px solid #E11D48;
 }
 
+.gbtn{
+
+  font-size: 20px;
+  width: 140px;
+  height: 50px;
+  background: linear-gradient(to top, #00154c, #12376e, #23487f);
+  color: #fff;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}

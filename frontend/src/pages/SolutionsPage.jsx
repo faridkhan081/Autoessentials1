@@ -77,12 +77,13 @@ const Solution = () => {
       }
     }
   }, [response, file, predictedClasss]);
-
+  
   return (
-    <div className={`${styles.section} my-8`}>
-      <h1 className="font-medium text-[30px] text-[#231e1e]">
-        Tire Inspection Tool
-      </h1>
+    <div className={`my-8`}>
+    <div className={``}>
+      <div className="gbtn !w-[200px] ml-5 flex items-center justify-center">
+        <h1>Tire Inspection Tool</h1>
+      </div>
 
       <fieldset className=" w-full space-y-1 dark:text-gray-100 flex justify-center mt-[50px] mb-[50px]">
         <div className=" border-2 border-dashed rounded-md dark:border-gray-700 p-3 dark:text-gray-400 dark:bg-gray-800 ">
@@ -97,7 +98,7 @@ const Solution = () => {
 
           <button
             onClick={handleUpload}
-            class="400px:m-5 btnsol  "
+            class="385px:m-5 btnsol  "
             style={{
               padding: "10px",
               height: "40px",
@@ -113,7 +114,7 @@ const Solution = () => {
       </fieldset>
 
       <div className="flex mt-[50px] gap-3 mb-[50px]">
-        <h1 className="font-medium text-[30px] text-[#231e1e]">Result: </h1>
+        <div className="gbtn ml-5 flex items-center justify-center"> <h1 className="">Result</h1></div>
       </div>
 
       {isLoading ? (
@@ -210,6 +211,8 @@ const Solution = () => {
         </>)
       }
    
+    </div>
+
     </div>
 
    
