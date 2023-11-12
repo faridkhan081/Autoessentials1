@@ -172,7 +172,7 @@ const DashboardMessages = () => {
       receiverId,
       images: e,
     });
-
+ 
     try {
       await axios
         .post(`${server}/message/create-new-message`, formData,{
@@ -205,7 +205,8 @@ const DashboardMessages = () => {
   }, [messages]);
 
   return (
-    <div className="w-[90%] bg-white m-5 h-[85vh] overflow-y-scroll rounded">
+   <div className="w-full h-[90vh] p-8">
+     <div className="w-[90%] bg-white m-5 h-[85vh] overflow-y-scroll rounded">
       {!open && (
         <>
           <h1 className="text-center text-[30px] py-3 font-Poppins">
@@ -246,6 +247,7 @@ const DashboardMessages = () => {
         />
       )}
     </div>
+   </div>
   );
 };
 

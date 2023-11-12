@@ -8,9 +8,9 @@ import Layout from "../../components/Layout/Layout.jsx";
 const ShopSettingsPage = () => {
   return (
     <Layout title={'Shop Settings'}>
-      <DashboardHeader />
-      <div className="flex items-start justify-between w-full">
-        <div className="w-[80px] 800px:w-[330px]">
+    
+      <div className="flex">
+        <div className="">
           <DashboardSideBar active={11} />
         </div>
         <ShopSettings />

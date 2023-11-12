@@ -10,8 +10,11 @@ import Layout from '../Layout/Layout';
 import { useDispatch, useSelector } from 'react-redux';
 import { addTocart, removeFromCart } from "../../redux/actions/cart";
 import { toast } from "react-toastify";
+import emptyAnimation from "../../Assests/animations/empty.json";
+import Lottie from 'react-lottie';
 
 function Cart({setOpenCart}) { 
+  
 
   const { cart } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
@@ -27,6 +30,14 @@ function Cart({setOpenCart}) {
   const quantityChangeHandler = (data) => {
     dispatch(addTocart(data));
   };
+  const defaultOptions = {
+    loop: false,
+    autoplay: true,
+    animationData: emptyAnimation,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
 
     return (
       <div className="fixed top-0 left-0 w-full bg-[#0000004b] h-screen z-10">
@@ -40,7 +51,10 @@ function Cart({setOpenCart}) {
                   onClick={() => setOpenCart(false)}
                   />
               </div>
-              <h5>Cart Items is empty!</h5>
+              <div className='flex flex-col items-center justify-center'>
+              <Lottie options={defaultOptions} width={300} height={300} />
+              <h5 >Your Cart is empty!</h5>
+              </div>
             </div>
           ) : (
             <>

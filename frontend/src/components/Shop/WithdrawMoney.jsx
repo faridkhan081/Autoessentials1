@@ -109,7 +109,7 @@ const WithdrawMoney = () => {
           toast.success("Withdraw money request is successful!");
         });
     }
-  };
+  }; 
 
   const totalEarningWithoutTax= deliveredOrder && deliveredOrder.reduce((acc,item)=>acc + item.totalPrice,0)
   const servingCharge = totalEarningWithoutTax * 0.1;
@@ -119,7 +119,7 @@ const WithdrawMoney = () => {
 
   return (
     <div className="w-full h-[90vh] p-8">
-      <div className="w-full bg-white h-full rounded flex items-center justify-center flex-col">
+      <div className="w-[90%] bg-white m-5 h-full rounded flex items-center justify-center flex-col">
         <h5 className="text-[20px] pb-4">
           Available Balance: RS. {availableBalance}
         </h5>

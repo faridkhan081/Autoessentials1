@@ -9,7 +9,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { removeFromWishlist } from "../../redux/actions/wishlist";
 import { backend_url } from "../../server";
 import { addTocart } from "../../redux/actions/cart";
-
+import emptyHeartAnimation from '../../Assests/animations/emptyheart.json'
+import Lottie from "react-lottie";
 const Wishlist = ({ setOpenWishlist }) => {
   const { wishlist } = useSelector((state) => state.wishlist);
   const dispatch = useDispatch();
@@ -24,6 +25,14 @@ const Wishlist = ({ setOpenWishlist }) => {
     setOpenWishlist(false);
   }
 
+  const defaultOptions = {
+    loop: false,
+    autoplay: true,
+    animationData: emptyHeartAnimation,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
   return (
     <div className="fixed top-0 left-0 w-full bg-[#0000004b] h-screen z-10">
       <div className="fixed top-0 right-0 h-full w-[80%] overflow-y-scroll 800px:w-[25%] bg-white flex flex-col justify-between shadow-sm">
@@ -36,7 +45,11 @@ const Wishlist = ({ setOpenWishlist }) => {
                 onClick={() => setOpenWishlist(false)}
               />
             </div>
-            <h5>Wishlist Items is empty!</h5>
+            <div className='flex flex-col items-center justify-center'>
+              <Lottie options={defaultOptions} width={300} height={300} />
+              <h5 >Your Wishlist Items is empty!</h5>
+              </div>
+          
           </div>
         ) : (
           <>

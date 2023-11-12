@@ -8,12 +8,14 @@ import Layout from "../../components/Layout/Layout.jsx";
 const ShopInboxPage = () => {
   return (
     <Layout title={'Shop Inbox'}>
-    <DashboardHeader />
+    
     <div className="flex items-start justify-between w-full">
-      <div className="w-[80px] 800px:w-[330px]">
+      <div>
         <DashboardSideBar active={8} /> 
       </div>
+      <div className="w-full flex justify-center">
        <DashboardMessages />
+       </div>
     </div>
   </Layout>
   );

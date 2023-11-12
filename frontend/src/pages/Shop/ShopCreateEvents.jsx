@@ -7,9 +7,9 @@ import Layout from '../../components/Layout/Layout.jsx';
 const ShopCreateEvents = () => {
   return (
     <Layout title={'Create Events'}>
-        <DashboardHeader />
+     
         <div className="flex items-center justify-between w-full">
-      <div className="w-[80px] 800px:w-[330px]">
+      <div className="">
         <DashboardSideBar active={6} />
       </div>
       <div className="w-full justify-center flex">

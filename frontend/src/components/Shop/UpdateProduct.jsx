@@ -94,7 +94,7 @@ const UpdateProduct = () => {
   };
 
   return (
-    <div className="mt-[30px] w-[90%] 800px:w-[60%] bg-white shadow h-[80vh] rounded-[4px] p-3 overflow-y-scroll">
+    <div className=" w-[90%] 800px:w-[60%] bg-white shadow h-[80vh] rounded-[4px] p-3 overflow-y-scroll">
       <h5 className="text-[30px] font-Poppins text-center">Update Product</h5>
       {/* create product form */}
       <form onSubmit={updateHandler}>

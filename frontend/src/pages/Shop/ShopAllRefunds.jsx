@@ -7,9 +7,9 @@ import Layout from '../../components/Layout/Layout.jsx';
 const ShopAllRefunds = () => {
   return (
     <Layout title={'Refunds'}>
-    <DashboardHeader />
+    
     <div className="flex justify-between w-full">
-        <div className="w-[80px] 800px:w-[330px]">
+        <div className="">
           <DashboardSideBar active={10} />
         </div>
         <div className="w-full justify-center flex">

@@ -63,12 +63,11 @@ const Hero = () => {
   <div class="p-5">
     <div class="mx-auto max-w-3xl text-center">
       <h2 class="text-[30px] font-bold text-gray-900">
-        Trusted by eCommerce Businesses
+     Become a Part of Our AutoEssentials Triumph!
       </h2>
 
       <p class="mt-4 text-gray-500 sm:text-xl ">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione dolores
-        laborum labore provident impedit.
+      Join Our Thriving AutoEssentials Community: Accelerating Success Together!
       </p>
     </div>
 
@@ -103,7 +102,7 @@ const Hero = () => {
           </dt>
 
           <dd class="text-[35px] font-extrabold text-rose-600 ">
-            $4.8m
+            RS.4m
           </dd>
         </div>
 
@@ -114,7 +113,7 @@ const Hero = () => {
             Active Sellers
           </dt>
 
-          <dd class="text-[35px] font-extrabold text-rose-600 ">{sellers ? sellers.length: '...'}</dd>
+          <dd class="text-[35px] font-extrabold text-rose-600 ">{sellers ? sellers.length: '20k+'}</dd>
         </div>
 
         <div
@@ -124,7 +123,7 @@ const Hero = () => {
             Total Users
           </dt>
 
-          <dd class="text-[35px] font-extrabold text-rose-600 ">{users ? users.length : '...'}</dd>
+          <dd class="text-[35px] font-extrabold text-rose-600 ">{users ? users.length : '50k+'}</dd>
         </div>
       </dl>
     </div>

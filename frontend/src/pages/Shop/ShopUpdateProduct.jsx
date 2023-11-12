@@ -8,12 +8,12 @@ import Layout from '../../components/Layout/Layout.jsx';
 const ShopUpdateProduct = () => {
   return (
     <Layout title={'Update Product'}>
-        <DashboardHeader />
-        <div className="flex justify-between w-full">
-            <div className="w-[80px] 800px:w-[330px]">
+        
+        <div className="flex items-center justify-between w-full">
+            <div className="">
               <DashboardSideBar active={3} />
             </div>
-            <div className="w-full justify-center flex">
+            <div className="w-full flex justify-center">
                 <UpdateProduct/>
             </div>
           </div>

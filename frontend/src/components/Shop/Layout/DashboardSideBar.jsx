@@ -1,179 +1,202 @@
-import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 
-import { RxDashboard } from "react-icons/rx";
+import {  useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { backend_url, server } from "../../../server";
+import {  LogOut, Settings,  } from "lucide-react";
+import logo from '../../../Assets/images/logo1.png'
+ import axios from "axios";
+import { FiChevronsLeft, FiChevronsRight } from "react-icons/fi/";
+import { MdDashboard, MdDiscount } from "react-icons/md";
+import { GiShoppingBag} from "react-icons/gi";
+import { RiMoneyDollarBoxFill, RiRefund2Fill } from "react-icons/ri";
 
-import {
-  Banknote,
-  Calendar,
-  Gift,
-  LayoutDashboard,
-  Receipt,
-  Settings,
-} from "lucide-react";
-import { PackagePlus } from "lucide-react";
-import { ShoppingBag } from "lucide-react";
-import { Package } from "lucide-react";
-import { CalendarPlus } from "lucide-react";
-import { MessagesSquare } from "lucide-react";
-import { Link } from "react-router-dom";
+import {GrProductHunt} from 'react-icons/gr';
+import { BsFillCalendarEventFill,BsChatLeftDotsFill } from "react-icons/bs";
+export default function DashboardSidebar() {
+  const location = useLocation();
+  const [openSubMenu, setOpenSubMenu] = useState(null);
+  const [path, setPath] = useState(location.pathname);
+  const { seller } = useSelector((state) => state.seller);
 
-const DashboardSideBar = ({ active }) => {
+  const [collapsed, setCollapsed] = useState(false);
+
+  const [toggled, setToggled] = useState(false);
+
+  const handleCollapsedChange = () => {
+    setCollapsed(!collapsed);
+  };
+  const handleToggleSidebar = (value) => {
+    setToggled(value);
+  };
+
+  const routeMenuKeys = {
+    "/seller-dashboard": "Dashboard",
+
+    "/dashboard-products": "products",
+    "/dashboard-create-product": "products",
+    "/dashboard-events": "events",
+    "/dashboard-create-events": "events",
+    "/task-category": "task",
+    "/tasks": "task",
+  };
+  const logoutHandler = async () => {
+    axios.get(`${server}/shop/logout`, {
+      withCredentials: true,
+    });
+
+    window.location.reload();
+  };
+  useEffect(() => {
+    const currentRoute = path;
+    const submenuKey = routeMenuKeys[currentRoute] || null;
+    setOpenSubMenu(submenuKey);
+  }, [path]);
+
   return (
-    <div className=" w-full min-h-[90vh] bg-white shadow-sm  sticky top-0 left-0 z-10">
-      {/* single item */}
-      <div className="ml-2 w-full flex items-center p-4">
-        <Link to="/seller-dashboard" className="w-full flex items-center">
-          <LayoutDashboard
-            size={30}
-            color={`${active === 1 ? "crimson" : "#555"}`}
-          />
-          <h5
-            className={`hidden 800px:block pl-2 text-[18px] font-[400] ${
-              active === 1 ? "text-[crimson]" : "text-[#555]"
-            }`}
-          >
-            Dashboard
-          </h5>
-        </Link>
-      </div>
+    <>
+      <Sidebar
+        rootStyles={{
+          width: "100%",
+        }}
+        className={`app ${toggled ? "toggled" : ""} w-full`}
+        collapsed={collapsed}
+        toggled={toggled}
+        handleToggleSidebar={handleToggleSidebar}
+        handleCollapsedChange={handleCollapsedChange}
+        style={{ height: "100vh", background: "white" }}
+      >
+        <Menu>
+          {collapsed ? (
+            <MenuItem
+              icon={<FiChevronsRight />}
+              onClick={handleCollapsedChange}
+            ></MenuItem>
+          ) : (
+            <MenuItem
+              suffix={<FiChevronsLeft />}
+              onClick={handleCollapsedChange}
+            >
+              <Link to='/'
+              
+              >
+                <img src={logo}  alt=""  className="h-[120px] ml-[47px] "/>
+              </Link>
+            </MenuItem>
+          )}
+          <hr />
+        </Menu>
+        <div className="flex items-center justify-center flex-col p-5 " >
+          <Link to={`/shop/${seller._id}`}>
+            <img
+              src={`${backend_url}${seller.avatar}`}
+              alt=""
+              className=" 800px:w-[60px] 800px:h-[60px] !ml-0 800px:ml-2 rounded-full object-cover"
+              style={{ border: "2px solid green" }}
+            />
 
-      <div className="ml-2 w-full flex items-center p-4">
-        <Link to="/dashboard-orders" className="w-full flex items-center">
-          <ShoppingBag color={`${active === 2 ? "crimson" : "#555"}`} />
-          <h5
-            className={`hidden 800px:block pl-2 text-[18px] font-[400] ${
-              active === 2 ? "text-[crimson]" : "text-[#555]"
-            }`}
+        
+          </Link>
+        </div>
+        <>
+          <Menu
+            menuItemStyles={{
+              button: {
+                // the active class will be added automatically by react router
+                // so we can use it to style the active menu item
+                [`&.active`]: {
+                  backgroundColor: "#13395e",
+                  color: "#b6c8d9",
+                },
+              },
+            }}
           >
-            All Orders
-          </h5>
-        </Link>
-      </div>
+            <MenuItem icon={<MdDashboard />}
+              component={<Link to="/seller-dashboard" />}
+              open={openSubMenu === "Dashboard"}
+            >
+              Dashboard
+            </MenuItem>
 
-      <div className="ml-2 w-full flex items-center p-4">
-        <Link to="/dashboard-products" className="w-full flex items-center">
-          <Package color={`${active === 3 ? "crimson" : "#555"}`} />
-          <h5
-            className={`hidden 800px:block pl-2 text-[18px] font-[400] ${
-              active === 3 ? "text-[crimson]" : "text-[#555]"
-            }`}
-          >
-            All Products
-          </h5>
-        </Link>
-      </div>
+            <SubMenu icon={<GrProductHunt/>} label={`Manage Products`}>
+              <MenuItem
+                component={<Link to="/dashboard-products" />}
+                open={openSubMenu === "products"}
+              >
+                All Products
+              </MenuItem>
+              <MenuItem
+                component={<Link to="/dashboard-create-product" />}
+                open={openSubMenu === "products"}
+              >
+                Create Product
+              </MenuItem>
+            </SubMenu>
 
-      <div className="ml-2 w-full flex items-center p-4">
-        <Link
-          to="/dashboard-create-product"
-          className="w-full flex items-center"
-        >
-          <PackagePlus color={`${active === 4 ? "crimson" : "#555"}`} />
-          <h5
-            className={`hidden 800px:block pl-2 text-[18px] font-[400] ${
-              active === 4 ? "text-[crimson]" : "text-[#555]"
-            }`}
-          >
-            Create Product
-          </h5>
-        </Link>
-      </div>
+            <SubMenu icon={<BsFillCalendarEventFill size={15}/>} label={`Manage Events`}>
+              <MenuItem
+                component={<Link to="/dashboard-events" />}
+                open={openSubMenu === "events"}
+              >
+                All Events
+              </MenuItem>
+              <MenuItem
+                component={<Link to="/dashboard-create-event" />}
+                open={openSubMenu === "products"}
+              >
+                Create Event
+              </MenuItem>
+            </SubMenu>
 
-      <div className="ml-2 w-full flex items-center p-4">
-        <Link to="/dashboard-events" className="w-full flex items-center">
-          <Calendar size={24} color={`${active === 5 ? "crimson" : "#555"}`} />
-          <h5
-            className={`hidden 800px:block pl-2 text-[18px] font-[400] ${
-              active === 5 ? "text-[crimson]" : "text-[#555]"
-            }`}
+            <MenuItem icon={<GiShoppingBag />}
+              component={<Link to="/dashboard-orders" />}
+              open={openSubMenu === "orders"}
+            >
+              All Orders
+            </MenuItem>
+            <MenuItem
+            icon={<RiMoneyDollarBoxFill />}
+              component={<Link to="/dashboard-withdraw-money" />}
+              open={openSubMenu === "money"}
+            >
+              Withdraw Money
+            </MenuItem>
+            <MenuItem
+              icon={<BsChatLeftDotsFill />}
+              component={<Link to="/dashboard-messages" />}
+              open={openSubMenu === "inbox"}
+            >
+              Inbox
+            </MenuItem>
+            <MenuItem
+              icon={<MdDiscount />}
+              component={<Link to="/dashboard-coupouns" />}
+              open={openSubMenu === "coupouns"}
+            >
+              Discount Codes
+            </MenuItem>
+            <MenuItem
+              icon={<RiRefund2Fill fill="#000" />}
+              component={<Link to="/dashboard-refunds" />}
+              open={openSubMenu === "refunds"}
+            >
+              Refunds
+            </MenuItem>
+          </Menu>
+        </>
+        <div className="flex mt-[30px] items-end justify-evenly">
+          <Link to="/settings" className=" hover:text-rose-600">
+            <Settings />
+          </Link>
+          <div
+            onClick={logoutHandler}
+            className="cursor-pointer hover:text-rose-600"
           >
-            All Events
-          </h5>
-        </Link>
-      </div>
-
-      <div className="ml-2 w-full flex items-center p-4">
-        <Link to="/dashboard-create-event" className="w-full flex items-center">
-          <CalendarPlus color={`${active === 6 ? "crimson" : "#555"}`} />
-          <h5
-            className={`hidden 800px:block pl-2 text-[18px] font-[400] ${
-              active === 6 ? "text-[crimson]" : "text-[#555]"
-            }`}
-          >
-            Create Event
-          </h5>
-        </Link>
-      </div>
-
-      <div className="ml-2 w-full flex items-center p-4">
-        <Link
-          to="/dashboard-withdraw-money"
-          className="w-full flex items-center"
-        >
-          <Banknote color={`${active === 7 ? "crimson" : "#555"}`} />
-          <h5
-            className={`hidden 800px:block pl-2 text-[18px] font-[400] ${
-              active === 7 ? "text-[crimson]" : "text-[#555]"
-            }`}
-          >
-            Withdraw Money
-          </h5>
-        </Link>
-      </div>
-
-      <div className="ml-2 w-full flex items-center p-4">
-        <Link to="/dashboard-messages" className="w-full flex items-center">
-          <MessagesSquare color={`${active === 8 ? "crimson" : "#555"}`} />
-          <h5
-            className={`hidden 800px:block pl-2 text-[18px] font-[400] ${
-              active === 8 ? "text-[crimson]" : "text-[#555]"
-            }`}
-          >
-            Shop Inbox
-          </h5>
-        </Link>
-      </div>
-
-      <div className="ml-2 w-full flex items-center p-4">
-        <Link to="/dashboard-coupouns" className="w-full flex items-center">
-          <Gift color={`${active === 9 ? "crimson" : "#555"}`} />
-          <h5
-            className={`hidden 800px:block pl-2 text-[18px] font-[400] ${
-              active === 9 ? "text-[crimson]" : "text-[#555]"
-            }`}
-          >
-            Discount Codes
-          </h5>
-        </Link>
-      </div>
-
-      <div className="ml-2 w-full flex items-center p-4">
-        <Link to="/dashboard-refunds" className="w-full flex items-center">
-          <Receipt color={`${active === 10 ? "crimson" : "#555"}`} />
-          <h5
-            className={`hidden 800px:block pl-2 text-[18px] font-[400] ${
-              active === 10 ? "text-[crimson]" : "text-[#555]"
-            }`}
-          >
-            Refunds
-          </h5>
-        </Link>
-      </div>
-
-      <div className="ml-2 w-full flex items-center p-4">
-        <Link to="/settings" className="w-full flex items-center">
-          <Settings color={`${active === 11 ? "crimson" : "#555"}`} />
-          <h5
-            className={`hidden 800px:block pl-2 text-[18px] font-[400] ${
-              active === 11 ? "text-[crimson]" : "text-[#555]"
-            }`}
-          >
-            Settings
-          </h5>
-        </Link>
-      </div>
-    </div>
+            <LogOut />
+          </div>
+        </div>
+      </Sidebar>
+    </>
   );
-};
-
-export default DashboardSideBar;
+}
