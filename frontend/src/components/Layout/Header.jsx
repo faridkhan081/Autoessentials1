@@ -210,7 +210,7 @@ const Header = ({ activeHeading }) => {
 
             <div className={`${styles.noramlFlex}`}>
               <div
-                className="relative cursor-pointer mr-[15px]"
+                className="relative cursor-pointer mr-[5px]"
                 onClick={() => setOpenCart(true)}
               >
                 <ShoppingCart size={25} color="rgb(255 255 255 / 83%)" />

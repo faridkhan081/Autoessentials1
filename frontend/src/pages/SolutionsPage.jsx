@@ -85,18 +85,22 @@ const Solution = () => {
         <h1>Tire Inspection Tool</h1>
       </div>
 
-      <fieldset className=" w-full space-y-1 dark:text-gray-100 flex justify-center mt-[50px] mb-[50px]">
-        <div className=" border-2 border-dashed rounded-md dark:border-gray-700 p-3 dark:text-gray-400 dark:bg-gray-800 ">
-          <input
-            type="file"
-            name="files"
-            accept="image/"
-            id="dropzone-file"
-            onChange={handleFileChange}
-            className="px-8 py-8"
-          />
-
-          <button
+    <div className="flex justify-center mt-[50px] flex-col items-center">
+    <div>
+   <form className="form">
+  <span className="form-title">Upload your file</span>
+  <p className="form-paragraph">
+    File should be an image
+  </p>
+  <label htmlFor="file-input" className="drop-container">
+    <span className="drop-title ">Drop files here</span>
+    or
+    <input type="file" accept="image/*"  name="files" required id="file-input" onChange={handleFileChange}/>
+  </label>
+</form>
+</div>
+<div>
+{/* <button
             onClick={handleUpload}
             class="370px:m-5 btnsol  "
             style={{
@@ -106,12 +110,19 @@ const Solution = () => {
               lineHeight: "40px",
               display: "flex",
               alignItems: "center",
+             
+              
             }}
           >
             Inspect
-          </button>
-        </div>
-      </fieldset>
+          </button> */}
+         <button className="mt-5 cursor-pointer  bg-white px-4 py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#000,-0.5rem_-0.5rem_#E11D48] transition">
+  Inspect
+</button>
+
+          </div>
+
+    </div>
 
       <div className="flex mt-[50px] gap-3 mb-[50px]">
         <div className="gbtn ml-5 flex items-center justify-center"> <h1 className="">Result</h1></div>

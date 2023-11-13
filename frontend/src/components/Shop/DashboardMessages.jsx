@@ -9,6 +9,7 @@ import styles from "../../styles/styles";
 import { TfiGallery } from "react-icons/tfi";
 import socketIO from "socket.io-client";
 import { format } from "timeago.js";
+import { Delete } from "lucide-react";
 const ENDPOINT = "http://localhost:4000/";
 const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
 
@@ -35,7 +36,7 @@ const DashboardMessages = () => {
       });
     });
   }, []);
-
+ 
   useEffect(() => {
     arrivalMessage &&
       currentChat?.members.includes(arrivalMessage.sender) &&
@@ -101,6 +102,8 @@ const DashboardMessages = () => {
       text: newMessage,
       conversationId: currentChat._id,
     };
+
+  
 
     const receiverId = currentChat.members.find(
       (member) => member.id !== seller._id
@@ -204,6 +207,15 @@ const DashboardMessages = () => {
     scrollRef.current?.scrollIntoView({ beahaviour: "smooth" });
   }, [messages]);
 
+  const deleteConversation = async (conversationId) => {
+    try {
+      await axios.delete(`${server}/conversation/delete-conversation/${conversationId}`);
+      // You may also want to update the state to reflect the changes immediately
+      setConversations((prev) => prev.filter((conversation) => conversation._id !== conversationId));
+    } catch (error) {
+      console.error("Error deleting conversation:", error);
+    }
+  };
   return (
    <div className="w-full h-[90vh] p-8">
      <div className="w-[90%] bg-white m-5 h-[85vh] overflow-y-scroll rounded">
@@ -216,6 +228,7 @@ const DashboardMessages = () => {
           {conversations &&
             conversations.map((item, index) => (
               <MessageList
+                onDeleteConversation={deleteConversation}
                 data={item}
                 key={index}
                 index={index}
@@ -261,6 +274,7 @@ const MessageList = ({
   userData,
   online,
   setActiveStatus,
+  onDeleteConversation, 
 }) => {
   console.log(data);
   const [user, setUser] = useState([]);
@@ -287,7 +301,7 @@ const MessageList = ({
 
   return (
     <div
-      className={`w-full flex p-3 px-3 ${
+      className={`w-full flex mb-2 p-3 px-3 ${
         active === index ? "bg-[#00000010]" : "bg-transparent"
       }  cursor-pointer`}
       onClick={(e) =>
@@ -298,7 +312,7 @@ const MessageList = ({
         setActiveStatus(online)
       }
     >
-      <div className="relative">
+      <div className="relative w-[60px]">
         <img
           src={`${backend_url}${user?.avatar}`}
           alt=""
@@ -310,7 +324,7 @@ const MessageList = ({
           <div className="w-[12px] h-[12px] bg-[#c7b9b9] rounded-full absolute top-[2px] right-[2px]" />
         )}
       </div>
-      <div className="pl-3">
+      <div className="pl-3 w-full">
         <h1 className="text-[18px]">{userData?.name}</h1>
         <p className="text-[16px] text-[#000c]">
           {data?.lastMessageId !== userData?._id
@@ -319,6 +333,15 @@ const MessageList = ({
           {data?.lastMessage}
         </p>
       </div>
+      <button
+        className="ml-2 p-1 text-red-500 hover:text-red-700"
+        onClick={(e) => {
+          e.stopPropagation();
+          onDeleteConversation(data._id);
+        }}
+      >
+        <Delete size={20} />
+      </button>
     </div>
   );
 };

@@ -6,10 +6,11 @@ import { format } from "timeago.js";
 import { backend_url, server } from "../server";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { AiOutlineArrowRight, AiOutlineSend } from "react-icons/ai";
+import { AiFillDelete, AiOutlineArrowRight, AiOutlineSend } from "react-icons/ai";
 import { TfiGallery } from "react-icons/tfi";
 import styles from "../styles/styles";
 import Layout from "../components/Layout/Layout";
+import { Delete } from "lucide-react";
 const ENDPOINT = "http://localhost:4000/";
 const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
 
@@ -70,6 +71,16 @@ const UserInbox = () => {
       });
     }
   }, [user]);
+
+  const deleteConversation = async (conversationId) => {
+    try {
+      await axios.delete(`${server}/conversation/delete-conversation/${conversationId}`);
+      // You may also want to update the state to reflect the changes immediately
+      setConversations((prev) => prev.filter((conversation) => conversation._id !== conversationId));
+    } catch (error) {
+      console.error("Error deleting conversation:", error);
+    }
+  };
 
   const onlineCheck = (chat) => {
     const chatMembers = chat.members.find((member) => member !== user?._id);
@@ -209,6 +220,7 @@ const UserInbox = () => {
       {!open && (
         <>
           <Header />
+          <div className="flex justify-center flex-col items-center" >
           <h1 className="text-center text-[30px] py-3 font-Poppins">
             All Messages
           </h1>
@@ -216,6 +228,7 @@ const UserInbox = () => {
           {conversations &&
             conversations.map((item, index) => (
               <MessageList
+                onDeleteConversation={deleteConversation}
                 data={item}
                 key={index}
                 index={index}
@@ -228,6 +241,7 @@ const UserInbox = () => {
                 setActiveStatus={setActiveStatus}
               />
             ))}
+            </div>
         </>
       )}
 
@@ -260,6 +274,7 @@ const MessageList = ({
   userData,
   online,
   setActiveStatus,
+  onDeleteConversation, 
 }) => {
   const [active, setActive] = useState(0);
   const [user, setUser] = useState([]);
@@ -285,7 +300,8 @@ const MessageList = ({
 
   return (
     <div
-      className={`w-[90%]  flex 800px:ml-[100px] p-3 px-3 ${
+   
+      className={`w-[90%]  flex  mb-2  p-3 px-3 ${
         active === index ? "bg-[#00000010]" : "bg-transparent"
       }  cursor-pointer`}
       onClick={(e) =>
@@ -296,7 +312,7 @@ const MessageList = ({
         setActiveStatus(online)
       }
     >
-      <div className="relative">
+      <div className="relative w-[60px]" >
         <img
           src={`${backend_url}${user?.avatar}`}
           alt=""
@@ -308,7 +324,7 @@ const MessageList = ({
           <div className="w-[12px] h-[12px] bg-[#c7b9b9] rounded-full absolute top-[2px] right-[2px]" />
         )}
       </div>
-      <div className="pl-3">
+      <div className="pl-3 w-full" >
         <h1 className="text-[18px]">{user?.name}</h1>
         <p className="text-[16px] text-[#000c]">
           {data?.lastMessageId !== userData?._id
@@ -317,6 +333,15 @@ const MessageList = ({
           {data?.lastMessage}
         </p>
       </div>
+      <button
+        className="ml-2 p-1 text-black hover:text-red-700"
+        onClick={(e) => {
+          e.stopPropagation();
+          onDeleteConversation(data._id);
+        }}
+      >
+        <AiFillDelete size={25} />
+      </button>
     </div>
   );
 };

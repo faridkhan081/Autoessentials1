@@ -59,6 +59,21 @@ router.get(
   })
 );
 
+router.delete(
+  "/delete-conversation/:id",
+  catchAsyncError(async (req, res, next) => {
+    try {
+      await Conversation.findByIdAndDelete(req.params.id);
+      res.status(200).json({
+        success: true,
+        message: "Conversation deleted successfully",
+      });
+    } catch (error) {
+      return next(new ErrorHandler(error), 500);
+    }
+  })
+);
+
 
 // get user conversations
 router.get(
