@@ -87,8 +87,8 @@ const DashboardHero = () => {
       });
   });
   return (
-    <div className="p-5 ml-0 mt-0 800px:mt-[30px] " >
-      <h3 className="text-[22px] font-Poppins pb-2 ">Overview</h3>
+    <div className=" ml-0 mt-0 800px:mt-[30px] "  >
+      <h3 className="text-[22px] font-Poppins mb-5 bg-gradient-to-r from-indigo-500 ... text-white p-2">Performance Snapshot</h3>
       <div className="w-full block 800px:flex items-center justify-between gap-[170px]" >
         <div className="w-full mb-4 800px:w-[30%] min-h-[20vh] shadow rounded px-2 py-5"  style={{backgroundColor:'#39BE9C' ,color:'white'}}>
           <div className="flex items-center">
@@ -145,7 +145,7 @@ const DashboardHero = () => {
         </div>
       </div>
       <br />
-      <h3 className="text-[22px] font-Poppins pb-2">Latest Orders</h3>
+      <h3 className="text-[22px] font-Poppins  mb-5 bg-gradient-to-r from-indigo-500 ... text-white p-2">Latest Orders</h3>
       <div className="w-full min-h-[45vh] bg-white rounded">
       <DataGrid
         rows={row}

@@ -1,5 +1,5 @@
 const express = require("express");
-const { isSeller } = require("../middleware/auth");
+const { isSeller, isAdmin , isAuthenticated } = require("../middleware/auth");
 const router = express.Router();
 const Event = require("../model/event");
 const Product = require("../model/product");
@@ -103,6 +103,27 @@ router.delete('/delete-shop-event/:id',isSeller, catchAsyncError(async(req,res,n
     return next(new ErrorHandler(error,400))
   }
 }))
+
+
+router.get(
+  "/admin-all-events",
+  isAuthenticated,
+  isAdmin("Admin"),
+  catchAsyncError(async (req, res, next) => {
+    try {
+      const events = await Event.find().sort({
+        createdAt: -1,
+      });
+      res.status(201).json({
+        success: true,
+        events,
+      });
+    } catch (error) {
+      return next(new ErrorHandler(error.message, 500));
+    }
+  })
+);
+
 module.exports = router;
 
 
