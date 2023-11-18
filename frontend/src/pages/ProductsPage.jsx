@@ -13,7 +13,7 @@ import SortBy from "../components/Layout/SortBy";
 const ProductsPage = () => {
   const [searchParams] = useSearchParams();
   const categoryData = searchParams.get("category");
-  const { allProducts } = useSelector((state) => state.products);
+  const { allProducts ,isLoading } = useSelector((state) => state.products);
   const [displayCount, setDisplayCount] = useState(5); // Control number of products displayed
   const [loadIncrement, setLoadIncrement] = useState(5); // Increment products on Load More
   const [data, setData] = useState([]);

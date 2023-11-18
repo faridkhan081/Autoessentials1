@@ -4,38 +4,74 @@ const catchAsyncError = require("../middleware/catchAsyncError");
 const express = require("express");
 const { isSeller, isAuthenticated } = require("../middleware/auth");
 const router = express.Router();
+const path = require('path');
+const fs = require('fs');
+
+const intentsPath = path.join(__dirname, 'intents.json');
+
+function getBotResponse(userMessage) {
+  const intents = JSON.parse(fs.readFileSync(intentsPath, 'utf-8'));
+
+  for (const item of intents.processed_data) {
+    const tokens = item.tokens;
+    const tag = item.tag;
+    const responses = item.responses;
+
+    const match = tokens.some(token => userMessage.includes(token));
+
+    if (match) {
+      return responses[Math.floor(Math.random() * responses.length)];
+    }
+  }
+
+  return "I'm sorry, I didn't understand that.";
+}
+
+router.post('/chat', (req, res) => {
+  const userMessage = req.body.message;
+  const botResponse = getBotResponse(userMessage);
+  res.json({ message: botResponse });
+});
+
 
 // create a new conversation
 router.post(
   "/create-new-conversation",
   catchAsyncError(async (req, res, next) => {
     try {
-      const { groupTitle, userId, sellerId } = req.body;
+      const { userId, sellerId } = req.body;
 
-      const isConversationExist = await Conversation.findOne({ groupTitle });
+      // Check if a conversation with the specified user and seller already exists
+      const existingConversation = await Conversation.findOne({
+        members: { $all: [userId, sellerId] },
+      });
 
-      if (isConversationExist) {
-        const conversation = isConversationExist;
-        res.status(201).json({
+      if (existingConversation) {
+        console.log("Conversation already exists:", existingConversation);
+        res.status(200).json({
           success: true,
-          conversation,
+          conversation: existingConversation,
         });
       } else {
-        const conversation = await Conversation.create({
+        // If not, create a new conversation
+        const newConversation = await Conversation.create({
           members: [userId, sellerId],
-          groupTitle: groupTitle,
         });
+
+        console.log("New conversation created:", newConversation);
 
         res.status(201).json({
           success: true,
-          conversation,
+          conversation: newConversation,
         });
       }
     } catch (error) {
+      console.error("Error creating conversation:", error);
       return next(new ErrorHandler(error.response.message), 500);
     }
   })
 );
+
 
 // get seller conversations
 router.get(
