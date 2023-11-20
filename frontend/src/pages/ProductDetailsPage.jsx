@@ -10,10 +10,10 @@ import "react-loading-skeleton/dist/skeleton.css";
 import { useSelector } from "react-redux";
 import Layout from "../components/Layout/Layout";
 function ProductDetailsPage() {
-  const { allProducts } = useSelector((state) => state.products);
+  const { allProducts,isLoading  } = useSelector((state) => state.products);
   const { id } = useParams();
   const [data, setData] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  
   const [searchParams] = useSearchParams();
   const eventData = searchParams.get("isEvent");
   const { allEvents } = useSelector((state) => state.events);
@@ -33,7 +33,7 @@ function ProductDetailsPage() {
   return (
     <Layout title={"Product Details..."}>
       <Header />
-      <ProductDetails data={data} />
+      <ProductDetails data={data}  />
       {!eventData && <>{data && <SuggestedProduct data={data} />}</>}
       <Footer />
     </Layout>

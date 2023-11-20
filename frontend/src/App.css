@@ -644,3 +644,30 @@ height: 5px !important;
 #file-input::file-selector-button:hover {
   background:black;
 }
+
+.loaderrr {
+  width: 40em;
+  height: 6px;
+  border-radius: 8px;
+  background-color: #e11d4742;
+}
+
+.loaderrr div {
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  background-color: #E11D48;
+  animation: width7435 5s linear infinite;
+  transition: all;
+}
+
+@keyframes width7435 {
+  from {
+    /*width: 0;*/
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
