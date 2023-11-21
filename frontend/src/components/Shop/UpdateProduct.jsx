@@ -12,7 +12,7 @@ const UpdateProduct = () => {
   const { seller } = useSelector((state) => state.seller);
   const { success, error } = useSelector((state) => state.products);
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); 
 
   const [data, setData] = useState();
   const { id } = useParams();
@@ -65,33 +65,35 @@ const UpdateProduct = () => {
   const formData = new FormData();
 
   const updateHandler = async (e) => {
+    const updatedData = new FormData();
+  images.forEach((image) => {
+    updatedData.append("images", image);
+  });
+
     e.preventDefault();
 
-    await axios
-      .put(
-        `${server}/product/update-product-info/${id}`,
-        {
-          name,
-          description,
-          category,
-          tags,
-          originalPrice,
-          discountPrice,
-          stock,
-          details
-        },
-        { withCredentials: true }
-      )
-      .then((res) => {
-        toast.success("Product info updated succesfully!");
-        navigate("/dashboard-products");
-        window.location.reload();
-        // dispatch(loadSeller());
-      })
-      .catch((error) => {
-        toast.error(error.response.data.message);
-      });
-  };
+  updatedData.append("name", name || singleProduct?.name);
+  updatedData.append("description", description || singleProduct?.description);
+  updatedData.append("details", details || singleProduct?.details);
+  updatedData.append("category", category || singleProduct?.category);
+  updatedData.append("tags", tags || singleProduct?.tags);
+  updatedData.append("originalPrice", originalPrice || singleProduct?.originalPrice);
+  updatedData.append("discountPrice", discountPrice || singleProduct?.discountPrice);
+  updatedData.append("stock", stock || singleProduct?.stock);
+  try {
+    await axios.put(
+      `${server}/product/update-product-info/${id}`,
+      updatedData,
+      { withCredentials: true }
+    );
+
+    toast.success("Product info updated successfully!");
+    navigate("/dashboard-products");
+    window.location.reload();
+  } catch (error) {
+    toast.error(error.response.data.message);
+  }
+};
 
   return (
     <div className=" w-[90%] 800px:w-[60%] bg-white shadow h-[80vh] rounded-[4px] p-3 overflow-y-scroll">

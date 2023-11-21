@@ -272,7 +272,7 @@ const CreateEvent = () => {
             <input
               type="submit"
               value="Create"
-              className="mt-2 border block w-full px-3 h-[35px] border-green-600 rounded-[3px] bg-green-500 text-sm font-medium text-white transition hover:bg-transparent hover:text-green-600 focus:outline-none focus:ring active:text-green-600 cursor-pointer "
+              className="mt-2 border block w-full px-3 h-[35px]border border-[#3ad132] border-500 bg-transparent text-[#3ad132] transition hover:bg-[#3ad132] hover:text-white focus:outline-none focus:ring active:test-rose-500 font-medium p-1 !rounded cursor-pointer "
             />
           </div>
         </div>

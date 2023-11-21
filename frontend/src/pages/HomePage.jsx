@@ -10,6 +10,7 @@ import Footer from '../components/Layout/Footer.jsx';
 import Layout from '../components/Layout/Layout.jsx';
 import Chatbox from '../components/Chat/Chatbox.jsx';
 
+
 function HomePage() {
   const [isChatOpen, setChatOpen] = useState(false);
 
@@ -32,9 +33,11 @@ function HomePage() {
     };
   }, []);
 
+
+
   return (
     <Layout>
-      <Header activeHeading={1} />
+      <Header activeHeading={2} />
       <Hero />
       <Categories />
       <BestDeals />

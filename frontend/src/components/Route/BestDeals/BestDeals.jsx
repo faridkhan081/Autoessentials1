@@ -8,7 +8,7 @@ import ProductCard from "../ProductCard/ProductCard.jsx";
 const BestDeals = () => {
   const [data, setData] = useState([]);
   const { allProducts,isLoading } = useSelector((state) => state.products);
-
+  
   useEffect(() => {
     const allProductsData = allProducts ? [...allProducts] : [];
     const sortedData = allProductsData?.sort((a,b) => b.sold_out - a.sold_out); 
@@ -31,12 +31,9 @@ const BestDeals = () => {
               <p className="heading">
                 Trending Products are loading...
               </p>
-              <div className="loading">
-                <div className="load" />
-                <div className="load" />
-                <div className="load" />
-                <div className="load" />
-              </div>
+              <div class="loaderrr">
+    <div></div>
+       </div>
             </div>
       </div>) :(
         <>

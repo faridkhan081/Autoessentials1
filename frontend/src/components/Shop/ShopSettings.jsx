@@ -16,7 +16,7 @@ const ShopSettings = () => {
   const [phoneNumber,setPhoneNumber] = useState(seller && seller.phoneNumber);
   const [zipCode,setZipcode] = useState(seller && seller.zipCode);
 
-
+ 
   const dispatch = useDispatch();
 
   const handleImage = async (e) => {
@@ -168,7 +168,7 @@ const ShopSettings = () => {
             <input
               type="submit"
               value="Update Shop"
-              className={`${styles.input} !w-[95%] mb-4 800px:mb-0`}
+              className={`${styles.input} cursor-pointer !rounded !w-[95%] mb-4 800px:mb-0 border border-[#3ad132] border-500 bg-transparent text-[#3ad132] transition hover:bg-[#3ad132] hover:text-white focus:outline-none focus:ring active:test-rose-500`}
               required
               readOnly
             />

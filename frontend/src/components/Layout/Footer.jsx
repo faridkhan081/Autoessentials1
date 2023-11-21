@@ -5,11 +5,11 @@ import styles from "../../styles/styles";
 const Footer = () => {
   return (
     <div>
-      <footer className="bg-white">
+      <footer className="bg-gray-800">
         <div  className={`${styles.section} mx-auto max-w-auto px-4 pb-8 pt-16 sm:px-6 lg:px-8`}>
           <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-32">
             <div className="mx-auto max-w-sm lg:max-w-none">
-              <p className="mt-4 text-center text-gray-500 lg:text-left lg:text-lg">
+              <p className="mt-4 text-center text-white lg:text-left lg:text-lg">
                 <span className="text-rose-600">Revolutionize </span>your auto
                 inspection process with our multivendor marketplace. Discover
                 cutting-edge tools and solutions designed specifically for the
@@ -21,7 +21,7 @@ const Footer = () => {
 
             <div className="grid grid-cols-1 gap-8 text-center lg:grid-cols-3 lg:text-left">
               <div>
-                <strong className="font-medium text-gray-900">
+                <strong className="font-medium text-white">
                   {" "}
                   Helpful Links{" "}
                 </strong>
@@ -29,7 +29,7 @@ const Footer = () => {
                 <ul className="mt-6 space-y-1">
                   <li>
                     <Link
-                      className="text-gray-700 transition hover:text-gray-700/75"
+                      className="text-gray-200 transition hover:text-gray-500/75"
                       to="/products"
                     >
                       Products
@@ -39,7 +39,7 @@ const Footer = () => {
                
                   <li>
                     <Link
-                      className="text-gray-700 transition hover:text-gray-700/75"
+                      className="text-gray-200 transition hover:text-gray-500/75"
                       to="/events"
                     >
                       Events
@@ -48,7 +48,7 @@ const Footer = () => {
 
                   <li>
                     <Link
-                      className="text-gray-700 transition hover:text-gray-700/75"
+                      className="text-gray-200 transition hover:text-gray-500/75"
                       to="/solutions"
                     >
                       Solutions
@@ -58,12 +58,12 @@ const Footer = () => {
               </div>
 
               <dX iv>
-                <strong className="font-medium text-gray-900"> Pages </strong>
+                <strong className="font-medium text-white"> Pages </strong>
 
                 <ul className="mt-6 space-y-1">
                   <li>
                     <Link
-                      className="text-gray-700 transition hover:text-gray-700/75"
+                      className="text-gray-200 transition hover:text-gray-500/75"
                       to="/"
                     >
                       Home
@@ -72,7 +72,7 @@ const Footer = () => {
 
                   <li>
                     <Link
-                      className="text-gray-700 transition hover:text-gray-700/75"
+                      className="text-gray-200 transition hover:text-gray-500/75"
                       to="/contact"
                     >
                       Contact
@@ -81,7 +81,7 @@ const Footer = () => {
 
                   <li>
                     <Link
-                      className="text-gray-700 transition hover:text-gray-700/75"
+                      className="text-gray-200 transition hover:text-gray-500/75"
                       to="/about"
                     >
                       About
@@ -91,11 +91,11 @@ const Footer = () => {
               </dX>
 
               <div>
-                <strong className="font-medium text-gray-900"> Find Us </strong>
+                <strong className="font-medium text-white"> Find Us </strong>
 
                 <div className="mt-6 flex justify-center gap-4 lg:justify-start">
                   <Link
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-white transition hover:text-blue-600/75"
                     href=""
                     target="_blank"
                     rel="noreferrer"
@@ -117,7 +117,7 @@ const Footer = () => {
                   </Link>
 
                   <Link
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-white transition hover:text-rose-700/75"
                     href=""
                     target="_blank"
                     rel="noreferrer"
@@ -139,7 +139,7 @@ const Footer = () => {
                   </Link>
 
                   <Link
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-white transition hover:text-blue-500/75"
                     href=""
                     target="_blank"
                     rel="noreferrer"
@@ -157,7 +157,7 @@ const Footer = () => {
                   </Link>
 
                   <Link
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-white transition hover:text-gray-700/75"
                     href=""
                     target="_blank"
                     rel="noreferrer"
@@ -189,7 +189,7 @@ const Footer = () => {
           </div>
 
           <div className="mt-16 border-t border-gray-100 pt-8">
-            <p className="text-center text-xs/relaxed text-gray-500">
+            <p className="text-center text-xs/relaxed text-white">
               © autoessentials 2023-24. All rights reserved.
             </p>
           </div>

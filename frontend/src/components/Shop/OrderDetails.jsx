@@ -59,7 +59,8 @@ const OrderDetails = () => {
     });
   }
 
-  console.log(data?.status);
+
+  console.log(data);
 
 
   return (
@@ -78,9 +79,12 @@ const OrderDetails = () => {
         </Link>
       </div>
 
-      <div className="w-full flex items-center justify-between pt-6">
-        <h5 className="text-[#00000084]">
-          Order ID: <span>#{data?._id?.slice(0, 8)}</span>
+      <div className="w-full flex  flex-col pt-6">
+        <h5 className="text-black text-[20px]">
+          Order From: <span className="text-[20px] text-[#00000084]">{data?.user?.name}</span>
+        </h5>
+        <h5 className="text-black">
+          Order ID: <span className="text-[#00000084]">#{data?._id?.slice(0, 8)}</span>
         </h5>
         <h5 className="text-[#00000084]">
           Placed on: <span>{data?.createdAt?.slice(0, 10)}</span>
@@ -118,13 +122,12 @@ const OrderDetails = () => {
         <div className="w-full 800px:w-[60%]">
           <h4 className="pt-3 text-[20px] font-[600]">Shipping Address:</h4>
           <h4 className="pt-3 text-[20px]">
-            {data?.shippingAddress.address1 +
-              " " +
-              data?.shippingAddress.address2}
+            {data?.shippingAddress.address1 }
           </h4>
           <h4 className=" text-[20px]">{data?.shippingAddress.country}</h4>
           <h4 className=" text-[20px]">{data?.shippingAddress.city}</h4>
           <h4 className=" text-[20px]">{data?.user?.phoneNumber}</h4>
+          <h4 className=" text-[20px]">{data?.user?.email}</h4>
         </div>
         <div className="w-full 800px:w-[40%]">
           <h4 className="pt-3 text-[20px]">Payment Info:</h4>

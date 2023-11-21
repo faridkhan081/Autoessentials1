@@ -31,12 +31,12 @@ const ShopProfileData = ({ isOwner }) => {
   return (
     <>
       <div className="w-full">
-        <div className="flex w-full items-center justify-between">
-          <div className="w-full flex">
+        <div className="flex items-center justify-between bg-gray-800">
+          <div className="w-full flex gap-16">
             <div className="flex items-center" onClick={() => setActive(1)}>
               <h5
                 className={`font-[500] text-[14px] md:text-[20px] ${
-                  active === 1 ? "text-red-500" : "text-[#333]"
+                  active === 1 ? "text-red-500 bg-white p-2 " : "text-white p-2 "
                 } cursor-pointer pr-[20px]`}
               >
                 Products
@@ -45,20 +45,20 @@ const ShopProfileData = ({ isOwner }) => {
             <div className="flex items-center" onClick={() => setActive(2)}>
               <h5
                 className={`font-[500] text-[14px] md:text-[20px]  ${
-                  active === 2 ? "text-red-500" : "text-[#333]"
+                  active === 2 ? "text-red-500 bg-white p-2 " : "text-white p-2 "
                 } cursor-pointer pr-[20px]`}
               >
-                Running Events
+                 Events
               </h5>
             </div>
 
-            <div className="flex items-center" onClick={() => setActive(3)}>
+            <div className="flex items-center " onClick={() => setActive(3)}>
               <h5
                 className={`font-[500] text-[14px] md:text-[20px]  ${
-                  active === 3 ? "text-red-500" : "text-[#333]"
+                  active === 3 ? "text-red-500 bg-white p-2 " : "text-white p-2"
                 } cursor-pointer pr-[20px]`}
               >
-                Shop Reviews
+              Reviews
               </h5>
             </div>
           </div>
@@ -72,13 +72,7 @@ const ShopProfileData = ({ isOwner }) => {
                 </Link>
               </div>
             ) : (
-              <div>
-                <Link to="/">
-                  <div className={`${styles.button} !rounded-[4px]  h-[42px]`}>
-                    <span className="text-[#fff]">Go to Home</span>
-                  </div>
-                </Link>
-              </div>
+             null
             )}
           </div>
         </div>

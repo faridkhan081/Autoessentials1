@@ -139,7 +139,7 @@ const Header = ({ activeHeading }) => {
           </div>
           {isSeller ? (
             <Link to="/seller-dashboard">
-              <div className={`${styles.button} primary-dark !rounded-md`}>
+              <div className={`${styles.button} hover:bg-gray-800  primary-dark !rounded-md`}>
                 <h1 className="text-[#fff] flex items-center">
                   Dashboard
                   <IoIosArrowForward className="ml-1" />
@@ -163,7 +163,7 @@ const Header = ({ activeHeading }) => {
       <div
         className={`${
           active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
-        } transition hidden 800px:flex items-center justify-between w-full bg-[#000000cd] h-[70px]`}
+        } transition hidden 800px:flex items-center justify-between w-full bg-gray-800 h-[70px]`}
       >
         <div
           className={`${styles.section} relative ${styles.noramlFlex} justify-between`}
@@ -235,15 +235,15 @@ const Header = ({ activeHeading }) => {
                       </button>
 
                       {/* menu list */}
-                      <ul className="rounded absolute hidden text-black pt-[10px] group-hover:block w-[133px] z-10">
+                      <ul className="rounded absolute hidden text-white pt-[10px] group-hover:block w-[133px] z-10">
                         <Link to="/profile">
-                          <li className="bg-white hover:text-white hover:bg-black py-4 px-4 cursor-pointer">
+                          <li className="bg-gray-800 hover:text-white hover:bg-rose-600 py-4 px-4 cursor-pointer">
                             Dashboard
                           </li>
                         </Link>
-                        <hr class="h-px bg-black border-0 "></hr>
+                        <hr class="h-px bg-gray-800 border-0 "></hr>
                         <li
-                          className="bg-white hover:text-white hover:bg-black py-4 px-4 cursor-pointer"
+                          className="bg-gray-800  hover:text-white hover:bg-rose-600 py-4 px-4 cursor-pointer"
                           onClick={logoutHandler}
                         >
                           Logout
@@ -295,7 +295,7 @@ const Header = ({ activeHeading }) => {
         className={`${
           active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
         }
-      w-full h-[60px] bg-[#000] z-50 top-0 left-0 shadow-sm 800px:hidden`}
+      w-full h-[60px] bg-gray-800 z-50 top-0 left-0 shadow-sm 800px:hidden`}
       >
         <div className="w-full flex items-center justify-between">
           <div>
@@ -386,7 +386,7 @@ const Header = ({ activeHeading }) => {
               <div
                 className={`w-[120px] p-2 mb-5 ml-4 !rounded-[4px] primary-dark`}
               >
-                <Link to="/shop-login">
+                 <Link to="/shop-login">
                   <h1 className="text-[#fff] flex items-center">
                     Seller Zone
                     <IoIosArrowForward className="ml-1" />

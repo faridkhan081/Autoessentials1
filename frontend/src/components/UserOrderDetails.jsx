@@ -63,6 +63,7 @@ const UserOrderDetails = () => {
     })
   };
 
+  console.log(data)
   return (
     <div className={`py-4 min-h-screen ${styles.section}`}>
       <div className="w-full flex items-center justify-between">
@@ -72,12 +73,17 @@ const UserOrderDetails = () => {
         </div>
       </div>
 
-      <div className="w-full flex items-center justify-between pt-6">
-        <h5 className="text-[#00000084]">
-          Order ID: <span>#{data?._id?.slice(0, 8)}</span>
+      <div className="w-full flex flex-col pt-6">
+        <h5 className="text-black">
+          Shop Name: <span className="text-[#00000084]">{data?.cart[0]?.shop?.name}</span>
         </h5>
-        <h5 className="text-[#00000084]">
-          Placed on: <span>{data?.createdAt?.slice(0, 10)}</span>
+        <h5 className="text-black">
+          Order ID: <span className="text-[#00000084]">#{data?._id?.slice(0, 8)}</span>
+        </h5>
+        
+        
+        <h5 className="text-black">
+          Placed on: <span className="text-[#00000084]">{data?.createdAt?.slice(0, 10)}</span>
         </h5>
       </div>
 

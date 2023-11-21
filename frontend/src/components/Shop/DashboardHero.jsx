@@ -8,10 +8,10 @@ import { getAllOrdersOfShop } from "../../redux/actions/order";
 import { getAllProductsShop } from "../../redux/actions/product";
 import { Button } from "@material-ui/core";
 import { DataGrid } from "@material-ui/data-grid";
-
+ 
 const DashboardHero = () => {
   const dispatch = useDispatch();
-  const { orders } = useSelector((state) => state.order);
+  const { orders,isLoading } = useSelector((state) => state.order);
   const { seller } = useSelector((state) => state.seller);
   const { products } = useSelector((state) => state.products);
   const [deliveredOrder,setDeliveredOrder] = useState(null)
@@ -88,7 +88,7 @@ const DashboardHero = () => {
   });
   return (
     <div className=" ml-0 mt-0 800px:mt-[30px] "  >
-      <h3 className="text-[22px] font-Poppins mb-5 bg-gradient-to-r from-indigo-500 ... text-white p-2">Performance Snapshot</h3>
+      <h3 className="text-[22px] font-Poppins mb-5 bg-black text-white p-2">Performance Snapshot</h3>
       <div className="w-full block 800px:flex items-center justify-between gap-[170px]" >
         <div className="w-full mb-4 800px:w-[30%] min-h-[20vh] shadow rounded px-2 py-5"  style={{backgroundColor:'#39BE9C' ,color:'white'}}>
           <div className="flex items-center">
@@ -145,7 +145,7 @@ const DashboardHero = () => {
         </div>
       </div>
       <br />
-      <h3 className="text-[22px] font-Poppins  mb-5 bg-gradient-to-r from-indigo-500 ... text-white p-2">Latest Orders</h3>
+      <h3 className="text-[22px] font-Poppins  mb-5 bg-black text-white p-2">Latest Orders</h3>
       <div className="w-full min-h-[45vh] bg-white rounded">
       <DataGrid
         rows={row}
