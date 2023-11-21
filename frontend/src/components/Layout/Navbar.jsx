@@ -47,18 +47,16 @@ const Navbar = ({ active }) => {
 
         {/* menu list */}
         <ul
-          className={`rounded absolute hidden text-white lg:pt-[16px] 370px:pt-2 group-hover:block w-40 z-10 ${
-            toolsActive ? "primary-dark-bg" : ""
-          }`}
+          className={`rounded absolute hidden text-white lg:pt-[16px] 370px:pt-2 group-hover:block  w-40 z-10`}
         >
           <Link to="/solutions">
-            <li className={`bg-gray-800 py-4 px-4 cursor-pointer `}>
+            <li className={`bg-gray-800 hover:bg-rose-600 py-4 px-4 cursor-pointer `}>
               Tire Inspection
             </li>
           </Link>
           <hr className="h-px bg-white border-0" />
           <Link to="/solutions">
-            <li className={`bg-gray-800 py-4 px-4 cursor-pointer `}>
+            <li className={`bg-gray-800 hover:bg-rose-600 py-4 px-4 cursor-pointer `}>
               Inspection Tool 2
             </li>
           </Link>

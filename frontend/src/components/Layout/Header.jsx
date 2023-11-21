@@ -241,7 +241,7 @@ const Header = ({ activeHeading }) => {
                             Dashboard
                           </li>
                         </Link>
-                        <hr class="h-px bg-gray-800 border-0 "></hr>
+                        <hr class="h-px bg-white border-0 "></hr>
                         <li
                           className="bg-gray-800  hover:text-white hover:bg-rose-600 py-4 px-4 cursor-pointer"
                           onClick={logoutHandler}
@@ -261,14 +261,16 @@ const Header = ({ activeHeading }) => {
                       </button>
 
                       {/* menu list */}
-                      <ul className="rounded absolute hidden text-black pt-[13px] group-hover:block w-[128px] z-10">
+                      <ul className="rounded absolute hidden text-white pt-[13px] group-hover:block w-[128px] z-10">
                         <Link to="/login">
-                          <li className="bg-gray-200 hover:text-white hover:bg-black py-4 px-4 cursor-pointer">
+                          <li className="bg-gray-800 hover:text-white hover:bg-rose-600 py-4 px-4 cursor-pointer">
                             Login
                           </li>
                         </Link>
+                        <hr class="h-px bg-white border-0 "></hr>
+
                         <Link to="/sign-up">
-                          <li className="bg-gray-200 hover:text-white hover:bg-black py-4 px-4 cursor-pointer">
+                          <li className="bg-gray-800 hover:text-white hover:bg-rose-600 py-4 px-4 cursor-pointer">
                             Register
                           </li>
                         </Link>
