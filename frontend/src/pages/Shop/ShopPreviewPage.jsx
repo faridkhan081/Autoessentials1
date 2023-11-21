@@ -90,53 +90,33 @@ const ShopPreviewPage = () => {
               Joined on: {data?.createdAt?.slice(0, 10)}
             </p>
 
-            <p className="mt-1 text-gray-600 text-[14px]">
-              Total Products: {products && products?.length}
-            </p>
-            <p className="mt-1 text-gray-600 text-[14px] flex items-center gap-1">
-              <Mail size={14} />
-              {data && data?.email}{" "}
-            </p>
-          </div>
-          <div className>
-            <button
-              className={`${styles.button} flex whitespace-nowrap !rounded bg-green-600 text-white transition hover:translate-y-1`}
-              onClick={handleMessageSubmit}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="mr-2 inline h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                />
-              </svg>
-              Chat with us
-            </button>
-            <p className="mt-[50px] flex items-center whitespace-nowrap text-gray-500 sm:justify-end">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="mr-2 inline h-5 w-5"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-              </svg>
-              +92{data.phoneNumber}
-            </p>
-          </div>
-        </div>
-        <hr className="bg-black" />
-        <main className="800px:w-[100%] p-5 800px:ml-0  mt-5 800px:mt-['unset'] rounded-[4px] ">
-          <ShopProfileData isOwner={false} />
-        </main>
-      </div>
+      <p  className="mt-1 text-gray-600 text-[14px]">Total Products: {products && products?.length}</p>
+      <p className='mt-1 text-gray-600 text-[14px] flex items-center gap-1'>
+      <Mail size={14}/>
+       {data && data?.email} </p>
+
+    </div> 
+    <div className>
+      <button className={`${styles.button} flex whitespace-nowrap !rounded bg-green-600 text-white transition hover:translate-y-1`}   onClick={handleMessageSubmit}>
+        <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 inline h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+        </svg>
+        Chat with us
+      </button>
+      <p className="mt-[50px] flex items-center whitespace-nowrap text-gray-500 sm:justify-end">
+        <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 inline h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+        </svg>
+       +92{data.phoneNumber}
+      </p>
+    </div>
+  </div>
+  <main className="800px:w-[100%] w-[80%] 800px:ml-0 ml-[50px] mt-5 800px:mt-['unset'] rounded-[4px] ">
+  <ShopProfileData isOwner={false} />
+  </main>
+</div>
+
+
     </Layout>
   );
 };
