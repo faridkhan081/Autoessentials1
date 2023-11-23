@@ -195,7 +195,7 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                       <span
                         className={`${styles.button} !bg-[#d54343] text-white !rounded !h-11 flex items-center`}
                       >
-                        Remove from cart
+                        Added to cart
                       </span>
                     </>
                   ) : (

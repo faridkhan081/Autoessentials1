@@ -71,7 +71,8 @@ import {
   AdminDashboardOrders,
   AdminDashboardProducts,
   AdminDashboardEvents,
-  AdminDashboardWithdraw
+  AdminDashboardWithdraw,
+  AdminShopRequest 
 } from "./routes/AdminRoutes";
 
 const App = () => {
@@ -304,6 +305,15 @@ const App = () => {
           element={
             <ProtectedAdminRoute>
               <AdminDashboardPage />
+            </ProtectedAdminRoute>
+          }
+        />
+
+<Route
+          path="/admin-shop-requests"
+          element={
+            <ProtectedAdminRoute>
+              <AdminShopRequest />
             </ProtectedAdminRoute>
           }
         />

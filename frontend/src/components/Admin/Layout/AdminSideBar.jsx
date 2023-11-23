@@ -10,7 +10,7 @@ import logo from '../../../Assets/images/logo1.png'
  import axios from "axios";
  import { FaProductHunt } from "react-icons/fa";
 import { FiChevronsLeft, FiChevronsRight } from "react-icons/fi/";
-import { MdDashboard, MdDiscount } from "react-icons/md";
+import { MdDashboard, MdDiscount, MdRequestQuote } from "react-icons/md";
 import { GiShoppingBag} from "react-icons/gi";
 import { RiMoneyDollarBoxFill, RiRefund2Fill } from "react-icons/ri";
 import { FaUser } from "react-icons/fa";
@@ -127,6 +127,13 @@ export default function DashboardSidebar() {
               open={openSubMenu === "Dashboard"}
             >
               Dashboard
+            </MenuItem>
+
+            <MenuItem icon={<MdRequestQuote />}
+              component={<Link to="/admin-shop-requests" />}
+              open={openSubMenu === "Seller Requests"}
+            >
+              Seller Requests
             </MenuItem>
 
 

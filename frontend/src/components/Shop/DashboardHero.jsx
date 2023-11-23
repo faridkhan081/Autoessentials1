@@ -86,6 +86,16 @@ const DashboardHero = () => {
         status: item.status,
       });
   });
+
+
+  if (seller.status !== "Approved") {
+    return (
+      <div className="w-full p-8">
+        <h3 className="text-[22px] font-Poppins pb-2">Account Under Observation</h3>
+        <p>Your account is currently under observation. Access to the dashboard is restricted until it's approved by the admin.</p>
+      </div>
+    );
+  }
   return (
     <div className=" ml-0 mt-0 800px:mt-[30px] "  >
       <h3 className="text-[22px] font-Poppins mb-5 bg-black text-white p-2">Performance Snapshot</h3>

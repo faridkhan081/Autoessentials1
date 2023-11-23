@@ -83,7 +83,10 @@ const ShopPreviewPage = () => {
         </div>
         <div className="mt-10 flex flex-col items-start justify-center space-y-4 py-8 px-4 sm:flex-row sm:space-y-0 md:justify-between lg:px-0">
           <div className="max-w-lg">
+          <div className="flex gap-2 items-center">
             <h1 className="text-2xl font-bold text-gray-800">{data.name}</h1>
+            <h1 className="text-sm   text-green-500">({data.status} Seller)</h1>
+</div>
             <p className="mt-2 text-gray-600">{data.address}</p>
             <p className="mt-1 text-gray-600 text-[14px]">
               {" "}

@@ -44,18 +44,28 @@ const Solution = () => {
   };
 
   const handlePredict = async () => {
-    
-   
+    if (!imageData) {
+      alert("Please upload an image before inspecting.");
+      return;
+    }
+  
     setIsLoading(true);
-    const response = await axios.post(`${server}/product/predict`, {
-      imageData,
-    });
-    const prediction = response.data.prediction[0][0];
-    console.log(response);
-    setIsLoading(false);
-    setPrediction(prediction);
+  
+    try {
+      const response = await axios.post(`${server}/product/predict`, {
+        imageData,
+      });
+  
+      const prediction = response.data.prediction[0][0];
+      console.log(response);
+      setPrediction(prediction);
+    } catch (error) {
+      // Handle the error, you may want to show an error message to the user.
+      console.error("Error predicting tire:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
-
   return (
     <div className={`my-8`}>
       <div className={``}>

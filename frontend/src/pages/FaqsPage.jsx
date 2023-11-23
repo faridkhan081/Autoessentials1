@@ -39,31 +39,31 @@ const Faq = () => {
       <section className="dark:bg-gray-800 dark:text-gray-100">
 	<div className="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
 		<h2 className="text-2xl font-semibold sm:text-4xl">Frequently Asked Questions</h2>
-		<p className="mt-4 mb-8 dark:text-gray-400">Sagittis tempor donec id vestibulum viverra. Neque condimentum primis orci at lacus amet bibendum.</p>
+		<p className="mt-4 mb-8 dark:text-gray-400">Discover a World of Auto Excellence: Your Questions Answered for a Smoother Ride.</p>
 		<div className="space-y-4">
 			<details className="w-full border rounded-lg">
-				<summary className="px-4 py-6 focus:outline-none focus-visible:ri">Ex orci laoreet egestas sapien magna egestas scelerisque?</summary>
-				<p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">Lectus iaculis orci metus vitae ligula dictum per. Nisl per nullam taciti at adipiscing est. </p>
+				<summary className="px-4 py-6 focus:outline-none focus-visible:ri">What makes Auto Essentials different from other auto parts platforms?</summary>
+				<p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">Auto Essentials stands out by integrating cutting-edge technologies such as Convolutional Neural Network (CNN)-based tools for tire health prediction, a natural language processing (NLP) chatbot, and personalized lubricant recommendations. Our focus on quality, scalability, and user support sets new industry standards, offering car owners a unique and advanced shopping experience</p>
 			</details>
 			<details className="w-full border rounded-lg">
-				<summary className="px-4 py-6 focus:outline-none focus-visible:ri">Lorem at arcu rutrum viverra metus sapien venenatis lobortis odio?</summary>
-				<p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">Tincidunt ut hac condimentum rhoncus phasellus nostra. Magna porttitor egestas tincidunt neque vehicula potenti. </p>
+				<summary className="px-4 py-6 focus:outline-none focus-visible:ri">How does the CNN-based tire health prediction tool work?</summary>
+				<p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">Our Convolutional Neural Network (CNN) analyzes tire images to assess their health. By leveraging advanced image recognition, the tool can identify issues such as tread wear, damage, or other factors affecting tire performance. This proactive approach helps car owners address potential problems before they become major concerns. </p>
 			</details>
 			<details className="w-full border rounded-lg">
-				<summary className="px-4 py-6 focus:outline-none focus-visible:ri">Eleifend feugiat sollicitudin laoreet adipiscing bibendum suscipit erat?</summary>
-				<p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">Justo libero tellus integer tincidunt justo semper consequat venenatis aliquet imperdiet. Ultricies urna proin fusce nulla pretium sodales vel magna et massa euismod vulputate sed. </p>
+				<summary className="px-4 py-6 focus:outline-none focus-visible:ri">What role does the NLP chatbot play in the Auto Essentials platform?</summary>
+				<p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">The natural language processing (NLP) chatbot enhances user interaction and support. It understands and responds to users' inquiries in a conversational manner, providing real-time assistance with product information, order tracking, and general queries. The chatbot ensures a seamless and user-friendly experience for our customers.</p>
 			</details>
       <details className="w-full border rounded-lg">
-				<summary className="px-4 py-6 focus:outline-none focus-visible:ri">Eleifend feugiat sollicitudin laoreet adipiscing bibendum suscipit erat?</summary>
-				<p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">Justo libero tellus integer tincidunt justo semper consequat venenatis aliquet imperdiet. Ultricies urna proin fusce nulla pretium sodales vel magna et massa euismod vulputate sed. </p>
+				<summary className="px-4 py-6 focus:outline-none focus-visible:ri">How does Auto Essentials prioritize security and privacy?</summary>
+				<p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">Security and privacy are paramount at Auto Essentials. We implement strict standards and protocols to safeguard user data, transactions, and personal information. Our platform utilizes encryption, secure payment gateways, and follows industry best practices to ensure a secure and trustworthy environment for our users.</p>
 			</details>
       <details className="w-full border rounded-lg">
-				<summary className="px-4 py-6 focus:outline-none focus-visible:ri">Eleifend feugiat sollicitudin laoreet adipiscing bibendum suscipit erat?</summary>
-				<p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">Justo libero tellus integer tincidunt justo semper consequat venenatis aliquet imperdiet. Ultricies urna proin fusce nulla pretium sodales vel magna et massa euismod vulputate sed. </p>
+				<summary className="px-4 py-6 focus:outline-none focus-visible:ri"> Can I trust the quality of products on Auto Essentials?</summary>
+				<p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400"> Absolutely. Quality is a core focus at Auto Essentials. We partner with reputable vendors and conduct thorough quality assessments to ensure that the products available on our platform meet high standards. Our commitment to quality is reflected in the satisfaction of our customers.</p>
 			</details>
       <details className="w-full border rounded-lg">
-				<summary className="px-4 py-6 focus:outline-none focus-visible:ri">Eleifend feugiat sollicitudin laoreet adipiscing bibendum suscipit erat?</summary>
-				<p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">Justo libero tellus integer tincidunt justo semper consequat venenatis aliquet imperdiet. Ultricies urna proin fusce nulla pretium sodales vel magna et massa euismod vulputate sed. </p>
+				<summary className="px-4 py-6 focus:outline-none focus-visible:ri">How does Auto Essentials support scalability for a growing user base?</summary>
+				<p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">Auto Essentials is designed with scalability in mind. Our infrastructure is built to handle increased demand, ensuring a smooth and responsive experience for users as our platform grows. We continuously invest in technology and resources to adapt to the evolving needs of our expanding user base</p>
 			</details>
 		</div>
 	</div>

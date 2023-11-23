@@ -18,6 +18,8 @@ const CreateEvent = () => {
   const [images, setImages] = useState([]);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+  const [details, setDetails] = useState("");
+
   const [category, setCategory] = useState("");
   const [tags, setTags] = useState("");
   const [originalPrice, setOriginalPrice] = useState();
@@ -92,6 +94,8 @@ const CreateEvent = () => {
     newForm.append("description", description);
     newForm.append("category", category);
     newForm.append("tags", tags);
+    newForm.append("details", details);
+
     newForm.append("originalPrice", originalPrice);
     newForm.append("discountPrice", discountPrice);
     newForm.append("stock", stock);
@@ -138,6 +142,27 @@ const CreateEvent = () => {
           ></textarea>
         </div>
         <br />
+
+
+        <div>
+          <label className="pb-2">
+            Details <span className="text-red-500">*</span>
+          </label>
+          <textarea
+            cols="30"
+            required
+            rows="8"
+            type="text"
+            name="description"
+            value={details}
+            className="mt-2 appearance-none block w-full pt-2 px-3 border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+            onChange={(e) => setDetails(e.target.value)}
+            placeholder="Enter your event event details..."
+          ></textarea>
+        </div>
+        <br />
+
+
         <div>
           <label className="pb-2">
             Category <span className="text-red-500">*</span>
@@ -264,7 +289,7 @@ const CreateEvent = () => {
                   key={i}
                   alt=""
                   className="h-[120px] w-[120px] object-cover m-2"
-                />
+                /> 
               ))}
           </div>
           <br />

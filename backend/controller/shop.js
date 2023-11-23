@@ -296,6 +296,38 @@ router.put('/update-seller-info',isSeller,catchAsyncError(async(req,res,next)=>{
 
 
 
+  // update shop status ---admin
+router.put(
+  "/update-shop-status/:id",
+  isAuthenticated,
+  isAdmin("Admin"),
+  catchAsyncError(async (req, res, next) => {
+    console.log("Received PUT request for shop ID:", req.params.id);
+    try {
+      const shop = await Shop.findById(req.params.id);
+
+      if (!shop) {
+        return next(
+          new ErrorHandler("Shop is not available with this id", 400)
+        );
+      }
+
+      const { newStatus } = req.body;
+
+      // Assuming that 'newStatus' is a valid status value
+      shop.status = newStatus;
+      await shop.save();
+
+      res.status(201).json({
+        success: true,
+        message: "Shop status updated successfully!",
+      });
+    } catch (error) {
+      return next(new ErrorHandler(error.message, 500));
+    }
+  })
+);
+
 
   // all sellers --- for users
   router.get(

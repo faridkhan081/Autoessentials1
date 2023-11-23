@@ -165,8 +165,15 @@ function ProductDetails({ data, isLoading }) {
                             ? "RS." + data.originalPrice
                             : null}
                         </h3>
+
+                       
                       </div>
-                      <div className="flex items-center mt-12 justify-between pr-3">
+                      <div className="flex items-center pt-2">
+                        <span className={`${styles.stockStatus} ${data.stock > 0 ? styles.inStock : styles.outOfStock}`}>
+                          {data.stock > 0 ? 'In Stock' : 'Out of Stock'}
+                        </span>
+                      </div>
+                      <div className="flex items-center mt-5 justify-between pr-3">
                         <div className="flex items-center">
                           <button
                             className="bg-gradient-to-r from-rose-500 to-rose-600 text-white font-bold rounded-l px-4 py-2 shadow-lg hover:opacity-75 transition duration-300 ease-in-out"
@@ -211,9 +218,9 @@ function ProductDetails({ data, isLoading }) {
                         {cart && cart.find((i) => i._id === data._id) ? (
                           <>
                             <span
-                              className={`${styles.button} !bg-[#d54343] text-white !rounded !h-11 flex items-center`}
+                              className={`${styles.button} !bg-[#37ae3d] text-white !rounded !h-11 flex items-center`}
                             >
-                              Remove from cart
+                              Added to cart
                             </span>
                           </>
                         ) : (
@@ -345,33 +352,32 @@ const ProductDetailsInfo = ({ data, products, id, totalReviewsLength,
       ) : null}
 
       {active === 2 ? (
-        <div className="w-full min-h-[40vh] flex flex-col items-center py-3 overflow-y-scroll">
-          {data &&
-            data.reviews.map((item, index) => (
-              <div className="w-full flex my-2">
-                <img
-                  src={`${backend_url}/${item.user.avatar}`}
-                  alt=""
-                  className="w-[50px] h-[50px] rounded-full"
-                />
-                <div className="pl-2 ">
-                  <div className="w-full flex items-center">
-                    <h1 className="font-[500] mr-3">{item.user.name}</h1>
-                    <Ratings rating={data?.ratings} />
-                  </div>
-                  <p>{item.comment}</p>
-                  <p className="font-[400] text-[13px] text-[#000000a7]"> Reviewed on {new Date(item.createdAt).toLocaleDateString()}</p>
-                </div>
-              </div>
-            ))}
-
-          <div className="w-full flex justify-center">
-            {data && data.reviews.length === 0 && (
-              <h5>No Reviews for this product!</h5>
-            )}
+  <div className="w-full min-h-[40vh] flex flex-col items-center py-3 overflow-y-scroll">
+    {data?.reviews?.map((item, index) => (
+      <div className="w-full flex my-2" key={index}>
+        <img
+          src={`${backend_url}/${item.user.avatar}`}
+          alt=""
+          className="w-[50px] h-[50px] rounded-full"
+        />
+        <div className="pl-2 ">
+          <div className="w-full flex items-center">
+            <h1 className="font-[500] mr-3">{item.user.name}</h1>
+            <Ratings rating={data?.ratings} />
           </div>
+          <p>{item.comment}</p>
+          <p className="font-[400] text-[13px] text-[#000000a7]"> Reviewed on {new Date(item.createdAt).toLocaleDateString()}</p>
         </div>
-      ) : null}
+      </div>
+    ))}
+
+    <div className="w-full flex justify-center">
+      {data?.reviews?.length === 0 && (
+        <h5>No Reviews for this product!</h5>
+      )}
+    </div>
+  </div>
+) : null}
 
       {active === 3 && (
         <div className="w-full block 800px:flex p-5">

@@ -19,6 +19,7 @@ import { toast } from "react-toastify";
 import Ratings from "../../Products/Rating";
 
 function ProductCard({ data,isEvent }) {
+  const [isInStock, setIsInStock] = useState(data.stock > 0);
   const [click, setClick] = useState(false);
   const [open, setOpen] = useState(false);
   const { wishlist } = useSelector((state) => state.wishlist);
@@ -40,7 +41,8 @@ function ProductCard({ data,isEvent }) {
     } else {
       setClick(false);
     }
-  }, [wishlist]);
+    setIsInStock(data.stock > 0);
+  }, [data.stock,wishlist]);
 
   const removeFromWishlistHandler = (data) => {
     setClick(!click);
@@ -82,7 +84,11 @@ function ProductCard({ data,isEvent }) {
         />
          <span className="absolute top-0 left-0 m-2 rounded-full bg-rose-600 px-2 text-center text-[11px] text-white">
          {calculateDiscountPercentage(data.originalPrice, data.discountPrice)}
+         
          </span>
+         
+         
+
         </div>
       </Link>
       <Link to={`/shop/preview/${data?.shop._id}`}>
@@ -92,8 +98,11 @@ function ProductCard({ data,isEvent }) {
         <h4 className="h-[50px]  font-[500]" >
           {data.name.length > 40 ? data.name.slice(0, 40) + "..." : data.name}
         </h4>
-        <div className="flex mb-1" >
+        <div className="flex mb-1 items-center justify-between" >
         <Ratings rating={data?.ratings} />
+        <p className={`${styles.stockStatus} ${isInStock ? styles.inStock : styles.outOfStock}`}>
+  {isInStock ? "In Stock" : "Out of Stock"}
+</p>
          
         </div>
 
@@ -167,7 +176,7 @@ function ProductCard({ data,isEvent }) {
           />
           </>
         )}
-
+ 
         
 
       

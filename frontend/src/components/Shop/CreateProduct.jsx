@@ -11,7 +11,7 @@ const CreateProduct = () => {
   const { seller } = useSelector((state) => state.seller);
   const { success, error } = useSelector((state) => state.products);
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); 
 
   const [images, setImages] = useState([]);
   const [name, setName] = useState("");

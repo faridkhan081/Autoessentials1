@@ -91,6 +91,110 @@
       ]
     },
     {
+      "tokens": ["create", "account"],
+      "tag": "account",
+      "responses": [
+        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+        "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
+        "To update your profile information, please log in to your account and click on the 'My Profile' link.",
+        "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
+        "To delete your account, please log in to your account and click on the 'Delete Account' link."
+      ]
+    },
+    {
+      "tokens": ["create", "account"],
+      "tag": "account",
+      "responses": [
+        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+        "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
+        "To update your profile information, please log in to your account and click on the 'My Profile' link.",
+        "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
+        "To delete your account, please log in to your account and click on the 'Delete Account' link."
+      ]
+    },
+    {
+      "tokens": ["create", "account"],
+      "tag": "account",
+      "responses": [
+        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+        "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
+        "To update your profile information, please log in to your account and click on the 'My Profile' link.",
+        "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
+        "To delete your account, please log in to your account and click on the 'Delete Account' link."
+      ]
+    },
+    {
+      "tokens": ["create", "account"],
+      "tag": "account",
+      "responses": [
+        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+        "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
+        "To update your profile information, please log in to your account and click on the 'My Profile' link.",
+        "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
+        "To delete your account, please log in to your account and click on the 'Delete Account' link."
+      ]
+    },
+    {
+      "tokens": ["forgot", "password", "help", "reset"],
+      "tag": "account",
+      "responses": [
+        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+        "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
+        "To update your profile information, please log in to your account and click on the 'My Profile' link.",
+        "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
+        "To delete your account, please log in to your account and click on the 'Delete Account' link."
+      ]
+    },
+    {
+      "tokens": ["want", "update", "profile", "information", "help"],
+      "tag": "account",
+      "responses": [
+        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+        "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
+        "To update your profile information, please log in to your account and click on the 'My Profile' link.",
+        "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
+        "To delete your account, please log in to your account and click on the 'Delete Account' link."
+      ]
+    },
+    {
+      "tokens": ["trouble", "logging", "account", "help"],
+      "tag": "account",
+      "responses": [
+        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+        "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
+        "To update your profile information, please log in to your account and click on the 'My Profile' link.",
+        "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
+        "To delete your account, please log in to your account and click on the 'Delete Account' link."
+      ]
+    },
+    {
+      "tokens": ["delete", "account"],
+      "tag": "account",
+      "responses": [
+        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+        "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
+        "To update your profile information, please log in to your account and click on the 'My Profile' link.",
+        "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
+        "To delete your account, please log in to your account and click on the 'Delete Account' link."
+      ]
+    },
+    {
       "tokens": ["cya"],
       "tag": "goodbye",
       "responses": [
@@ -421,1853 +525,794 @@
       ]
     },
     {
-      "tokens": ["timing", "college"],
-      "tag": "hours",
-      "responses": ["College is open 8am-5pm Monday-Saturday!"]
-    },
-    {
-      "tokens": ["college", "timing"],
-      "tag": "hours",
-      "responses": ["College is open 8am-5pm Monday-Saturday!"]
-    },
-    {
-      "tokens": ["working", "day"],
-      "tag": "hours",
-      "responses": ["College is open 8am-5pm Monday-Saturday!"]
-    },
-    {
-      "tokens": ["guy", "open"],
-      "tag": "hours",
-      "responses": ["College is open 8am-5pm Monday-Saturday!"]
-    },
-    {
-      "tokens": ["hour"],
-      "tag": "hours",
-      "responses": ["College is open 8am-5pm Monday-Saturday!"]
-    },
-    {
-      "tokens": ["hour", "operation"],
-      "tag": "hours",
-      "responses": ["College is open 8am-5pm Monday-Saturday!"]
-    },
-    {
-      "tokens": ["college", "open"],
-      "tag": "hours",
-      "responses": ["College is open 8am-5pm Monday-Saturday!"]
-    },
-    {
-      "tokens": ["college", "timing"],
-      "tag": "hours",
-      "responses": ["College is open 8am-5pm Monday-Saturday!"]
-    },
-    {
-      "tokens": ["college", "timing"],
-      "tag": "hours",
-      "responses": ["College is open 8am-5pm Monday-Saturday!"]
-    },
-    {
-      "tokens": ["college", "open", "saturday"],
-      "tag": "hours",
-      "responses": ["College is open 8am-5pm Monday-Saturday!"]
-    },
-    {
-      "tokens": ["tell", "something", "college", "timing"],
-      "tag": "hours",
-      "responses": ["College is open 8am-5pm Monday-Saturday!"]
-    },
-    {
-      "tokens": ["college", "hour"],
-      "tag": "hours",
-      "responses": ["College is open 8am-5pm Monday-Saturday!"]
-    },
-    {
-      "tokens": ["come", "college"],
-      "tag": "hours",
-      "responses": ["College is open 8am-5pm Monday-Saturday!"]
-    },
-    {
-      "tokens": ["attend", "college"],
-      "tag": "hours",
-      "responses": ["College is open 8am-5pm Monday-Saturday!"]
-    },
-    {
-      "tokens": ["college", "time"],
-      "tag": "hours",
-      "responses": ["College is open 8am-5pm Monday-Saturday!"]
-    },
-    {
-      "tokens": ["college", "timing"],
-      "tag": "hours",
-      "responses": ["College is open 8am-5pm Monday-Saturday!"]
-    },
-    {
-      "tokens": ["timing", "college"],
-      "tag": "hours",
-      "responses": ["College is open 8am-5pm Monday-Saturday!"]
-    },
-    {
       "tokens": ["info"],
       "tag": "number",
-      "responses": ["You can contact at: +92 123 4567890"]
+      "responses": ["You can contact at: 0300 1080023"]
     },
     {
       "tokens": ["contact", "info"],
       "tag": "number",
-      "responses": ["You can contact at: +92 123 4567890"]
+      "responses": ["You can contact at: 0300 1080023"]
     },
     {
       "tokens": ["contact"],
       "tag": "number",
-      "responses": ["You can contact at: +92 123 4567890"]
+      "responses": ["You can contact at: 0300 1080023"]
     },
     {
       "tokens": ["contact", "number"],
       "tag": "number",
-      "responses": ["You can contact at: +92 123 4567890"]
+      "responses": ["You can contact at: 0300 1080023"]
     },
     {
       "tokens": ["team", "number"],
       "tag": "number",
-      "responses": ["You can contact at: +92 123 4567890"]
+      "responses": ["You can contact at: 0300 1080023"]
     },
     {
       "tokens": ["contact"],
       "tag": "number",
-      "responses": ["You can contact at: +92 123 4567890"]
+      "responses": ["You can contact at: 0300 1080023"]
     },
     {
       "tokens": ["contact", "number"],
       "tag": "number",
-      "responses": ["You can contact at: +92 123 4567890"]
+      "responses": ["You can contact at: 0300 1080023"]
     },
     {
       "tokens": ["call"],
       "tag": "number",
-      "responses": ["You can contact at: +92 123 4567890"]
+      "responses": ["You can contact at: 0300 1080023"]
     },
     {
       "tokens": ["team", "phone"],
       "tag": "number",
-      "responses": ["You can contact at: +92 123 4567890"]
+      "responses": ["You can contact at: 0300 1080023"]
     },
     {
       "tokens": ["contact"],
       "tag": "number",
-      "responses": ["You can contact at: +92 123 4567890"]
+      "responses": ["You can contact at: 0300 1080023"]
     },
     {
       "tokens": ["get", "phone", "number"],
       "tag": "number",
-      "responses": ["You can contact at: +92 123 4567890"]
+      "responses": ["You can contact at: 0300 1080023"]
     },
     {
       "tokens": ["call"],
       "tag": "number",
-      "responses": ["You can contact at: +92 123 4567890"]
+      "responses": ["You can contact at: 0300 1080023"]
     },
     {
       "tokens": ["phone", "number"],
       "tag": "number",
-      "responses": ["You can contact at: +92 123 4567890"]
+      "responses": ["You can contact at: 0300 1080023"]
     },
     {
       "tokens": ["phone"],
       "tag": "number",
-      "responses": ["You can contact at: +92 123 4567890"]
+      "responses": ["You can contact at: 0300 1080023"]
     },
     {
       "tokens": ["call"],
       "tag": "number",
-      "responses": ["You can contact at: +92 123 4567890"]
+      "responses": ["You can contact at: 0300 1080023"]
+    },
+    {
+      "tokens": ["info"],
+      "tag": "number",
+      "responses": ["You can contact at: 0300 1080023"]
     },
     {
       "tokens": ["list", "product"],
-      "tag": "course",
+      "tag": "Products",
       "responses": [
         "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
       ]
     },
     {
       "tokens": ["list", "product", "offered"],
-      "tag": "course",
+      "tag": "Products",
       "responses": [
         "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
       ]
     },
     {
       "tokens": ["list", "product", "offered"],
-      "tag": "course",
+      "tag": "Products",
       "responses": [
         "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
       ]
     },
     {
       "tokens": ["product", "offered", "website"],
-      "tag": "course",
+      "tag": "Products",
       "responses": [
         "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
       ]
     },
     {
       "tokens": ["product"],
-      "tag": "course",
+      "tag": "Products",
       "responses": [
         "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
       ]
     },
     {
       "tokens": ["product", "offered"],
-      "tag": "course",
+      "tag": "Products",
       "responses": [
         "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
       ]
     },
     {
       "tokens": ["product", "offered", "website", "name"],
-      "tag": "course",
+      "tag": "Products",
       "responses": [
         "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
       ]
     },
     {
       "tokens": ["product", "offer"],
-      "tag": "course",
+      "tag": "Products",
       "responses": [
         "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
       ]
     },
     {
       "tokens": ["branch"],
-      "tag": "course",
+      "tag": "Products",
       "responses": [
         "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
       ]
     },
     {
       "tokens": ["product", "available", "website"],
-      "tag": "course",
+      "tag": "Products",
       "responses": [
         "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
       ]
     },
     {
       "tokens": ["branch", "available", "website"],
-      "tag": "course",
+      "tag": "Products",
       "responses": [
         "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
       ]
     },
     {
       "tokens": ["product", "website"],
-      "tag": "course",
+      "tag": "Products",
       "responses": [
         "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
       ]
     },
     {
       "tokens": ["branch", "website"],
-      "tag": "course",
+      "tag": "Products",
       "responses": [
         "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
       ]
     },
     {
       "tokens": ["product", "website"],
-      "tag": "course",
+      "tag": "Products",
       "responses": [
         "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
       ]
     },
     {
       "tokens": ["branch", "available", "website"],
-      "tag": "course",
+      "tag": "Products",
       "responses": [
         "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
       ]
     },
     {
       "tokens": ["tell", "product", "available", "website"],
-      "tag": "course",
+      "tag": "Products",
       "responses": [
         "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
       ]
     },
     {
-      "tokens": ["information", "fee"],
-      "tag": "funds",
+      "tokens": ["information", "payment", "method"],
+      "tag": "payment",
       "responses": [
-        "For Fee detail visit <a target=\"_blank\" href=\"LINK\"> here</a>"
+        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
       ]
     },
     {
-      "tokens": ["information", "fee"],
-      "tag": "funds",
+      "tokens": ["payment", "method", "method", "accept"],
+      "tag": "payment",
       "responses": [
-        "For Fee detail visit <a target=\"_blank\" href=\"LINK\"> here</a>"
+        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
       ]
     },
     {
-      "tokens": ["tell", "fee"],
-      "tag": "funds",
+      "tokens": ["information", "payment", "method"],
+      "tag": "payment",
       "responses": [
-        "For Fee detail visit <a target=\"_blank\" href=\"LINK\"> here</a>"
+        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
       ]
     },
     {
-      "tokens": ["college", "fee"],
-      "tag": "funds",
+      "tokens": ["tell", "payment", "method"],
+      "tag": "payment",
       "responses": [
-        "For Fee detail visit <a target=\"_blank\" href=\"LINK\"> here</a>"
+        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
       ]
     },
     {
-      "tokens": ["fee", "per", "semester"],
-      "tag": "funds",
+      "tokens": ["buying", "payment", "method"],
+      "tag": "payment",
       "responses": [
-        "For Fee detail visit <a target=\"_blank\" href=\"LINK\"> here</a>"
+        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
       ]
     },
     {
-      "tokens": ["fee", "semester"],
-      "tag": "funds",
+      "tokens": ["selling", "payment", "method"],
+      "tag": "payment",
       "responses": [
-        "For Fee detail visit <a target=\"_blank\" href=\"LINK\"> here</a>"
+        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
       ]
     },
     {
-      "tokens": ["fund", "year"],
-      "tag": "funds",
+      "tokens": ["payment", "method", "per", "product"],
+      "tag": "payment",
       "responses": [
-        "For Fee detail visit <a target=\"_blank\" href=\"LINK\"> here</a>"
+        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
       ]
     },
     {
-      "tokens": ["fee"],
-      "tag": "funds",
+      "tokens": ["payment", "method"],
+      "tag": "payment",
       "responses": [
-        "For Fee detail visit <a target=\"_blank\" href=\"LINK\"> here</a>"
+        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
       ]
     },
     {
-      "tokens": ["fund"],
-      "tag": "funds",
+      "tokens": ["payment", "method"],
+      "tag": "payment",
       "responses": [
-        "For Fee detail visit <a target=\"_blank\" href=\"LINK\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["much", "fund"],
-      "tag": "funds",
-      "responses": [
-        "For Fee detail visit <a target=\"_blank\" href=\"LINK\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["fund", "first", "year"],
-      "tag": "funds",
-      "responses": [
-        "For Fee detail visit <a target=\"_blank\" href=\"LINK\"> here</a>"
+        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
       ]
     },
     {
       "tokens": ["fund"],
-      "tag": "funds",
+      "tag": "payment",
       "responses": [
-        "For Fee detail visit <a target=\"_blank\" href=\"LINK\"> here</a>"
+        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
+      ]
+    },
+    {
+      "tokens": ["payment"],
+      "tag": "payment",
+      "responses": [
+        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
+      ]
+    },
+    {
+      "tokens": ["payment", "method"],
+      "tag": "payment",
+      "responses": [
+        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
       ]
     },
     {
       "tokens": ["fund"],
-      "tag": "funds",
+      "tag": "payment",
       "responses": [
-        "For Fee detail visit <a target=\"_blank\" href=\"LINK\"> here</a>"
+        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
+      ]
+    },
+    {
+      "tokens": ["payment"],
+      "tag": "payment",
+      "responses": [
+        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
+      ]
+    },
+    {
+      "tokens": ["payment", "method"],
+      "tag": "payment",
+      "responses": [
+        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
       ]
     },
     {
       "tokens": ["tell", "something", "fund"],
-      "tag": "funds",
+      "tag": "payment",
       "responses": [
-        "For Fee detail visit <a target=\"_blank\" href=\"LINK\"> here</a>"
+        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
       ]
     },
     {
-      "tokens": ["fund", "hostel"],
-      "tag": "funds",
+      "tokens": ["tell", "something", "payment"],
+      "tag": "payment",
       "responses": [
-        "For Fee detail visit <a target=\"_blank\" href=\"LINK\"> here</a>"
+        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
       ]
     },
     {
-      "tokens": ["much", "fund"],
-      "tag": "funds",
+      "tokens": ["tell", "something", "payment", "method"],
+      "tag": "payment",
       "responses": [
-        "For Fee detail visit <a target=\"_blank\" href=\"LINK\"> here</a>"
+        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
       ]
     },
     {
-      "tokens": ["hostel", "fund"],
-      "tag": "funds",
+      "tokens": ["track", "order"],
+      "tag": "track",
       "responses": [
-        "For Fee detail visit <a target=\"_blank\" href=\"LINK\"> here</a>"
+        "You can track your order by logging into your account and navigating to the 'Order History' section. There, you will find the tracking information for your shipment."
       ]
     },
     {
-      "tokens": ["fund", "ac", "room"],
-      "tag": "funds",
+      "tokens": ["track", "order"],
+      "tag": "track",
       "responses": [
-        "For Fee detail visit <a target=\"_blank\" href=\"LINK\"> here</a>"
+        "You can track your order by logging into your account and navigating to the 'Order History' section. There, you will find the tracking information for your shipment."
       ]
     },
     {
-      "tokens": ["fund", "room"],
-      "tag": "funds",
+      "tokens": ["track", "order"],
+      "tag": "track",
       "responses": [
-        "For Fee detail visit <a target=\"_blank\" href=\"LINK\"> here</a>"
+        "You can track your order by logging into your account and navigating to the 'Order History' section. There, you will find the tracking information for your shipment."
       ]
     },
     {
-      "tokens": ["fund", "ac", "room", "girl"],
-      "tag": "funds",
+      "tokens": ["track", "order"],
+      "tag": "track",
       "responses": [
-        "For Fee detail visit <a target=\"_blank\" href=\"LINK\"> here</a>"
+        "You can track your order by logging into your account and navigating to the 'Order History' section. There, you will find the tracking information for your shipment."
       ]
     },
     {
-      "tokens": ["fund", "room", "girl"],
-      "tag": "funds",
+      "tokens": ["return", "policy"],
+      "tag": "return",
       "responses": [
-        "For Fee detail visit <a target=\"_blank\" href=\"LINK\"> here</a>"
+        "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
       ]
     },
     {
-      "tokens": ["fund", "ac", "room", "boy"],
-      "tag": "funds",
+      "tokens": ["return", "policy"],
+      "tag": "return",
       "responses": [
-        "For Fee detail visit <a target=\"_blank\" href=\"LINK\"> here</a>"
+        "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
       ]
     },
     {
-      "tokens": ["fund", "room", "boy"],
-      "tag": "funds",
+      "tokens": ["return"],
+      "tag": "return",
       "responses": [
-        "For Fee detail visit <a target=\"_blank\" href=\"LINK\"> here</a>"
+        "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
       ]
     },
     {
-      "tokens": ["college", "located"],
-      "tag": "location",
+      "tokens": ["return", "policy"],
+      "tag": "return",
       "responses": [
-        "<a target=\"_blank\" href=\"ADD YOU GOOGLE MAP LINK HERE\"> here</a>"
+        "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
       ]
     },
     {
-      "tokens": ["college", "located"],
-      "tag": "location",
+      "tokens": ["return", "policy", "website"],
+      "tag": "return",
       "responses": [
-        "<a target=\"_blank\" href=\"ADD YOU GOOGLE MAP LINK HERE\"> here</a>"
+        "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
       ]
     },
     {
-      "tokens": ["college"],
-      "tag": "location",
+      "tokens": ["return", "policy", "website"],
+      "tag": "return",
       "responses": [
-        "<a target=\"_blank\" href=\"ADD YOU GOOGLE MAP LINK HERE\"> here</a>"
+        "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
       ]
     },
     {
-      "tokens": ["college", "located"],
-      "tag": "location",
+      "tokens": ["return", "policy", "website"],
+      "tag": "return",
       "responses": [
-        "<a target=\"_blank\" href=\"ADD YOU GOOGLE MAP LINK HERE\"> here</a>"
+        "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
       ]
     },
     {
-      "tokens": ["address", "college"],
-      "tag": "location",
+      "tokens": ["return", "policy", "website"],
+      "tag": "return",
       "responses": [
-        "<a target=\"_blank\" href=\"ADD YOU GOOGLE MAP LINK HERE\"> here</a>"
+        "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
       ]
     },
     {
-      "tokens": ["reach", "college"],
-      "tag": "location",
+      "tokens": ["return", "product"],
+      "tag": "return",
       "responses": [
-        "<a target=\"_blank\" href=\"ADD YOU GOOGLE MAP LINK HERE\"> here</a>"
+        "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
       ]
     },
     {
-      "tokens": ["college", "location"],
-      "tag": "location",
+      "tokens": ["return", "product", "policy"],
+      "tag": "return",
       "responses": [
-        "<a target=\"_blank\" href=\"ADD YOU GOOGLE MAP LINK HERE\"> here</a>"
+        "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
       ]
     },
     {
-      "tokens": ["college", "address"],
-      "tag": "location",
+      "tokens": ["return", "product", "policy", "website"],
+      "tag": "return",
       "responses": [
-        "<a target=\"_blank\" href=\"ADD YOU GOOGLE MAP LINK HERE\"> here</a>"
+        "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
       ]
     },
     {
-      "tokens": ["wheres", "college"],
-      "tag": "location",
+      "tokens": ["return", "product", "policy", "website"],
+      "tag": "return",
       "responses": [
-        "<a target=\"_blank\" href=\"ADD YOU GOOGLE MAP LINK HERE\"> here</a>"
+        "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
       ]
     },
     {
-      "tokens": ["reach", "college"],
-      "tag": "location",
+      "tokens": ["cancel", "order"],
+      "tag": "cancelorder",
       "responses": [
-        "<a target=\"_blank\" href=\"ADD YOU GOOGLE MAP LINK HERE\"> here</a>"
+        "You can cancel your order if it has not been shipped yet. Please contact our customer support team with your order details, and we will assist you with the cancellation process."
       ]
     },
     {
-      "tokens": ["whats", "college", "address"],
-      "tag": "location",
+      "tokens": ["cancel", "order"],
+      "tag": "cancelorder",
       "responses": [
-        "<a target=\"_blank\" href=\"ADD YOU GOOGLE MAP LINK HERE\"> here</a>"
+        "You can cancel your order if it has not been shipped yet. Please contact our customer support team with your order details, and we will assist you with the cancellation process."
       ]
     },
     {
-      "tokens": ["address", "college"],
-      "tag": "location",
+      "tokens": ["cancel", "order"],
+      "tag": "cancelorder",
       "responses": [
-        "<a target=\"_blank\" href=\"ADD YOU GOOGLE MAP LINK HERE\"> here</a>"
+        "You can cancel your order if it has not been shipped yet. Please contact our customer support team with your order details, and we will assist you with the cancellation process."
       ]
     },
     {
-      "tokens": ["address"],
-      "tag": "location",
+      "tokens": ["cancel", "order"],
+      "tag": "cancelorder",
       "responses": [
-        "<a target=\"_blank\" href=\"ADD YOU GOOGLE MAP LINK HERE\"> here</a>"
+        "You can cancel your order if it has not been shipped yet. Please contact our customer support team with your order details, and we will assist you with the cancellation process."
       ]
     },
     {
-      "tokens": ["location"],
-      "tag": "location",
+      "tokens": ["cancel", "order"],
+      "tag": "cancelorder",
       "responses": [
-        "<a target=\"_blank\" href=\"ADD YOU GOOGLE MAP LINK HERE\"> here</a>"
+        "You can cancel your order if it has not been shipped yet. Please contact our customer support team with your order details, and we will assist you with the cancellation process."
       ]
     },
     {
-      "tokens": ["hostel", "facility"],
-      "tag": "hostel",
+      "tokens": ["cancel", "order", "website"],
+      "tag": "cancelorder",
       "responses": [
-        "For hostel detail visit <a target=\"_blank\" href=\"ADD YOUR HOSTEL DETAIL PDF LINK OR ANY INFORMATION LINK OR ADD YOU OWN ANSWERS\"> here</a>"
+        "You can cancel your order if it has not been shipped yet. Please contact our customer support team with your order details, and we will assist you with the cancellation process."
       ]
     },
     {
-      "tokens": ["hostel", "servive"],
-      "tag": "hostel",
+      "tokens": ["cancel", "order", "website"],
+      "tag": "cancelorder",
       "responses": [
-        "For hostel detail visit <a target=\"_blank\" href=\"ADD YOUR HOSTEL DETAIL PDF LINK OR ANY INFORMATION LINK OR ADD YOU OWN ANSWERS\"> here</a>"
+        "You can cancel your order if it has not been shipped yet. Please contact our customer support team with your order details, and we will assist you with the cancellation process."
       ]
     },
     {
-      "tokens": ["hostel", "location"],
-      "tag": "hostel",
+      "tokens": ["cancel", "order", "website"],
+      "tag": "cancelorder",
       "responses": [
-        "For hostel detail visit <a target=\"_blank\" href=\"ADD YOUR HOSTEL DETAIL PDF LINK OR ANY INFORMATION LINK OR ADD YOU OWN ANSWERS\"> here</a>"
+        "You can cancel your order if it has not been shipped yet. Please contact our customer support team with your order details, and we will assist you with the cancellation process."
       ]
     },
     {
-      "tokens": ["hostel", "address"],
-      "tag": "hostel",
+      "tokens": ["cancel", "order", "website"],
+      "tag": "cancelorder",
       "responses": [
-        "For hostel detail visit <a target=\"_blank\" href=\"ADD YOUR HOSTEL DETAIL PDF LINK OR ANY INFORMATION LINK OR ADD YOU OWN ANSWERS\"> here</a>"
+        "You can cancel your order if it has not been shipped yet. Please contact our customer support team with your order details, and we will assist you with the cancellation process."
       ]
     },
     {
-      "tokens": ["hostel", "facility"],
-      "tag": "hostel",
+      "tokens": ["long", "doe", "shipping", "take"],
+      "tag": "shipping",
       "responses": [
-        "For hostel detail visit <a target=\"_blank\" href=\"ADD YOUR HOSTEL DETAIL PDF LINK OR ANY INFORMATION LINK OR ADD YOU OWN ANSWERS\"> here</a>"
+        "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
       ]
     },
     {
-      "tokens": ["hostel", "fee"],
-      "tag": "hostel",
+      "tokens": ["shipping"],
+      "tag": "shipping",
       "responses": [
-        "For hostel detail visit <a target=\"_blank\" href=\"ADD YOUR HOSTEL DETAIL PDF LINK OR ANY INFORMATION LINK OR ADD YOU OWN ANSWERS\"> here</a>"
+        "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
       ]
     },
     {
-      "tokens": ["doe", "college", "provide", "hostel"],
-      "tag": "hostel",
+      "tokens": ["shipping", "time"],
+      "tag": "shipping",
       "responses": [
-        "For hostel detail visit <a target=\"_blank\" href=\"ADD YOUR HOSTEL DETAIL PDF LINK OR ANY INFORMATION LINK OR ADD YOU OWN ANSWERS\"> here</a>"
+        "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
       ]
     },
     {
-      "tokens": ["hostel"],
-      "tag": "hostel",
+      "tokens": ["shipping", "time"],
+      "tag": "shipping",
       "responses": [
-        "For hostel detail visit <a target=\"_blank\" href=\"ADD YOUR HOSTEL DETAIL PDF LINK OR ANY INFORMATION LINK OR ADD YOU OWN ANSWERS\"> here</a>"
+        "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
       ]
     },
     {
-      "tokens": ["hostel"],
-      "tag": "hostel",
+      "tokens": ["shipping", "time", "website"],
+      "tag": "shipping",
       "responses": [
-        "For hostel detail visit <a target=\"_blank\" href=\"ADD YOUR HOSTEL DETAIL PDF LINK OR ANY INFORMATION LINK OR ADD YOU OWN ANSWERS\"> here</a>"
+        "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
       ]
     },
     {
-      "tokens": ["hostel"],
-      "tag": "hostel",
+      "tokens": ["shipping", "time", "website"],
+      "tag": "shipping",
       "responses": [
-        "For hostel detail visit <a target=\"_blank\" href=\"ADD YOUR HOSTEL DETAIL PDF LINK OR ANY INFORMATION LINK OR ADD YOU OWN ANSWERS\"> here</a>"
+        "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
       ]
     },
     {
-      "tokens": ["guy", "hostel"],
-      "tag": "hostel",
+      "tokens": ["shipping", "time", "website"],
+      "tag": "shipping",
       "responses": [
-        "For hostel detail visit <a target=\"_blank\" href=\"ADD YOUR HOSTEL DETAIL PDF LINK OR ANY INFORMATION LINK OR ADD YOU OWN ANSWERS\"> here</a>"
+        "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
       ]
     },
     {
-      "tokens": ["builder", "built by", "who created you"],
-      "tag": "builder_info",
+      "tokens": ["shipping", "time", "website"],
+      "tag": "shipping",
       "responses": [
-        "I was proudly built by the talented AutoEssentials team. The key developers behind my creation include Hamad, Farid khan, and Abuzar. They have worked diligently to enhance your experience on our platform, ensuring seamless interactions and innovative features. If you have any specific questions or feedback, feel free to let us know!"
+        "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
       ]
-    }
-    ,
-    {
-      "tokens": ["hostel", "capacity"],
-      "tag": "hostel",
-      "responses": [
-        "For hostel detail visit <a target=\"_blank\" href=\"ADD YOUR HOSTEL DETAIL PDF LINK OR ANY INFORMATION LINK OR ADD YOU OWN ANSWERS\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["hostel", "fee"],
-      "tag": "hostel",
-      "responses": [
-        "For hostel detail visit <a target=\"_blank\" href=\"ADD YOUR HOSTEL DETAIL PDF LINK OR ANY INFORMATION LINK OR ADD YOU OWN ANSWERS\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["get", "hostel"],
-      "tag": "hostel",
-      "responses": [
-        "For hostel detail visit <a target=\"_blank\" href=\"ADD YOUR HOSTEL DETAIL PDF LINK OR ANY INFORMATION LINK OR ADD YOU OWN ANSWERS\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["hostel", "address"],
-      "tag": "hostel",
-      "responses": [
-        "For hostel detail visit <a target=\"_blank\" href=\"ADD YOUR HOSTEL DETAIL PDF LINK OR ANY INFORMATION LINK OR ADD YOU OWN ANSWERS\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["far", "hostel", "college"],
-      "tag": "hostel",
-      "responses": [
-        "For hostel detail visit <a target=\"_blank\" href=\"ADD YOUR HOSTEL DETAIL PDF LINK OR ANY INFORMATION LINK OR ADD YOU OWN ANSWERS\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["hostel", "college", "distance"],
-      "tag": "hostel",
-      "responses": [
-        "For hostel detail visit <a target=\"_blank\" href=\"ADD YOUR HOSTEL DETAIL PDF LINK OR ANY INFORMATION LINK OR ADD YOU OWN ANSWERS\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["hostel"],
-      "tag": "hostel",
-      "responses": [
-        "For hostel detail visit <a target=\"_blank\" href=\"ADD YOUR HOSTEL DETAIL PDF LINK OR ANY INFORMATION LINK OR ADD YOU OWN ANSWERS\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["big", "hostel"],
-      "tag": "hostel",
-      "responses": [
-        "For hostel detail visit <a target=\"_blank\" href=\"ADD YOUR HOSTEL DETAIL PDF LINK OR ANY INFORMATION LINK OR ADD YOU OWN ANSWERS\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["distance", "college", "hostel"],
-      "tag": "hostel",
-      "responses": [
-        "For hostel detail visit <a target=\"_blank\" href=\"ADD YOUR HOSTEL DETAIL PDF LINK OR ANY INFORMATION LINK OR ADD YOU OWN ANSWERS\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["distance", "hostel", "college"],
-      "tag": "hostel",
-      "responses": [
-        "For hostel detail visit <a target=\"_blank\" href=\"ADD YOUR HOSTEL DETAIL PDF LINK OR ANY INFORMATION LINK OR ADD YOU OWN ANSWERS\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["event", "organised"],
-      "tag": "event",
-      "responses": [
-        "For event detail visit <a target=\"_blank\" href=\"ADD YOUR FUNCTIONS LINK OR YOUR OWN RESPONSE\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["list", "event"],
-      "tag": "event",
-      "responses": [
-        "For event detail visit <a target=\"_blank\" href=\"ADD YOUR FUNCTIONS LINK OR YOUR OWN RESPONSE\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["list", "event", "organised", "college"],
-      "tag": "event",
-      "responses": [
-        "For event detail visit <a target=\"_blank\" href=\"ADD YOUR FUNCTIONS LINK OR YOUR OWN RESPONSE\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["list", "event", "conducted", "college"],
-      "tag": "event",
-      "responses": [
-        "For event detail visit <a target=\"_blank\" href=\"ADD YOUR FUNCTIONS LINK OR YOUR OWN RESPONSE\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["event", "conducted", "college"],
-      "tag": "event",
-      "responses": [
-        "For event detail visit <a target=\"_blank\" href=\"ADD YOUR FUNCTIONS LINK OR YOUR OWN RESPONSE\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["event", "held", "college"],
-      "tag": "event",
-      "responses": [
-        "For event detail visit <a target=\"_blank\" href=\"ADD YOUR FUNCTIONS LINK OR YOUR OWN RESPONSE\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["event"],
-      "tag": "event",
-      "responses": [
-        "For event detail visit <a target=\"_blank\" href=\"ADD YOUR FUNCTIONS LINK OR YOUR OWN RESPONSE\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["function"],
-      "tag": "event",
-      "responses": [
-        "For event detail visit <a target=\"_blank\" href=\"ADD YOUR FUNCTIONS LINK OR YOUR OWN RESPONSE\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["event"],
-      "tag": "event",
-      "responses": [
-        "For event detail visit <a target=\"_blank\" href=\"ADD YOUR FUNCTIONS LINK OR YOUR OWN RESPONSE\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["tell", "event"],
-      "tag": "event",
-      "responses": [
-        "For event detail visit <a target=\"_blank\" href=\"ADD YOUR FUNCTIONS LINK OR YOUR OWN RESPONSE\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["event"],
-      "tag": "event",
-      "responses": [
-        "For event detail visit <a target=\"_blank\" href=\"ADD YOUR FUNCTIONS LINK OR YOUR OWN RESPONSE\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["document", "bring"],
-      "tag": "document",
-      "responses": [
-        "To know more about document required visit <a target=\"_blank\" href=\"ADD LINK OF ADMISSION GUIDANCE DOCUMENT FROM YOUR Website WEBSITE\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["document", "needed", "admision"],
-      "tag": "document",
-      "responses": [
-        "To know more about document required visit <a target=\"_blank\" href=\"ADD LINK OF ADMISSION GUIDANCE DOCUMENT FROM YOUR Website WEBSITE\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["document", "needed", "time", "admission"],
-      "tag": "document",
-      "responses": [
-        "To know more about document required visit <a target=\"_blank\" href=\"ADD LINK OF ADMISSION GUIDANCE DOCUMENT FROM YOUR Website WEBSITE\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["document", "needed", "admission"],
-      "tag": "document",
-      "responses": [
-        "To know more about document required visit <a target=\"_blank\" href=\"ADD LINK OF ADMISSION GUIDANCE DOCUMENT FROM YOUR Website WEBSITE\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["document", "required", "admision"],
-      "tag": "document",
-      "responses": [
-        "To know more about document required visit <a target=\"_blank\" href=\"ADD LINK OF ADMISSION GUIDANCE DOCUMENT FROM YOUR Website WEBSITE\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["document", "required", "time", "admission"],
-      "tag": "document",
-      "responses": [
-        "To know more about document required visit <a target=\"_blank\" href=\"ADD LINK OF ADMISSION GUIDANCE DOCUMENT FROM YOUR Website WEBSITE\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["document", "required", "admission"],
-      "tag": "document",
-      "responses": [
-        "To know more about document required visit <a target=\"_blank\" href=\"ADD LINK OF ADMISSION GUIDANCE DOCUMENT FROM YOUR Website WEBSITE\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["document", "required", "admission"],
-      "tag": "document",
-      "responses": [
-        "To know more about document required visit <a target=\"_blank\" href=\"ADD LINK OF ADMISSION GUIDANCE DOCUMENT FROM YOUR Website WEBSITE\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["document", "bring", "admission"],
-      "tag": "document",
-      "responses": [
-        "To know more about document required visit <a target=\"_blank\" href=\"ADD LINK OF ADMISSION GUIDANCE DOCUMENT FROM YOUR Website WEBSITE\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["document"],
-      "tag": "document",
-      "responses": [
-        "To know more about document required visit <a target=\"_blank\" href=\"ADD LINK OF ADMISSION GUIDANCE DOCUMENT FROM YOUR Website WEBSITE\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["document", "need"],
-      "tag": "document",
-      "responses": [
-        "To know more about document required visit <a target=\"_blank\" href=\"ADD LINK OF ADMISSION GUIDANCE DOCUMENT FROM YOUR Website WEBSITE\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["document", "need", "admission"],
-      "tag": "document",
-      "responses": [
-        "To know more about document required visit <a target=\"_blank\" href=\"ADD LINK OF ADMISSION GUIDANCE DOCUMENT FROM YOUR Website WEBSITE\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["document", "needed"],
-      "tag": "document",
-      "responses": [
-        "To know more about document required visit <a target=\"_blank\" href=\"ADD LINK OF ADMISSION GUIDANCE DOCUMENT FROM YOUR Website WEBSITE\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["size", "campus"],
-      "tag": "floors",
-      "responses": ["My College has total 2 floors "]
-    },
-    {
-      "tokens": ["building", "size"],
-      "tag": "floors",
-      "responses": ["My College has total 2 floors "]
-    },
-    {
-      "tokens": ["many", "floor", "doe", "college"],
-      "tag": "floors",
-      "responses": ["My College has total 2 floors "]
-    },
-    {
-      "tokens": ["floor", "college"],
-      "tag": "floors",
-      "responses": ["My College has total 2 floors "]
-    },
-    {
-      "tokens": ["floor", "college"],
-      "tag": "floors",
-      "responses": ["My College has total 2 floors "]
-    },
-    {
-      "tokens": [
-        "tall",
-        "uni",
-        "college",
-        "engineering",
-        "college",
-        "building"
-      ],
-      "tag": "floors",
-      "responses": ["My College has total 2 floors "]
-    },
-    {
-      "tokens": ["floor"],
-      "tag": "floors",
-      "responses": ["My College has total 2 floors "]
-    },
-    {
-      "tokens": ["syllabus"],
-      "tag": "syllabus",
-      "responses": [
-        "Timetable provide direct to the students OR To know about syllabus visit <a target=\"_blank\" href=\"TIMETABLE LINK\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["information", "technology", "syllabus"],
-      "tag": "syllabus",
-      "responses": [
-        "Timetable provide direct to the students OR To know about syllabus visit <a target=\"_blank\" href=\"TIMETABLE LINK\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["syllabus"],
-      "tag": "syllabus",
-      "responses": [
-        "Timetable provide direct to the students OR To know about syllabus visit <a target=\"_blank\" href=\"TIMETABLE LINK\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["timetable"],
-      "tag": "syllabus",
-      "responses": [
-        "Timetable provide direct to the students OR To know about syllabus visit <a target=\"_blank\" href=\"TIMETABLE LINK\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["syllabus"],
-      "tag": "syllabus",
-      "responses": [
-        "Timetable provide direct to the students OR To know about syllabus visit <a target=\"_blank\" href=\"TIMETABLE LINK\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["syllabus"],
-      "tag": "syllabus",
-      "responses": [
-        "Timetable provide direct to the students OR To know about syllabus visit <a target=\"_blank\" href=\"TIMETABLE LINK\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["next", "lecture"],
-      "tag": "syllabus",
-      "responses": [
-        "Timetable provide direct to the students OR To know about syllabus visit <a target=\"_blank\" href=\"TIMETABLE LINK\"> here</a>"
-      ]
-    },
-    {
-      "tokens": ["library"],
-      "tag": "library",
-      "responses": [
-        "There is one huge and spacious library.timings are 8am to 6pm and for more visit <a target=\"blank\" href=\"ADD LIBRARY DETAIL LINK\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["library", "facility"],
-      "tag": "library",
-      "responses": [
-        "There is one huge and spacious library.timings are 8am to 6pm and for more visit <a target=\"blank\" href=\"ADD LIBRARY DETAIL LINK\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["library", "facility"],
-      "tag": "library",
-      "responses": [
-        "There is one huge and spacious library.timings are 8am to 6pm and for more visit <a target=\"blank\" href=\"ADD LIBRARY DETAIL LINK\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["library"],
-      "tag": "library",
-      "responses": [
-        "There is one huge and spacious library.timings are 8am to 6pm and for more visit <a target=\"blank\" href=\"ADD LIBRARY DETAIL LINK\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["doe", "college", "library", "facility"],
-      "tag": "library",
-      "responses": [
-        "There is one huge and spacious library.timings are 8am to 6pm and for more visit <a target=\"blank\" href=\"ADD LIBRARY DETAIL LINK\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["college", "library"],
-      "tag": "library",
-      "responses": [
-        "There is one huge and spacious library.timings are 8am to 6pm and for more visit <a target=\"blank\" href=\"ADD LIBRARY DETAIL LINK\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["get", "book"],
-      "tag": "library",
-      "responses": [
-        "There is one huge and spacious library.timings are 8am to 6pm and for more visit <a target=\"blank\" href=\"ADD LIBRARY DETAIL LINK\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["book", "facility"],
-      "tag": "library",
-      "responses": [
-        "There is one huge and spacious library.timings are 8am to 6pm and for more visit <a target=\"blank\" href=\"ADD LIBRARY DETAIL LINK\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["library"],
-      "tag": "library",
-      "responses": [
-        "There is one huge and spacious library.timings are 8am to 6pm and for more visit <a target=\"blank\" href=\"ADD LIBRARY DETAIL LINK\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["library"],
-      "tag": "library",
-      "responses": [
-        "There is one huge and spacious library.timings are 8am to 6pm and for more visit <a target=\"blank\" href=\"ADD LIBRARY DETAIL LINK\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["library", "information"],
-      "tag": "library",
-      "responses": [
-        "There is one huge and spacious library.timings are 8am to 6pm and for more visit <a target=\"blank\" href=\"ADD LIBRARY DETAIL LINK\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["library", "book", "information"],
-      "tag": "library",
-      "responses": [
-        "There is one huge and spacious library.timings are 8am to 6pm and for more visit <a target=\"blank\" href=\"ADD LIBRARY DETAIL LINK\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["tell", "library"],
-      "tag": "library",
-      "responses": [
-        "There is one huge and spacious library.timings are 8am to 6pm and for more visit <a target=\"blank\" href=\"ADD LIBRARY DETAIL LINK\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["many", "library"],
-      "tag": "library",
-      "responses": [
-        "There is one huge and spacious library.timings are 8am to 6pm and for more visit <a target=\"blank\" href=\"ADD LIBRARY DETAIL LINK\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["college", "infrastructure"],
-      "tag": "infrastructure",
-      "responses": [
-        "Our Website has Excellent Infrastructure. Campus is clean. Good IT Labs With Good Speed of Internet connection"
-      ]
-    },
-    {
-      "tokens": ["infrastructure"],
-      "tag": "infrastructure",
-      "responses": [
-        "Our Website has Excellent Infrastructure. Campus is clean. Good IT Labs With Good Speed of Internet connection"
-      ]
-    },
-    {
-      "tokens": ["college", "infrastructure"],
-      "tag": "infrastructure",
-      "responses": [
-        "Our Website has Excellent Infrastructure. Campus is clean. Good IT Labs With Good Speed of Internet connection"
-      ]
-    },
-    {
-      "tokens": ["food", "facility"],
-      "tag": "canteen",
-      "responses": ["Our Website has canteen with variety of food available"]
-    },
-    {
-      "tokens": ["canteen", "facility"],
-      "tag": "canteen",
-      "responses": ["Our Website has canteen with variety of food available"]
-    },
-    {
-      "tokens": ["canteen", "facility"],
-      "tag": "canteen",
-      "responses": ["Our Website has canteen with variety of food available"]
-    },
-    {
-      "tokens": ["canteen"],
-      "tag": "canteen",
-      "responses": ["Our Website has canteen with variety of food available"]
-    },
-    {
-      "tokens": ["cafetaria", "college"],
-      "tag": "canteen",
-      "responses": ["Our Website has canteen with variety of food available"]
-    },
-    {
-      "tokens": ["doe", "college", "canteen"],
-      "tag": "canteen",
-      "responses": ["Our Website has canteen with variety of food available"]
-    },
-    {
-      "tokens": ["canteen"],
-      "tag": "canteen",
-      "responses": ["Our Website has canteen with variety of food available"]
-    },
-    {
-      "tokens": ["cafetaria"],
-      "tag": "canteen",
-      "responses": ["Our Website has canteen with variety of food available"]
-    },
-    {
-      "tokens": ["canteen"],
-      "tag": "canteen",
-      "responses": ["Our Website has canteen with variety of food available"]
-    },
-    {
-      "tokens": ["food"],
-      "tag": "canteen",
-      "responses": ["Our Website has canteen with variety of food available"]
-    },
-    {
-      "tokens": ["cafetaria"],
-      "tag": "canteen",
-      "responses": ["Our Website has canteen with variety of food available"]
-    },
-    {
-      "tokens": ["food", "menu"],
-      "tag": "menu",
-      "responses": [
-        "we serve Franky, Locho, Alu-puri, Kachori, Khavsa, Thaali and many more on menu"
-      ]
-    },
-    {
-      "tokens": ["food", "canteen"],
-      "tag": "menu",
-      "responses": [
-        "we serve Franky, Locho, Alu-puri, Kachori, Khavsa, Thaali and many more on menu"
-      ]
-    },
-    {
-      "tokens": ["whats", "menu"],
-      "tag": "menu",
-      "responses": [
-        "we serve Franky, Locho, Alu-puri, Kachori, Khavsa, Thaali and many more on menu"
-      ]
-    },
-    {
-      "tokens": ["available", "college", "canteen"],
-      "tag": "menu",
-      "responses": [
-        "we serve Franky, Locho, Alu-puri, Kachori, Khavsa, Thaali and many more on menu"
-      ]
-    },
-    {
-      "tokens": ["food", "get", "college", "canteen"],
-      "tag": "menu",
-      "responses": [
-        "we serve Franky, Locho, Alu-puri, Kachori, Khavsa, Thaali and many more on menu"
-      ]
-    },
-    {
-      "tokens": ["food", "variety"],
-      "tag": "menu",
-      "responses": [
-        "we serve Franky, Locho, Alu-puri, Kachori, Khavsa, Thaali and many more on menu"
-      ]
-    },
-    {
-      "tokens": ["eat"],
-      "tag": "menu",
-      "responses": [
-        "we serve Franky, Locho, Alu-puri, Kachori, Khavsa, Thaali and many more on menu"
-      ]
-    },
-    {
-      "tokens": ["college", "placement"],
-      "tag": "placement",
-      "responses": [
-        "To know about placement visit <a target=\"_blank\" href=\"PLACEMENT INFORMATION LINK FROM YOUR Website WEBSITE IF THEY HAVE\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["company", "visit", "college"],
-      "tag": "placement",
-      "responses": [
-        "To know about placement visit <a target=\"_blank\" href=\"PLACEMENT INFORMATION LINK FROM YOUR Website WEBSITE IF THEY HAVE\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["average", "package"],
-      "tag": "placement",
-      "responses": [
-        "To know about placement visit <a target=\"_blank\" href=\"PLACEMENT INFORMATION LINK FROM YOUR Website WEBSITE IF THEY HAVE\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["company", "visit"],
-      "tag": "placement",
-      "responses": [
-        "To know about placement visit <a target=\"_blank\" href=\"PLACEMENT INFORMATION LINK FROM YOUR Website WEBSITE IF THEY HAVE\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["package"],
-      "tag": "placement",
-      "responses": [
-        "To know about placement visit <a target=\"_blank\" href=\"PLACEMENT INFORMATION LINK FROM YOUR Website WEBSITE IF THEY HAVE\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["placement"],
-      "tag": "placement",
-      "responses": [
-        "To know about placement visit <a target=\"_blank\" href=\"PLACEMENT INFORMATION LINK FROM YOUR Website WEBSITE IF THEY HAVE\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["placement"],
-      "tag": "placement",
-      "responses": [
-        "To know about placement visit <a target=\"_blank\" href=\"PLACEMENT INFORMATION LINK FROM YOUR Website WEBSITE IF THEY HAVE\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["recruitment"],
-      "tag": "placement",
-      "responses": [
-        "To know about placement visit <a target=\"_blank\" href=\"PLACEMENT INFORMATION LINK FROM YOUR Website WEBSITE IF THEY HAVE\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["company"],
-      "tag": "placement",
-      "responses": [
-        "To know about placement visit <a target=\"_blank\" href=\"PLACEMENT INFORMATION LINK FROM YOUR Website WEBSITE IF THEY HAVE\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["hod"],
-      "tag": "ithod",
-      "responses": [
-        "All engineering departments have only one hod XYZ who available on (Place name)"
-      ]
-    },
-    {
-      "tokens": ["hod"],
-      "tag": "ithod",
-      "responses": [
-        "All engineering departments have only one hod XYZ who available on (Place name)"
-      ]
-    },
-    {
-      "tokens": ["hod"],
-      "tag": "ithod",
-      "responses": [
-        "All engineering departments have only one hod XYZ who available on (Place name)"
-      ]
-    },
-    {
-      "tokens": ["name", "hod"],
-      "tag": "ithod",
-      "responses": [
-        "All engineering departments have only one hod XYZ who available on (Place name)"
-      ]
-    },
-    {
-      "tokens": ["computer", "hod"],
-      "tag": "computerhod",
-      "responses": [
-        "All engineering departments have only one hod XYZ who available on (PLACE NAME)"
-      ]
-    },
-    {
-      "tokens": ["computer", "hod"],
-      "tag": "computerhod",
-      "responses": [
-        "All engineering departments have only one hod XYZ who available on (PLACE NAME)"
-      ]
-    },
-    {
-      "tokens": ["computer", "hod"],
-      "tag": "computerhod",
-      "responses": [
-        "All engineering departments have only one hod XYZ who available on (PLACE NAME)"
-      ]
-    },
-    {
-      "tokens": ["name", "computer", "hod"],
-      "tag": "computerhod",
-      "responses": [
-        "All engineering departments have only one hod XYZ who available on (PLACE NAME)"
-      ]
-    },
-    {
-      "tokens": ["extc", "hod"],
-      "tag": "extchod",
-      "responses": [
-        "Different school wise hod are different.So be more clear with your school or department"
-      ]
-    },
-    {
-      "tokens": ["extc", "hod"],
-      "tag": "extchod",
-      "responses": [
-        "Different school wise hod are different.So be more clear with your school or department"
-      ]
-    },
-    {
-      "tokens": ["extc", "hod"],
-      "tag": "extchod",
-      "responses": [
-        "Different school wise hod are different.So be more clear with your school or department"
-      ]
-    },
-    {
-      "tokens": ["name", "extc", "hod"],
-      "tag": "extchod",
-      "responses": [
-        "Different school wise hod are different.So be more clear with your school or department"
-      ]
-    },
-    {
-      "tokens": ["name", "principal"],
-      "tag": "principal",
-      "responses": [
-        "XYZ is college principal and if you need any help then call your branch hod first.That is more appropriate"
-      ]
-    },
-    {
-      "tokens": ["whatv", "principal", "name"],
-      "tag": "principal",
-      "responses": [
-        "XYZ is college principal and if you need any help then call your branch hod first.That is more appropriate"
-      ]
-    },
-    {
-      "tokens": ["principal", "name"],
-      "tag": "principal",
-      "responses": [
-        "XYZ is college principal and if you need any help then call your branch hod first.That is more appropriate"
-      ]
-    },
-    {
-      "tokens": ["college", "principal"],
-      "tag": "principal",
-      "responses": [
-        "XYZ is college principal and if you need any help then call your branch hod first.That is more appropriate"
-      ]
-    },
-    {
-      "tokens": ["principal", "office"],
-      "tag": "principal",
-      "responses": [
-        "XYZ is college principal and if you need any help then call your branch hod first.That is more appropriate"
-      ]
-    },
-    {
-      "tokens": ["principal"],
-      "tag": "principal",
-      "responses": [
-        "XYZ is college principal and if you need any help then call your branch hod first.That is more appropriate"
-      ]
-    },
-    {
-      "tokens": ["name", "principal"],
-      "tag": "principal",
-      "responses": [
-        "XYZ is college principal and if you need any help then call your branch hod first.That is more appropriate"
-      ]
-    },
-    {
-      "tokens": ["exam", "date"],
-      "tag": "sem",
-      "responses": [
-        "Here is the Academic Calendar  <a target=\"_blank\" href=\"YOUR ACADEMIC CALENDER\">website</a>"
-      ]
-    },
-    {
-      "tokens": ["exam", "schedule"],
-      "tag": "sem",
-      "responses": [
-        "Here is the Academic Calendar  <a target=\"_blank\" href=\"YOUR ACADEMIC CALENDER\">website</a>"
-      ]
-    },
-    {
-      "tokens": ["semester", "exam"],
-      "tag": "sem",
-      "responses": [
-        "Here is the Academic Calendar  <a target=\"_blank\" href=\"YOUR ACADEMIC CALENDER\">website</a>"
-      ]
-    },
-    {
-      "tokens": ["semester", "exam", "timetable"],
-      "tag": "sem",
-      "responses": [
-        "Here is the Academic Calendar  <a target=\"_blank\" href=\"YOUR ACADEMIC CALENDER\">website</a>"
-      ]
-    },
-    {
-      "tokens": ["sem"],
-      "tag": "sem",
-      "responses": [
-        "Here is the Academic Calendar  <a target=\"_blank\" href=\"YOUR ACADEMIC CALENDER\">website</a>"
-      ]
-    },
-    {
-      "tokens": ["semester"],
-      "tag": "sem",
-      "responses": [
-        "Here is the Academic Calendar  <a target=\"_blank\" href=\"YOUR ACADEMIC CALENDER\">website</a>"
-      ]
-    },
-    {
-      "tokens": ["exam"],
-      "tag": "sem",
-      "responses": [
-        "Here is the Academic Calendar  <a target=\"_blank\" href=\"YOUR ACADEMIC CALENDER\">website</a>"
-      ]
-    },
-    {
-      "tokens": ["exam"],
-      "tag": "sem",
-      "responses": [
-        "Here is the Academic Calendar  <a target=\"_blank\" href=\"YOUR ACADEMIC CALENDER\">website</a>"
-      ]
-    },
-    {
-      "tokens": ["exam", "timetable"],
-      "tag": "sem",
-      "responses": [
-        "Here is the Academic Calendar  <a target=\"_blank\" href=\"YOUR ACADEMIC CALENDER\">website</a>"
-      ]
-    },
-    {
-      "tokens": ["exam", "date"],
-      "tag": "sem",
-      "responses": [
-        "Here is the Academic Calendar  <a target=\"_blank\" href=\"YOUR ACADEMIC CALENDER\">website</a>"
-      ]
-    },
-    {
-      "tokens": ["semester"],
-      "tag": "sem",
-      "responses": [
-        "Here is the Academic Calendar  <a target=\"_blank\" href=\"YOUR ACADEMIC CALENDER\">website</a>"
-      ]
-    },
-    {
-      "tokens": ["process", "admission"],
-      "tag": "admission",
-      "responses": [
-        "Application can also be submitted online through the Unversity's  <a target=\"_blank\" href=\"LINK OF ADMISSION DOCUMENT\">website</a>"
-      ]
-    },
-    {
-      "tokens": ["admission", "process"],
-      "tag": "admission",
-      "responses": [
-        "Application can also be submitted online through the Unversity's  <a target=\"_blank\" href=\"LINK OF ADMISSION DOCUMENT\">website</a>"
-      ]
-    },
-    {
-      "tokens": ["take", "admission", "college"],
-      "tag": "admission",
-      "responses": [
-        "Application can also be submitted online through the Unversity's  <a target=\"_blank\" href=\"LINK OF ADMISSION DOCUMENT\">website</a>"
-      ]
-    },
-    {
-      "tokens": ["process", "admission"],
-      "tag": "admission",
-      "responses": [
-        "Application can also be submitted online through the Unversity's  <a target=\"_blank\" href=\"LINK OF ADMISSION DOCUMENT\">website</a>"
-      ]
-    },
-    {
-      "tokens": ["admission"],
-      "tag": "admission",
-      "responses": [
-        "Application can also be submitted online through the Unversity's  <a target=\"_blank\" href=\"LINK OF ADMISSION DOCUMENT\">website</a>"
-      ]
-    },
-    {
-      "tokens": ["admission", "process"],
-      "tag": "admission",
-      "responses": [
-        "Application can also be submitted online through the Unversity's  <a target=\"_blank\" href=\"LINK OF ADMISSION DOCUMENT\">website</a>"
-      ]
-    },
-    {
-      "tokens": ["scholarship"],
-      "tag": "scholarship",
-      "responses": [
-        "Many government scholarships are supported by our Website. For details and updates visit <a target=\"_blank\" href=\"(SCHOLARSHIP DETAILS LINK)\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["scholarship", "available"],
-      "tag": "scholarship",
-      "responses": [
-        "Many government scholarships are supported by our Website. For details and updates visit <a target=\"_blank\" href=\"(SCHOLARSHIP DETAILS LINK)\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["scholarship", "engineering"],
-      "tag": "scholarship",
-      "responses": [
-        "Many government scholarships are supported by our Website. For details and updates visit <a target=\"_blank\" href=\"(SCHOLARSHIP DETAILS LINK)\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["scholarship"],
-      "tag": "scholarship",
-      "responses": [
-        "Many government scholarships are supported by our Website. For details and updates visit <a target=\"_blank\" href=\"(SCHOLARSHIP DETAILS LINK)\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["scholarship", "ce"],
-      "tag": "scholarship",
-      "responses": [
-        "Many government scholarships are supported by our Website. For details and updates visit <a target=\"_blank\" href=\"(SCHOLARSHIP DETAILS LINK)\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["scholarship", "mechanical"],
-      "tag": "scholarship",
-      "responses": [
-        "Many government scholarships are supported by our Website. For details and updates visit <a target=\"_blank\" href=\"(SCHOLARSHIP DETAILS LINK)\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["scholarship", "civil"],
-      "tag": "scholarship",
-      "responses": [
-        "Many government scholarships are supported by our Website. For details and updates visit <a target=\"_blank\" href=\"(SCHOLARSHIP DETAILS LINK)\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["scholarship", "chemical"],
-      "tag": "scholarship",
-      "responses": [
-        "Many government scholarships are supported by our Website. For details and updates visit <a target=\"_blank\" href=\"(SCHOLARSHIP DETAILS LINK)\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["scholarship"],
-      "tag": "scholarship",
-      "responses": [
-        "Many government scholarships are supported by our Website. For details and updates visit <a target=\"_blank\" href=\"(SCHOLARSHIP DETAILS LINK)\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["available", "scholarship"],
-      "tag": "scholarship",
-      "responses": [
-        "Many government scholarships are supported by our Website. For details and updates visit <a target=\"_blank\" href=\"(SCHOLARSHIP DETAILS LINK)\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["scholarship", "computer", "engineering"],
-      "tag": "scholarship",
-      "responses": [
-        "Many government scholarships are supported by our Website. For details and updates visit <a target=\"_blank\" href=\"(SCHOLARSHIP DETAILS LINK)\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["scholarship", "engineering"],
-      "tag": "scholarship",
-      "responses": [
-        "Many government scholarships are supported by our Website. For details and updates visit <a target=\"_blank\" href=\"(SCHOLARSHIP DETAILS LINK)\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["scholarship", "mechanical", "engineering"],
-      "tag": "scholarship",
-      "responses": [
-        "Many government scholarships are supported by our Website. For details and updates visit <a target=\"_blank\" href=\"(SCHOLARSHIP DETAILS LINK)\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["scholarship", "civil", "engineering"],
-      "tag": "scholarship",
-      "responses": [
-        "Many government scholarships are supported by our Website. For details and updates visit <a target=\"_blank\" href=\"(SCHOLARSHIP DETAILS LINK)\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["scholarship", "chemical", "engineering"],
-      "tag": "scholarship",
-      "responses": [
-        "Many government scholarships are supported by our Website. For details and updates visit <a target=\"_blank\" href=\"(SCHOLARSHIP DETAILS LINK)\">here</a>"
-      ]
     },
     {
-      "tokens": ["list", "scholarship"],
-      "tag": "scholarship",
+      "tokens": ["shipping", "product", "send", "user"],
+      "tag": "shipping",
       "responses": [
-        "Many government scholarships are supported by our Website. For details and updates visit <a target=\"_blank\" href=\"(SCHOLARSHIP DETAILS LINK)\">here</a>"
+        "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
       ]
     },
     {
-      "tokens": ["comp", "scholarship"],
-      "tag": "scholarship",
+      "tokens": ["shipping", "product", "send", "user"],
+      "tag": "shipping",
       "responses": [
-        "Many government scholarships are supported by our Website. For details and updates visit <a target=\"_blank\" href=\"(SCHOLARSHIP DETAILS LINK)\">here</a>"
+        "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
       ]
     },
     {
-      "tokens": ["scholarship"],
-      "tag": "scholarship",
+      "tokens": ["track", "order"],
+      "tag": "shipping",
       "responses": [
-        "Many government scholarships are supported by our Website. For details and updates visit <a target=\"_blank\" href=\"(SCHOLARSHIP DETAILS LINK)\">here</a>"
+        "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
       ]
     },
     {
-      "tokens": ["mechanical", "scholarship"],
-      "tag": "scholarship",
+      "tokens": ["track", "order"],
+      "tag": "shipping",
       "responses": [
-        "Many government scholarships are supported by our Website. For details and updates visit <a target=\"_blank\" href=\"(SCHOLARSHIP DETAILS LINK)\">here</a>"
+        "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
       ]
     },
     {
-      "tokens": ["civil", "scholarship"],
-      "tag": "scholarship",
+      "tokens": ["track", "order"],
+      "tag": "shipping",
       "responses": [
-        "Many government scholarships are supported by our Website. For details and updates visit <a target=\"_blank\" href=\"(SCHOLARSHIP DETAILS LINK)\">here</a>"
+        "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
       ]
     },
     {
-      "tokens": ["chemical", "scholarship"],
-      "tag": "scholarship",
+      "tokens": ["track", "order"],
+      "tag": "shipping",
       "responses": [
-        "Many government scholarships are supported by our Website. For details and updates visit <a target=\"_blank\" href=\"(SCHOLARSHIP DETAILS LINK)\">here</a>"
+        "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
       ]
     },
     {
-      "tokens": ["automobile", "scholarship"],
-      "tag": "scholarship",
+      "tokens": ["personal", "payment", "detail", "secure"],
+      "tag": "detailssecure",
       "responses": [
-        "Many government scholarships are supported by our Website. For details and updates visit <a target=\"_blank\" href=\"(SCHOLARSHIP DETAILS LINK)\">here</a>"
+        "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
       ]
     },
     {
-      "tokens": ["first", "year", "scholarship"],
-      "tag": "scholarship",
+      "tokens": ["detail", "secure"],
+      "tag": "detailssecure",
       "responses": [
-        "Many government scholarships are supported by our Website. For details and updates visit <a target=\"_blank\" href=\"(SCHOLARSHIP DETAILS LINK)\">here</a>"
+        "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
       ]
     },
     {
-      "tokens": ["second", "year", "scholarship"],
-      "tag": "scholarship",
+      "tokens": ["detail", "secure"],
+      "tag": "detailssecure",
       "responses": [
-        "Many government scholarships are supported by our Website. For details and updates visit <a target=\"_blank\" href=\"(SCHOLARSHIP DETAILS LINK)\">here</a>"
+        "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
       ]
     },
     {
-      "tokens": ["third", "year", "scholarship"],
-      "tag": "scholarship",
+      "tokens": ["detail", "secure", "website"],
+      "tag": "detailssecure",
       "responses": [
-        "Many government scholarships are supported by our Website. For details and updates visit <a target=\"_blank\" href=\"(SCHOLARSHIP DETAILS LINK)\">here</a>"
+        "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
       ]
     },
     {
-      "tokens": ["fourth", "year", "scholarship"],
-      "tag": "scholarship",
+      "tokens": ["detail", "secure", "website"],
+      "tag": "detailssecure",
       "responses": [
-        "Many government scholarships are supported by our Website. For details and updates visit <a target=\"_blank\" href=\"(SCHOLARSHIP DETAILS LINK)\">here</a>"
+        "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
       ]
     },
     {
-      "tokens": ["facility", "college", "provide"],
-      "tag": "facilities",
+      "tokens": ["detail", "secure", "website"],
+      "tag": "detailssecure",
       "responses": [
-        "Our Website's Engineering department provides fully AC Lab with internet connection, smart classroom, Auditorium, library,canteen"
+        "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
       ]
     },
     {
-      "tokens": ["college", "facility"],
-      "tag": "facilities",
+      "tokens": ["detail", "secure", "website"],
+      "tag": "detailssecure",
       "responses": [
-        "Our Website's Engineering department provides fully AC Lab with internet connection, smart classroom, Auditorium, library,canteen"
+        "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
       ]
     },
     {
-      "tokens": ["college", "facility"],
-      "tag": "facilities",
+      "tokens": ["personal", "detail", "secure"],
+      "tag": "detailssecure",
       "responses": [
-        "Our Website's Engineering department provides fully AC Lab with internet connection, smart classroom, Auditorium, library,canteen"
+        "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
       ]
     },
     {
-      "tokens": ["facility"],
-      "tag": "facilities",
+      "tokens": ["payment", "detail", "secure"],
+      "tag": "detailssecure",
       "responses": [
-        "Our Website's Engineering department provides fully AC Lab with internet connection, smart classroom, Auditorium, library,canteen"
+        "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
       ]
     },
     {
-      "tokens": ["facility", "provided"],
-      "tag": "facilities",
+      "tokens": ["security", "website"],
+      "tag": "detailssecure",
       "responses": [
-        "Our Website's Engineering department provides fully AC Lab with internet connection, smart classroom, Auditorium, library,canteen"
+        "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
       ]
     },
     {
-      "tokens": ["max", "number", "student"],
-      "tag": "college intake",
+      "tokens": ["security", "website"],
+      "tag": "detailssecure",
       "responses": [
-        "For IT, Computer and extc 60 per branch and seat may be differ for different department."
+        "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
       ]
     },
     {
-      "tokens": ["number", "seat", "per", "branch"],
-      "tag": "college intake",
+      "tokens": ["order", "without", "creating", "account"],
+      "tag": "guest",
       "responses": [
-        "For IT, Computer and extc 60 per branch and seat may be differ for different department."
+        "Yes, you can place an order as a guest without creating an account. However, creating an account offers benefits such as order tracking and easier future purchases."
       ]
     },
     {
-      "tokens": ["number", "seat", "branch"],
-      "tag": "college intake",
+      "tokens": ["guest", "user", "allowed"],
+      "tag": "guest",
       "responses": [
-        "For IT, Computer and extc 60 per branch and seat may be differ for different department."
+        "Yes, you can place an order as a guest without creating an account. However, creating an account offers benefits such as order tracking and easier future purchases."
       ]
     },
     {
-      "tokens": ["maximum", "number", "seat"],
-      "tag": "college intake",
+      "tokens": ["guest", "user", "allowed"],
+      "tag": "guest",
       "responses": [
-        "For IT, Computer and extc 60 per branch and seat may be differ for different department."
+        "Yes, you can place an order as a guest without creating an account. However, creating an account offers benefits such as order tracking and easier future purchases."
       ]
     },
     {
-      "tokens": ["maximum", "student", "intake"],
-      "tag": "college intake",
+      "tokens": ["think", "guest", "user"],
+      "tag": "guest",
       "responses": [
-        "For IT, Computer and extc 60 per branch and seat may be differ for different department."
+        "Yes, you can place an order as a guest without creating an account. However, creating an account offers benefits such as order tracking and easier future purchases."
       ]
     },
     {
-      "tokens": ["college", "intake"],
-      "tag": "college intake",
+      "tokens": ["trouble", "navigating", "website", "help"],
+      "tag": "technicalsupport",
       "responses": [
-        "For IT, Computer and extc 60 per branch and seat may be differ for different department."
+        "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
+        "If you have forgotten your password, please click on the 'Forgot Password' link on our login page and follow the instructions to reset your password. You can find our login page here: [link to login page].",
+        "To update your profile information, please log in to your account and click on the 'My Profile' link.",
+        "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
+        "To delete your account, please log in to your account and click on the 'Delete Account' link."
       ]
     },
     {
-      "tokens": ["many", "stundent", "taken", "branch"],
-      "tag": "college intake",
+      "tokens": ["ca", "seem", "add", "item", "cart", "help"],
+      "tag": "technicalsupport",
       "responses": [
-        "For IT, Computer and extc 60 per branch and seat may be differ for different department."
+        "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
+        "If you have forgotten your password, please click on the 'Forgot Password' link on our login page and follow the instructions to reset your password. You can find our login page here: [link to login page].",
+        "To update your profile information, please log in to your account and click on the 'My Profile' link.",
+        "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
+        "To delete your account, please log in to your account and click on the 'Delete Account' link."
       ]
     },
     {
-      "tokens": ["seat", "allotment"],
-      "tag": "college intake",
+      "tokens": ["trouble", "placing", "order", "help"],
+      "tag": "technicalsupport",
       "responses": [
-        "For IT, Computer and extc 60 per branch and seat may be differ for different department."
+        "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
+        "If you have forgotten your password, please click on the 'Forgot Password' link on our login page and follow the instructions to reset your password. You can find our login page here: [link to login page].",
+        "To update your profile information, please log in to your account and click on the 'My Profile' link.",
+        "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
+        "To delete your account, please log in to your account and click on the 'Delete Account' link."
       ]
     },
     {
-      "tokens": ["seat"],
-      "tag": "college intake",
+      "tokens": ["product", "received", "working", "properly", "help"],
+      "tag": "technicalsupport",
       "responses": [
-        "For IT, Computer and extc 60 per branch and seat may be differ for different department."
+        "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
+        "If you have forgotten your password, please click on the 'Forgot Password' link on our login page and follow the instructions to reset your password. You can find our login page here: [link to login page].",
+        "To update your profile information, please log in to your account and click on the 'My Profile' link.",
+        "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
+        "To delete your account, please log in to your account and click on the 'Delete Account' link."
       ]
-    },
-    {
-      "tokens": ["college", "dress", "code"],
-      "tag": "uniform",
-      "responses": ["ENTER YOUR OWN Website UNIFORM CIRCULER"]
-    },
-    {
-      "tokens": ["college", "dresscode"],
-      "tag": "uniform",
-      "responses": ["ENTER YOUR OWN Website UNIFORM CIRCULER"]
-    },
-    {
-      "tokens": ["uniform"],
-      "tag": "uniform",
-      "responses": ["ENTER YOUR OWN Website UNIFORM CIRCULER"]
-    },
-    {
-      "tokens": ["wear", "casuals"],
-      "tag": "uniform",
-      "responses": ["ENTER YOUR OWN Website UNIFORM CIRCULER"]
-    },
-    {
-      "tokens": ["doe", "college", "uniform"],
-      "tag": "uniform",
-      "responses": ["ENTER YOUR OWN Website UNIFORM CIRCULER"]
-    },
-    {
-      "tokens": ["uniform"],
-      "tag": "uniform",
-      "responses": ["ENTER YOUR OWN Website UNIFORM CIRCULER"]
-    },
-    {
-      "tokens": ["uniform"],
-      "tag": "uniform",
-      "responses": ["ENTER YOUR OWN Website UNIFORM CIRCULER"]
-    },
-    {
-      "tokens": ["uniform"],
-      "tag": "uniform",
-      "responses": ["ENTER YOUR OWN Website UNIFORM CIRCULER"]
-    },
-    {
-      "tokens": ["wear", "uniform"],
-      "tag": "uniform",
-      "responses": ["ENTER YOUR OWN Website UNIFORM CIRCULER"]
     },
     {
-      "tokens": ["different", "committe", "college"],
-      "tag": "committee",
+      "tokens": ["trouble", "downloading", "file", "help"],
+      "tag": "technicalsupport",
       "responses": [
-        "For the various committe in college contact this number: ADD NUMBER"
+        "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
+        "If you have forgotten your password, please click on the 'Forgot Password' link on our login page and follow the instructions to reset your password. You can find our login page here: [link to login page].",
+        "To update your profile information, please log in to your account and click on the 'My Profile' link.",
+        "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
+        "To delete your account, please log in to your account and click on the 'Delete Account' link."
       ]
     },
     {
-      "tokens": ["different", "committee", "college"],
-      "tag": "committee",
+      "tokens": ["question", "product"],
+      "tag": "Customerservice",
       "responses": [
-        "For the various committe in college contact this number: ADD NUMBER"
+        "Please feel free to contact us with any questions, complaints, or feedback you may have. You can contact us by email, phone, or live chat.",
+        "We are committed to providing our customers with excellent customer service, and we appreciate your feedback."
       ]
     },
     {
-      "tokens": ["committee", "college"],
-      "tag": "committee",
+      "tokens": ["complaint", "service"],
+      "tag": "Customerservice",
       "responses": [
-        "For the various committe in college contact this number: ADD NUMBER"
+        "Please feel free to contact us with any questions, complaints, or feedback you may have. You can contact us by email, phone, or live chat.",
+        "We are committed to providing our customers with excellent customer service, and we appreciate your feedback."
       ]
     },
     {
-      "tokens": ["give", "committee", "detail"],
-      "tag": "committee",
+      "tokens": ["feedback", "website"],
+      "tag": "Customerservice",
       "responses": [
-        "For the various committe in college contact this number: ADD NUMBER"
+        "Please feel free to contact us with any questions, complaints, or feedback you may have. You can contact us by email, phone, or live chat.",
+        "We are committed to providing our customers with excellent customer service, and we appreciate your feedback."
       ]
     },
     {
-      "tokens": ["committee"],
-      "tag": "committee",
+      "tokens": ["put", "touch", "customer", "service", "representative"],
+      "tag": "Customerservice",
       "responses": [
-        "For the various committe in college contact this number: ADD NUMBER"
+        "Please feel free to contact us with any questions, complaints, or feedback you may have. You can contact us by email, phone, or live chat.",
+        "We are committed to providing our customers with excellent customer service, and we appreciate your feedback."
       ]
     },
     {
-      "tokens": ["many", "committee", "college"],
-      "tag": "committee",
+      "tokens": ["thank", "help"],
+      "tag": "Customerservice",
       "responses": [
-        "For the various committe in college contact this number: ADD NUMBER"
+        "Please feel free to contact us with any questions, complaints, or feedback you may have. You can contact us by email, phone, or live chat.",
+        "We are committed to providing our customers with excellent customer service, and we appreciate your feedback."
       ]
     },
     {
@@ -2355,139 +1400,6 @@
       "responses": [
         "please use appropriate language",
         "Maintaining decency would be appreciated"
-      ]
-    },
-    {
-      "tokens": ["holiday"],
-      "tag": "vacation",
-      "responses": [
-        "Academic calender is given to you by your class-soordinators after you join your respective classes"
-      ]
-    },
-    {
-      "tokens": ["semester", "start"],
-      "tag": "vacation",
-      "responses": [
-        "Academic calender is given to you by your class-soordinators after you join your respective classes"
-      ]
-    },
-    {
-      "tokens": ["semester", "end"],
-      "tag": "vacation",
-      "responses": [
-        "Academic calender is given to you by your class-soordinators after you join your respective classes"
-      ]
-    },
-    {
-      "tokens": ["holiday"],
-      "tag": "vacation",
-      "responses": [
-        "Academic calender is given to you by your class-soordinators after you join your respective classes"
-      ]
-    },
-    {
-      "tokens": ["list", "holiday"],
-      "tag": "vacation",
-      "responses": [
-        "Academic calender is given to you by your class-soordinators after you join your respective classes"
-      ]
-    },
-    {
-      "tokens": ["holiday", "year"],
-      "tag": "vacation",
-      "responses": [
-        "Academic calender is given to you by your class-soordinators after you join your respective classes"
-      ]
-    },
-    {
-      "tokens": ["holiday", "list"],
-      "tag": "vacation",
-      "responses": [
-        "Academic calender is given to you by your class-soordinators after you join your respective classes"
-      ]
-    },
-    {
-      "tokens": ["vacation"],
-      "tag": "vacation",
-      "responses": [
-        "Academic calender is given to you by your class-soordinators after you join your respective classes"
-      ]
-    },
-    {
-      "tokens": ["holiday"],
-      "tag": "vacation",
-      "responses": [
-        "Academic calender is given to you by your class-soordinators after you join your respective classes"
-      ]
-    },
-    {
-      "tokens": ["vacation"],
-      "tag": "vacation",
-      "responses": [
-        "Academic calender is given to you by your class-soordinators after you join your respective classes"
-      ]
-    },
-    {
-      "tokens": ["holiday"],
-      "tag": "vacation",
-      "responses": [
-        "Academic calender is given to you by your class-soordinators after you join your respective classes"
-      ]
-    },
-    {
-      "tokens": ["long", "vacation"],
-      "tag": "vacation",
-      "responses": [
-        "Academic calender is given to you by your class-soordinators after you join your respective classes"
-      ]
-    },
-    {
-      "tokens": ["sport", "game"],
-      "tag": "sports",
-      "responses": [
-        "Our Website encourages all-round development of students and hence provides sports facilities in the campus. For more details visit<a target=\"_blank\" href=/\"(LINK IF HAVE)\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["give", "sport", "detail"],
-      "tag": "sports",
-      "responses": [
-        "Our Website encourages all-round development of students and hence provides sports facilities in the campus. For more details visit<a target=\"_blank\" href=/\"(LINK IF HAVE)\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["sport", "infrastructure"],
-      "tag": "sports",
-      "responses": [
-        "Our Website encourages all-round development of students and hence provides sports facilities in the campus. For more details visit<a target=\"_blank\" href=/\"(LINK IF HAVE)\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["sport", "facility"],
-      "tag": "sports",
-      "responses": [
-        "Our Website encourages all-round development of students and hence provides sports facilities in the campus. For more details visit<a target=\"_blank\" href=/\"(LINK IF HAVE)\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["information", "sport"],
-      "tag": "sports",
-      "responses": [
-        "Our Website encourages all-round development of students and hence provides sports facilities in the campus. For more details visit<a target=\"_blank\" href=/\"(LINK IF HAVE)\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["sport", "activity"],
-      "tag": "sports",
-      "responses": [
-        "Our Website encourages all-round development of students and hence provides sports facilities in the campus. For more details visit<a target=\"_blank\" href=/\"(LINK IF HAVE)\">here</a>"
-      ]
-    },
-    {
-      "tokens": ["please", "provide", "sport", "game", "information"],
-      "tag": "sports",
-      "responses": [
-        "Our Website encourages all-round development of students and hence provides sports facilities in the campus. For more details visit<a target=\"_blank\" href=/\"(LINK IF HAVE)\">here</a>"
       ]
     },
     {
@@ -2598,139 +1510,48 @@
       "tokens": [],
       "tag": "task",
       "responses": [
-        "I can answer to low-intermediate questions regarding college",
-        "You can ask me questions regarding college, and i will try to answer them"
+        "I can answer to low-intermediate questions regarding Auto-Essential.",
+        "You can ask me questions regarding Auto-Essential., and i will try to answer them"
       ]
     },
     {
       "tokens": ["thing"],
       "tag": "task",
       "responses": [
-        "I can answer to low-intermediate questions regarding college",
-        "You can ask me questions regarding college, and i will try to answer them"
+        "I can answer to low-intermediate questions regarding Auto-Essential.",
+        "You can ask me questions regarding Auto-Essential., and i will try to answer them"
       ]
     },
     {
       "tokens": ["thing"],
       "tag": "task",
       "responses": [
-        "I can answer to low-intermediate questions regarding college",
-        "You can ask me questions regarding college, and i will try to answer them"
+        "I can answer to low-intermediate questions regarding Auto-Essential.",
+        "You can ask me questions regarding Auto-Essential., and i will try to answer them"
       ]
     },
     {
       "tokens": ["u"],
       "tag": "task",
       "responses": [
-        "I can answer to low-intermediate questions regarding college",
-        "You can ask me questions regarding college, and i will try to answer them"
+        "I can answer to low-intermediate questions regarding Auto-Essential.",
+        "You can ask me questions regarding Auto-Essential., and i will try to answer them"
       ]
     },
     {
       "tokens": ["u", "help"],
       "tag": "task",
       "responses": [
-        "I can answer to low-intermediate questions regarding college",
-        "You can ask me questions regarding college, and i will try to answer them"
+        "I can answer to low-intermediate questions regarding Auto-Essential.",
+        "You can ask me questions regarding Auto-Essential., and i will try to answer them"
       ]
     },
     {
       "tokens": ["use"],
       "tag": "task",
       "responses": [
-        "I can answer to low-intermediate questions regarding college",
-        "You can ask me questions regarding college, and i will try to answer them"
-      ]
-    },
-    {
-      "tokens": ["ragging"],
-      "tag": "ragging",
-      "responses": [
-        "We are Proud to tell you that our college provides ragging free environment, and we have strict rules against ragging"
-      ]
-    },
-    {
-      "tokens": ["ragging", "practice", "active", "college"],
-      "tag": "ragging",
-      "responses": [
-        "We are Proud to tell you that our college provides ragging free environment, and we have strict rules against ragging"
-      ]
-    },
-    {
-      "tokens": ["doe", "college", "antiragging", "facility"],
-      "tag": "ragging",
-      "responses": [
-        "We are Proud to tell you that our college provides ragging free environment, and we have strict rules against ragging"
-      ]
-    },
-    {
-      "tokens": ["ragging", "case"],
-      "tag": "ragging",
-      "responses": [
-        "We are Proud to tell you that our college provides ragging free environment, and we have strict rules against ragging"
-      ]
-    },
-    {
-      "tokens": ["ragging", "done"],
-      "tag": "ragging",
-      "responses": [
-        "We are Proud to tell you that our college provides ragging free environment, and we have strict rules against ragging"
-      ]
-    },
-    {
-      "tokens": ["ragging"],
-      "tag": "ragging",
-      "responses": [
-        "We are Proud to tell you that our college provides ragging free environment, and we have strict rules against ragging"
-      ]
-    },
-    {
-      "tokens": ["antiragging", "facility"],
-      "tag": "ragging",
-      "responses": [
-        "We are Proud to tell you that our college provides ragging free environment, and we have strict rules against ragging"
-      ]
-    },
-    {
-      "tokens": ["ragging", "junior"],
-      "tag": "ragging",
-      "responses": [
-        "We are Proud to tell you that our college provides ragging free environment, and we have strict rules against ragging"
-      ]
-    },
-    {
-      "tokens": ["ragging", "history"],
-      "tag": "ragging",
-      "responses": [
-        "We are Proud to tell you that our college provides ragging free environment, and we have strict rules against ragging"
-      ]
-    },
-    {
-      "tokens": ["ragging", "incident"],
-      "tag": "ragging",
-      "responses": [
-        "We are Proud to tell you that our college provides ragging free environment, and we have strict rules against ragging"
-      ]
-    },
-    {
-      "tokens": ["hod"],
-      "tag": "hod",
-      "responses": [
-        "HODs differ for each branch, please be more specific like: (HOD it)"
-      ]
-    },
-    {
-      "tokens": ["hod", "name"],
-      "tag": "hod",
-      "responses": [
-        "HODs differ for each branch, please be more specific like: (HOD it)"
-      ]
-    },
-    {
-      "tokens": ["hod"],
-      "tag": "hod",
-      "responses": [
-        "HODs differ for each branch, please be more specific like: (HOD it)"
+        "I can answer to low-intermediate questions regarding Auto-Essential.",
+        "You can ask me questions regarding Auto-Essential., and i will try to answer them"
       ]
     }
   ],

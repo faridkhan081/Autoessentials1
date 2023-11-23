@@ -17,6 +17,11 @@ const shopSchema = new mongoose.Schema({
     minLength: [4, "Password should be greater than 4 characters"],
     select: false,
   },
+  status: {
+    type: String,
+    enum: ["Under Observation", "Approved", "Rejected"],
+    default: "Under Observation",
+  },
   phoneNumber: {
     type: Number,
     required: true,

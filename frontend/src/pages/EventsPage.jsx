@@ -7,6 +7,7 @@ import Layout from "../components/Layout/Layout";
 import { useSelector } from "react-redux";
 import HeadBanner from "../components/Banner/HeadBanner";
 import product from '../Assets/images/sale2.jpeg'
+import Loader from "../components/Layout/Loader";
 
 
 const EventsPage = () => {
@@ -24,7 +25,13 @@ const EventsPage = () => {
           <HeadBanner title="Best Sales For You" list='Events' imageUrl={product}/>
 
 
-          <EventCard active={true} data={allEvents && allEvents[0]}/>
+          {isLoading? (<>
+            <Loader />
+          </>):(
+            <>
+            <EventCard active={true} data={allEvents && allEvents[0]}/>
+            </>
+          )}
        
         </Layout>
    
