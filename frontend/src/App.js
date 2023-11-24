@@ -8,10 +8,13 @@ import ProtectedRoute from "./routes/ProtectedRoute";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
   LoginPage,
+  ForgetPasswordPage,
+  ResetPasswordPage,
   SignupPage,
   ActivationPage,
   HomePage,
   ProductsPage,
+
   // BestSellingPage,
   EventsPage,
   SolutionsPage,
@@ -114,6 +117,8 @@ const App = () => {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/forget-password" element={<ForgetPasswordPage />} />
+          <Route path="/reset-password/:resetToken" element={<ResetPasswordPage />} />
           <Route path="/sign-up" element={<SignupPage />} />
           <Route path="*" element={<PageNotFound />} />
           <Route

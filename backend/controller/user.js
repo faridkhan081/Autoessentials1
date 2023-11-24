@@ -8,9 +8,81 @@ const catchAsyncError = require("../middleware/catchAsyncError");
 const fs = require("fs");
 const jwt = require("jsonwebtoken");
 const sendMail = require("../utils/sendMail");
-const sendToken = require("../utils/jwtToken");
+const { createActivationToken, createResetToken, sendToken } = require("../utils/jwtToken");
 
 const { isAuthenticated, isAdmin } = require("../middleware/auth");
+
+
+
+router.post("/forgot-password", catchAsyncError(async (req, res, next) => {
+  try {
+    const { email } = req.body;
+
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return next(new ErrorHandler("User not found", 404));
+    }
+
+    const resetToken = createResetToken(user);
+
+    const resetUrl = `http://localhost:3000/reset-password/${resetToken}`;
+
+    try {
+      // Send the reset URL to the user's email using Nodemailer or your preferred email service
+      await sendMail({
+        email: user.email,
+        subject: "Reset Your Password",
+        message: `Click on the link to reset your password: ${resetUrl}`,
+      });
+
+      res.status(200).json({
+        success: true,
+        message: "Password reset email sent. Check your inbox.",
+      });
+    } catch (error) {
+      return next(new ErrorHandler(error.message, 500));
+    }
+  } catch (error) {
+    return next(new ErrorHandler(error.message, 400));
+  }
+}));
+
+
+
+router.post("/reset-password", catchAsyncError(async (req, res, next) => {
+  try {
+    const { resetToken, password } = req.body;
+    const decoded = jwt.verify(resetToken, process.env.RESET_SECRET);
+
+    if (!decoded) {
+      return next(new ErrorHandler("Invalid or expired reset token", 400));
+    }
+
+    const user = await User.findById(decoded.id);
+
+    if (!user) {
+      return next(new ErrorHandler("User not found", 404));
+    }
+
+    // Update the user's password
+    user.password = password;
+    await user.save();
+
+    // You may want to invalidate the reset token after successful use
+
+    res.status(200).json({
+      success: true,
+      message: "Password reset successful.",
+    });
+  } catch (error) {
+    return next(new ErrorHandler(error.message, 500));
+  }
+}));
+
+
+
+
 
 
 router.post("/create-user", upload.single("file"), async (req, res, next) => {
@@ -63,12 +135,12 @@ router.post("/create-user", upload.single("file"), async (req, res, next) => {
   }
 });
 
-// create activation token
-const createActivationToken = (user) => {
-  return jwt.sign(user, process.env.ACTIVATION_SECRET, {
-    expiresIn: "5m",
-  });
-};
+// // create activation token
+// const createActivationToken = (user) => {
+//   return jwt.sign(user, process.env.ACTIVATION_SECRET, {
+//     expiresIn: "5m",
+//   });
+// };
 
 // activate user
 router.post(
