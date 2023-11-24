@@ -406,15 +406,14 @@ const ProductDetailsInfo = ({ data, products, id, totalReviewsLength,
                   {data.shop?.createdAt?.slice(0, 10)}
                 </span>
               </h5>
+              
               <h5 className="font-[600] pt-3">
                 Total Products:{" "}
                 <span className="font-[500]">
                   {products && products.length}
                 </span>
               </h5>
-              <h5 className="font-[600] pt-3">
-                Total Reviews: <span className="font-[500]">234</span>
-              </h5>
+             
               <Link to={`/shop/preview/${data?.shop._id}`}>
                 <div
                   className={`${styles.button} !rounded-[4px] !h-[39.5px] mt-3`}

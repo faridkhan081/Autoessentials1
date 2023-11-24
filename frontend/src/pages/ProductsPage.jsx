@@ -14,8 +14,8 @@ const ProductsPage = () => {
   const [searchParams] = useSearchParams();
   const categoryData = searchParams.get("category");
   const { allProducts, isLoading } = useSelector((state) => state.products);
-  const [displayCount, setDisplayCount] = useState(5);
-  const [loadIncrement, setLoadIncrement] = useState(5);
+  const [displayCount, setDisplayCount] = useState(15);
+  const [loadIncrement, setLoadIncrement] = useState(15);
   const [data, setData] = useState([]);
   const [sortCriteria, setSortCriteria] = useState('');
 
