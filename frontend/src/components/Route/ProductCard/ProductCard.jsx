@@ -17,8 +17,9 @@ import { useEffect } from "react";
 import { addTocart } from "../../../redux/actions/cart";
 import { toast } from "react-toastify";
 import Ratings from "../../Products/Rating";
+import CountDown from "../../Events/CountDown.jsx";
 
-function ProductCard({ data,isEvent }) {
+function ProductCard({ data,isEvent,best }) {
   const [isInStock, setIsInStock] = useState(data.stock > 0);
   const [click, setClick] = useState(false);
   const [open, setOpen] = useState(false);
@@ -70,7 +71,7 @@ function ProductCard({ data,isEvent }) {
   };
 
   return (
-    <div className="w-full h-[370px] bg-white rounded-lg p-3 relative shadow-sm hover:shadow-lg hover:shadow-gray-200  hover:border"
+    <div className={`w-full ${isEvent ? 'h-[400px]' : 'h-[370px]'} bg-white rounded-lg p-3 relative shadow-sm hover:shadow-lg hover:shadow-gray-200  hover:border`}
     
     >
   
@@ -120,7 +121,14 @@ function ProductCard({ data,isEvent }) {
           <span className="font-[400] text-[17px] text-[#68d284]">
             {data?.sold_out} sold
           </span>
+          
         </div>
+       
+        {
+          isEvent &&  <CountDown data={data} />
+        }
+        
+      
       </Link>
       {/* side options */}
 
@@ -145,15 +153,50 @@ function ProductCard({ data,isEvent }) {
           />
         )}
 
-        <Expand
+        {
+          !best && (<>
+ <Expand
           size={20}
           className="cursor-pointer absolute right-2 top-16"
           onClick={() => setOpen(!open)}
           color="#333"
           title="Quick view"
         />
+          </>) 
+        }
 
-        {cart && cart.find((i) => i._id === data._id) ? (
+       
+
+       {
+        best ? (
+          <>
+          {cart && cart.find((i) => i._id === data._id) ? (
+          <>
+          <ShoppingCart
+            size={22}
+            className="cursor-pointer absolute right-2 top-16"
+            onClick={() => addToCartHandler(data._id)}
+            
+            title="Remove from Cart"
+            fill="black"
+          />
+          </>
+        ) : (
+          <>
+          <ShoppingCart
+            size={22}
+            className="cursor-pointer absolute right-2 top-16"
+            onClick={() => addToCartHandler(data._id)}
+           
+            title="Remove from Cart"
+            
+          />
+          </>
+        )}
+          </>
+        ) : (
+          <>
+          {cart && cart.find((i) => i._id === data._id) ? (
           <>
           <ShoppingCart
             size={22}
@@ -176,12 +219,18 @@ function ProductCard({ data,isEvent }) {
           />
           </>
         )}
+          </>
+        )
+       }
+
+     
  
         
 
       
         {open ? <ProductDetailsCard setOpen={setOpen} data={data} /> : null}
       </div>
+      
     </div>
   );
 }

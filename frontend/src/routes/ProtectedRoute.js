@@ -1,18 +1,25 @@
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ProtectedRoute = ({ children }) => {
   const { loading, isAuthenticated } = useSelector((state) => state.user);
 
-  if (loading === false) {
-    if (!isAuthenticated) {
-      return <Navigate to="/" replace />;
-    }
-    return children;
+  if (loading === true) {
+    // Return a loading message or indicator while waiting for authentication check
+    return <div>Loading...</div>;
   }
 
-  // Return null when loading is true to indicate that the component is waiting for authentication to be checked.
-  return null;
+  if (!isAuthenticated) {
+    // Display a toast notification indicating that login is required
+    toast.error("Login required. Please log in to access this page.");
+    // Redirect the user to the home page or login page
+    return <Navigate to="/" replace />;
+  }
+
+  // If authenticated, render the children components
+  return children;
 };
 
 export default ProtectedRoute;

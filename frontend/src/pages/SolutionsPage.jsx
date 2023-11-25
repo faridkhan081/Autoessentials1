@@ -63,7 +63,7 @@ const Solution = () => {
       // Handle the error, you may want to show an error message to the user.
       console.error("Error predicting tire:", error);
     } finally {
-      setIsLoading(false);
+      setIsLoading(false); 
     }
   };
   return (
