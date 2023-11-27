@@ -106,6 +106,7 @@ function ProductDetails({ data, isLoading }) {
           userId,
           sellerId,
         })
+        
         .then((res) => {
           navigate(`/inbox?${res.data.conversation._id}`);
         })

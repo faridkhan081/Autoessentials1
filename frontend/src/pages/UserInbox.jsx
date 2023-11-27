@@ -210,9 +210,12 @@ const UserInbox = () => {
     );
   };
 
-  useEffect(() => {
+  useEffect(() => { 
     scrollRef.current?.scrollIntoView({ beahaviour: "smooth" });
   }, [messages]);
+
+
+  
 
   return (
     <Layout title={'User Inbox'}>
@@ -300,6 +303,7 @@ const MessageList = ({
 
   return (
     <div
+    
    
       className={`w-[90%]  flex  mb-2  p-3 px-3 ${
         active === index ? "bg-[#00000010]" : "bg-transparent"
@@ -359,7 +363,7 @@ const SellerInbox = ({
   handleImageUpload,
 }) => {
   return (
-    <div className="w-[full] min-h-full flex flex-col justify-between p-5">
+    <div className="w-[full] min-h-full flex flex-col justify-between p-5" >
       {/* message header */}
       <div className="w-full flex p-3 items-center justify-between bg-slate-200">
         <div className="flex">

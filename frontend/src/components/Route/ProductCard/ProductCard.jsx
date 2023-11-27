@@ -84,6 +84,12 @@ function ProductCard({ data,isEvent,best }) {
           className="w-90% h-[170px] object-contain  mt-5 "
         />
          <span className="absolute top-0 left-0 m-2 rounded-full bg-rose-600 px-2 text-center text-[11px] text-white">
+       
+       {
+        isEvent ? (<>
+          Sale {" "}
+        </>):null
+       }
          {calculateDiscountPercentage(data.originalPrice, data.discountPrice)}
          
          </span>

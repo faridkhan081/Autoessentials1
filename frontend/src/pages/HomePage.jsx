@@ -6,6 +6,7 @@ import BestDeals from '../components/Route/BestDeals/BestDeals.jsx';
 import FeaturedProduct from '../components/Route/FeaturedProduct/FeaturedProduct.jsx';
 import Events from '../components/Events/Events.jsx';
 import Sponsored from '../components/Route/Sponsored.jsx';
+import Reviews from '../components/Route/Reviews.jsx';
 import Footer from '../components/Layout/Footer.jsx';
 import Layout from '../components/Layout/Layout.jsx';
 import Chatbox from '../components/Chat/Chatbox.jsx';
@@ -44,6 +45,7 @@ function HomePage() {
       <FeaturedProduct />
       <Events />
       <Sponsored />
+      <Reviews/>
       <Footer />
 
       <div className="relative">

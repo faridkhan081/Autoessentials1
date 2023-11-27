@@ -673,3 +673,21 @@ height: 5px !important;
 }
 
 
+
+.slick-container {
+  margin: 0 auto;
+  margin-top: 5rem;
+  width: 80vw;
+  max-width: 800px;
+  text-align: center;
+}
+.slick-slide img {
+  display: inline-block;
+}
+
+
+
+h2 {
+  
+  margin-top: 2rem;
+}
