@@ -53,7 +53,7 @@ const Chatbox = ({ isOpen, onClose }) => {
   }, [messages]);
 
   return (
-    <div className={`fixed w-[300px] 800px:w-[400px] bottom-0 right-0 mb-4 mr-4 ${isOpen ? '' : 'hidden'} `}>
+    <div className={`fixed w-[300px] 800px:w-[400px] bottom-20 right-5 mb-4 mr-4 ${isOpen ? '' : 'hidden'} `}>
       <div className="bg-white shadow-md rounded-lg max-w-lg w-full">
         <div className="p-4 border-b bg-rose-500 text-white rounded-t-lg flex justify-between items-center">
           <p className="text-lg font-semibold">AutoEssentials</p>

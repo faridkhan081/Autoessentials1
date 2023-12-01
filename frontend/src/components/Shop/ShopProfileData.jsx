@@ -32,11 +32,11 @@ const ShopProfileData = ({ isOwner }) => {
     <>
       <div className="w-full">
         <div className="flex items-center justify-between bg-gray-800">
-          <div className="w-full flex gap-16">
+          <div className="ml-5 w-full flex gap-16">
             <div className="flex items-center" onClick={() => setActive(1)}>
               <h5
-                className={`font-[500] text-[14px] md:text-[20px] ${
-                  active === 1 ? "text-red-500 bg-white p-2 " : "text-white p-2 "
+                className={`font-[500] text-[12px] md:text-[17px] ${
+                  active === 1 ? "text-red-500 bg-white p-2 rounded" : "text-white p-2 "
                 } cursor-pointer pr-[20px]`}
               >
                 Products
@@ -44,8 +44,8 @@ const ShopProfileData = ({ isOwner }) => {
             </div>
             <div className="flex items-center" onClick={() => setActive(2)}>
               <h5
-                className={`font-[500] text-[14px] md:text-[20px]  ${
-                  active === 2 ? "text-red-500 bg-white p-2 " : "text-white p-2 "
+                className={`font-[500] text-[12px] md:text-[17px]  ${
+                  active === 2 ? "text-red-500 bg-white p-2 rounded " : "text-white p-2 "
                 } cursor-pointer pr-[20px]`}
               >
                  Events
@@ -54,8 +54,8 @@ const ShopProfileData = ({ isOwner }) => {
 
             <div className="flex items-center " onClick={() => setActive(3)}>
               <h5
-                className={`font-[500] text-[14px] md:text-[20px]  ${
-                  active === 3 ? "text-red-500 bg-white p-2 " : "text-white p-2"
+                className={`font-[500] text-[12px] md:text-[17px]  ${
+                  active === 3 ? "text-red-500 bg-white p-2 rounded " : "text-white p-2"
                 } cursor-pointer pr-[20px]`}
               >
               Reviews
