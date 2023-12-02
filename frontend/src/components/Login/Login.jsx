@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from "react"; 
 import styles from "../../styles/styles";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { BsFillArrowLeftSquareFill } from "react-icons/bs";
@@ -27,7 +27,7 @@ const Login = () => {
         { withCredentials: true }
       )
       .then((res) => {
-        setLoading(false);
+     
         toast.success("Login Success!");
         navigate("/");
         window.location.reload(true);
@@ -35,6 +35,8 @@ const Login = () => {
       .catch((err) => {
         toast.error(err.response.data.message);
       });
+
+      setLoading(false);
   };
 
   return (
@@ -151,20 +153,20 @@ const Login = () => {
 
               <div className="col-span-6">
                 <p className="text-sm text-gray-500">
-                  By creating an account, you agree to our
-                  <a href="#" className="text-gray-700 underline">
-                    terms and conditions
-                  </a>
-                  and
-                  <Link to="#" className="text-gray-700 underline">
-                    privacy policy
+                  By creating an account, you agree to our{" "}
+                  <Link to="/terms-conditions" className="text-gray-700 underline">
+                    {" "}terms and conditions
+                  </Link>
+                 {" "} and
+                  <Link to="/privacy-policy" className="text-gray-700 underline">
+                    {" "}privacy policy
                   </Link>
                   .
                 </p>
               </div>
 
               <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
-                {loading ? (
+                {/* {loading ? (
                   <button
                     style={{ width: "142px" }}
                     className="inline-block shrink-0 rounded-md border border-rose-600 bg-tansparent px-12 py-3 text-sm font-medium text-white transition  focus:outline-none focus:ring active:text-rose-500"
@@ -178,7 +180,22 @@ const Login = () => {
                   >
                     Sign in
                   </button>
-                )}
+                )} */}
+
+
+              
+                  <button
+                    style={{ width: "142px" }}
+                    className={`inline-block w-full py-2 px-4 border border-transparent rounded-md font-semibold text-white ${
+                loading ? "bg-green-400 cursor-not-allowed" : "bg-rose-500 hover:bg-rose-600"
+              } focus:outline-none focus:ring focus:border-rose-300 active:bg-rose-800 transition`}
+              disabled={loading}
+                  >
+
+
+{loading ? "Loading..." : "Login"}
+                  </button>
+                
 
                 <p className="mt-4 text-sm text-gray-500 sm:mt-0">
                   No account?

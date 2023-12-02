@@ -20,10 +20,13 @@ import PageNotFound from "../pages/PageNotFound.jsx";
 import PaymentPage from "../pages/PaymentPage.jsx";
 
 import ContactPage from "./../pages/ContactPage";
+import TermsAndConditions from "./../pages/TermsAndConditions.jsx";
 import OrderSuccessPage from "./../pages/OrderSuccessPage.jsx";
 import OrderDetailsPage from "./../pages/OrderDetailsPage.jsx";
 import TrackOrderPage from "./../pages/TrackOrderPage.jsx";
 import UserInbox from "./../pages/UserInbox.jsx";
+import PrivacyPolicy  from "./../pages/PrivacyPolicy.jsx";
+
 export {
   LoginPage,
   ForgetPasswordPage,
@@ -32,6 +35,8 @@ export {
   ActivationPage,
   HomePage,
   ProductsPage,
+  TermsAndConditions,
+  PrivacyPolicy ,
   // BestSellingPage,
   EventsPage,
   SolutionsPage,

@@ -7,7 +7,38 @@ const Footer = () => {
     <div>
       <footer className="bg-gray-800">
         <div  className={`${styles.section} mx-auto max-w-auto px-4 pb-8 pt-16 sm:px-6 lg:px-8`}>
-          <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-32">
+
+        <div className="flex justify-center flex-col items-center"  >
+        <h1 className="text-2xl font-bold mb-4 text-center text-white">Stay in the loop – subscribe here</h1>
+        <div class="relative w-[300px]">
+  <input
+    type="email"
+    placeholder="Enter your Email"
+    autocomplete="email"
+    aria-label="Email address"
+    class="block w-full rounded-2xl border border-neutral-300 bg-transparent py-4 pl-6 pr-20 text-base/6 text-white ring-4 ring-transparent transition placeholder:text-white focus:border-neutral-950 focus:outline-none focus:ring-white"
+  />
+  <div class="absolute inset-y-1 right-1 flex justify-end">
+    <button
+      type="submit"
+      aria-label="Submit"
+      class="flex aspect-square h-full items-center justify-center rounded-xl bg-white text-black transition hover:bg-rose-600 hover:text-white"
+    >
+      <svg viewBox="0 0 16 6" aria-hidden="true" class="w-4">
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M16 3 10 .5v2H0v1h10v2L16 3Z"
+        ></path>
+      </svg>
+    </button>
+  </div>
+</div>
+
+        </div>
+
+          <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-32" >
             <div className="mx-auto max-w-sm lg:max-w-none">
               <p className="mt-4 text-center text-white lg:text-left lg:text-lg">
                 <span className="text-rose-600">Revolutionize </span>your auto

@@ -14,6 +14,8 @@ import {
   ActivationPage,
   HomePage,
   ProductsPage,
+  TermsAndConditions,
+  PrivacyPolicy ,
 
   // BestSellingPage,
   EventsPage,
@@ -116,6 +118,8 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/terms-conditions" element={<TermsAndConditions />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/forget-password" element={<ForgetPasswordPage />} />
           <Route path="/reset-password/:resetToken" element={<ResetPasswordPage />} />

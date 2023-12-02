@@ -296,21 +296,16 @@ const ShopCreate = () => {
               </div>
 
               <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
-                {loading ? (
+                
                   <button
                     style={{ width: "142px" }}
-                    className="inline-block shrink-0 rounded-md border border-rose-600 bg-tansparent px-12 py-3 text-sm font-medium text-white transition  focus:outline-none focus:ring active:text-rose-500"
-                  >
-                    <div className="lds-hourglass" />
+                    className={`inline-block w-full py-2 px-4 border border-transparent rounded-md font-semibold text-white ${
+                loading ? "bg-green-400 cursor-not-allowed" : "bg-rose-500 hover:bg-rose-600"
+              } focus:outline-none focus:ring focus:border-rose-300 active:bg-rose-800 transition`}
+              disabled={loading}>
+         {loading ? "Loading..." : "Register"}
                   </button>
-                ) : (
-                  <button
-                    style={{ width: "142px" }}
-                    className="inline-block shrink-0 rounded-md border border-rose-600 bg-rose-500 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-rose-600 focus:outline-none focus:ring active:text-rose-500"
-                  >
-                    Register
-                  </button>
-                )}
+                
 
                 <p className="mt-4 text-sm text-gray-500 sm:mt-0">
                   Already have an account?

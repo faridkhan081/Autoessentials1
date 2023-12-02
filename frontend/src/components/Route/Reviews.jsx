@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+
 import Slider from "react-slick";
 import { useSelector } from "react-redux";
 import { backend_url } from "../../server";
@@ -9,25 +9,7 @@ import { backend_url } from "../../server";
 import { FaQuoteRight } from 'react-icons/fa';
 import Ratings from "../Products/Rating";
 
-// Custom Next Arrow component
-const NextArrow = ({ onClick }) => (
-  <div
-    className="absolute top-1/2 -translate-y-1/2 right-2 cursor-pointer bg-rose-500 text-white hover:bg-white rounded hover:text-gray-800 z-10"
-    onClick={onClick}
-  >
-    <FiChevronRight className="text-2xl" />
-  </div>
-);
 
-// Custom Previous Arrow component
-const PrevArrow = ({ onClick }) => (
-  <div
-    className="absolute top-1/2 -translate-y-1/2 left-2 cursor-pointer bg-rose-500 text-white hover:bg-white rounded hover:text-gray-800 z-10"
-    onClick={onClick}
-  >
-    <FiChevronLeft className="text-2xl" />
-  </div>
-);
 
 function Reviews() {
   const { allProducts } = useSelector((state) => state.products);
@@ -56,8 +38,8 @@ function Reviews() {
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+    arrows:false,
+ 
   };
 
   return (

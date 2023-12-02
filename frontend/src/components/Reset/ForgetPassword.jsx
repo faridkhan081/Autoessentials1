@@ -46,7 +46,7 @@ const ForgotPassword = () => {
             />
           </div>
 
-          {/* Submit Button */}
+          {/* Submit Button */} 
           <div>
             <button
               type="submit"
