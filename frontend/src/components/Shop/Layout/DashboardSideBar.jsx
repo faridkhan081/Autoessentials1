@@ -1,39 +1,37 @@
-import { Link, useLocation } from "react-router-dom";
-import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
-
-import {  useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { backend_url, server } from "../../../server";
-import {  LogOut, Settings,  } from "lucide-react";
-import logo from '../../../Assets/images/logo1.png'
- import axios from "axios";
-import { FiChevronsLeft, FiChevronsRight } from "react-icons/fi/";
+import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
+import { Link, useLocation } from "react-router-dom";
+import { LogOut, Settings } from "lucide-react";
+import { FiChevronsLeft, FiChevronsRight } from "react-icons/fi";
 import { MdDashboard, MdDiscount } from "react-icons/md";
-import { GiShoppingBag} from "react-icons/gi";
+import { GiShoppingBag } from "react-icons/gi";
 import { RiMoneyDollarBoxFill, RiRefund2Fill } from "react-icons/ri";
+import { GrProductHunt } from "react-icons/gr";
+import { BsFillCalendarEventFill, BsChatLeftDotsFill } from "react-icons/bs";
+import logo from '../../../Assets/images/logo1.png';
+import axios from "axios";
+import { backend_url, server } from "../../../server";
 
-import {GrProductHunt} from 'react-icons/gr';
-import { BsFillCalendarEventFill,BsChatLeftDotsFill } from "react-icons/bs";
-export default function DashboardSidebar() {
+const DashboardSidebar = () => {
   const location = useLocation();
   const [openSubMenu, setOpenSubMenu] = useState(null);
   const [path, setPath] = useState(location.pathname);
   const { seller } = useSelector((state) => state.seller);
 
-  const [collapsed, setCollapsed] = useState(false);
-
+  const [collapsed, setCollapsed] = useState(window.innerWidth <= 500);
   const [toggled, setToggled] = useState(false);
 
   const handleCollapsedChange = () => {
     setCollapsed(!collapsed);
   };
+
   const handleToggleSidebar = (value) => {
     setToggled(value);
   };
 
   const routeMenuKeys = {
     "/seller-dashboard": "Dashboard",
-
     "/dashboard-products": "products",
     "/dashboard-create-product": "products",
     "/dashboard-events": "events",
@@ -41,6 +39,7 @@ export default function DashboardSidebar() {
     "/task-category": "task",
     "/tasks": "task",
   };
+
   const logoutHandler = async () => {
     axios.get(`${server}/shop/logout`, {
       withCredentials: true,
@@ -48,17 +47,31 @@ export default function DashboardSidebar() {
 
     window.location.reload();
   };
+
   useEffect(() => {
     const currentRoute = path;
     const submenuKey = routeMenuKeys[currentRoute] || null;
     setOpenSubMenu(submenuKey);
   }, [path]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setCollapsed(window.innerWidth <= 500);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <>
       <Sidebar
         rootStyles={{
           width: "100%",
+          boxSizing: "border-box",
         }}
         className={`app ${toggled ? "toggled" : ""} w-full`}
         collapsed={collapsed}
@@ -78,16 +91,14 @@ export default function DashboardSidebar() {
               suffix={<FiChevronsLeft />}
               onClick={handleCollapsedChange}
             >
-              <Link to='/'
-              
-              >
-                <img src={logo}  alt=""  className="h-[120px] ml-[47px] "/>
+              <Link to="/">
+                <img src={logo} alt="" className="h-[120px] ml-[47px] " />
               </Link>
             </MenuItem>
           )}
           <hr />
         </Menu>
-        <div className="flex items-center justify-center flex-col p-5 " >
+        <div className="flex items-center justify-center flex-col p-5">
           <Link to={`/shop/${seller._id}`}>
             <img
               src={`${backend_url}${seller.avatar}`}
@@ -95,16 +106,12 @@ export default function DashboardSidebar() {
               className=" 800px:w-[60px] 800px:h-[60px] !ml-0 800px:ml-2 rounded-full object-cover"
               style={{ border: "2px solid green" }}
             />
-
-        
           </Link>
         </div>
         <>
           <Menu
             menuItemStyles={{
               button: {
-                // the active class will be added automatically by react router
-                // so we can use it to style the active menu item
                 [`&.active`]: {
                   backgroundColor: "#13395e",
                   color: "#b6c8d9",
@@ -112,14 +119,15 @@ export default function DashboardSidebar() {
               },
             }}
           >
-            <MenuItem icon={<MdDashboard />}
+            <MenuItem
+              icon={<MdDashboard />}
               component={<Link to="/seller-dashboard" />}
               open={openSubMenu === "Dashboard"}
             >
               Dashboard
             </MenuItem>
 
-            <SubMenu icon={<GrProductHunt/>} label={`Manage Products`}>
+            <SubMenu icon={<GrProductHunt />} label={`Manage Products`}>
               <MenuItem
                 component={<Link to="/dashboard-products" />}
                 open={openSubMenu === "products"}
@@ -134,7 +142,7 @@ export default function DashboardSidebar() {
               </MenuItem>
             </SubMenu>
 
-            <SubMenu icon={<BsFillCalendarEventFill size={15}/>} label={`Manage Events`}>
+            <SubMenu icon={<BsFillCalendarEventFill size={15} />} label={`Manage Events`}>
               <MenuItem
                 component={<Link to="/dashboard-events" />}
                 open={openSubMenu === "events"}
@@ -149,14 +157,15 @@ export default function DashboardSidebar() {
               </MenuItem>
             </SubMenu>
 
-            <MenuItem icon={<GiShoppingBag />}
+            <MenuItem
+              icon={<GiShoppingBag />}
               component={<Link to="/dashboard-orders" />}
               open={openSubMenu === "orders"}
             >
               All Orders
             </MenuItem>
             <MenuItem
-            icon={<RiMoneyDollarBoxFill />}
+              icon={<RiMoneyDollarBoxFill />}
               component={<Link to="/dashboard-withdraw-money" />}
               open={openSubMenu === "money"}
             >
@@ -199,4 +208,6 @@ export default function DashboardSidebar() {
       </Sidebar>
     </>
   );
-}
+};
+
+export default DashboardSidebar;

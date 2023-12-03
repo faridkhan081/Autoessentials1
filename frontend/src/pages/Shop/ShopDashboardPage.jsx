@@ -13,7 +13,7 @@ function ShopDashboardPage() {
           <div className=''>
             <DashboardSideBar active={1}/>
           </div>
-          <div className='w-full flex justify-center bg-gradient-to-br from-white via-gray-500 to-white' >
+          <div className=' flex-1 p-4 bg-[#F8F9FA]' >
           <DashboardHero />
           </div>
         </div>

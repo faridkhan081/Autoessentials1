@@ -10,6 +10,8 @@ import { Button } from "@material-ui/core";
 import { DataGrid } from "@material-ui/data-grid";
 import LineChart from "./Charts/LineChart";
 import BarChart from "./Charts/BarChart";
+import { ShoppingBag, SpeakerIcon, Zap, ZapIcon } from "lucide-react";
+import { GrProductHunt } from "react-icons/gr";
 
 const DashboardHero = () => {
   const dispatch = useDispatch();
@@ -110,39 +112,40 @@ const DashboardHero = () => {
   }
   return (
     <div className=" ml-0 mt-0 800px:mt-[30px] ">
-      <h3 className="text-[22px] font-Poppins mb-5 bg-black text-white p-2">
+      <h3 className="text-[22px] font-bold font-Poppins mb-5 text-gray-700 p-2">
         Performance Snapshot
       </h3>
-      <div className=" block 800px:flex items-center justify-between gap-[50px]">
+      <div className=" block 800px:flex items-center justify-start gap-[50px]">
         <div
-          className="w-full mb-4 800px:w-[30%] min-h-[20vh] shadow rounded px-2 py-5"
-          style={{ backgroundColor: "#39BE9C", color: "white" }}
+          className="cursor-pointer overflow-hidden relative transition-all duration-500 hover:translate-y-2  gap-2 p-2 before:absolute before:w-full hover:before:top-0 before:duration-500 before:-top-1 before:h-1 before:bg-rose-500 inset-0 shadow-2xl  mb-4 800px:w-[30%]  rounded-lg px-2 py-5"
+          style={{ backgroundColor: "#fff", color: "black" }}
         >
           <div className="flex items-center">
-            <AiOutlineMoneyCollect size={30} className="mr-2" fill="#fff" />
+            <AiOutlineMoneyCollect size={30} className="mr-2" />
             <h3
-              className={`${styles.productTitle}!text-white !text-[18px] leading-5 !font-[400] `}
+              className={`${styles.productTitle} !text-[18px] leading-5 !font-[400] `}
             >
-              Account Balance{" "}
-              <span className="text-[13px]">(with 10% service charge)</span>
+              Account Balance{" "} <br />
+            
+              <span className="text-[10px]">(with 10% service charge)</span>
             </h3>
           </div>
-          <h5 className="pt-2 pl-[36px] text-[22px] font-[500]">
+          <h5 className="pt-1 pl-[36px] text-[22px] font-[500]">
             RS. {availableBalance}
           </h5>
           <Link to="/dashboard-withdraw-money">
-            <h5 className="pt-4 pl-2 hover:underline ">Withdraw Money</h5>
+            <h5 className="pt-2 pl-2 hover:underline ">Withdraw Money</h5>
           </Link>
         </div>
 
         <div
-          className="w-full mb-4 800px:w-[30%] min-h-[20vh] shadow rounded px-2 py-5"
-          style={{ backgroundColor: "#4285F4", color: "white" }}
+          className="cursor-pointer overflow-hidden relative transition-all duration-500 hover:translate-y-2  gap-2 p-2 before:absolute before:w-full hover:before:top-0 before:duration-500 before:-top-1 before:h-1 before:bg-rose-500 inset-0 shadow-2xl  mb-4 800px:w-[30%]  rounded-lg px-2 py-5"
+          style={{ backgroundColor: "#fff", color: "black" }}
         >
           <div className="flex items-center">
-            <MdBorderClear size={30} className="mr-2" fill="#fff" />
+            <ShoppingBag size={30} className="mr-2"  />
             <h3
-              className={`${styles.productTitle} !text-white !text-[18px] leading-5 !font-[400] `}
+              className={`${styles.productTitle}  !text-[18px] leading-5 !font-[400] `}
             >
               All Orders
             </h3>
@@ -156,13 +159,13 @@ const DashboardHero = () => {
         </div>
 
         <div
-          className="w-full mb-4 800px:w-[30%] min-h-[20vh]  shadow rounded px-2 py-5"
-          style={{ backgroundColor: "#FF5252", color: "white" }}
+          className="cursor-pointer overflow-hidden relative transition-all duration-500 hover:translate-y-2  gap-2 p-2 before:absolute before:w-full hover:before:top-0 before:duration-500 before:-top-1 before:h-1 before:bg-rose-500 inset-0 shadow-2xl  mb-4 800px:w-[30%]  rounded-lg px-2 py-5"
+          style={{ backgroundColor: "#fff", color: "black" }}
         >
           <div className="flex items-center">
-            <AiOutlineMoneyCollect size={30} className="mr-2" fill="#fff" />
+            <GrProductHunt size={30} className="mr-2"  />
             <h3
-              className={`${styles.productTitle} !text-[18px] !text-white leading-5 !font-[400]`}
+              className={`${styles.productTitle} !text-[18px]  leading-5 !font-[400]`}
             >
               All Products
             </h3>
@@ -176,13 +179,13 @@ const DashboardHero = () => {
         </div>
 
         <div
-          className="w-full mb-4 800px:w-[30%] min-h-[20vh]  shadow rounded px-2 py-5"
-          style={{ backgroundColor: "#374151", color: "white" }}
+          className="cursor-pointer overflow-hidden relative transition-all duration-500 hover:translate-y-2  gap-2 p-2 before:absolute before:w-full hover:before:top-0 before:duration-500 before:-top-1 before:h-1 before:bg-rose-500 inset-0 shadow-2xl  mb-4 800px:w-[30%]  rounded-lg px-2 py-5"
+          style={{ backgroundColor: "white", color: "black" }}
         >
           <div className="flex items-center">
-            <AiOutlineMoneyCollect size={30} className="mr-2" fill="#fff" />
+            <ZapIcon size={30} className="mr-2" />
             <h3
-              className={`${styles.productTitle} !text-[18px] !text-white leading-5 !font-[400]`}
+              className={`${styles.productTitle} !text-[18px]  leading-5 !font-[400]`}
             >
               Running Events
             </h3>
@@ -194,9 +197,12 @@ const DashboardHero = () => {
             <h5 className="pt-4 pl-2 hover:underline">View Events</h5>
           </Link>
         </div>
+
+
+
       </div>
       <br />
-      <h3 className="text-[22px] font-Poppins  mb-5 bg-black text-white p-2">
+      <h3 className="text-[22px] font-bold font-Poppins  mb-5 text-gray-700 p-2">
         Sales Performance
       </h3>
       <div className="w-full min-h-[200px] flex 800px:flex-row items-center flex-col justify-center gap-10 bg-white rounded mb-5">
@@ -209,7 +215,7 @@ const DashboardHero = () => {
         </div>
       </div>
 
-      <h3 className="text-[22px] font-Poppins  mb-5 bg-black text-white p-2">
+      <h3 className="text-[22px] font-bold font-Poppins  mb-5 text-gray-700 p-2">
         Latest Orders
       </h3>
       <div className="w-full min-h-[45vh] bg-white rounded">
