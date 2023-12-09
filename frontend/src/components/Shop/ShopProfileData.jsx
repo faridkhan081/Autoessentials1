@@ -31,7 +31,7 @@ const ShopProfileData = ({ isOwner }) => {
   return (
     <>
       <div className="w-full">
-        <div className="flex items-center justify-between bg-gray-800">
+        <div className={`flex items-center justify-between ${!isOwner ? 'p-5' : ''}  bg-gray-800`}>
           <div className="ml-5 w-full flex gap-16">
             <div className="flex items-center" onClick={() => setActive(1)}>
               <h5

@@ -70,16 +70,16 @@ const ShopPreviewPage = () => {
               "url(https://images.unsplash.com/photo-1472851294608-062f824d29cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80)",
           }}
         >
-          <div className="px-4 pt-8 pb-10">
-            <div className="absolute inset-x-0 -bottom-10 mx-auto w-36 rounded-full border-8 border-white shadow-lg">
-              <span className="absolute right-0 m-3 h-3 w-3 rounded-full bg-green-500 ring-1 ring-green-300 ring-offset-2" />
-              <img
-                src={`${backend_url}${data.avatar}`}
-                alt=""
-                className="mx-auto h-auto w-full rounded-full"
-              />
-            </div>
-          </div>
+    <div className="px-4 pt-8 pb-10 ">
+  <div className="absolute inset-x-0 -bottom-10 mx-auto w-36 h-36 rounded-full border-8 border-white shadow-lg overflow-hidden">
+    <span className="absolute right-5 m-2 h-3 w-3 rounded-full bg-green-500 ring-1 ring-green-300 ring-offset-2" />
+    <img
+      src={`${backend_url}${data.avatar}`}
+      alt=""
+      className="mx-auto h-full w-full rounded-full object-cover"
+    />
+  </div>
+</div>
         </div>
         <div className="mt-10 flex flex-col items-start justify-center space-y-4 py-8 px-4 sm:flex-row sm:space-y-0 md:justify-between lg:px-0">
           <div className="max-w-lg">

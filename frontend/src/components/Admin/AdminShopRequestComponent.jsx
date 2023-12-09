@@ -146,14 +146,7 @@ const AdminShopRequestComponent = () => {
                     Shop Description
                   </h3>
                   <p className="text-[16px] text-center pb-5">{selectedSeller.description}</p>
-                  <div className="w-full flex items-center justify-center">
-                    <div
-                      className={`${styles.button} text-white text-[18px] !h-[42px] mr-4`}
-                      onClick={() => setOpenPreviewModal(false)}
-                    >
-                      Close
-                    </div>
-                  </div>
+                  
                 </div>
               </div>
             )}
@@ -167,20 +160,15 @@ const AdminShopRequestComponent = () => {
                     Update Shop Status
                   </h3>
                   <div className="w-full flex items-center justify-center">
+                   
                     <div
-                      className={`${styles.button} text-white text-[18px] !h-[42px] mr-4`}
-                      onClick={() => setOpenStatusModal(false)}
-                    >
-                      Cancel
-                    </div>
-                    <div
-                      className={`${styles.button} text-white text-[18px] !h-[42px] ml-4`}
+                      className={`${styles.button}  text-white text-[18px] !h-[42px] ml-4`}
                       onClick={() => setOpenStatusModal(false) || handleUpdateStatus(userId, 'Approved')}
                     >
                       Approve
                     </div>
                     <div
-                      className={`${styles.button} text-white text-[18px] !h-[42px] ml-4`}
+                      className={`${styles.button} hover:bg-red-500 text-white text-[18px] !h-[42px] ml-4`}
                       onClick={() => setOpenStatusModal(false) || handleUpdateStatus(userId, 'Rejected')}
                     >
                       Reject

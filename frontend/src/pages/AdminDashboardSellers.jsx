@@ -7,7 +7,7 @@ import Layout from '../components/Layout/Layout.jsx';
 const AdminDashboardSellers = () => {
   return (
     <Layout title={'Admin - All Sellers'}>
-   
+    
     
       <div className="flex ">
         <div >

@@ -10,13 +10,13 @@ import Cart from "../cart/Cart";
 import { categoriesData } from "../../static/data";
 import { AiOutlineClose } from "react-icons/ai";
 
-import { Heart, Menu } from "lucide-react";
+import { Heart } from "lucide-react";
 import { ShoppingCart } from "lucide-react";
 
 import { IoIosArrowForward } from "react-icons/io";
 import { BiMenuAltLeft } from "react-icons/bi";
 import { IoIosArrowDown } from "react-icons/io";
-import { CgProfile } from "react-icons/cg";
+
 import DropDown from "./DropDown.jsx";
 import Navbar from "./Navbar.jsx";
 import { useSelector } from "react-redux";

@@ -46,6 +46,8 @@ const AllWithdraw = () => {
       headerName: "Amount",
       minWidth: 100,
       flex: 0.6,
+      sortable: true,
+      filterable: true,
     },
     {
       field: "status",
@@ -60,6 +62,7 @@ const AllWithdraw = () => {
       type: "number",
       minWidth: 130,
       flex: 0.6,
+      
     },
     {
       field: " ",
@@ -100,7 +103,7 @@ const AllWithdraw = () => {
         id: item._id,
         shopId: item.seller._id,
         name: item.seller.name,
-        amount: "US$ " + item.amount,
+        amount: "RS " + item.amount,
         status: item.status,
         createdAt: item.createdAt.slice(0, 10),
       });

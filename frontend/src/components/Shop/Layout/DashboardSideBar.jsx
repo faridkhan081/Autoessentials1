@@ -98,7 +98,7 @@ const DashboardSidebar = () => {
           )}
           <hr />
         </Menu>
-        <div className="flex items-center justify-center flex-col p-5">
+        <div className="flex items-center justify-center flex-col p-5  mt-5">
           <Link to={`/shop/${seller._id}`}>
             <img
               src={`${backend_url}${seller.avatar}`}
@@ -109,7 +109,7 @@ const DashboardSidebar = () => {
           </Link>
         </div>
         <>
-          <Menu
+          <Menu className="mt-5"
             menuItemStyles={{
               button: {
                 [`&.active`]: {
@@ -117,9 +117,9 @@ const DashboardSidebar = () => {
                   color: "#b6c8d9",
                 },
               },
-            }}
+            }} 
           >
-            <MenuItem
+            <MenuItem className=" hover:text-rose-500" 
               icon={<MdDashboard />}
               component={<Link to="/seller-dashboard" />}
               open={openSubMenu === "Dashboard"}
@@ -127,14 +127,14 @@ const DashboardSidebar = () => {
               Dashboard
             </MenuItem>
 
-            <SubMenu icon={<GrProductHunt />} label={`Manage Products`}>
-              <MenuItem
+            <SubMenu  icon={<GrProductHunt />} label={`Manage Products`}>
+              <MenuItem className=" hover:text-rose-500" 
                 component={<Link to="/dashboard-products" />}
                 open={openSubMenu === "products"}
               >
                 All Products
               </MenuItem>
-              <MenuItem
+              <MenuItem className=" hover:text-rose-500" 
                 component={<Link to="/dashboard-create-product" />}
                 open={openSubMenu === "products"}
               >
@@ -143,13 +143,13 @@ const DashboardSidebar = () => {
             </SubMenu>
 
             <SubMenu icon={<BsFillCalendarEventFill size={15} />} label={`Manage Events`}>
-              <MenuItem
+              <MenuItem className=" hover:text-rose-500" 
                 component={<Link to="/dashboard-events" />}
                 open={openSubMenu === "events"}
               >
                 All Events
               </MenuItem>
-              <MenuItem
+              <MenuItem className=" hover:text-rose-500" 
                 component={<Link to="/dashboard-create-event" />}
                 open={openSubMenu === "products"}
               >
@@ -157,36 +157,36 @@ const DashboardSidebar = () => {
               </MenuItem>
             </SubMenu>
 
-            <MenuItem
+            <MenuItem className=" hover:text-rose-500" 
               icon={<GiShoppingBag />}
               component={<Link to="/dashboard-orders" />}
               open={openSubMenu === "orders"}
             >
               All Orders
             </MenuItem>
-            <MenuItem
+            <MenuItem className=" hover:text-rose-500" 
               icon={<RiMoneyDollarBoxFill />}
               component={<Link to="/dashboard-withdraw-money" />}
               open={openSubMenu === "money"}
             >
               Withdraw Money
             </MenuItem>
-            <MenuItem
+            <MenuItem className=" hover:text-rose-500" 
               icon={<BsChatLeftDotsFill />}
               component={<Link to="/dashboard-messages" />}
               open={openSubMenu === "inbox"}
             >
               Inbox
             </MenuItem>
-            <MenuItem
+            <MenuItem className=" hover:text-rose-500" 
               icon={<MdDiscount />}
               component={<Link to="/dashboard-coupouns" />}
               open={openSubMenu === "coupouns"}
             >
               Discount Codes
             </MenuItem>
-            <MenuItem
-              icon={<RiRefund2Fill fill="#000" />}
+            <MenuItem className=" hover:text-rose-500" 
+              icon={<RiRefund2Fill />}
               component={<Link to="/dashboard-refunds" />}
               open={openSubMenu === "refunds"}
             >
@@ -194,15 +194,15 @@ const DashboardSidebar = () => {
             </MenuItem>
           </Menu>
         </>
-        <div className="flex mt-[30px] items-end justify-evenly">
+        <div className="flex mt-[30px] items-center flex-col">
           <Link to="/settings" className=" hover:text-rose-600">
-            <Settings />
+            <Settings size={20} />
           </Link>
           <div
             onClick={logoutHandler}
-            className="cursor-pointer hover:text-rose-600"
+            className="cursor-pointer mt-[30px] hover:text-rose-600"
           >
-            <LogOut />
+            <LogOut size={20}/>
           </div>
         </div>
       </Sidebar>

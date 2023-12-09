@@ -22,8 +22,7 @@ export default function DashboardSidebar() {
   const [openSubMenu, setOpenSubMenu] = useState(null);
   const [path, setPath] = useState(location.pathname);
   const { seller } = useSelector((state) => state.seller);
-
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(window.innerWidth <= 500);
   const {user} = useSelector((state) => state.user);
 
   const [toggled, setToggled] = useState(false);
@@ -63,6 +62,20 @@ export default function DashboardSidebar() {
     const submenuKey = routeMenuKeys[currentRoute] || null;
     setOpenSubMenu(submenuKey);
   }, [path]);
+
+
+
+  useEffect(() => {
+    const handleResize = () => {
+      setCollapsed(window.innerWidth <= 500);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <>
@@ -110,7 +123,7 @@ export default function DashboardSidebar() {
           </Link>
         </div>
         <>
-          <Menu className="mt-5 "
+          <Menu className="mt-5"
             menuItemStyles={{
               button: {
                 // the active class will be added automatically by react router
@@ -122,14 +135,14 @@ export default function DashboardSidebar() {
               },
             }}
           >
-            <MenuItem icon={<MdDashboard />}
+            <MenuItem className=" hover:text-rose-500" icon={<MdDashboard />}
               component={<Link to="/admin/dashboard" />}
               open={openSubMenu === "Dashboard"}
             >
               Dashboard
             </MenuItem>
 
-            <MenuItem icon={<MdRequestQuote />}
+            <MenuItem className=" hover:text-rose-500"  icon={<MdRequestQuote />}
               component={<Link to="/admin-shop-requests" />}
               open={openSubMenu === "Seller Requests"}
             >
@@ -137,20 +150,20 @@ export default function DashboardSidebar() {
             </MenuItem>
 
 
-            <MenuItem icon={<FaShop />}
+            <MenuItem className=" hover:text-rose-500"  icon={<FaShop />}
               component={<Link to="/admin-sellers" />}
               open={openSubMenu === "orders"}
             >
               All Shops
             </MenuItem>
-            <MenuItem icon={<FaUser />}
+            <MenuItem className=" hover:text-rose-500"  icon={<FaUser />}
               component={<Link to="/admin-users" />}
               open={openSubMenu === "orders"}
             >
               All Users
             </MenuItem>
              
-            <MenuItem
+            <MenuItem className=" hover:text-rose-500" 
               icon={<FaProductHunt />}
               component={<Link to="/admin-products" />}
               open={openSubMenu === "inbox"}
@@ -158,14 +171,22 @@ export default function DashboardSidebar() {
               All Products
             </MenuItem>
 
+            <MenuItem className=" hover:text-rose-500" 
+              icon={<FaProductHunt />}
+              component={<Link to="/admin-events" />}
+              open={openSubMenu === "inbox"}
+            >
+              All Events
+            </MenuItem>
 
-            <MenuItem icon={<FaCartArrowDown />}
+
+            <MenuItem className=" hover:text-rose-500"  icon={<FaCartArrowDown />}
               component={<Link to="/admin-orders" />}
               open={openSubMenu === "orders"}
             >
               All Orders
             </MenuItem>
-            <MenuItem
+            <MenuItem className=" hover:text-rose-500" 
             icon={<RiMoneyDollarBoxFill />}
               component={<Link to="/admin-withdraw-request" />}
               open={openSubMenu === "money"}
@@ -176,15 +197,15 @@ export default function DashboardSidebar() {
            
           </Menu>
         </>
-        <div className="flex mt-[30px] items-end justify-evenly">
+        <div className="flex flex-col items-center  mt-[30px]">
           <Link to="/profile" className=" hover:text-rose-600">
-            <Settings />
+            <Settings size={20}/>
           </Link>
           <div
             onClick={logoutHandler}
-            className="cursor-pointer hover:text-rose-600"
+            className="cursor-pointer 370px:mt-[30px] hover:text-rose-600"
           >
-            <LogOut />
+            <LogOut size={20}/>
           </div>
         </div>
       </Sidebar>

@@ -47,6 +47,7 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
 
   const conversation = require("./controller/conversation");
   const message = require("./controller/message");
+  const withdraw = require("./controller/withdraw");
 
 
 
@@ -61,6 +62,7 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
   app.use("/api/v2/coupon", coupon);
   app.use("/api/v2/payment", payment);
   app.use("/api/v2/order", order);
+  app.use("/api/v2/withdraw", withdraw);
 
 
   // its for Error Handling

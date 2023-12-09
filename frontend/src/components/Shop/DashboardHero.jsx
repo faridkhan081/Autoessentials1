@@ -12,6 +12,7 @@ import LineChart from "./Charts/LineChart";
 import BarChart from "./Charts/BarChart";
 import { ShoppingBag, SpeakerIcon, Zap, ZapIcon } from "lucide-react";
 import { GrProductHunt } from "react-icons/gr";
+import { getAllEventsShop } from "../../redux/actions/event";
 
 const DashboardHero = () => {
   const dispatch = useDispatch();
@@ -19,21 +20,17 @@ const DashboardHero = () => {
   const { seller } = useSelector((state) => state.seller);
   const { products } = useSelector((state) => state.products);
   const { events } = useSelector((state) => state.events);
-  const [deliveredOrder, setDeliveredOrder] = useState(null);
+ 
+  
   useEffect(() => {
     dispatch(getAllOrdersOfShop(seller._id));
     dispatch(getAllProductsShop(seller._id));
-    const orderData =
-      orders && orders.filter((item) => item.status === "Delivered");
-    setDeliveredOrder(orderData);
-  }, [dispatch]);
+    dispatch(getAllEventsShop(seller._id));
+   
+  }, [dispatch]); 
 
-  const totalEarningWithoutTax = deliveredOrder
-    ? deliveredOrder.reduce((acc, item) => acc + item.totalPrice, 0)
-    : 0;
-  const servingCharge = totalEarningWithoutTax * 0.1 || 0;
-  const availableBalance =
-    totalEarningWithoutTax - servingCharge.toFixed(2) || 0;
+ 
+  const availableBalance = seller?.availableBalance.toFixed(2) || 0;
   const columns = [
     { field: "id", headerName: "Order ID", minWidth: 150, flex: 0.7 },
 
@@ -191,8 +188,9 @@ const DashboardHero = () => {
             </h3>
           </div>
           <h5 className="pt-2 pl-[36px] text-[22px] font-[500]">
-            {events && events.length}
-          </h5>
+          {events && events.length}
+
+</h5>
           <Link to="/dashboard-events">
             <h5 className="pt-4 pl-2 hover:underline">View Events</h5>
           </Link>

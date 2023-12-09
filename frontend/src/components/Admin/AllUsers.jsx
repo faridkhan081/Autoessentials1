@@ -117,12 +117,7 @@ const AllUsers = () => {
                 Are you sure you wanna delete this user?
               </h3>
               <div className="w-full flex items-center justify-center">
-                <div
-                  className={`${styles.button} text-white text-[18px] !h-[42px] mr-4`}
-                  onClick={() => setOpen(false)}
-                >
-                  cancel
-                </div>
+                
                 <div
                   className={`${styles.button} text-white text-[18px] !h-[42px] ml-4`}
                   onClick={() =>  setOpen(false) || handleDelete(userId)}

@@ -16,13 +16,7 @@ const WithdrawMoney = () => {
   const { seller } = useSelector((state) => state.seller);
   const [paymentMethod, setPaymentMethod] = useState(false);
   const [withdrawAmount, setWithdrawAmount] = useState(50);
-  const [deliveredOrder,setDeliveredOrder] = useState(null)
 
-
-
-  const { orders } = useSelector((state) => state.order);
-
-  const { products } = useSelector((state) => state.products);
   const [bankInfo, setBankInfo] = useState({
     bankName: "",
     bankCountry: "",
@@ -36,8 +30,7 @@ const WithdrawMoney = () => {
     dispatch(getAllOrdersOfShop(seller._id));
     dispatch(getAllProductsShop(seller._id));
 
-    const orderData = orders && orders.filter((item)=>item.status === "Delivered")
-    setDeliveredOrder(orderData)
+   
   }, [dispatch]);
 
   const handleSubmit = async (e) => {
@@ -95,7 +88,7 @@ const WithdrawMoney = () => {
   };
 
   const withdrawHandler = async () => {
-    if (withdrawAmount < 50 || withdrawAmount > availableBalance) {
+    if (withdrawAmount < 50 || withdrawAmount > seller?.availableBalance) {
       toast.error("You can't withdraw this amount!");
     } else {
       const amount = withdrawAmount;
@@ -111,9 +104,7 @@ const WithdrawMoney = () => {
     }
   }; 
 
-  const totalEarningWithoutTax= deliveredOrder && deliveredOrder.reduce((acc,item)=>acc + item.totalPrice,0)
-  const servingCharge = totalEarningWithoutTax * 0.1;
-  const availableBalance = totalEarningWithoutTax - servingCharge.toFixed(2)
+
 
   if (seller.status !== "Approved") {
     return (
@@ -129,11 +120,11 @@ const WithdrawMoney = () => {
     <div className="w-full h-[90vh] p-8">
       <div className="w-[90%] bg-white m-5 h-full rounded flex items-center justify-center flex-col">
         <h5 className="text-[20px] pb-4">
-          Available Balance: RS. {availableBalance}
+          Available Balance: RS. {seller?.availableBalance}
         </h5>
         <div
           className={`${styles.button} text-white !h-[42px] !rounded`}
-          onClick={() => (availableBalance < 50 ? error() : setOpen(true))}
+          onClick={() => (seller?.availableBalance < 50 ? error() : setOpen(true))}
         >
           Withdraw
         </div>
@@ -315,7 +306,7 @@ const WithdrawMoney = () => {
                       </div>
                     </div>
                     <br />
-                    <h4>Available Balance: {availableBalance}$</h4>
+                    <h4>Available Balance: {seller?.availableBalance} Rs</h4>
                     <br />
                     <div className="800px:flex w-full items-center">
                       <input
