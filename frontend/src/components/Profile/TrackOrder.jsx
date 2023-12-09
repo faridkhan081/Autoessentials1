@@ -1,51 +1,93 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getAllOrdersOfUser } from "../../redux/actions/order";
+// import "./TrackOrder.css"; // Import your CSS file for animations
 
 const TrackOrder = () => {
-  const { orders } = useSelector((state) => state.order);
+  const { orders, loading } = useSelector((state) => state.order);
   const { user } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   const { id } = useParams();
+  const [currentStep, setCurrentStep] = useState(0);
 
   useEffect(() => {
     dispatch(getAllOrdersOfUser(user._id));
-  }, [dispatch]);
+  }, [dispatch, user._id]);
 
   const data = orders && orders.find((item) => item._id === id);
 
+  const steps = [
+    "Processing",
+    "Transferred to delivery partner",
+    "Shipping",
+    "Received",
+    "On the way",
+    "Delivered",
+    "Processing refund",
+    "Refund Success",
+  ];
+
+  useEffect(() => {
+    if (data) {
+      const currentStepIndex = steps.indexOf(data.status);
+      setCurrentStep(currentStepIndex);
+    }
+  }, [data, steps]);
+
+  if (loading) {
+    // Handle loading state
+    return <div>Loading...</div>;
+  }
+
   return (
-    <div className="w-full h-[80vh] flex justify-center items-center">
-      {" "}
-      <>
-        {data && data?.status === "Processing" ? (
-          <h1 className="text-[20px]">Your Order is processing in shop.</h1>
-        ) : data?.status === "Transferred to delivery partner" ? (
-          <h1 className="text-[20px]">
-            Your Order is on the way for delivery partner.
-          </h1>
-        ) : data?.status === "Shipping" ? (
-          <h1 className="text-[20px]">
-            Your Order is on the way with our delivery partner.
-          </h1>
-        ) : data?.status === "Received" ? (
-          <h1 className="text-[20px]">
-            Your Order is in your city. Our Delivery man will deliver it.
-          </h1>
-        ) : data?.status === "On the way" ? (
-          <h1 className="text-[20px]">
-            Our Delivery man is going to deliver your order.
-          </h1>
-        ) : data?.status === "Delivered" ? (
-          <h1 className="text-[20px]">Your order is delivered!</h1>
-        ) : data?.status === "Processing refund" ? (
-          <h1 className="text-[20px]">Your refund is processing!</h1>
-        ) : data?.status === "Refund Success" ? (
-          <h1 className="text-[20px]">Your Refund is success!</h1>
-        ) : null}
-      </>
+    <div className="flex 800px:gap-[150px] 370px:flex-col 800px:flex-row justify-center  h-full p-16">
+      {/* Dynamic Progress Bar */}
+      <div className="flex flex-col items-center">
+        {steps.map((step, index) => (
+          <div
+            key={index}
+            className={`flex flex-col items-center ${
+              index < steps.length - 1 ? "mb-4" : ""
+            }`}
+          >
+            <div
+              className={`w-8 h-8 rounded-full mb-2 flex items-center justify-center ${
+                index <= currentStep ? "bg-rose-500 " : "bg-gray-300"
+              }`}
+            >
+              <span
+                className={`text-xs ${
+                  index <= currentStep
+                    ? "text-white"
+                    : "text-gray-500"
+                }`}
+              >
+                {index + 1}
+              </span>
+            </div>
+            <div
+              className={`text-xs bg-red-100 p-1 rounded ${
+                index === currentStep ? "bg-red-500 text-white text-[16px] font-bold animate-pulse" : "text-gray-600"
+              }`}
+            >
+              {step}
+            </div>
+            {index < steps.length - 1 && (
+              <div
+                className={`h-4 w-1 ${
+                  index < currentStep ? "bg-rose-700" : "bg-gray-300"
+                }`}
+              ></div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* <div className="800px:w-[450px] h-[500px] bg-gray-400">
+    
+      </div> */}
     </div>
   );
 };

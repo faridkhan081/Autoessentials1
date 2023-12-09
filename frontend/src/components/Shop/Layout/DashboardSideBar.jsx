@@ -171,13 +171,21 @@ const DashboardSidebar = () => {
             >
               Withdraw Money
             </MenuItem>
-            <MenuItem className=" hover:text-rose-500" 
+            <MenuItem className=" hover:text-rose-500"
               icon={<BsChatLeftDotsFill />}
               component={<Link to="/dashboard-messages" />}
               open={openSubMenu === "inbox"}
             >
               Inbox
+            
+              <span className="absolute ml-[50px] flex bottom-[20px] h-2 w-2" >
+                <span
+                  className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-75"
+                ></span>
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-teal-500"></span>
+              </span>
             </MenuItem>
+             
             <MenuItem className=" hover:text-rose-500" 
               icon={<MdDiscount />}
               component={<Link to="/dashboard-coupouns" />}
