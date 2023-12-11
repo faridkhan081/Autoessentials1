@@ -6,13 +6,15 @@ import { format } from "timeago.js";
 import { backend_url, server } from "../server";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { AiFillDelete, AiOutlineArrowRight, AiOutlineSend } from "react-icons/ai";
+import { AiFillDelete, AiOutlineArrowRight, AiOutlineFullscreen, AiOutlineSend } from "react-icons/ai";
 import { TfiGallery } from "react-icons/tfi";
 import styles from "../styles/styles";
 import Layout from "../components/Layout/Layout";
 import { Delete } from "lucide-react";
+import ImageViewer from "../components/Shop/Layout/ImageViewer";
 const ENDPOINT = "http://localhost:4000/";
 const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
+
 
 const UserInbox = () => {
   const { user } = useSelector((state) => state.user);
@@ -27,6 +29,19 @@ const UserInbox = () => {
   const [activeStatus, setActiveStatus] = useState(false);
   const [open, setOpen] = useState(false);
   const scrollRef = useRef(null);
+
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [isImageHovered, setIsImageHovered] = useState(false);
+
+  const openImageViewer = (imageUrl) => {
+    setSelectedImage(imageUrl);
+    console.log('hi cliked');
+  };
+
+  const closeImageViewer = () => {
+    setSelectedImage(null);
+  };
+
 
   useEffect(() => {
     socketId.on("getMessage", (data) => {
@@ -260,6 +275,13 @@ const UserInbox = () => {
           activeStatus={activeStatus}
           scrollRef={scrollRef}
           handleImageUpload={handleImageUpload}
+          openImageViewer={
+            openImageViewer
+          }
+          selectedImage={selectedImage}
+          closeImageViewer={closeImageViewer}
+          setIsImageHovered={setIsImageHovered}
+          isImageHovered={isImageHovered}
         />
       )}
     </div>
@@ -361,6 +383,11 @@ const SellerInbox = ({
   activeStatus,
   scrollRef,
   handleImageUpload,
+  openImageViewer,
+  selectedImage,
+  closeImageViewer,
+  setIsImageHovered,
+  isImageHovered
 }) => {
   return (
     <div className="w-[full] min-h-full flex flex-col justify-between p-5" >
@@ -402,10 +429,23 @@ const SellerInbox = ({
                 />
               )}
               {item.images && (
-                <img
-                  src={`${backend_url}${item.images}`}
-                  className="w-[300px] h-[300px] object-cover rounded-[10px] ml-2 mb-2"
-                />
+                <div
+            className="relative"
+            onMouseEnter={() => setIsImageHovered(true)}
+            onMouseLeave={() => setIsImageHovered(false)}
+          >
+            <img
+              src={`${backend_url}${item.images}`}
+              className="w-[300px] h-[300px] object-cover rounded-[10px] mr-2 mb-2 cursor-pointer"
+            
+              alt=""
+            />
+            {isImageHovered && (
+              <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
+                <p className="text-white cursor-pointer bg-rose-500 " onClick={() => openImageViewer(`${backend_url}${item.images}`)}><AiOutlineFullscreen size={40} /></p>
+              </div>
+            )}
+          </div>
               )}
               {item.text !== "" && (
                 <div>
@@ -462,6 +502,9 @@ const SellerInbox = ({
           </label>
         </div>
       </form>
+      {selectedImage && (
+        <ImageViewer imageUrl={selectedImage} onClose={closeImageViewer} />
+      )}
     </div>
   );
 };

@@ -72,7 +72,7 @@ router.get('/get-all-events', catchAsyncError(async(req,res,next)=>{
 }))
 
 // delete event product
-router.delete('/delete-shop-event/:id',isSeller, catchAsyncError(async(req,res,next)=>{
+router.delete('/delete-shop-event/:id', catchAsyncError(async(req,res,next)=>{
   try {
     const productId = req.params.id;
     const eventData = await Event.findById(productId)

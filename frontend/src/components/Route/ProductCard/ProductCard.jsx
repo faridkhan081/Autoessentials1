@@ -31,7 +31,7 @@ function ProductCard({ data,isEvent,best }) {
       const discount = ((originalPrice - discountedPrice) / originalPrice) * 100;
       return `${Math.round(discount)}% OFF`;
     }
-    return 'No OFF'; // If there's no discount
+    return 'New'; // If there's no discount
   };
 
   const dispatch = useDispatch();
@@ -113,22 +113,25 @@ function ProductCard({ data,isEvent,best }) {
          
         </div>
 
-        <div className="py-2 flex items-center justify-between" >
-          <div className="flex">
-            <h5 className={`${styles.productDiscountPrice}`}>
-              {data.originalPrice === 0
-                ? data.originalPrice
-                : "RS." + data.discountPrice}
-            </h5>
-            <h4 className={`${styles.price}`}>
-              {data.originalPrice ? data.originalPrice + " RS" : null}
-            </h4>
-          </div>
-          <span className="font-[400] text-[17px] text-[#68d284]">
-            {data?.sold_out} sold
-          </span>
-          
-        </div>
+        <div className="py-2 flex items-center justify-between">
+  <div className="flex">
+    {data.discountPrice === 0 ? (
+      <h4 className={`${styles.productDiscountPrice}`}>RS.{data.originalPrice} </h4>
+    ) : (
+      <>
+        <h5 className={`${styles.productDiscountPrice}`}>
+          RS.{data.discountPrice}
+        </h5>
+        {data.originalPrice ? (
+          <h4 className={`${styles.price}`}>{data.originalPrice} RS</h4>
+        ) : null}
+      </>
+    )}
+  </div>
+  <span className="font-[400] text-[17px] text-[#68d284]">
+    {data?.sold_out} sold
+  </span>
+</div>
        
         {
           isEvent &&  <CountDown data={data} />

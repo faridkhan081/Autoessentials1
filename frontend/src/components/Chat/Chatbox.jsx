@@ -30,7 +30,7 @@ const Chatbox = ({ isOpen, onClose }) => {
     }
   };
   const addUserMessage = (message) => {
-    setMessages((prevMessages) => [
+    setMessages((prevMessages) => [ 
       ...prevMessages,
       { text: message, type: 'user' },
     ]);
@@ -79,26 +79,25 @@ const Chatbox = ({ isOpen, onClose }) => {
           </button>
         </div>
         <div id="chatbox" className="p-4 h-80 overflow-y-auto">
-          {messages.map((msg, index) => (
-            <div
-              key={index}
-              className={`mb-2 ${
-                msg.type === 'user' ? 'text-right' : 'text-left'
-              }`}
-            >
-         
-              <p
-                className={`${
-                  msg.type === 'user'
-                    ? 'bg-rose-500 text-white'
-                    : 'bg-gray-100 text-gray-700'
-                } rounded-lg py-2 px-4 inline-block`}
-              >
-                 {msg.text}
-              </p>
-            </div>
-          ))}
-        </div>
+        {messages.map((msg, index) => (
+    <div
+      key={index}
+      className={`mb-2 ${
+        msg.type === 'user' ? 'text-right' : 'text-left'
+      }`}
+    >
+      <p
+        className={`${
+          msg.type === 'user'
+            ? 'bg-rose-500 text-white'
+            : 'bg-gray-100 text-gray-700'
+        } rounded-lg py-2 px-4 inline-block`}
+      >
+        {msg.text}
+      </p>
+    </div>
+  ))}
+</div>
         <div className="p-4 border-t flex">
           <input
             id="user-input"

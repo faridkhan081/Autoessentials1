@@ -12,12 +12,9 @@ const messagesSchema = new mongoose.Schema(
       type: String,
     },
     images: {
-      public_id: {
+    
         type: String,
-      },
-      url: {
-        type: String,
-      },
+     
     },
   },
   { timestamps: true }

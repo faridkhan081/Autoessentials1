@@ -20,7 +20,7 @@ const CreateProduct = () => {
   const [category, setCategory] = useState("");
   const [tags, setTags] = useState("");
   const [originalPrice, setOriginalPrice] = useState();
-  const [discountPrice, setDiscountPrice] = useState();
+  const [discountPrice, setDiscountPrice] = useState(0);
   const [stock, setStock] = useState();
 
   useEffect(() => {
@@ -169,7 +169,7 @@ const CreateProduct = () => {
         </div>
         <br />
         <div>
-          <label className="pb-2">Original Price</label>
+          <label className="pb-2">Original Price <span className="text-red-500">*</span></label>
           <input
             type="number"
             name="price"
@@ -182,7 +182,7 @@ const CreateProduct = () => {
         <br />
         <div>
           <label className="pb-2">
-            Price (With Discount) <span className="text-red-500">*</span>
+            Price (With Discount) <span className="text-red-500"></span>
           </label>
           <input
             type="number"

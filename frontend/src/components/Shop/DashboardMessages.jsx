@@ -4,12 +4,13 @@ import { useEffect } from "react";
 import { backend_url, server } from "../../server";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { AiOutlineArrowRight, AiOutlineSend } from "react-icons/ai";
+import { AiOutlineArrowRight, AiOutlineFullscreen, AiOutlineSend } from "react-icons/ai";
 import styles from "../../styles/styles";
 import { TfiGallery } from "react-icons/tfi";
 import socketIO from "socket.io-client";
 import { format } from "timeago.js";
 import { Delete } from "lucide-react";
+import ImageViewer from "./Layout/ImageViewer";
 const ENDPOINT = "http://localhost:4000/";
 const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
 
@@ -26,6 +27,17 @@ const DashboardMessages = () => {
   const [images, setImages] = useState();
   const [open, setOpen] = useState(false);
   const scrollRef = useRef(null);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [isImageHovered, setIsImageHovered] = useState(false);
+  const openImageViewer = (imageUrl) => {
+    setSelectedImage(imageUrl);
+    console.log('hi cliked');
+  };
+
+  const closeImageViewer = () => {
+    setSelectedImage(null);
+  };
+
 
   useEffect(() => {
     socketId.on("getMessage", (data) => {
@@ -248,6 +260,9 @@ const DashboardMessages = () => {
                 userData={userData}
                 online={onlineCheck(item)}
                 setActiveStatus={setActiveStatus}
+                handleImageUpload={handleImageUpload}
+               
+
               />
             ))}
         </>
@@ -266,6 +281,13 @@ const DashboardMessages = () => {
           scrollRef={scrollRef}
           setMessages={setMessages}
           handleImageUpload={handleImageUpload}
+          openImageViewer={
+            openImageViewer
+          }
+          selectedImage={selectedImage}
+          closeImageViewer={closeImageViewer}
+          setIsImageHovered={setIsImageHovered}
+          isImageHovered={isImageHovered}
         />
       )}
     </div>
@@ -284,6 +306,7 @@ const MessageList = ({
   online,
   setActiveStatus,
   onDeleteConversation, 
+
 }) => {
   console.log(data);
   const [user, setUser] = useState([]);
@@ -306,7 +329,7 @@ const MessageList = ({
       }
     };
     getUser();
-  }, [me, data]);
+  }, [me, data]); 
 
   return (
     <div
@@ -366,6 +389,12 @@ const SellerInbox = ({
   userData,
   activeStatus,
   handleImageUpload,
+  openImageViewer,
+  selectedImage,
+  closeImageViewer,
+  setIsImageHovered,
+  isImageHovered
+
 }) => {
   return (
     <div className="w-full min-h-full flex flex-col justify-between">
@@ -391,50 +420,59 @@ const SellerInbox = ({
 
       {/* messages */}
       <div className="px-3 h-[65vh] py-3 overflow-y-scroll">
-        {messages &&
-          messages.map((item, index) => {
-             return (
-              <div
-              className={`flex w-full my-2 ${
-                item.sender === sellerId ? "justify-end" : "justify-start"
-              }`}
-              ref={scrollRef}
-            >
-              {item.sender !== sellerId && (
-                <img
-                  src={`${backend_url}${userData?.avatar}`}
-                  className="w-[40px] h-[40px] rounded-full mr-3"
-                  alt=""
-                />
-              )}
-              {
-                item.images && (
-                  <img
-                     src={`${backend_url}${item.images}`}
-                     className="w-[300px] h-[300px] object-cover rounded-[10px] mr-2"
-                  />
-                )
-              }
-             {
-              item.text !== "" && (
-                <div>
-                <div
-                  className={`w-max p-2 rounded ${
-                    item.sender === sellerId ? "bg-[#000]" : "bg-[#38c776]"
-                  } text-[#fff] h-min`}
-                >
-                  <p>{item.text}</p>
-                </div>
-
-                <p className="text-[12px] text-[#000000d3] pt-1">
-                  {format(item.createdAt)}
-                </p>
+      {messages &&
+  messages.map((item, index) => {
+    return (
+      <div
+        className={`flex w-full my-2 ${
+          item.sender === sellerId ? "justify-end" : "justify-start"
+        }`}
+        ref={scrollRef}
+      >
+        {item.sender !== sellerId && (
+          <img
+            src={`${backend_url}${userData?.avatar}`}
+            className="w-[40px] h-[40px] rounded-full mr-3"
+            alt=""
+          />
+        )}
+        {item.images && (
+          <div
+            className="relative"
+            onMouseEnter={() => setIsImageHovered(true)}
+            onMouseLeave={() => setIsImageHovered(false)}
+          >
+            <img
+              src={`${backend_url}${item.images}`}
+              className="w-[300px] h-[300px] object-cover rounded-[10px] mr-2 mb-2 cursor-pointer"
+            
+              alt=""
+            />
+            {isImageHovered && (
+              <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
+                <p className="text-white cursor-pointer bg-rose-500 " onClick={() => openImageViewer(`${backend_url}${item.images}`)}><AiOutlineFullscreen size={40} /></p>
               </div>
-              )
-             }
+            )}
+          </div>
+        )}
+        {item.text !== "" && (
+          <div>
+            <div
+              className={`w-max p-2 rounded ${
+                item.sender === sellerId ? "bg-[#000]" : "bg-[#38c776]"
+              } text-[#fff] h-min`}
+            >
+              <p>{item.text}</p>
             </div>
-             )
-      })}
+
+            <p className="text-[12px] text-[#000000d3] pt-1">
+              {format(item.createdAt)}
+            </p>
+          </div>
+        )}
+      </div>
+    );
+  })}
       </div>
 
       {/* send message input */}
@@ -473,6 +511,10 @@ const SellerInbox = ({
           </label>
         </div>
       </form>
+
+      {selectedImage && (
+        <ImageViewer imageUrl={selectedImage} onClose={closeImageViewer} />
+      )}
     </div>
   );
 };

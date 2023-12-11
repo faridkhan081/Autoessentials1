@@ -64,7 +64,7 @@ const ProductDetailsCard = ({ setOpen, data }) => {
       toast.error("Item already in cart!");
     } else {
       if (data.stock < count) {
-        toast.error("Product stock limited!");
+        toast.error("Product out of stock!");
       } else {
         const cartData = { ...data, qty: count };
         dispatch(addTocart(cartData));
@@ -141,12 +141,18 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                 <p>{data.description}</p>
 
                 <div className="flex pt-3 ">
-                  <h4 className={`${styles.productDiscountPrice}`}>
-                    RS.{data.discountPrice}
-                  </h4>
-                  <h3 className={`${styles.price}`}>
-                    {data.originalPrice ? "RS." + data.originalPrice : null}
-                  </h3>
+                {data.discountPrice === 0 ? (
+      <h4 className={`${styles.productDiscountPrice}`}>RS.{data.originalPrice} </h4>
+    ) : (
+      <>
+        <h5 className={`${styles.productDiscountPrice}`}>
+          RS.{data.discountPrice}
+        </h5>
+        {data.originalPrice ? (
+          <h4 className={`${styles.price}`}>{data.originalPrice} RS</h4>
+        ) : null}
+      </>
+    )}
                 </div>
                 <div className="flex items-center mt-12 justify-between pr-3">
                   <div className="flex items-center">
