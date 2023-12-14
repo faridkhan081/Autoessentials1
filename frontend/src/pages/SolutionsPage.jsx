@@ -77,7 +77,7 @@ const Solution = () => {
           <div>
             <form className="form">
               <span className="form-title">Upload your file</span>
-              <p className="form-paragraph">File should be an image</p>
+              <p className="form-paragraph bg-red-600 rounded !text-white">File should be an image of atleast 0.7 Mb</p>
               <label htmlFor="file-input" className="drop-container">
                 <span className="drop-title ">Drop files here</span>
                 or

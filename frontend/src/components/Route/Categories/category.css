@@ -43,6 +43,7 @@
     position: absolute;
     top: 40%;
     right: -20px;
+    
    
   }
   
@@ -50,7 +51,7 @@
     position: absolute;
     top: 40%;
     left: -20px;
-   
+    z-index: 10;
   
   }
   .control-btn .icon {

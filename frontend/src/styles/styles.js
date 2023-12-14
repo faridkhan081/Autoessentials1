@@ -12,7 +12,7 @@ const styles = {
     cart_button_text:"text-[#fff] text-[16px] font-[600]",
     input:"w-full border p-1 rounded-[5px]",
     activeStatus:"w-[10px] h-[10px] rounded-full absolute top-0 right-1 bg-[#40d132]",
-    noramlFlex:"flex items-center",
+    noramlFlex:"flex items-center ",
     stockStatus: 'p-[1px] rounded-full  px-2 text-center text-[11px] text-white  ',
     inStock: 'bg-green-500 ', // Tailwind CSS class for in stock
     outOfStock: 'bg-red-500', // Tailwind CSS class for out of stock

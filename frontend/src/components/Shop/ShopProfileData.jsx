@@ -66,8 +66,8 @@ const ShopProfileData = ({ isOwner }) => {
             {isOwner ? (
               <div className="mr-5">
                 <Link to="/seller-dashboard">
-                  <div className={`${styles.button} !bg-white  hover:underline  !text-black !rounded-[4px] h-[42px]`}>
-                    <span className="">Go Dashboard</span>
+                  <div className={`${styles.button} 370px:w-[50px] 800px:w-[150px] 800px:text-[17px] 800px:h-[50px] 370px:p-2 370px:h-[35px] 370px:text-[10px] !bg-white  hover:underline  !text-black !rounded-[4px] h-[42px]`}>
+                    <span className="">Dashboard</span>
                   </div>
                 </Link>
               </div>

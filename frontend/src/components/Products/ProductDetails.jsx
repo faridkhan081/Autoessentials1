@@ -8,10 +8,14 @@ import {
   AiOutlineMinus,
   AiOutlinePlus,
   AiOutlineShoppingCart,
+ 
 } from "react-icons/ai";
-
+import { GrFormPrevious } from "react-icons/gr";
+import { MdNavigateNext } from "react-icons/md";
 import Ratings from "../Products/Rating";
-
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { backend_url, server } from "../../server";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -34,6 +38,25 @@ function ProductDetails({ data, isLoading }) {
   const [select, setSelect] = useState(0);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  let [sliderRef, setSliderRef] = useState(null);
+  const NextArrow = ({ onClick }) => (
+    <div
+      className="absolute top-1/2 shadow-md hover:bg-white bg-[#FF5252] rounded-full right-5 transform -translate-y-1/2 cursor-pointer"
+      onClick={onClick}
+    >
+      <MdNavigateNext size={25}  />
+    </div>
+  );
+
+  const PrevArrow = ({ onClick }) => (
+    <div
+      className="absolute top-1/2 shadow-md hover:bg-white bg-[#FF5252] rounded-full left-5 
+      -z-50 transform -translate-y-1/2 cursor-pointer"
+      onClick={onClick}
+    >
+      <GrFormPrevious size={25}  />
+    </div>
+  );
   useEffect(() => {
     dispatch(getAllProductsShop(data && data?.shop._id));
     if (wishlist && wishlist.find((i) => i._id === data?._id)) {
@@ -70,7 +93,7 @@ function ProductDetails({ data, isLoading }) {
     } else {
       if (data.stock < count) {
         toast.error("Product out of stock!");
-        setCount(1)
+        setCount(1);
       } else {
         const cartData = { ...data, qty: count };
         dispatch(addTocart(cartData));
@@ -125,28 +148,51 @@ function ProductDetails({ data, isLoading }) {
               <div className={`${styles.section} w-[90%] 800px:w-[80%] `}>
                 <div className="w-full py-5">
                   <div className="block w-full 800px:flex mt-5">
-                    <div className="w-full 800px:w-[50%] ">
-                      <img
-                        src={`${backend_url}${data && data.images[select]}`}
-                        alt=""
-                        className="w-[80%] cursor-zoom-in h-[400px] overflow-hidden hover:scale-105 duration-500"
-                      />
-                      <div className="flex mt-[70px] items-center gap-3 cursor-pointer w-[257px]">
+                    <div className="w-full 800px:w-[50%] p-[30px] ">
+                      <Slider
+                        dots={false}
+                        infinite
+                        speed={500}
+                        slidesToShow={1}
+                        slidesToScroll={1}
+                        ref={(slider) => (sliderRef = slider)}
+                        nextArrow={<NextArrow />}
+                        prevArrow={<PrevArrow />}
+                      >
+                        {data.images.map((img, index) => (
+                          <div key={index}>
+                            <img 
+                              src={`${backend_url}${img}`}
+                              alt=""
+                              className="800px:w-full 370px:w-full cursor-zoom-in h-[400px] overflow-hidden hover:scale-110 duration-500"
+                            />
+                          </div>
+                        ))}
+                      </Slider>
+                      <div className="flex mt-[70px] items-center 800px:justify-start 370px:justify-center gap-3  w-full">
                         {data &&
                           data.images.map((i, index) => (
                             <div
-                              className="p-5 flex items-center justify-center"
-                              style={{ border: "1px solid gray" }}
+                              key={index}
+                              className={`p-5 flex items-center justify-center ${
+                                index === select
+                                  ? "border-2 border-rose-500"
+                                  : "border-2 border-gray-300"
+                              }`}
+                              onClick={() => {
+                                setSelect(index);
+                                // Use slickGoTo to change the main slider's current slide
+                                sliderRef.slickGoTo(index);
+                              }}
                             >
                               <div
-                                className={`cursor-pointer h-20 md:h-20 rounded-l  `}
+                                className={`cursor-pointer h-20 md:h-20 rounded-l`}
                               >
                                 <img
                                   src={`${backend_url}${i}`}
                                   alt=""
-                                  className="h-20 "
+                                  className="h-20"
                                   style={{ minWidth: "100px" }}
-                                  onClick={() => setSelect(index)}
                                 />
                               </div>
                             </div>

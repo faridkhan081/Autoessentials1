@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { navItems } from "../../static/data";
 import styles from "../../styles/styles";
+import Head from "./Head";
 
 const Navbar = ({ active }) => {
   const [toolsActive, setToolsActive] = useState(false);
@@ -11,7 +12,7 @@ const Navbar = ({ active }) => {
   };
 
   return (
-    <div className={`block 800px:${styles.noramlFlex} font-Poppins text-[14px] `}>
+    <div className={`block 800px:${styles.noramlFlex} font-Poppins text-[14px] 800px:ml-[50px] 370px:ml-0`}>
       {navItems &&
         navItems.map((i, index) => (
           <div className="flex" key={index}>
@@ -28,7 +29,7 @@ const Navbar = ({ active }) => {
           </div>
         ))}
 
-      <div className="group relative text-[15px] ml-5">
+      <div className="group relative text-[15px] ml-5 ">
         <button
           onClick={handleToolsClick}
           className={`text-white mt-[1px] py-2 px-2 rounded inline-flex items-center group 370px:bg-rose-600 lg:bg-transparent ${
@@ -61,6 +62,10 @@ const Navbar = ({ active }) => {
             </li>
           </Link>
         </ul>
+      </div>
+
+      <div className="ml-5 w-[350px] 370px:hidden 800px:block" >
+        <Head/>
       </div>
     </div>
   );

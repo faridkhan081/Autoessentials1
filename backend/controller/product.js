@@ -7,11 +7,20 @@ const Product = require("../model/product");
 const catchAsyncError = require("../middleware/catchAsyncError");
 const ErrorHandler = require("../utils/ErrorHandler");
 const { upload } = require("../multer");
-const fs = require('fs')
+
+const fs = require('fs');
 const tf = require('@tensorflow/tfjs-node');
 const path = require('path');
 
+let modelPromise; // Promise to hold the loaded model
 
+async function loadModel() {
+  if (!modelPromise) {
+    const modelPath = path.join(__dirname, 'model.json');
+    modelPromise = tf.loadLayersModel('file://' + modelPath);
+  }
+  return modelPromise;
+}
 
 router.post('/predict', async (req, res) => {
   try {
@@ -42,9 +51,8 @@ router.post('/predict', async (req, res) => {
     // Add an extra dimension to represent the batch size
     tensor = tf.expandDims(tensor, 0);
 
-    // Load the TensorFlow.js model
-    const modelPath = path.join(__dirname, 'model.json');
-    const model = await tf.loadLayersModel('file://' + modelPath);
+    // Load the TensorFlow.js model (this is now a promise)
+    const model = await loadModel();
 
     // Make a prediction
     const prediction = model.predict(tensor);
@@ -56,6 +64,7 @@ router.post('/predict', async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 });
+
 //create product
 
 router.post(

@@ -99,6 +99,7 @@ const Header = ({ activeHeading }) => {
 
   return (
     <>
+    
       <div className={`${styles.section}`}>
         <div className="hidden 800px:h-[50px] 800px:my-[20px] 800px:flex items-center justify-between ">
           <div>
@@ -179,7 +180,7 @@ const Header = ({ activeHeading }) => {
               </button>
               <IoIosArrowDown
                 size={20}
-                className="absolute right-2 top-4 cursor-pointer"
+                className="absolute right-2 top-4 cursor-pointer underline " 
                 onClick={() => setDropDown(!dropDown)}
               />
               {dropDown ? (
