@@ -7,29 +7,30 @@ import "slick-carousel/slick/slick-theme.css";
 import { GrFormPrevious } from "react-icons/gr";
 import { MdNavigateNext } from "react-icons/md";
 import Slider from "react-slick";
-import "./category.css";
 
-function SampleNextArrow(props) {
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+const SampleNextArrow = (props) => {
   const { onClick } = props;
   return (
-    <div className="control-btn" onClick={onClick}>
-      <button className="next">
-        <MdNavigateNext className="icon" />
+    <div className='control-btn next-btn' onClick={onClick}>
+      <button className='next' >
+        <MdNavigateNext />
       </button>
     </div>
   );
-}
+};
 
-function SamplePrevArrow(props) {
+const SamplePrevArrow = (props) => {
   const { onClick } = props;
   return (
-    <div className="control-btn" onClick={onClick}>
-      <button className="prev">
-        <GrFormPrevious className="icon" />
+    <div className='control-btn prev-btn' onClick={onClick}>
+      <button className='prev' style={{ zIndex: 1 }}>
+        <GrFormPrevious />
       </button>
     </div>
   );
-}
+};
 
 const Categories = () => {
   const navigate = useNavigate();
@@ -39,7 +40,9 @@ const Categories = () => {
     speed: 500,
     slidesToShow: 6,
     slidesToScroll: 2,
-    arrows:true,
+    
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
     responsive: [
       {
         breakpoint: 800,
@@ -59,49 +62,46 @@ const Categories = () => {
   };
   return (
     <>
-      <div className=" w-full mt-[33px]">
-        <div className="text-center flex justify-center items-center flex-col text-4xl text-slate-600 font-bold relative pb-[45px]">
-          <h2>Top Categories</h2>
-          <div className="w-[100px] h-[4px] bg-rose-500 mt-4"></div>
-        </div>
+    <div className=" w-full mt-[33px]">
+      <div className="text-center flex justify-center items-center flex-col text-4xl text-slate-600 font-bold relative pb-[45px]">
+        <h2>Top Categories</h2>
+        <div className="w-[100px] h-[4px] bg-rose-500 mt-4"></div>
       </div>
-      <section className={`${styles.section} bg-white p-6 mb-12`}>
-        <div className="container">
-          <Slider {...settings}>
-            {categoriesData &&
-              categoriesData.map((item) => {
-                const handleSubmit = (item) => {
-                  navigate(`/products?category=${item.title}`);
-                };
-                return (
-                  <>
-                    <div
-                      className="h-[150px] cursor-pointer flex items-center justify-center flex-col flex-wrap gap-2"
-                      key={item.id}
-                      onClick={() => handleSubmit(item)}
-                    
-                    >
-                      <div
-                        className="p-5 flex flex-col items-center justify-center hover:underline  " 
-                       
-                      >
-                        <img
-                          className="object-cover w-[150px]"
-                          src={item.image_Url}
-                          alt=""
-                         
-                        
-                        />
-                        <p className="!text-[14px] w-full text-center "  >{item.title}</p>
-                      </div>
-                    </div>
-                  </>
-                );
-              })}
-          </Slider>
-        </div>
-      </section>
-    </>
-  );
+    </div>
+    <section className={`${styles.section} bg-white p-6 mb-12 relative`}>
+      <div className="container">
+        <Slider {...settings}>
+          {categoriesData &&
+            categoriesData.map((item) => {
+              const handleSubmit = (item) => {
+                navigate(`/products?category=${item.title}`);
+              };
+              return (
+                <div
+                  className="h-[150px] cursor-pointer flex items-center justify-center flex-col flex-wrap gap-2"
+                  key={item.id}
+                  onClick={() => handleSubmit(item)}
+                >
+                  <div
+                    className="p-5 flex flex-col items-center justify-center hover:underline"
+                  >
+                    <img
+                      className="object-cover w-[150px]"
+                      src={item.image_Url}
+                      alt=""
+                    />
+                    <p className="!text-[14px] w-full text-center">
+                      {item.title}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+        </Slider>
+      </div>
+    </section>
+  </>
+);
 };
+
 export default Categories;

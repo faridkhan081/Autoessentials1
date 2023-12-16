@@ -49,9 +49,15 @@ router.post("/create-shop", upload.single("file"), async (req, res, next) => {
 
     try {
       await sendMail({
-        email: seller.email,
         subject: "Activate your Shop",
-        message: `Hello ${seller.name}, please click on the link to activate your shop: ${activationUrl}`,
+
+        email: seller.email,
+        emailType: "sellerActivation",
+        recipientName: seller.name,
+        activationCode: activationUrl, 
+        appName: "AutoEssentials", 
+        // Use the activation URL as the code for seller activation
+        // Add any other dynamic data needed for your template
       });
       res.status(201).json({
         success: true,

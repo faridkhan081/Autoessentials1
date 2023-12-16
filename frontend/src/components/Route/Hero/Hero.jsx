@@ -102,7 +102,7 @@ const Hero = () => {
           </dt>
 
           <dd class="text-[35px] font-extrabold text-rose-600 ">
-            RS.4m
+          139k
           </dd>
         </div>
 

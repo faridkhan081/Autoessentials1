@@ -17,7 +17,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { backend_url, server } from "../../server";
-
+import { Magnifier } from "react-image-magnifiers";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProductsShop } from "../../redux/actions/product";
 import { toast } from "react-toastify";
@@ -27,7 +27,8 @@ import {
 } from "../../redux/actions/wishlist";
 import { addTocart } from "../../redux/actions/cart";
 import axios from "axios";
-
+// hove to zoom image, react magnifiy library
+import ReactImageMagnify from "react-image-magnify";
 function ProductDetails({ data, isLoading }) {
   const { wishlist } = useSelector((state) => state.wishlist);
   const { cart } = useSelector((state) => state.cart);
@@ -39,24 +40,28 @@ function ProductDetails({ data, isLoading }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   let [sliderRef, setSliderRef] = useState(null);
-  const NextArrow = ({ onClick }) => (
-    <div
-      className="absolute top-1/2 shadow-md hover:bg-white bg-[#FF5252] rounded-full right-5 transform -translate-y-1/2 cursor-pointer"
-      onClick={onClick}
-    >
-      <MdNavigateNext size={25}  />
-    </div>
-  );
-
-  const PrevArrow = ({ onClick }) => (
-    <div
-      className="absolute top-1/2 shadow-md hover:bg-white bg-[#FF5252] rounded-full left-5 
-      -z-50 transform -translate-y-1/2 cursor-pointer"
-      onClick={onClick}
-    >
-      <GrFormPrevious size={25}  />
-    </div>
-  );
+  const NextArrow = (props) => {
+    const { onClick } = props;
+    return (
+      <div className='control-btn next-btn absolute right-0 mr-[50px] top-[162px]' onClick={onClick}>
+        <button className='next' style={{ zIndex: 1 }}>
+          <MdNavigateNext />
+        </button>
+      </div>
+    );
+  };
+  
+  const PrevArrow = (props) => {
+    const { onClick } = props;
+    return (
+      <div className='control-btn ml-[50px] prev-btn absolute top-[162px]' onClick={onClick}>
+        <button className='prev' style={{ zIndex: 1 }}>
+          <GrFormPrevious />
+        </button>
+      </div>
+    );
+  };
+  
   useEffect(() => {
     dispatch(getAllProductsShop(data && data?.shop._id));
     if (wishlist && wishlist.find((i) => i._id === data?._id)) {
@@ -148,8 +153,8 @@ function ProductDetails({ data, isLoading }) {
               <div className={`${styles.section} w-[90%] 800px:w-[80%] `}>
                 <div className="w-full py-5">
                   <div className="block w-full 800px:flex mt-5">
-                    <div className="w-full 800px:w-[50%] p-[30px] ">
-                      <Slider
+                    <div className="w-full 800px:w-[50%] p-[30px] " >
+                    <Slider
                         dots={false}
                         infinite
                         speed={500}
@@ -164,7 +169,7 @@ function ProductDetails({ data, isLoading }) {
                             <img 
                               src={`${backend_url}${img}`}
                               alt=""
-                              className="800px:w-full 370px:w-full cursor-zoom-in h-[400px] overflow-hidden hover:scale-110 duration-500"
+                              className="800px:w-full 370px:w-full h-[400px] overflow-hidden"
                             />
                           </div>
                         ))}
@@ -301,7 +306,7 @@ function ProductDetails({ data, isLoading }) {
                         </Link>
                         <div className="pr-8">
                           <Link to={`/shop/preview/${data?.shop._id}`}>
-                            <h3 className={`${styles.shop_name} pb-1 pt-1`}>
+                            <h3 className={`${styles.shop_name} hover:underline pb-1 pt-1`}>
                               {data.shop.name}
                             </h3>
                           </Link>
@@ -356,55 +361,40 @@ function ProductDetails({ data, isLoading }) {
 
 const ProductDetailsInfo = ({
   data,
-  products,
-  id,
-  totalReviewsLength,
-  averageRating,
+ 
 }) => {
   const [active, setActive] = useState(1);
 
   return (
     <div className="bg-[#f8f8f9] px-3 800px:px-10 py-2 rounded">
-      <div className="w-full flex justify-between border-b pt-10 pb-2">
+      <div className="w-full flex justify-start gap-16 border-b pt-10 pb-2">
         <div className="relative">
-          <h5
-            className={
-              "text-[#000] text-[18px] px-1 leading-5 font-[600] cursor-pointer 800px:text-[20px]"
-            }
+        <h5
+            className={`${
+              active === 1 ? 'text-[#000]' : 'text-gray-500'
+            } text-[14px] font-Poppins px-1 leading-5 font-[600] cursor-pointer 800px:text-[18px]`}
             onClick={() => setActive(1)}
           >
-            Product Details
+            Details
           </h5>
           {active === 1 ? (
             <div className={`${styles.active_indicator}`} />
           ) : null}
         </div>
         <div className="relative">
-          <h5
-            className={
-              "text-[#000] text-[18px] px-1 leading-5 font-[600] cursor-pointer 800px:text-[20px]"
-            }
+        <h5
+            className={`${
+              active === 2 ? 'text-[#000]' : 'text-gray-500'
+            } text-[14px] font-Poppins px-1 leading-5 font-[600] cursor-pointer 800px:text-[18px]`}
             onClick={() => setActive(2)}
           >
-            Product Reviews
+            Reviews ({data?.reviews?.length})
           </h5>
           {active === 2 ? (
             <div className={`${styles.active_indicator}`} />
           ) : null}
         </div>
-        <div className="relative">
-          <h5
-            className={
-              "text-[#000] text-[18px] px-1 leading-5 font-[600] cursor-pointer 800px:text-[20px]"
-            }
-            onClick={() => setActive(3)}
-          >
-            Seller Information
-          </h5>
-          {active === 3 ? (
-            <div className={`${styles.active_indicator}`} />
-          ) : null}
-        </div>
+      
       </div>
       {active === 1 ? (
         <>
@@ -445,55 +435,7 @@ const ProductDetailsInfo = ({
         </div>
       ) : null}
 
-      {active === 3 && (
-        <div className="w-full block 800px:flex p-5">
-          <div className="w-full 800px:w-[50%]">
-            <Link to={`/shop/preview/${data?.shop._id}`}>
-              <div className="flex items-center">
-                <img
-                  src={`${backend_url}${data?.shop?.avatar}`}
-                  className="w-[50px] h-[50px] rounded-full"
-                  alt=""
-                />
-                <div className="pl-3">
-                  <h3 className={`${styles.shop_name}`}>{data.shop.name}</h3>
-                  <h5 className="pb-2 text-[15px]">
-                    {" "}
-                    ({averageRating}/5) Ratings
-                  </h5>
-                </div>
-              </div>
-            </Link>
-            <p className="pt-2 text-justify">{data.shop.description}</p>
-          </div>
-          <div className="w-full 800px:w-[50%] mt-5 800px:mt-0 800px:flex flex-col items-end">
-            <div className="text-left">
-              <h5 className="font-[600]">
-                Joined on:{" "}
-                <span className="font-[500]">
-                  {" "}
-                  {data.shop?.createdAt?.slice(0, 10)}
-                </span>
-              </h5>
-
-              <h5 className="font-[600] pt-3">
-                Total Products:{" "}
-                <span className="font-[500]">
-                  {products && products.length}
-                </span>
-              </h5>
-
-              <Link to={`/shop/preview/${data?.shop._id}`}>
-                <div
-                  className={`${styles.button} !rounded-[4px] !h-[39.5px] mt-3`}
-                >
-                  <h4 className="text-white">Visit Shop</h4>
-                </div>
-              </Link>
-            </div>
-          </div>
-        </div>
-      )}
+      
     </div>
   );
 };

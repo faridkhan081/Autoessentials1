@@ -8,7 +8,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { backend_url } from "../../server";
 import axios from "axios";
 import { server } from "../../server";
-import { Book, Mail } from "lucide-react";
+import { BadgeCheck, Book, Mail } from "lucide-react";
 import Layout from "../../components/Layout/Layout";
 import { toast } from "react-toastify";
 
@@ -85,7 +85,7 @@ const ShopPreviewPage = () => {
           <div className="max-w-lg">
           <div className="flex gap-2 items-center">
             <h1 className="text-2xl font-bold text-gray-800">{data.name}</h1>
-            <h1 className="text-sm   text-green-500">({data.status} Seller)</h1>
+            <h1 className="text-sm   text-green-500"><BadgeCheck/></h1>
 </div>
             <p className="mt-2 text-gray-600">{data.address}</p>
             <p className="mt-1 text-gray-600 text-[14px]">

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import {server} from '../../server'
+import { server } from '../../server';
+import { Send } from 'lucide-react';
+
 const Chatbox = ({ isOpen, onClose }) => {
   const [messages, setMessages] = useState([]);
   const [userInput, setUserInput] = useState('');
@@ -22,15 +24,16 @@ const Chatbox = ({ isOpen, onClose }) => {
         },
         body: JSON.stringify({ message: userMessage }),
       });
-  
+
       const data = await response.json();
       addBotMessage(data.message);
     } catch (error) {
       console.error('Error:', error);
     }
   };
+
   const addUserMessage = (message) => {
-    setMessages((prevMessages) => [ 
+    setMessages((prevMessages) => [
       ...prevMessages,
       { text: message, type: 'user' },
     ]);
@@ -43,14 +46,16 @@ const Chatbox = ({ isOpen, onClose }) => {
     ]);
   };
 
-
   useEffect(() => {
+    // Display an initial greeting when the component mounts
+    addBotMessage("Hi there! How can I help you today?");
+
     // Scroll to the bottom of the message container whenever messages change
     const messageContainer = document.getElementById('chatbox');
     if (messageContainer) {
       messageContainer.scrollTop = messageContainer.scrollHeight;
     }
-  }, [messages]);
+  }, []); // Empty dependency array ensures this effect runs only once on mount
 
   return (
     <div className={`fixed w-[300px] 800px:w-[400px] bottom-20 right-5 mb-4 mr-4 ${isOpen ? '' : 'hidden'} `}>
@@ -79,25 +84,25 @@ const Chatbox = ({ isOpen, onClose }) => {
           </button>
         </div>
         <div id="chatbox" className="p-4 h-80 overflow-y-auto">
-        {messages.map((msg, index) => (
-    <div
-      key={index}
-      className={`mb-2 ${
-        msg.type === 'user' ? 'text-right' : 'text-left'
-      }`}
-    >
-      <p
-        className={`${
-          msg.type === 'user'
-            ? 'bg-rose-500 text-white'
-            : 'bg-gray-100 text-gray-700'
-        } rounded-lg py-2 px-4 inline-block`}
-      >
-        {msg.text}
-      </p>
-    </div>
-  ))}
-</div>
+          {messages.map((msg, index) => (
+            <div
+              key={index}
+              className={`mb-2 ${
+                msg.type === 'user' ? 'text-right' : 'text-left'
+              }`}
+            >
+              <p
+                className={`${
+                  msg.type === 'user'
+                    ? 'bg-rose-500 text-white'
+                    : 'bg-gray-100 text-gray-700'
+                } rounded-lg py-2 px-4 inline-block`}
+              >
+                {msg.text}
+              </p>
+            </div>
+          ))}
+        </div>
         <div className="p-4 border-t flex">
           <input
             id="user-input"
@@ -113,7 +118,7 @@ const Chatbox = ({ isOpen, onClose }) => {
             className="bg-rose-500 text-white px-4 py-2 rounded-r-md hover:bg-rose-600 transition duration-300"
             onClick={sendMessage}
           >
-            Send
+            <Send size={22} />
           </button>
         </div>
       </div>

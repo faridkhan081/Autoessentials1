@@ -9,6 +9,7 @@ import HeadBanner from "../components/Banner/HeadBanner";
 import Layout from "../components/Layout/Layout";
 import product from '../Assets/images/productsHeader.jpg';
 import SortBy from "../components/Layout/SortBy";
+import { motion, useAnimation } from "framer-motion";
 
 const ProductsPage = () => {
   const [searchParams] = useSearchParams();
@@ -18,6 +19,9 @@ const ProductsPage = () => {
   const [loadIncrement, setLoadIncrement] = useState(15);
   const [data, setData] = useState([]);
   const [sortCriteria, setSortCriteria] = useState('');
+  const controls = useAnimation();
+
+  
 
   useEffect(() => {
     if (categoryData === null) {
@@ -28,6 +32,11 @@ const ProductsPage = () => {
     }
     window.scrollTo(0, 0);
   }, [allProducts, categoryData]);
+
+  useEffect(() => {
+    // Trigger animation when the component mounts or when the data changes
+    controls.start("visible");
+  }, [controls, data]);
 
   const handleSortChange = (selectedValue) => {
     setSortCriteria(selectedValue);
@@ -52,6 +61,11 @@ const ProductsPage = () => {
     setDisplayCount(displayCount + loadIncrement);
   };
 
+  const cardVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+  };
+
   return (
     <Layout title={"Products"}>
       <div>
@@ -62,30 +76,36 @@ const ProductsPage = () => {
 
         {isLoading ? (
           <div className={`${styles.section} text-center`}>
-          <div className="flex justify-center items-center">
-      <div className="loader mb-[50px]">
-              <p className="heading">
-               Products are loading...
-              </p>
-              <div class="loaderrr">
-    <div></div>
-       </div>
+            <div className="flex justify-center items-center">
+              <div className="loader mb-[50px]">
+                <p className="heading">Products are loading...</p>
+                <div className="loaderrr">
+                  <div></div>
+                </div>
+              </div>
             </div>
-      </div>
           </div>
         ) : (
           <div className={`${styles.section}`}>
-            <div className="grid grid-cols-1 gap-[20px] md:grid-cols-2 md:gap-[25px] lg:grid-cols-4 lg:gap-[25px] xl:grid-cols-5 xl:gap-[30px] mb-12">
+            <motion.div
+              className="grid grid-cols-1 gap-[20px] md:grid-cols-2 md:gap-[25px] lg:grid-cols-4 lg:gap-[25px] xl:grid-cols-5 xl:gap-[30px] mb-12"
+              initial="hidden"
+              animate={controls}
+              variants={cardVariants}
+            >
               {sortedData && sortedData.length > 0 ? (
                 sortedData.slice(0, displayCount).map((item, index) => (
-                  <ProductCard data={item} key={index} />
+                 
+                    <ProductCard data={item} />
+               
                 ))
               ) : (
                 <h1 className="text-center w-full pb-[100px] text-[20px]">
                   No products Found!
                 </h1>
               )}
-            </div>
+            </motion.div>
+
             {displayCount < (sortedData ? sortedData.length : 0) && (
               <div className="flex justify-center mb-[50px]">
                 <button className="butto" type="button" onClick={loadMore}>
@@ -115,4 +135,3 @@ const ProductsPage = () => {
 };
 
 export default ProductsPage;
-

@@ -23,7 +23,7 @@ router.post("/forgot-password", catchAsyncError(async (req, res, next) => {
     if (!user) {
       return next(new ErrorHandler("User not found", 404));
     }
-
+  
     const resetToken = createResetToken(user);
 
     const resetUrl = `http://localhost:3000/reset-password/${resetToken}`;
@@ -31,9 +31,15 @@ router.post("/forgot-password", catchAsyncError(async (req, res, next) => {
     try {
       // Send the reset URL to the user's email using Nodemailer or your preferred email service
       await sendMail({
+     
+
+
         email: user.email,
         subject: "Reset Your Password",
-        message: `Click on the link to reset your password: ${resetUrl}`,
+        emailType: "resetPassword",
+        appName: "AutoEssentials", // Replace with your app name
+        resetUrl: resetUrl, // Replace with the actual reset URL
+        recipientName: user.name,
       });
 
       res.status(200).json({
@@ -118,9 +124,16 @@ router.post("/create-user", upload.single("file"), async (req, res, next) => {
 
     try {
       await sendMail({
+       
+     
+
+
         email: user.email,
         subject: "Activate your account",
-        message: `Hello ${user.name}, please click on the link to activate your account: ${activationUrl}`,
+        emailType: "activation",
+        appName: "AutoEssentials", // Replace with your app name
+        activationCode: activationUrl, // Use the link in the email body
+        recipientName: user.name,
       
       });
       res.status(201).json({
