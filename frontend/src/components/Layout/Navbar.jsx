@@ -56,9 +56,9 @@ const Navbar = ({ active }) => {
             </li>
           </Link>
           <hr className="h-px bg-white border-0" />
-          <Link to="/solutions">
+          <Link to="/oilInsights">
             <li className={`bg-gray-800 hover:bg-rose-600 py-4 px-4 cursor-pointer `}>
-              Inspection Tool 2
+            Oil Insights
             </li>
           </Link>
         </ul>

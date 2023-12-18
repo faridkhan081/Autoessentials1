@@ -7,6 +7,7 @@ const sendMail = require("../utils/sendMail");
 
 const { isAuthenticated, isSeller,isAdmin } = require("../middleware/auth");
 const Shop = require("../model/shop");
+const User = require("../model/user");
 const { upload } = require("../multer");
 const catchAsyncError = require("../middleware/catchAsyncError");
 const ErrorHandler = require("../utils/ErrorHandler");
@@ -321,7 +322,7 @@ router.put(
       const { newStatus } = req.body;
 
       // Assuming that 'newStatus' is a valid status value
-      shop.status = newStatus;
+      shop.status = newStatus; 
       await shop.save();
 
       res.status(201).json({
@@ -333,6 +334,9 @@ router.put(
     }
   })
 );
+
+
+
 
 
   // all sellers --- for users

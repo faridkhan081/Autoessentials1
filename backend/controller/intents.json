@@ -1,1559 +1,1559 @@
 {
-  "processed_data": [
-    {
-      "tokens": ["hi"],
-      "tag": "greeting",
-      "responses": [
-        "Hello!",
-        "Good to see you again!",
-        "Hi there, how can I help?"
-      ]
-    },
-    {
-      "tokens": [],
-      "tag": "greeting",
-      "responses": [
-        "Hello!",
-        "Good to see you again!",
-        "Hi there, how can I help?"
-      ]
-    },
-    {
-      "tokens": ["anyone"],
-      "tag": "greeting",
-      "responses": [
-        "Hello!",
-        "Good to see you again!",
-        "Hi there, how can I help?"
-      ]
-    },
-    {
-      "tokens": ["hello"],
-      "tag": "greeting",
-      "responses": [
-        "Hello!",
-        "Good to see you again!",
-        "Hi there, how can I help?"
-      ]
-    },
-    {
-      "tokens": ["good", "day"],
-      "tag": "greeting",
-      "responses": [
-        "Hello!",
-        "Good to see you again!",
-        "Hi there, how can I help?"
-      ]
-    },
-    {
-      "tokens": [],
-      "tag": "greeting",
-      "responses": [
-        "Hello!",
-        "Good to see you again!",
-        "Hi there, how can I help?"
-      ]
-    },
-    {
-      "tokens": ["ya"],
-      "tag": "greeting",
-      "responses": [
-        "Hello!",
-        "Good to see you again!",
-        "Hi there, how can I help?"
-      ]
-    },
-    {
-      "tokens": ["heyy"],
-      "tag": "greeting",
-      "responses": [
-        "Hello!",
-        "Good to see you again!",
-        "Hi there, how can I help?"
-      ]
-    },
-    {
-      "tokens": ["whatsup"],
-      "tag": "greeting",
-      "responses": [
-        "Hello!",
-        "Good to see you again!",
-        "Hi there, how can I help?"
-      ]
-    },
-    {
-      "tokens": [],
-      "tag": "greeting",
-      "responses": [
-        "Hello!",
-        "Good to see you again!",
-        "Hi there, how can I help?"
-      ]
-    },
-    {
-      "tokens": ["create", "account"],
-      "tag": "account",
-      "responses": [
-        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
-        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
-        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
-        "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
-        "To update your profile information, please log in to your account and click on the 'My Profile' link.",
-        "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
-        "To delete your account, please log in to your account and click on the 'Delete Account' link."
-      ]
-    },
-    {
-      "tokens": ["create", "account"],
-      "tag": "account",
-      "responses": [
-        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
-        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
-        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
-        "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
-        "To update your profile information, please log in to your account and click on the 'My Profile' link.",
-        "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
-        "To delete your account, please log in to your account and click on the 'Delete Account' link."
-      ]
-    },
-    {
-      "tokens": ["create", "account"],
-      "tag": "account",
-      "responses": [
-        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
-        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
-        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
-        "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
-        "To update your profile information, please log in to your account and click on the 'My Profile' link.",
-        "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
-        "To delete your account, please log in to your account and click on the 'Delete Account' link."
-      ]
-    },
-    {
-      "tokens": ["create", "account"],
-      "tag": "account",
-      "responses": [
-        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
-        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
-        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
-        "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
-        "To update your profile information, please log in to your account and click on the 'My Profile' link.",
-        "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
-        "To delete your account, please log in to your account and click on the 'Delete Account' link."
-      ]
-    },
-    {
-      "tokens": ["forgot", "password", "help", "reset"],
-      "tag": "account",
-      "responses": [
-        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
-        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
-        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
-        "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
-        "To update your profile information, please log in to your account and click on the 'My Profile' link.",
-        "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
-        "To delete your account, please log in to your account and click on the 'Delete Account' link."
-      ]
-    },
-    {
-      "tokens": ["want", "update", "profile", "information", "help"],
-      "tag": "account",
-      "responses": [
-        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
-        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
-        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
-        "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
-        "To update your profile information, please log in to your account and click on the 'My Profile' link.",
-        "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
-        "To delete your account, please log in to your account and click on the 'Delete Account' link."
-      ]
-    },
-    {
-      "tokens": ["trouble", "logging", "account", "help"],
-      "tag": "account",
-      "responses": [
-        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
-        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
-        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
-        "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
-        "To update your profile information, please log in to your account and click on the 'My Profile' link.",
-        "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
-        "To delete your account, please log in to your account and click on the 'Delete Account' link."
-      ]
-    },
-    {
-      "tokens": ["delete", "account"],
-      "tag": "account",
-      "responses": [
-        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
-        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
-        "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
-        "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
-        "To update your profile information, please log in to your account and click on the 'My Profile' link.",
-        "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
-        "To delete your account, please log in to your account and click on the 'Delete Account' link."
-      ]
-    },
-    {
-      "tokens": ["cya"],
-      "tag": "goodbye",
-      "responses": [
-        "Sad to see you go :(",
-        "Talk to you later",
-        "Goodbye!",
-        "Come back soon"
-      ]
-    },
-    {
-      "tokens": ["see"],
-      "tag": "goodbye",
-      "responses": [
-        "Sad to see you go :(",
-        "Talk to you later",
-        "Goodbye!",
-        "Come back soon"
-      ]
-    },
-    {
-      "tokens": ["bye", "bye"],
-      "tag": "goodbye",
-      "responses": [
-        "Sad to see you go :(",
-        "Talk to you later",
-        "Goodbye!",
-        "Come back soon"
-      ]
-    },
-    {
-      "tokens": ["see", "later"],
-      "tag": "goodbye",
-      "responses": [
-        "Sad to see you go :(",
-        "Talk to you later",
-        "Goodbye!",
-        "Come back soon"
-      ]
-    },
-    {
-      "tokens": ["goodbye"],
-      "tag": "goodbye",
-      "responses": [
-        "Sad to see you go :(",
-        "Talk to you later",
-        "Goodbye!",
-        "Come back soon"
-      ]
-    },
-    {
-      "tokens": ["leaving"],
-      "tag": "goodbye",
-      "responses": [
-        "Sad to see you go :(",
-        "Talk to you later",
-        "Goodbye!",
-        "Come back soon"
-      ]
-    },
-    {
-      "tokens": ["bye"],
-      "tag": "goodbye",
-      "responses": [
-        "Sad to see you go :(",
-        "Talk to you later",
-        "Goodbye!",
-        "Come back soon"
-      ]
-    },
-    {
-      "tokens": ["good", "day"],
-      "tag": "goodbye",
-      "responses": [
-        "Sad to see you go :(",
-        "Talk to you later",
-        "Goodbye!",
-        "Come back soon"
-      ]
-    },
-    {
-      "tokens": ["talk", "later"],
-      "tag": "goodbye",
-      "responses": [
-        "Sad to see you go :(",
-        "Talk to you later",
-        "Goodbye!",
-        "Come back soon"
-      ]
-    },
-    {
-      "tokens": ["ttyl"],
-      "tag": "goodbye",
-      "responses": [
-        "Sad to see you go :(",
-        "Talk to you later",
-        "Goodbye!",
-        "Come back soon"
-      ]
-    },
-    {
-      "tokens": ["got", "go"],
-      "tag": "goodbye",
-      "responses": [
-        "Sad to see you go :(",
-        "Talk to you later",
-        "Goodbye!",
-        "Come back soon"
-      ]
-    },
-    {
-      "tokens": ["gtg"],
-      "tag": "goodbye",
-      "responses": [
-        "Sad to see you go :(",
-        "Talk to you later",
-        "Goodbye!",
-        "Come back soon"
-      ]
-    },
-    {
-      "tokens": ["name", "developer"],
-      "tag": "creator",
-      "responses": ["Auto-Essential Team"]
-    },
-    {
-      "tokens": ["name", "creator"],
-      "tag": "creator",
-      "responses": ["Auto-Essential Team"]
-    },
-    {
-      "tokens": ["name", "developer"],
-      "tag": "creator",
-      "responses": ["Auto-Essential Team"]
-    },
-    {
-      "tokens": ["name", "creator"],
-      "tag": "creator",
-      "responses": ["Auto-Essential Team"]
-    },
-    {
-      "tokens": ["created"],
-      "tag": "creator",
-      "responses": ["Auto-Essential Team"]
-    },
-    {
-      "tokens": ["developer"],
-      "tag": "creator",
-      "responses": ["Auto-Essential Team"]
-    },
-    {
-      "tokens": ["creator"],
-      "tag": "creator",
-      "responses": ["Auto-Essential Team"]
-    },
-    {
-      "tokens": ["developer"],
-      "tag": "creator",
-      "responses": ["Auto-Essential Team"]
-    },
-    {
-      "tokens": ["developer"],
-      "tag": "creator",
-      "responses": ["Auto-Essential Team"]
-    },
-    {
-      "tokens": ["made"],
-      "tag": "creator",
-      "responses": ["Auto-Essential Team"]
-    },
-    {
-      "tokens": ["made"],
-      "tag": "creator",
-      "responses": ["Auto-Essential Team"]
-    },
-    {
-      "tokens": ["created"],
-      "tag": "creator",
-      "responses": ["Auto-Essential Team"]
-    },
-    {
-      "tokens": ["create"],
-      "tag": "creator",
-      "responses": ["Auto-Essential Team"]
-    },
-    {
-      "tokens": ["creator"],
-      "tag": "creator",
-      "responses": ["Auto-Essential Team"]
-    },
-    {
-      "tokens": ["made"],
-      "tag": "creator",
-      "responses": ["Auto-Essential Team"]
-    },
-    {
-      "tokens": ["designed"],
-      "tag": "creator",
-      "responses": ["Auto-Essential Team"]
-    },
-    {
-      "tokens": ["name"],
-      "tag": "name",
-      "responses": [
-        "You can call me Auto-Essential.",
-        "I'm Auto-Essential",
-        "I am a Auto-Essential Chatbot.",
-        "I am your Auto-Essential helper"
-      ]
-    },
-    {
-      "tokens": ["name"],
-      "tag": "name",
-      "responses": [
-        "You can call me Auto-Essential.",
-        "I'm Auto-Essential",
-        "I am a Auto-Essential Chatbot.",
-        "I am your Auto-Essential helper"
-      ]
-    },
-    {
-      "tokens": ["name"],
-      "tag": "name",
-      "responses": [
-        "You can call me Auto-Essential.",
-        "I'm Auto-Essential",
-        "I am a Auto-Essential Chatbot.",
-        "I am your Auto-Essential helper"
-      ]
-    },
-    {
-      "tokens": ["called"],
-      "tag": "name",
-      "responses": [
-        "You can call me Auto-Essential.",
-        "I'm Auto-Essential",
-        "I am a Auto-Essential Chatbot.",
-        "I am your Auto-Essential helper"
-      ]
-    },
-    {
-      "tokens": ["name"],
-      "tag": "name",
-      "responses": [
-        "You can call me Auto-Essential.",
-        "I'm Auto-Essential",
-        "I am a Auto-Essential Chatbot.",
-        "I am your Auto-Essential helper"
-      ]
-    },
-    {
-      "tokens": ["call"],
-      "tag": "name",
-      "responses": [
-        "You can call me Auto-Essential.",
-        "I'm Auto-Essential",
-        "I am a Auto-Essential Chatbot.",
-        "I am your Auto-Essential helper"
-      ]
-    },
-    {
-      "tokens": ["whats", "name"],
-      "tag": "name",
-      "responses": [
-        "You can call me Auto-Essential.",
-        "I'm Auto-Essential",
-        "I am a Auto-Essential Chatbot.",
-        "I am your Auto-Essential helper"
-      ]
-    },
-    {
-      "tokens": [],
-      "tag": "name",
-      "responses": [
-        "You can call me Auto-Essential.",
-        "I'm Auto-Essential",
-        "I am a Auto-Essential Chatbot.",
-        "I am your Auto-Essential helper"
-      ]
-    },
-    {
-      "tokens": [],
-      "tag": "name",
-      "responses": [
-        "You can call me Auto-Essential.",
-        "I'm Auto-Essential",
-        "I am a Auto-Essential Chatbot.",
-        "I am your Auto-Essential helper"
-      ]
-    },
-    {
-      "tokens": [],
-      "tag": "name",
-      "responses": [
-        "You can call me Auto-Essential.",
-        "I'm Auto-Essential",
-        "I am a Auto-Essential Chatbot.",
-        "I am your Auto-Essential helper"
-      ]
-    },
-    {
-      "tokens": ["chatting"],
-      "tag": "name",
-      "responses": [
-        "You can call me Auto-Essential.",
-        "I'm Auto-Essential",
-        "I am a Auto-Essential Chatbot.",
-        "I am your Auto-Essential helper"
-      ]
-    },
-    {
-      "tokens": ["taking"],
-      "tag": "name",
-      "responses": [
-        "You can call me Auto-Essential.",
-        "I'm Auto-Essential",
-        "I am a Auto-Essential Chatbot.",
-        "I am your Auto-Essential helper"
-      ]
-    },
-    {
-      "tokens": [],
-      "tag": "name",
-      "responses": [
-        "You can call me Auto-Essential.",
-        "I'm Auto-Essential",
-        "I am a Auto-Essential Chatbot.",
-        "I am your Auto-Essential helper"
-      ]
-    },
-    {
-      "tokens": ["info"],
-      "tag": "number",
-      "responses": ["You can contact at: 0300 1080023"]
-    },
-    {
-      "tokens": ["contact", "info"],
-      "tag": "number",
-      "responses": ["You can contact at: 0300 1080023"]
-    },
-    {
-      "tokens": ["contact"],
-      "tag": "number",
-      "responses": ["You can contact at: 0300 1080023"]
-    },
-    {
-      "tokens": ["contact", "number"],
-      "tag": "number",
-      "responses": ["You can contact at: 0300 1080023"]
-    },
-    {
-      "tokens": ["team", "number"],
-      "tag": "number",
-      "responses": ["You can contact at: 0300 1080023"]
-    },
-    {
-      "tokens": ["contact"],
-      "tag": "number",
-      "responses": ["You can contact at: 0300 1080023"]
-    },
-    {
-      "tokens": ["contact", "number"],
-      "tag": "number",
-      "responses": ["You can contact at: 0300 1080023"]
-    },
-    {
-      "tokens": ["call"],
-      "tag": "number",
-      "responses": ["You can contact at: 0300 1080023"]
-    },
-    {
-      "tokens": ["team", "phone"],
-      "tag": "number",
-      "responses": ["You can contact at: 0300 1080023"]
-    },
-    {
-      "tokens": ["contact"],
-      "tag": "number",
-      "responses": ["You can contact at: 0300 1080023"]
-    },
-    {
-      "tokens": ["get", "phone", "number"],
-      "tag": "number",
-      "responses": ["You can contact at: 0300 1080023"]
-    },
-    {
-      "tokens": ["call"],
-      "tag": "number",
-      "responses": ["You can contact at: 0300 1080023"]
-    },
-    {
-      "tokens": ["phone", "number"],
-      "tag": "number",
-      "responses": ["You can contact at: 0300 1080023"]
-    },
-    {
-      "tokens": ["phone"],
-      "tag": "number",
-      "responses": ["You can contact at: 0300 1080023"]
-    },
-    {
-      "tokens": ["call"],
-      "tag": "number",
-      "responses": ["You can contact at: 0300 1080023"]
-    },
-    {
-      "tokens": ["info"],
-      "tag": "number",
-      "responses": ["You can contact at: 0300 1080023"]
-    },
-    {
-      "tokens": ["list", "product"],
-      "tag": "Products",
-      "responses": [
-        "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
-      ]
-    },
-    {
-      "tokens": ["list", "product", "offered"],
-      "tag": "Products",
-      "responses": [
-        "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
-      ]
-    },
-    {
-      "tokens": ["list", "product", "offered"],
-      "tag": "Products",
-      "responses": [
-        "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
-      ]
-    },
-    {
-      "tokens": ["product", "offered", "website"],
-      "tag": "Products",
-      "responses": [
-        "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
-      ]
-    },
-    {
-      "tokens": ["product"],
-      "tag": "Products",
-      "responses": [
-        "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
-      ]
-    },
-    {
-      "tokens": ["product", "offered"],
-      "tag": "Products",
-      "responses": [
-        "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
-      ]
-    },
-    {
-      "tokens": ["product", "offered", "website", "name"],
-      "tag": "Products",
-      "responses": [
-        "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
-      ]
-    },
-    {
-      "tokens": ["product", "offer"],
-      "tag": "Products",
-      "responses": [
-        "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
-      ]
-    },
-    {
-      "tokens": ["branch"],
-      "tag": "Products",
-      "responses": [
-        "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
-      ]
-    },
-    {
-      "tokens": ["product", "available", "website"],
-      "tag": "Products",
-      "responses": [
-        "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
-      ]
-    },
-    {
-      "tokens": ["branch", "available", "website"],
-      "tag": "Products",
-      "responses": [
-        "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
-      ]
-    },
-    {
-      "tokens": ["product", "website"],
-      "tag": "Products",
-      "responses": [
-        "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
-      ]
-    },
-    {
-      "tokens": ["branch", "website"],
-      "tag": "Products",
-      "responses": [
-        "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
-      ]
-    },
-    {
-      "tokens": ["product", "website"],
-      "tag": "Products",
-      "responses": [
-        "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
-      ]
-    },
-    {
-      "tokens": ["branch", "available", "website"],
-      "tag": "Products",
-      "responses": [
-        "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
-      ]
-    },
-    {
-      "tokens": ["tell", "product", "available", "website"],
-      "tag": "Products",
-      "responses": [
-        "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
-      ]
-    },
-    {
-      "tokens": ["information", "payment", "method"],
-      "tag": "payment",
-      "responses": [
-        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
-      ]
-    },
-    {
-      "tokens": ["payment", "method", "method", "accept"],
-      "tag": "payment",
-      "responses": [
-        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
-      ]
-    },
-    {
-      "tokens": ["information", "payment", "method"],
-      "tag": "payment",
-      "responses": [
-        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
-      ]
-    },
-    {
-      "tokens": ["tell", "payment", "method"],
-      "tag": "payment",
-      "responses": [
-        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
-      ]
-    },
-    {
-      "tokens": ["buying", "payment", "method"],
-      "tag": "payment",
-      "responses": [
-        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
-      ]
-    },
-    {
-      "tokens": ["selling", "payment", "method"],
-      "tag": "payment",
-      "responses": [
-        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
-      ]
-    },
-    {
-      "tokens": ["payment", "method", "per", "product"],
-      "tag": "payment",
-      "responses": [
-        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
-      ]
-    },
-    {
-      "tokens": ["payment", "method"],
-      "tag": "payment",
-      "responses": [
-        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
-      ]
-    },
-    {
-      "tokens": ["payment", "method"],
-      "tag": "payment",
-      "responses": [
-        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
-      ]
-    },
-    {
-      "tokens": ["fund"],
-      "tag": "payment",
-      "responses": [
-        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
-      ]
-    },
-    {
-      "tokens": ["payment"],
-      "tag": "payment",
-      "responses": [
-        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
-      ]
-    },
-    {
-      "tokens": ["payment", "method"],
-      "tag": "payment",
-      "responses": [
-        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
-      ]
-    },
-    {
-      "tokens": ["fund"],
-      "tag": "payment",
-      "responses": [
-        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
-      ]
-    },
-    {
-      "tokens": ["payment"],
-      "tag": "payment",
-      "responses": [
-        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
-      ]
-    },
-    {
-      "tokens": ["payment", "method"],
-      "tag": "payment",
-      "responses": [
-        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
-      ]
-    },
-    {
-      "tokens": ["tell", "something", "fund"],
-      "tag": "payment",
-      "responses": [
-        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
-      ]
-    },
-    {
-      "tokens": ["tell", "something", "payment"],
-      "tag": "payment",
-      "responses": [
-        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
-      ]
-    },
-    {
-      "tokens": ["tell", "something", "payment", "method"],
-      "tag": "payment",
-      "responses": [
-        "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
-      ]
-    },
-    {
-      "tokens": ["track", "order"],
-      "tag": "track",
-      "responses": [
-        "You can track your order by logging into your account and navigating to the 'Order History' section. There, you will find the tracking information for your shipment."
-      ]
-    },
-    {
-      "tokens": ["track", "order"],
-      "tag": "track",
-      "responses": [
-        "You can track your order by logging into your account and navigating to the 'Order History' section. There, you will find the tracking information for your shipment."
-      ]
-    },
-    {
-      "tokens": ["track", "order"],
-      "tag": "track",
-      "responses": [
-        "You can track your order by logging into your account and navigating to the 'Order History' section. There, you will find the tracking information for your shipment."
-      ]
-    },
-    {
-      "tokens": ["track", "order"],
-      "tag": "track",
-      "responses": [
-        "You can track your order by logging into your account and navigating to the 'Order History' section. There, you will find the tracking information for your shipment."
-      ]
-    },
-    {
-      "tokens": ["return", "policy"],
-      "tag": "return",
-      "responses": [
-        "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
-      ]
-    },
-    {
-      "tokens": ["return", "policy"],
-      "tag": "return",
-      "responses": [
-        "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
-      ]
-    },
-    {
-      "tokens": ["return"],
-      "tag": "return",
-      "responses": [
-        "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
-      ]
-    },
-    {
-      "tokens": ["return", "policy"],
-      "tag": "return",
-      "responses": [
-        "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
-      ]
-    },
-    {
-      "tokens": ["return", "policy", "website"],
-      "tag": "return",
-      "responses": [
-        "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
-      ]
-    },
-    {
-      "tokens": ["return", "policy", "website"],
-      "tag": "return",
-      "responses": [
-        "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
-      ]
-    },
-    {
-      "tokens": ["return", "policy", "website"],
-      "tag": "return",
-      "responses": [
-        "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
-      ]
-    },
-    {
-      "tokens": ["return", "policy", "website"],
-      "tag": "return",
-      "responses": [
-        "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
-      ]
-    },
-    {
-      "tokens": ["return", "product"],
-      "tag": "return",
-      "responses": [
-        "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
-      ]
-    },
-    {
-      "tokens": ["return", "product", "policy"],
-      "tag": "return",
-      "responses": [
-        "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
-      ]
-    },
-    {
-      "tokens": ["return", "product", "policy", "website"],
-      "tag": "return",
-      "responses": [
-        "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
-      ]
-    },
-    {
-      "tokens": ["return", "product", "policy", "website"],
-      "tag": "return",
-      "responses": [
-        "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
-      ]
-    },
-    {
-      "tokens": ["cancel", "order"],
-      "tag": "cancelorder",
-      "responses": [
-        "You can cancel your order if it has not been shipped yet. Please contact our customer support team with your order details, and we will assist you with the cancellation process."
-      ]
-    },
-    {
-      "tokens": ["cancel", "order"],
-      "tag": "cancelorder",
-      "responses": [
-        "You can cancel your order if it has not been shipped yet. Please contact our customer support team with your order details, and we will assist you with the cancellation process."
-      ]
-    },
-    {
-      "tokens": ["cancel", "order"],
-      "tag": "cancelorder",
-      "responses": [
-        "You can cancel your order if it has not been shipped yet. Please contact our customer support team with your order details, and we will assist you with the cancellation process."
-      ]
-    },
-    {
-      "tokens": ["cancel", "order"],
-      "tag": "cancelorder",
-      "responses": [
-        "You can cancel your order if it has not been shipped yet. Please contact our customer support team with your order details, and we will assist you with the cancellation process."
-      ]
-    },
-    {
-      "tokens": ["cancel", "order"],
-      "tag": "cancelorder",
-      "responses": [
-        "You can cancel your order if it has not been shipped yet. Please contact our customer support team with your order details, and we will assist you with the cancellation process."
-      ]
-    },
-    {
-      "tokens": ["cancel", "order", "website"],
-      "tag": "cancelorder",
-      "responses": [
-        "You can cancel your order if it has not been shipped yet. Please contact our customer support team with your order details, and we will assist you with the cancellation process."
-      ]
-    },
-    {
-      "tokens": ["cancel", "order", "website"],
-      "tag": "cancelorder",
-      "responses": [
-        "You can cancel your order if it has not been shipped yet. Please contact our customer support team with your order details, and we will assist you with the cancellation process."
-      ]
-    },
-    {
-      "tokens": ["cancel", "order", "website"],
-      "tag": "cancelorder",
-      "responses": [
-        "You can cancel your order if it has not been shipped yet. Please contact our customer support team with your order details, and we will assist you with the cancellation process."
-      ]
-    },
-    {
-      "tokens": ["cancel", "order", "website"],
-      "tag": "cancelorder",
-      "responses": [
-        "You can cancel your order if it has not been shipped yet. Please contact our customer support team with your order details, and we will assist you with the cancellation process."
-      ]
-    },
-    {
-      "tokens": ["long", "doe", "shipping", "take"],
-      "tag": "shipping",
-      "responses": [
-        "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
-      ]
-    },
-    {
-      "tokens": ["shipping"],
-      "tag": "shipping",
-      "responses": [
-        "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
-      ]
-    },
-    {
-      "tokens": ["shipping", "time"],
-      "tag": "shipping",
-      "responses": [
-        "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
-      ]
-    },
-    {
-      "tokens": ["shipping", "time"],
-      "tag": "shipping",
-      "responses": [
-        "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
-      ]
-    },
-    {
-      "tokens": ["shipping", "time", "website"],
-      "tag": "shipping",
-      "responses": [
-        "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
-      ]
-    },
-    {
-      "tokens": ["shipping", "time", "website"],
-      "tag": "shipping",
-      "responses": [
-        "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
-      ]
-    },
-    {
-      "tokens": ["shipping", "time", "website"],
-      "tag": "shipping",
-      "responses": [
-        "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
-      ]
-    },
-    {
-      "tokens": ["shipping", "time", "website"],
-      "tag": "shipping",
-      "responses": [
-        "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
-      ]
-    },
-    {
-      "tokens": ["shipping", "product", "send", "user"],
-      "tag": "shipping",
-      "responses": [
-        "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
-      ]
-    },
-    {
-      "tokens": ["shipping", "product", "send", "user"],
-      "tag": "shipping",
-      "responses": [
-        "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
-      ]
-    },
-    {
-      "tokens": ["track", "order"],
-      "tag": "shipping",
-      "responses": [
-        "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
-      ]
-    },
-    {
-      "tokens": ["track", "order"],
-      "tag": "shipping",
-      "responses": [
-        "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
-      ]
-    },
-    {
-      "tokens": ["track", "order"],
-      "tag": "shipping",
-      "responses": [
-        "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
-      ]
-    },
-    {
-      "tokens": ["track", "order"],
-      "tag": "shipping",
-      "responses": [
-        "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
-      ]
-    },
-    {
-      "tokens": ["personal", "payment", "detail", "secure"],
-      "tag": "detailssecure",
-      "responses": [
-        "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
-      ]
-    },
-    {
-      "tokens": ["detail", "secure"],
-      "tag": "detailssecure",
-      "responses": [
-        "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
-      ]
-    },
-    {
-      "tokens": ["detail", "secure"],
-      "tag": "detailssecure",
-      "responses": [
-        "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
-      ]
-    },
-    {
-      "tokens": ["detail", "secure", "website"],
-      "tag": "detailssecure",
-      "responses": [
-        "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
-      ]
-    },
-    {
-      "tokens": ["detail", "secure", "website"],
-      "tag": "detailssecure",
-      "responses": [
-        "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
-      ]
-    },
-    {
-      "tokens": ["detail", "secure", "website"],
-      "tag": "detailssecure",
-      "responses": [
-        "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
-      ]
-    },
-    {
-      "tokens": ["detail", "secure", "website"],
-      "tag": "detailssecure",
-      "responses": [
-        "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
-      ]
-    },
-    {
-      "tokens": ["personal", "detail", "secure"],
-      "tag": "detailssecure",
-      "responses": [
-        "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
-      ]
-    },
-    {
-      "tokens": ["payment", "detail", "secure"],
-      "tag": "detailssecure",
-      "responses": [
-        "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
-      ]
-    },
-    {
-      "tokens": ["security", "website"],
-      "tag": "detailssecure",
-      "responses": [
-        "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
-      ]
-    },
-    {
-      "tokens": ["security", "website"],
-      "tag": "detailssecure",
-      "responses": [
-        "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
-      ]
-    },
-    {
-      "tokens": ["order", "without", "creating", "account"],
-      "tag": "guest",
-      "responses": [
-        "Yes, you can place an order as a guest without creating an account. However, creating an account offers benefits such as order tracking and easier future purchases."
-      ]
-    },
-    {
-      "tokens": ["guest", "user", "allowed"],
-      "tag": "guest",
-      "responses": [
-        "Yes, you can place an order as a guest without creating an account. However, creating an account offers benefits such as order tracking and easier future purchases."
-      ]
-    },
-    {
-      "tokens": ["guest", "user", "allowed"],
-      "tag": "guest",
-      "responses": [
-        "Yes, you can place an order as a guest without creating an account. However, creating an account offers benefits such as order tracking and easier future purchases."
-      ]
-    },
-    {
-      "tokens": ["think", "guest", "user"],
-      "tag": "guest",
-      "responses": [
-        "Yes, you can place an order as a guest without creating an account. However, creating an account offers benefits such as order tracking and easier future purchases."
-      ]
-    },
-    {
-      "tokens": ["trouble", "navigating", "website", "help"],
-      "tag": "technicalsupport",
-      "responses": [
-        "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
-        "If you have forgotten your password, please click on the 'Forgot Password' link on our login page and follow the instructions to reset your password. You can find our login page here: [link to login page].",
-        "To update your profile information, please log in to your account and click on the 'My Profile' link.",
-        "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
-        "To delete your account, please log in to your account and click on the 'Delete Account' link."
-      ]
-    },
-    {
-      "tokens": ["ca", "seem", "add", "item", "cart", "help"],
-      "tag": "technicalsupport",
-      "responses": [
-        "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
-        "If you have forgotten your password, please click on the 'Forgot Password' link on our login page and follow the instructions to reset your password. You can find our login page here: [link to login page].",
-        "To update your profile information, please log in to your account and click on the 'My Profile' link.",
-        "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
-        "To delete your account, please log in to your account and click on the 'Delete Account' link."
-      ]
-    },
-    {
-      "tokens": ["trouble", "placing", "order", "help"],
-      "tag": "technicalsupport",
-      "responses": [
-        "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
-        "If you have forgotten your password, please click on the 'Forgot Password' link on our login page and follow the instructions to reset your password. You can find our login page here: [link to login page].",
-        "To update your profile information, please log in to your account and click on the 'My Profile' link.",
-        "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
-        "To delete your account, please log in to your account and click on the 'Delete Account' link."
-      ]
-    },
-    {
-      "tokens": ["product", "received", "working", "properly", "help"],
-      "tag": "technicalsupport",
-      "responses": [
-        "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
-        "If you have forgotten your password, please click on the 'Forgot Password' link on our login page and follow the instructions to reset your password. You can find our login page here: [link to login page].",
-        "To update your profile information, please log in to your account and click on the 'My Profile' link.",
-        "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
-        "To delete your account, please log in to your account and click on the 'Delete Account' link."
-      ]
-    },
-    {
-      "tokens": ["trouble", "downloading", "file", "help"],
-      "tag": "technicalsupport",
-      "responses": [
-        "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
-        "If you have forgotten your password, please click on the 'Forgot Password' link on our login page and follow the instructions to reset your password. You can find our login page here: [link to login page].",
-        "To update your profile information, please log in to your account and click on the 'My Profile' link.",
-        "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
-        "To delete your account, please log in to your account and click on the 'Delete Account' link."
-      ]
-    },
-    {
-      "tokens": ["question", "product"],
-      "tag": "Customerservice",
-      "responses": [
-        "Please feel free to contact us with any questions, complaints, or feedback you may have. You can contact us by email, phone, or live chat.",
-        "We are committed to providing our customers with excellent customer service, and we appreciate your feedback."
-      ]
-    },
-    {
-      "tokens": ["complaint", "service"],
-      "tag": "Customerservice",
-      "responses": [
-        "Please feel free to contact us with any questions, complaints, or feedback you may have. You can contact us by email, phone, or live chat.",
-        "We are committed to providing our customers with excellent customer service, and we appreciate your feedback."
-      ]
-    },
-    {
-      "tokens": ["feedback", "website"],
-      "tag": "Customerservice",
-      "responses": [
-        "Please feel free to contact us with any questions, complaints, or feedback you may have. You can contact us by email, phone, or live chat.",
-        "We are committed to providing our customers with excellent customer service, and we appreciate your feedback."
-      ]
-    },
-    {
-      "tokens": ["put", "touch", "customer", "service", "representative"],
-      "tag": "Customerservice",
-      "responses": [
-        "Please feel free to contact us with any questions, complaints, or feedback you may have. You can contact us by email, phone, or live chat.",
-        "We are committed to providing our customers with excellent customer service, and we appreciate your feedback."
-      ]
-    },
-    {
-      "tokens": ["thank", "help"],
-      "tag": "Customerservice",
-      "responses": [
-        "Please feel free to contact us with any questions, complaints, or feedback you may have. You can contact us by email, phone, or live chat.",
-        "We are committed to providing our customers with excellent customer service, and we appreciate your feedback."
-      ]
-    },
-    {
-      "tokens": ["love"],
-      "tag": "random",
-      "responses": ["I am not program for this, please ask appropriate query"]
-    },
-    {
-      "tokens": ["marry"],
-      "tag": "random",
-      "responses": ["I am not program for this, please ask appropriate query"]
-    },
-    {
-      "tokens": ["love"],
-      "tag": "random",
-      "responses": ["I am not program for this, please ask appropriate query"]
-    },
-    {
-      "tokens": ["fuck"],
-      "tag": "swear",
-      "responses": [
-        "please use appropriate language",
-        "Maintaining decency would be appreciated"
-      ]
-    },
-    {
-      "tokens": ["bitch"],
-      "tag": "swear",
-      "responses": [
-        "please use appropriate language",
-        "Maintaining decency would be appreciated"
-      ]
-    },
-    {
-      "tokens": ["shut"],
-      "tag": "swear",
-      "responses": [
-        "please use appropriate language",
-        "Maintaining decency would be appreciated"
-      ]
-    },
-    {
-      "tokens": ["hell"],
-      "tag": "swear",
-      "responses": [
-        "please use appropriate language",
-        "Maintaining decency would be appreciated"
-      ]
-    },
-    {
-      "tokens": ["stupid"],
-      "tag": "swear",
-      "responses": [
-        "please use appropriate language",
-        "Maintaining decency would be appreciated"
-      ]
-    },
-    {
-      "tokens": ["idiot"],
-      "tag": "swear",
-      "responses": [
-        "please use appropriate language",
-        "Maintaining decency would be appreciated"
-      ]
-    },
-    {
-      "tokens": ["dumb"],
-      "tag": "swear",
-      "responses": [
-        "please use appropriate language",
-        "Maintaining decency would be appreciated"
-      ]
-    },
-    {
-      "tokens": ["asshole"],
-      "tag": "swear",
-      "responses": [
-        "please use appropriate language",
-        "Maintaining decency would be appreciated"
-      ]
-    },
-    {
-      "tokens": ["fucker"],
-      "tag": "swear",
-      "responses": [
-        "please use appropriate language",
-        "Maintaining decency would be appreciated"
-      ]
-    },
-    {
-      "tokens": ["okk"],
-      "tag": "salutaion",
-      "responses": [
-        "I am glad I helped you",
-        "welcome, anything else i can assist you with?"
-      ]
-    },
-    {
-      "tokens": ["okie"],
-      "tag": "salutaion",
-      "responses": [
-        "I am glad I helped you",
-        "welcome, anything else i can assist you with?"
-      ]
-    },
-    {
-      "tokens": ["nice", "work"],
-      "tag": "salutaion",
-      "responses": [
-        "I am glad I helped you",
-        "welcome, anything else i can assist you with?"
-      ]
-    },
-    {
-      "tokens": ["well", "done"],
-      "tag": "salutaion",
-      "responses": [
-        "I am glad I helped you",
-        "welcome, anything else i can assist you with?"
-      ]
-    },
-    {
-      "tokens": ["good", "job"],
-      "tag": "salutaion",
-      "responses": [
-        "I am glad I helped you",
-        "welcome, anything else i can assist you with?"
-      ]
-    },
-    {
-      "tokens": ["thanks", "help"],
-      "tag": "salutaion",
-      "responses": [
-        "I am glad I helped you",
-        "welcome, anything else i can assist you with?"
-      ]
-    },
-    {
-      "tokens": ["thank"],
-      "tag": "salutaion",
-      "responses": [
-        "I am glad I helped you",
-        "welcome, anything else i can assist you with?"
-      ]
-    },
-    {
-      "tokens": ["ok"],
-      "tag": "salutaion",
-      "responses": [
-        "I am glad I helped you",
-        "welcome, anything else i can assist you with?"
-      ]
-    },
-    {
-      "tokens": ["thanks"],
-      "tag": "salutaion",
-      "responses": [
-        "I am glad I helped you",
-        "welcome, anything else i can assist you with?"
-      ]
-    },
-    {
-      "tokens": ["good", "work"],
-      "tag": "salutaion",
-      "responses": [
-        "I am glad I helped you",
-        "welcome, anything else i can assist you with?"
-      ]
-    },
-    {
-      "tokens": ["k"],
-      "tag": "salutaion",
-      "responses": [
-        "I am glad I helped you",
-        "welcome, anything else i can assist you with?"
-      ]
-    },
-    {
-      "tokens": ["ok"],
-      "tag": "salutaion",
-      "responses": [
-        "I am glad I helped you",
-        "welcome, anything else i can assist you with?"
-      ]
-    },
-    {
-      "tokens": ["okay"],
-      "tag": "salutaion",
-      "responses": [
-        "I am glad I helped you",
-        "welcome, anything else i can assist you with?"
-      ]
-    },
-    {
-      "tokens": [],
-      "tag": "task",
-      "responses": [
-        "I can answer to low-intermediate questions regarding Auto-Essential.",
-        "You can ask me questions regarding Auto-Essential., and i will try to answer them"
-      ]
-    },
-    {
-      "tokens": ["thing"],
-      "tag": "task",
-      "responses": [
-        "I can answer to low-intermediate questions regarding Auto-Essential.",
-        "You can ask me questions regarding Auto-Essential., and i will try to answer them"
-      ]
-    },
-    {
-      "tokens": ["thing"],
-      "tag": "task",
-      "responses": [
-        "I can answer to low-intermediate questions regarding Auto-Essential.",
-        "You can ask me questions regarding Auto-Essential., and i will try to answer them"
-      ]
-    },
-    {
-      "tokens": ["u"],
-      "tag": "task",
-      "responses": [
-        "I can answer to low-intermediate questions regarding Auto-Essential.",
-        "You can ask me questions regarding Auto-Essential., and i will try to answer them"
-      ]
-    },
-    {
-      "tokens": ["u", "help"],
-      "tag": "task",
-      "responses": [
-        "I can answer to low-intermediate questions regarding Auto-Essential.",
-        "You can ask me questions regarding Auto-Essential., and i will try to answer them"
-      ]
-    },
-    {
-      "tokens": ["use"],
-      "tag": "task",
-      "responses": [
-        "I can answer to low-intermediate questions regarding Auto-Essential.",
-        "You can ask me questions regarding Auto-Essential., and i will try to answer them"
-      ]
-    }
-  ],
-  "lemmatizer": { "type": "WordNetLemmatizer" }
-}
+    "processed_data": [
+      {
+        "tokens": ["hi"],
+        "tag": "greeting",
+        "responses": [
+          "Hello!",
+          "Good to see you again!",
+          "Hi there, how can I help?"
+        ]
+      },
+      {
+        "tokens": [],
+        "tag": "greeting",
+        "responses": [
+          "Hello!",
+          "Good to see you again!",
+          "Hi there, how can I help?"
+        ]
+      },
+      {
+        "tokens": ["anyone"],
+        "tag": "greeting",
+        "responses": [
+          "Hello!",
+          "Good to see you again!",
+          "Hi there, how can I help?"
+        ]
+      },
+      {
+        "tokens": ["hello"],
+        "tag": "greeting",
+        "responses": [
+          "Hello!",
+          "Good to see you again!",
+          "Hi there, how can I help?"
+        ]
+      },
+      {
+        "tokens": ["good", "day"],
+        "tag": "greeting",
+        "responses": [
+          "Hello!",
+          "Good to see you again!",
+          "Hi there, how can I help?"
+        ]
+      },
+      {
+        "tokens": [],
+        "tag": "greeting",
+        "responses": [
+          "Hello!",
+          "Good to see you again!",
+          "Hi there, how can I help?"
+        ]
+      },
+      {
+        "tokens": ["ya"],
+        "tag": "greeting",
+        "responses": [
+          "Hello!",
+          "Good to see you again!",
+          "Hi there, how can I help?"
+        ]
+      },
+      {
+        "tokens": ["heyy"],
+        "tag": "greeting",
+        "responses": [
+          "Hello!",
+          "Good to see you again!",
+          "Hi there, how can I help?"
+        ]
+      },
+      {
+        "tokens": ["whatsup"],
+        "tag": "greeting",
+        "responses": [
+          "Hello!",
+          "Good to see you again!",
+          "Hi there, how can I help?"
+        ]
+      },
+      {
+        "tokens": [],
+        "tag": "greeting",
+        "responses": [
+          "Hello!",
+          "Good to see you again!",
+          "Hi there, how can I help?"
+        ]
+      },
+      {
+        "tokens": ["create", "account"],
+        "tag": "account",
+        "responses": [
+          "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+          "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+          "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+          "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
+          "To update your profile information, please log in to your account and click on the 'My Profile' link.",
+          "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
+          "To delete your account, please log in to your account and click on the 'Delete Account' link."
+        ]
+      },
+      {
+        "tokens": ["create", "account"],
+        "tag": "account",
+        "responses": [
+          "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+          "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+          "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+          "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
+          "To update your profile information, please log in to your account and click on the 'My Profile' link.",
+          "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
+          "To delete your account, please log in to your account and click on the 'Delete Account' link."
+        ]
+      },
+      {
+        "tokens": ["create", "account"],
+        "tag": "account",
+        "responses": [
+          "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+          "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+          "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+          "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
+          "To update your profile information, please log in to your account and click on the 'My Profile' link.",
+          "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
+          "To delete your account, please log in to your account and click on the 'Delete Account' link."
+        ]
+      },
+      {
+        "tokens": ["create", "account"],
+        "tag": "account",
+        "responses": [
+          "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+          "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+          "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+          "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
+          "To update your profile information, please log in to your account and click on the 'My Profile' link.",
+          "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
+          "To delete your account, please log in to your account and click on the 'Delete Account' link."
+        ]
+      },
+      {
+        "tokens": ["forgot", "password", "help", "reset"],
+        "tag": "account",
+        "responses": [
+          "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+          "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+          "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+          "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
+          "To update your profile information, please log in to your account and click on the 'My Profile' link.",
+          "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
+          "To delete your account, please log in to your account and click on the 'Delete Account' link."
+        ]
+      },
+      {
+        "tokens": ["want", "update", "profile", "information", "help"],
+        "tag": "account",
+        "responses": [
+          "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+          "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+          "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+          "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
+          "To update your profile information, please log in to your account and click on the 'My Profile' link.",
+          "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
+          "To delete your account, please log in to your account and click on the 'Delete Account' link."
+        ]
+      },
+      {
+        "tokens": ["trouble", "logging", "account", "help"],
+        "tag": "account",
+        "responses": [
+          "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+          "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+          "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+          "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
+          "To update your profile information, please log in to your account and click on the 'My Profile' link.",
+          "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
+          "To delete your account, please log in to your account and click on the 'Delete Account' link."
+        ]
+      },
+      {
+        "tokens": ["delete", "account"],
+        "tag": "account",
+        "responses": [
+          "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+          "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+          "To create an account, click on the 'Sign Up' button on the top right corner of our website and follow the instructions to complete the registration process.",
+          "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
+          "To update your profile information, please log in to your account and click on the 'My Profile' link.",
+          "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
+          "To delete your account, please log in to your account and click on the 'Delete Account' link."
+        ]
+      },
+      {
+        "tokens": ["cya"],
+        "tag": "goodbye",
+        "responses": [
+          "Sad to see you go :(",
+          "Talk to you later",
+          "Goodbye!",
+          "Come back soon"
+        ]
+      },
+      {
+        "tokens": ["see"],
+        "tag": "goodbye",
+        "responses": [
+          "Sad to see you go :(",
+          "Talk to you later",
+          "Goodbye!",
+          "Come back soon"
+        ]
+      },
+      {
+        "tokens": ["bye", "bye"],
+        "tag": "goodbye",
+        "responses": [
+          "Sad to see you go :(",
+          "Talk to you later",
+          "Goodbye!",
+          "Come back soon"
+        ]
+      },
+      {
+        "tokens": ["see", "later"],
+        "tag": "goodbye",
+        "responses": [
+          "Sad to see you go :(",
+          "Talk to you later",
+          "Goodbye!",
+          "Come back soon"
+        ]
+      },
+      {
+        "tokens": ["goodbye"],
+        "tag": "goodbye",
+        "responses": [
+          "Sad to see you go :(",
+          "Talk to you later",
+          "Goodbye!",
+          "Come back soon"
+        ]
+      },
+      {
+        "tokens": ["leaving"],
+        "tag": "goodbye",
+        "responses": [
+          "Sad to see you go :(",
+          "Talk to you later",
+          "Goodbye!",
+          "Come back soon"
+        ]
+      },
+      {
+        "tokens": ["bye"],
+        "tag": "goodbye",
+        "responses": [
+          "Sad to see you go :(",
+          "Talk to you later",
+          "Goodbye!",
+          "Come back soon"
+        ]
+      },
+      {
+        "tokens": ["good", "day"],
+        "tag": "goodbye",
+        "responses": [
+          "Sad to see you go :(",
+          "Talk to you later",
+          "Goodbye!",
+          "Come back soon"
+        ]
+      },
+      {
+        "tokens": ["talk", "later"],
+        "tag": "goodbye",
+        "responses": [
+          "Sad to see you go :(",
+          "Talk to you later",
+          "Goodbye!",
+          "Come back soon"
+        ]
+      },
+      {
+        "tokens": ["ttyl"],
+        "tag": "goodbye",
+        "responses": [
+          "Sad to see you go :(",
+          "Talk to you later",
+          "Goodbye!",
+          "Come back soon"
+        ]
+      },
+      {
+        "tokens": ["got", "go"],
+        "tag": "goodbye",
+        "responses": [
+          "Sad to see you go :(",
+          "Talk to you later",
+          "Goodbye!",
+          "Come back soon"
+        ]
+      },
+      {
+        "tokens": ["gtg"],
+        "tag": "goodbye",
+        "responses": [
+          "Sad to see you go :(",
+          "Talk to you later",
+          "Goodbye!",
+          "Come back soon"
+        ]
+      },
+      {
+        "tokens": ["name", "developer"],
+        "tag": "creator",
+        "responses": ["Auto-Essential Team"]
+      },
+      {
+        "tokens": ["name", "creator"],
+        "tag": "creator",
+        "responses": ["Auto-Essential Team"]
+      },
+      {
+        "tokens": ["name", "developer"],
+        "tag": "creator",
+        "responses": ["Auto-Essential Team"]
+      },
+      {
+        "tokens": ["name", "creator"],
+        "tag": "creator",
+        "responses": ["Auto-Essential Team"]
+      },
+      {
+        "tokens": ["created"],
+        "tag": "creator",
+        "responses": ["Auto-Essential Team"]
+      },
+      {
+        "tokens": ["developer"],
+        "tag": "creator",
+        "responses": ["Auto-Essential Team"]
+      },
+      {
+        "tokens": ["creator"],
+        "tag": "creator",
+        "responses": ["Auto-Essential Team"]
+      },
+      {
+        "tokens": ["developer"],
+        "tag": "creator",
+        "responses": ["Auto-Essential Team"]
+      },
+      {
+        "tokens": ["developer"],
+        "tag": "creator",
+        "responses": ["Auto-Essential Team"]
+      },
+      {
+        "tokens": ["made"],
+        "tag": "creator",
+        "responses": ["Auto-Essential Team"]
+      },
+      {
+        "tokens": ["made"],
+        "tag": "creator",
+        "responses": ["Auto-Essential Team"]
+      },
+      {
+        "tokens": ["created"],
+        "tag": "creator",
+        "responses": ["Auto-Essential Team"]
+      },
+      {
+        "tokens": ["create"],
+        "tag": "creator",
+        "responses": ["Auto-Essential Team"]
+      },
+      {
+        "tokens": ["creator"],
+        "tag": "creator",
+        "responses": ["Auto-Essential Team"]
+      },
+      {
+        "tokens": ["made"],
+        "tag": "creator",
+        "responses": ["Auto-Essential Team"]
+      },
+      {
+        "tokens": ["designed"],
+        "tag": "creator",
+        "responses": ["Auto-Essential Team"]
+      },
+      {
+        "tokens": ["name"],
+        "tag": "name",
+        "responses": [
+          "You can call me Auto-Essential.",
+          "I'm Auto-Essential",
+          "I am a Auto-Essential Chatbot.",
+          "I am your Auto-Essential helper"
+        ]
+      },
+      {
+        "tokens": ["name"],
+        "tag": "name",
+        "responses": [
+          "You can call me Auto-Essential.",
+          "I'm Auto-Essential",
+          "I am a Auto-Essential Chatbot.",
+          "I am your Auto-Essential helper"
+        ]
+      },
+      {
+        "tokens": ["name"],
+        "tag": "name",
+        "responses": [
+          "You can call me Auto-Essential.",
+          "I'm Auto-Essential",
+          "I am a Auto-Essential Chatbot.",
+          "I am your Auto-Essential helper"
+        ]
+      },
+      {
+        "tokens": ["called"],
+        "tag": "name",
+        "responses": [
+          "You can call me Auto-Essential.",
+          "I'm Auto-Essential",
+          "I am a Auto-Essential Chatbot.",
+          "I am your Auto-Essential helper"
+        ]
+      },
+      {
+        "tokens": ["name"],
+        "tag": "name",
+        "responses": [
+          "You can call me Auto-Essential.",
+          "I'm Auto-Essential",
+          "I am a Auto-Essential Chatbot.",
+          "I am your Auto-Essential helper"
+        ]
+      },
+      {
+        "tokens": ["call"],
+        "tag": "name",
+        "responses": [
+          "You can call me Auto-Essential.",
+          "I'm Auto-Essential",
+          "I am a Auto-Essential Chatbot.",
+          "I am your Auto-Essential helper"
+        ]
+      },
+      {
+        "tokens": ["whats", "name"],
+        "tag": "name",
+        "responses": [
+          "You can call me Auto-Essential.",
+          "I'm Auto-Essential",
+          "I am a Auto-Essential Chatbot.",
+          "I am your Auto-Essential helper"
+        ]
+      },
+      {
+        "tokens": [],
+        "tag": "name",
+        "responses": [
+          "You can call me Auto-Essential.",
+          "I'm Auto-Essential",
+          "I am a Auto-Essential Chatbot.",
+          "I am your Auto-Essential helper"
+        ]
+      },
+      {
+        "tokens": [],
+        "tag": "name",
+        "responses": [
+          "You can call me Auto-Essential.",
+          "I'm Auto-Essential",
+          "I am a Auto-Essential Chatbot.",
+          "I am your Auto-Essential helper"
+        ]
+      },
+      {
+        "tokens": [],
+        "tag": "name",
+        "responses": [
+          "You can call me Auto-Essential.",
+          "I'm Auto-Essential",
+          "I am a Auto-Essential Chatbot.",
+          "I am your Auto-Essential helper"
+        ]
+      },
+      {
+        "tokens": ["chatting"],
+        "tag": "name",
+        "responses": [
+          "You can call me Auto-Essential.",
+          "I'm Auto-Essential",
+          "I am a Auto-Essential Chatbot.",
+          "I am your Auto-Essential helper"
+        ]
+      },
+      {
+        "tokens": ["taking"],
+        "tag": "name",
+        "responses": [
+          "You can call me Auto-Essential.",
+          "I'm Auto-Essential",
+          "I am a Auto-Essential Chatbot.",
+          "I am your Auto-Essential helper"
+        ]
+      },
+      {
+        "tokens": [],
+        "tag": "name",
+        "responses": [
+          "You can call me Auto-Essential.",
+          "I'm Auto-Essential",
+          "I am a Auto-Essential Chatbot.",
+          "I am your Auto-Essential helper"
+        ]
+      },
+      {
+        "tokens": ["info"],
+        "tag": "number",
+        "responses": ["You can contact at: 0300 1080023"]
+      },
+      {
+        "tokens": ["contact", "info"],
+        "tag": "number",
+        "responses": ["You can contact at: 0300 1080023"]
+      },
+      {
+        "tokens": ["contact"],
+        "tag": "number",
+        "responses": ["You can contact at: 0300 1080023"]
+      },
+      {
+        "tokens": ["contact", "number"],
+        "tag": "number",
+        "responses": ["You can contact at: 0300 1080023"]
+      },
+      {
+        "tokens": ["team", "number"],
+        "tag": "number",
+        "responses": ["You can contact at: 0300 1080023"]
+      },
+      {
+        "tokens": ["contact"],
+        "tag": "number",
+        "responses": ["You can contact at: 0300 1080023"]
+      },
+      {
+        "tokens": ["contact", "number"],
+        "tag": "number",
+        "responses": ["You can contact at: 0300 1080023"]
+      },
+      {
+        "tokens": ["call"],
+        "tag": "number",
+        "responses": ["You can contact at: 0300 1080023"]
+      },
+      {
+        "tokens": ["team", "phone"],
+        "tag": "number",
+        "responses": ["You can contact at: 0300 1080023"]
+      },
+      {
+        "tokens": ["contact"],
+        "tag": "number",
+        "responses": ["You can contact at: 0300 1080023"]
+      },
+      {
+        "tokens": ["get", "phone", "number"],
+        "tag": "number",
+        "responses": ["You can contact at: 0300 1080023"]
+      },
+      {
+        "tokens": ["call"],
+        "tag": "number",
+        "responses": ["You can contact at: 0300 1080023"]
+      },
+      {
+        "tokens": ["phone", "number"],
+        "tag": "number",
+        "responses": ["You can contact at: 0300 1080023"]
+      },
+      {
+        "tokens": ["phone"],
+        "tag": "number",
+        "responses": ["You can contact at: 0300 1080023"]
+      },
+      {
+        "tokens": ["call"],
+        "tag": "number",
+        "responses": ["You can contact at: 0300 1080023"]
+      },
+      {
+        "tokens": ["info"],
+        "tag": "number",
+        "responses": ["You can contact at: 0300 1080023"]
+      },
+      {
+        "tokens": ["list", "product"],
+        "tag": "Products",
+        "responses": [
+          "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
+        ]
+      },
+      {
+        "tokens": ["list", "product", "offered"],
+        "tag": "Products",
+        "responses": [
+          "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
+        ]
+      },
+      {
+        "tokens": ["list", "product", "offered"],
+        "tag": "Products",
+        "responses": [
+          "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
+        ]
+      },
+      {
+        "tokens": ["product", "offered", "website"],
+        "tag": "Products",
+        "responses": [
+          "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
+        ]
+      },
+      {
+        "tokens": ["product"],
+        "tag": "Products",
+        "responses": [
+          "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
+        ]
+      },
+      {
+        "tokens": ["product", "offered"],
+        "tag": "Products",
+        "responses": [
+          "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
+        ]
+      },
+      {
+        "tokens": ["product", "offered", "website", "name"],
+        "tag": "Products",
+        "responses": [
+          "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
+        ]
+      },
+      {
+        "tokens": ["product", "offer"],
+        "tag": "Products",
+        "responses": [
+          "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
+        ]
+      },
+      {
+        "tokens": ["branch"],
+        "tag": "Products",
+        "responses": [
+          "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
+        ]
+      },
+      {
+        "tokens": ["product", "available", "website"],
+        "tag": "Products",
+        "responses": [
+          "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
+        ]
+      },
+      {
+        "tokens": ["branch", "available", "website"],
+        "tag": "Products",
+        "responses": [
+          "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
+        ]
+      },
+      {
+        "tokens": ["product", "website"],
+        "tag": "Products",
+        "responses": [
+          "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
+        ]
+      },
+      {
+        "tokens": ["branch", "website"],
+        "tag": "Products",
+        "responses": [
+          "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
+        ]
+      },
+      {
+        "tokens": ["product", "website"],
+        "tag": "Products",
+        "responses": [
+          "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
+        ]
+      },
+      {
+        "tokens": ["branch", "available", "website"],
+        "tag": "Products",
+        "responses": [
+          "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
+        ]
+      },
+      {
+        "tokens": ["tell", "product", "available", "website"],
+        "tag": "Products",
+        "responses": [
+          "Our Website offers Parts, Wheels & Tires, Exterior, Lighting, Body Parts, Interior, Audio & Electronics, Automotive Tools"
+        ]
+      },
+      {
+        "tokens": ["information", "payment", "method"],
+        "tag": "payment",
+        "responses": [
+          "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
+        ]
+      },
+      {
+        "tokens": ["payment", "method", "method", "accept"],
+        "tag": "payment",
+        "responses": [
+          "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
+        ]
+      },
+      {
+        "tokens": ["information", "payment", "method"],
+        "tag": "payment",
+        "responses": [
+          "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
+        ]
+      },
+      {
+        "tokens": ["tell", "payment", "method"],
+        "tag": "payment",
+        "responses": [
+          "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
+        ]
+      },
+      {
+        "tokens": ["buying", "payment", "method"],
+        "tag": "payment",
+        "responses": [
+          "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
+        ]
+      },
+      {
+        "tokens": ["selling", "payment", "method"],
+        "tag": "payment",
+        "responses": [
+          "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
+        ]
+      },
+      {
+        "tokens": ["payment", "method", "per", "product"],
+        "tag": "payment",
+        "responses": [
+          "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
+        ]
+      },
+      {
+        "tokens": ["payment", "method"],
+        "tag": "payment",
+        "responses": [
+          "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
+        ]
+      },
+      {
+        "tokens": ["payment", "method"],
+        "tag": "payment",
+        "responses": [
+          "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
+        ]
+      },
+      {
+        "tokens": ["fund"],
+        "tag": "payment",
+        "responses": [
+          "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
+        ]
+      },
+      {
+        "tokens": ["payment"],
+        "tag": "payment",
+        "responses": [
+          "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
+        ]
+      },
+      {
+        "tokens": ["payment", "method"],
+        "tag": "payment",
+        "responses": [
+          "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
+        ]
+      },
+      {
+        "tokens": ["fund"],
+        "tag": "payment",
+        "responses": [
+          "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
+        ]
+      },
+      {
+        "tokens": ["payment"],
+        "tag": "payment",
+        "responses": [
+          "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
+        ]
+      },
+      {
+        "tokens": ["payment", "method"],
+        "tag": "payment",
+        "responses": [
+          "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
+        ]
+      },
+      {
+        "tokens": ["tell", "something", "fund"],
+        "tag": "payment",
+        "responses": [
+          "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
+        ]
+      },
+      {
+        "tokens": ["tell", "something", "payment"],
+        "tag": "payment",
+        "responses": [
+          "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
+        ]
+      },
+      {
+        "tokens": ["tell", "something", "payment", "method"],
+        "tag": "payment",
+        "responses": [
+          "We accept major credit cards, debit cards, and PayPal as payment methods for online orders"
+        ]
+      },
+      {
+        "tokens": ["track", "order"],
+        "tag": "track",
+        "responses": [
+          "You can track your order by logging into your account and navigating to the 'Order History' section. There, you will find the tracking information for your shipment."
+        ]
+      },
+      {
+        "tokens": ["track", "order"],
+        "tag": "track",
+        "responses": [
+          "You can track your order by logging into your account and navigating to the 'Order History' section. There, you will find the tracking information for your shipment."
+        ]
+      },
+      {
+        "tokens": ["track", "order"],
+        "tag": "track",
+        "responses": [
+          "You can track your order by logging into your account and navigating to the 'Order History' section. There, you will find the tracking information for your shipment."
+        ]
+      },
+      {
+        "tokens": ["track", "order"],
+        "tag": "track",
+        "responses": [
+          "You can track your order by logging into your account and navigating to the 'Order History' section. There, you will find the tracking information for your shipment."
+        ]
+      },
+      {
+        "tokens": ["return", "policy"],
+        "tag": "return",
+        "responses": [
+          "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
+        ]
+      },
+      {
+        "tokens": ["return", "policy"],
+        "tag": "return",
+        "responses": [
+          "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
+        ]
+      },
+      {
+        "tokens": ["return"],
+        "tag": "return",
+        "responses": [
+          "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
+        ]
+      },
+      {
+        "tokens": ["return", "policy"],
+        "tag": "return",
+        "responses": [
+          "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
+        ]
+      },
+      {
+        "tokens": ["return", "policy", "website"],
+        "tag": "return",
+        "responses": [
+          "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
+        ]
+      },
+      {
+        "tokens": ["return", "policy", "website"],
+        "tag": "return",
+        "responses": [
+          "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
+        ]
+      },
+      {
+        "tokens": ["return", "policy", "website"],
+        "tag": "return",
+        "responses": [
+          "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
+        ]
+      },
+      {
+        "tokens": ["return", "policy", "website"],
+        "tag": "return",
+        "responses": [
+          "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
+        ]
+      },
+      {
+        "tokens": ["return", "product"],
+        "tag": "return",
+        "responses": [
+          "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
+        ]
+      },
+      {
+        "tokens": ["return", "product", "policy"],
+        "tag": "return",
+        "responses": [
+          "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
+        ]
+      },
+      {
+        "tokens": ["return", "product", "policy", "website"],
+        "tag": "return",
+        "responses": [
+          "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
+        ]
+      },
+      {
+        "tokens": ["return", "product", "policy", "website"],
+        "tag": "return",
+        "responses": [
+          "Our return policy allows you to return products within 30 days of purchase for a full refund, provided they are in their original condition and packaging. Please refer to our Returns page for detailed instructions."
+        ]
+      },
+      {
+        "tokens": ["cancel", "order"],
+        "tag": "cancelorder",
+        "responses": [
+          "You can cancel your order if it has not been shipped yet. Please contact our customer support team with your order details, and we will assist you with the cancellation process."
+        ]
+      },
+      {
+        "tokens": ["cancel", "order"],
+        "tag": "cancelorder",
+        "responses": [
+          "You can cancel your order if it has not been shipped yet. Please contact our customer support team with your order details, and we will assist you with the cancellation process."
+        ]
+      },
+      {
+        "tokens": ["cancel", "order"],
+        "tag": "cancelorder",
+        "responses": [
+          "You can cancel your order if it has not been shipped yet. Please contact our customer support team with your order details, and we will assist you with the cancellation process."
+        ]
+      },
+      {
+        "tokens": ["cancel", "order"],
+        "tag": "cancelorder",
+        "responses": [
+          "You can cancel your order if it has not been shipped yet. Please contact our customer support team with your order details, and we will assist you with the cancellation process."
+        ]
+      },
+      {
+        "tokens": ["cancel", "order"],
+        "tag": "cancelorder",
+        "responses": [
+          "You can cancel your order if it has not been shipped yet. Please contact our customer support team with your order details, and we will assist you with the cancellation process."
+        ]
+      },
+      {
+        "tokens": ["cancel", "order", "website"],
+        "tag": "cancelorder",
+        "responses": [
+          "You can cancel your order if it has not been shipped yet. Please contact our customer support team with your order details, and we will assist you with the cancellation process."
+        ]
+      },
+      {
+        "tokens": ["cancel", "order", "website"],
+        "tag": "cancelorder",
+        "responses": [
+          "You can cancel your order if it has not been shipped yet. Please contact our customer support team with your order details, and we will assist you with the cancellation process."
+        ]
+      },
+      {
+        "tokens": ["cancel", "order", "website"],
+        "tag": "cancelorder",
+        "responses": [
+          "You can cancel your order if it has not been shipped yet. Please contact our customer support team with your order details, and we will assist you with the cancellation process."
+        ]
+      },
+      {
+        "tokens": ["cancel", "order", "website"],
+        "tag": "cancelorder",
+        "responses": [
+          "You can cancel your order if it has not been shipped yet. Please contact our customer support team with your order details, and we will assist you with the cancellation process."
+        ]
+      },
+      {
+        "tokens": ["long", "doe", "shipping", "take"],
+        "tag": "shipping",
+        "responses": [
+          "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
+        ]
+      },
+      {
+        "tokens": ["shipping"],
+        "tag": "shipping",
+        "responses": [
+          "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
+        ]
+      },
+      {
+        "tokens": ["shipping", "time"],
+        "tag": "shipping",
+        "responses": [
+          "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
+        ]
+      },
+      {
+        "tokens": ["shipping", "time"],
+        "tag": "shipping",
+        "responses": [
+          "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
+        ]
+      },
+      {
+        "tokens": ["shipping", "time", "website"],
+        "tag": "shipping",
+        "responses": [
+          "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
+        ]
+      },
+      {
+        "tokens": ["shipping", "time", "website"],
+        "tag": "shipping",
+        "responses": [
+          "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
+        ]
+      },
+      {
+        "tokens": ["shipping", "time", "website"],
+        "tag": "shipping",
+        "responses": [
+          "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
+        ]
+      },
+      {
+        "tokens": ["shipping", "time", "website"],
+        "tag": "shipping",
+        "responses": [
+          "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
+        ]
+      },
+      {
+        "tokens": ["shipping", "product", "send", "user"],
+        "tag": "shipping",
+        "responses": [
+          "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
+        ]
+      },
+      {
+        "tokens": ["shipping", "product", "send", "user"],
+        "tag": "shipping",
+        "responses": [
+          "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
+        ]
+      },
+      {
+        "tokens": ["track", "order"],
+        "tag": "shipping",
+        "responses": [
+          "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
+        ]
+      },
+      {
+        "tokens": ["track", "order"],
+        "tag": "shipping",
+        "responses": [
+          "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
+        ]
+      },
+      {
+        "tokens": ["track", "order"],
+        "tag": "shipping",
+        "responses": [
+          "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
+        ]
+      },
+      {
+        "tokens": ["track", "order"],
+        "tag": "shipping",
+        "responses": [
+          "Shipping times vary depending on the destination and the shipping method chosen. Standard shipping usually takes 3-5 business days, while express shipping can take 1-2 business days."
+        ]
+      },
+      {
+        "tokens": ["personal", "payment", "detail", "secure"],
+        "tag": "detailssecure",
+        "responses": [
+          "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
+        ]
+      },
+      {
+        "tokens": ["detail", "secure"],
+        "tag": "detailssecure",
+        "responses": [
+          "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
+        ]
+      },
+      {
+        "tokens": ["detail", "secure"],
+        "tag": "detailssecure",
+        "responses": [
+          "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
+        ]
+      },
+      {
+        "tokens": ["detail", "secure", "website"],
+        "tag": "detailssecure",
+        "responses": [
+          "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
+        ]
+      },
+      {
+        "tokens": ["detail", "secure", "website"],
+        "tag": "detailssecure",
+        "responses": [
+          "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
+        ]
+      },
+      {
+        "tokens": ["detail", "secure", "website"],
+        "tag": "detailssecure",
+        "responses": [
+          "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
+        ]
+      },
+      {
+        "tokens": ["detail", "secure", "website"],
+        "tag": "detailssecure",
+        "responses": [
+          "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
+        ]
+      },
+      {
+        "tokens": ["personal", "detail", "secure"],
+        "tag": "detailssecure",
+        "responses": [
+          "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
+        ]
+      },
+      {
+        "tokens": ["payment", "detail", "secure"],
+        "tag": "detailssecure",
+        "responses": [
+          "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
+        ]
+      },
+      {
+        "tokens": ["security", "website"],
+        "tag": "detailssecure",
+        "responses": [
+          "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
+        ]
+      },
+      {
+        "tokens": ["security", "website"],
+        "tag": "detailssecure",
+        "responses": [
+          "Yes, we take the security of your personal and payment details seriously. We use industry-standard encryption and follow strict security protocols to ensure your information is protected."
+        ]
+      },
+      {
+        "tokens": ["order", "without", "creating", "account"],
+        "tag": "guest",
+        "responses": [
+          "Yes, you can place an order as a guest without creating an account. However, creating an account offers benefits such as order tracking and easier future purchases."
+        ]
+      },
+      {
+        "tokens": ["guest", "user", "allowed"],
+        "tag": "guest",
+        "responses": [
+          "Yes, you can place an order as a guest without creating an account. However, creating an account offers benefits such as order tracking and easier future purchases."
+        ]
+      },
+      {
+        "tokens": ["guest", "user", "allowed"],
+        "tag": "guest",
+        "responses": [
+          "Yes, you can place an order as a guest without creating an account. However, creating an account offers benefits such as order tracking and easier future purchases."
+        ]
+      },
+      {
+        "tokens": ["think", "guest", "user"],
+        "tag": "guest",
+        "responses": [
+          "Yes, you can place an order as a guest without creating an account. However, creating an account offers benefits such as order tracking and easier future purchases."
+        ]
+      },
+      {
+        "tokens": ["trouble", "navigating", "website", "help"],
+        "tag": "technicalsupport",
+        "responses": [
+          "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
+          "If you have forgotten your password, please click on the 'Forgot Password' link on our login page and follow the instructions to reset your password. You can find our login page here: [link to login page].",
+          "To update your profile information, please log in to your account and click on the 'My Profile' link.",
+          "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
+          "To delete your account, please log in to your account and click on the 'Delete Account' link."
+        ]
+      },
+      {
+        "tokens": ["ca", "seem", "add", "item", "cart", "help"],
+        "tag": "technicalsupport",
+        "responses": [
+          "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
+          "If you have forgotten your password, please click on the 'Forgot Password' link on our login page and follow the instructions to reset your password. You can find our login page here: [link to login page].",
+          "To update your profile information, please log in to your account and click on the 'My Profile' link.",
+          "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
+          "To delete your account, please log in to your account and click on the 'Delete Account' link."
+        ]
+      },
+      {
+        "tokens": ["trouble", "placing", "order", "help"],
+        "tag": "technicalsupport",
+        "responses": [
+          "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
+          "If you have forgotten your password, please click on the 'Forgot Password' link on our login page and follow the instructions to reset your password. You can find our login page here: [link to login page].",
+          "To update your profile information, please log in to your account and click on the 'My Profile' link.",
+          "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
+          "To delete your account, please log in to your account and click on the 'Delete Account' link."
+        ]
+      },
+      {
+        "tokens": ["product", "received", "working", "properly", "help"],
+        "tag": "technicalsupport",
+        "responses": [
+          "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
+          "If you have forgotten your password, please click on the 'Forgot Password' link on our login page and follow the instructions to reset your password. You can find our login page here: [link to login page].",
+          "To update your profile information, please log in to your account and click on the 'My Profile' link.",
+          "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
+          "To delete your account, please log in to your account and click on the 'Delete Account' link."
+        ]
+      },
+      {
+        "tokens": ["trouble", "downloading", "file", "help"],
+        "tag": "technicalsupport",
+        "responses": [
+          "To create an account, please visit our registration page and follow the instructions. You can find our registration page here: [link to registration page].",
+          "If you have forgotten your password, please click on the 'Forgot Password' link on our login page and follow the instructions to reset your password. You can find our login page here: [link to login page].",
+          "To update your profile information, please log in to your account and click on the 'My Profile' link.",
+          "If you are having trouble logging into your account, please click on the 'Contact Us' link and send us a message with your email address and a brief description of the problem. You can find our contact us page here: [link to contact us page].",
+          "To delete your account, please log in to your account and click on the 'Delete Account' link."
+        ]
+      },
+      {
+        "tokens": ["question", "product"],
+        "tag": "Customerservice",
+        "responses": [
+          "Please feel free to contact us with any questions, complaints, or feedback you may have. You can contact us by email, phone, or live chat.",
+          "We are committed to providing our customers with excellent customer service, and we appreciate your feedback."
+        ]
+      },
+      {
+        "tokens": ["complaint", "service"],
+        "tag": "Customerservice",
+        "responses": [
+          "Please feel free to contact us with any questions, complaints, or feedback you may have. You can contact us by email, phone, or live chat.",
+          "We are committed to providing our customers with excellent customer service, and we appreciate your feedback."
+        ]
+      },
+      {
+        "tokens": ["feedback", "website"],
+        "tag": "Customerservice",
+        "responses": [
+          "Please feel free to contact us with any questions, complaints, or feedback you may have. You can contact us by email, phone, or live chat.",
+          "We are committed to providing our customers with excellent customer service, and we appreciate your feedback."
+        ]
+      },
+      {
+        "tokens": ["put", "touch", "customer", "service", "representative"],
+        "tag": "Customerservice",
+        "responses": [
+          "Please feel free to contact us with any questions, complaints, or feedback you may have. You can contact us by email, phone, or live chat.",
+          "We are committed to providing our customers with excellent customer service, and we appreciate your feedback."
+        ]
+      },
+      {
+        "tokens": ["thank", "help"],
+        "tag": "Customerservice",
+        "responses": [
+          "Please feel free to contact us with any questions, complaints, or feedback you may have. You can contact us by email, phone, or live chat.",
+          "We are committed to providing our customers with excellent customer service, and we appreciate your feedback."
+        ]
+      },
+      {
+        "tokens": ["love"],
+        "tag": "random",
+        "responses": ["I am not program for this, please ask appropriate query"]
+      },
+      {
+        "tokens": ["marry"],
+        "tag": "random",
+        "responses": ["I am not program for this, please ask appropriate query"]
+      },
+      {
+        "tokens": ["love"],
+        "tag": "random",
+        "responses": ["I am not program for this, please ask appropriate query"]
+      },
+      {
+        "tokens": ["fuck"],
+        "tag": "swear",
+        "responses": [
+          "please use appropriate language",
+          "Maintaining decency would be appreciated"
+        ]
+      },
+      {
+        "tokens": ["bitch"],
+        "tag": "swear",
+        "responses": [
+          "please use appropriate language",
+          "Maintaining decency would be appreciated"
+        ]
+      },
+      {
+        "tokens": ["shut"],
+        "tag": "swear",
+        "responses": [
+          "please use appropriate language",
+          "Maintaining decency would be appreciated"
+        ]
+      },
+      {
+        "tokens": ["hell"],
+        "tag": "swear",
+        "responses": [
+          "please use appropriate language",
+          "Maintaining decency would be appreciated"
+        ]
+      },
+      {
+        "tokens": ["stupid"],
+        "tag": "swear",
+        "responses": [
+          "please use appropriate language",
+          "Maintaining decency would be appreciated"
+        ]
+      },
+      {
+        "tokens": ["idiot"],
+        "tag": "swear",
+        "responses": [
+          "please use appropriate language",
+          "Maintaining decency would be appreciated"
+        ]
+      },
+      {
+        "tokens": ["dumb"],
+        "tag": "swear",
+        "responses": [
+          "please use appropriate language",
+          "Maintaining decency would be appreciated"
+        ]
+      },
+      {
+        "tokens": ["asshole"],
+        "tag": "swear",
+        "responses": [
+          "please use appropriate language",
+          "Maintaining decency would be appreciated"
+        ]
+      },
+      {
+        "tokens": ["fucker"],
+        "tag": "swear",
+        "responses": [
+          "please use appropriate language",
+          "Maintaining decency would be appreciated"
+        ]
+      },
+      {
+        "tokens": ["okk"],
+        "tag": "salutaion",
+        "responses": [
+          "I am glad I helped you",
+          "welcome, anything else i can assist you with?"
+        ]
+      },
+      {
+        "tokens": ["okie"],
+        "tag": "salutaion",
+        "responses": [
+          "I am glad I helped you",
+          "welcome, anything else i can assist you with?"
+        ]
+      },
+      {
+        "tokens": ["nice", "work"],
+        "tag": "salutaion",
+        "responses": [
+          "I am glad I helped you",
+          "welcome, anything else i can assist you with?"
+        ]
+      },
+      {
+        "tokens": ["well", "done"],
+        "tag": "salutaion",
+        "responses": [
+          "I am glad I helped you",
+          "welcome, anything else i can assist you with?"
+        ]
+      },
+      {
+        "tokens": ["good", "job"],
+        "tag": "salutaion",
+        "responses": [
+          "I am glad I helped you",
+          "welcome, anything else i can assist you with?"
+        ]
+      },
+      {
+        "tokens": ["thanks", "help"],
+        "tag": "salutaion",
+        "responses": [
+          "I am glad I helped you",
+          "welcome, anything else i can assist you with?"
+        ]
+      },
+      {
+        "tokens": ["thank"],
+        "tag": "salutaion",
+        "responses": [
+          "I am glad I helped you",
+          "welcome, anything else i can assist you with?"
+        ]
+      },
+      {
+        "tokens": ["ok"],
+        "tag": "salutaion",
+        "responses": [
+          "I am glad I helped you",
+          "welcome, anything else i can assist you with?"
+        ]
+      },
+      {
+        "tokens": ["thanks"],
+        "tag": "salutaion",
+        "responses": [
+          "I am glad I helped you",
+          "welcome, anything else i can assist you with?"
+        ]
+      },
+      {
+        "tokens": ["good", "work"],
+        "tag": "salutaion",
+        "responses": [
+          "I am glad I helped you",
+          "welcome, anything else i can assist you with?"
+        ]
+      },
+      {
+        "tokens": ["k"],
+        "tag": "salutaion",
+        "responses": [
+          "I am glad I helped you",
+          "welcome, anything else i can assist you with?"
+        ]
+      },
+      {
+        "tokens": ["ok"],
+        "tag": "salutaion",
+        "responses": [
+          "I am glad I helped you",
+          "welcome, anything else i can assist you with?"
+        ]
+      },
+      {
+        "tokens": ["okay"],
+        "tag": "salutaion",
+        "responses": [
+          "I am glad I helped you",
+          "welcome, anything else i can assist you with?"
+        ]
+      },
+      {
+        "tokens": [],
+        "tag": "task",
+        "responses": [
+          "I can answer to low-intermediate questions regarding Auto-Essential.",
+          "You can ask me questions regarding Auto-Essential., and i will try to answer them"
+        ]
+      },
+      {
+        "tokens": ["thing"],
+        "tag": "task",
+        "responses": [
+          "I can answer to low-intermediate questions regarding Auto-Essential.",
+          "You can ask me questions regarding Auto-Essential., and i will try to answer them"
+        ]
+      },
+      {
+        "tokens": ["thing"],
+        "tag": "task",
+        "responses": [
+          "I can answer to low-intermediate questions regarding Auto-Essential.",
+          "You can ask me questions regarding Auto-Essential., and i will try to answer them"
+        ]
+      },
+      {
+        "tokens": ["u"],
+        "tag": "task",
+        "responses": [
+          "I can answer to low-intermediate questions regarding Auto-Essential.",
+          "You can ask me questions regarding Auto-Essential., and i will try to answer them"
+        ]
+      },
+      {
+        "tokens": ["u", "help"],
+        "tag": "task",
+        "responses": [
+          "I can answer to low-intermediate questions regarding Auto-Essential.",
+          "You can ask me questions regarding Auto-Essential., and i will try to answer them"
+        ]
+      },
+      {
+        "tokens": ["use"],
+        "tag": "task",
+        "responses": [
+          "I can answer to low-intermediate questions regarding Auto-Essential.",
+          "You can ask me questions regarding Auto-Essential., and i will try to answer them"
+        ]
+      }
+    ],
+    "lemmatizer": { "type": "WordNetLemmatizer" }
+  }

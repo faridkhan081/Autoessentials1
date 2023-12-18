@@ -61,7 +61,7 @@ function HeadBanner({title,list,imageUrl}) {
     </li>
 
     <li>
-      <Link to="/products" className="block transition hover:text-white"> {list} </Link>
+      <div  className="block transition hover:text-white"> {list} </div>
     </li>
 
    

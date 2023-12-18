@@ -54,12 +54,12 @@ const Checkout = () => {
     
   
     navigate("/payment");
-    window.location.reload(true)
+    // window.location.reload(true)
    }
   };
 
   const subTotalPrice = cart.reduce(
-    (acc, item) => acc + item.qty * item.discountPrice,
+    (acc, item) => acc + (item.discountPrice || item.originalPrice) * item.qty,
     0
   );
 

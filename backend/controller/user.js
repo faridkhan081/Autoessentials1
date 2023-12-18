@@ -479,6 +479,37 @@ router.get(
 );
 
 
+
+  // update shop status ---admin
+  router.put(
+    '/update-user-role/:id',
+    isAuthenticated,
+    isAdmin("Admin"),
+    catchAsyncError(async (req, res, next) => {
+      try {
+        const user = await User.findById(req.params.id);
+    
+        if (!user) {
+          return next(new ErrorHandler('User is not available with this id', 400));
+        }
+    
+        const { newRole } = req.body;
+    
+        // Assuming that 'newRole' is a valid role value
+        user.role = newRole;
+        await user.save();
+    
+        res.status(201).json({
+          success: true,
+          message: 'User role updated successfully!',
+        });
+      } catch (error) {
+        return next(new ErrorHandler(error.message, 500));
+      }
+    })
+  );
+
+
 // delete users --- admin
 router.delete(
   "/delete-user/:id",

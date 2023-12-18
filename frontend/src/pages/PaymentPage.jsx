@@ -6,11 +6,20 @@ import Payment from "../components/Payment/Payment.jsx";
 import Layout from '../components/Layout/Layout.jsx';
 
 const PaymentPage = () => {
- 
+  useEffect(() => {
+    console.log("PaymentPage rendered");
+    // Additional code...
+
+    window.scrollTo(0,0)
+  }, []);
+
+  // Rest of the component...
+
   return (
 
-    <Layout title={"Payment "}>
-    <div className='w-full min-h-screen bg-[#f6f9fc]'>
+
+    <Layout title={"Payment"}>
+    <div className='w-full min-h-screen '>
        <Header />
        <br />
        <br />

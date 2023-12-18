@@ -9,6 +9,7 @@ import ProductsPage from "../pages/ProductsPage";
 // import BestSellingPage from '../pages/BestSellingPage'
 import EventsPage from "../pages/EventsPage";
 import SolutionsPage from "../pages/SolutionsPage";
+import OilInsight from "../pages/OilInsight.jsx";
 import FaqsPage from "../pages/FaqsPage";
 import ProductDetailsPage from "../pages/ProductDetailsPage";
 
@@ -17,7 +18,7 @@ import ShopCreatePage from "../pages/ShopCreatePage";
 import ShopLoginPage from "../pages/ShopLoginPage";
 import CheckoutPage from "../pages/CheckoutPage";
 import PageNotFound from "../pages/PageNotFound.jsx";
-import PaymentPage from "../pages/PaymentPage.jsx";
+import PaymentPage from "../pages/PaymentPage";
 
 import ContactPage from "./../pages/ContactPage";
 import TermsAndConditions from "./../pages/TermsAndConditions.jsx";
@@ -26,6 +27,7 @@ import OrderDetailsPage from "./../pages/OrderDetailsPage.jsx";
 import TrackOrderPage from "./../pages/TrackOrderPage.jsx";
 import UserInbox from "./../pages/UserInbox.jsx";
 import PrivacyPolicy  from "./../pages/PrivacyPolicy.jsx";
+
 
 export {
   LoginPage,
@@ -53,5 +55,6 @@ export {
   OrderSuccessPage,
   OrderDetailsPage,
   TrackOrderPage,
-  UserInbox
+  UserInbox,
+  OilInsight
 };

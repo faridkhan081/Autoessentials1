@@ -17,7 +17,7 @@ const Head = () => {
             <p className=" mb-0 ">
               <a href="mailto:autoessentials01@gmail.com">Customer Support (MON-SUN: 10 AM TO 1 AM)</a>
             </p>
-            npm i framer-motion
+           
             <span className="font-bold !no-underline">2. </span>
             <p className=" mb-0 ">Orders worth Rs 20,000/- or more will be paid online in Advance</p>
             <span className="font-bold !no-underline">3. </span>

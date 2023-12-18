@@ -17,7 +17,7 @@ const SolutionsPage = () => {
   return (
     <Layout title={"Tools"}>
       <Header activeHeading={6} />
-      <HeadBanner title="Inspect Your Tire" list="tools" imageUrl={product} />
+      <HeadBanner title="Inspect Your Tire" list="Tools" imageUrl={product} />
       <Solution />
       <Footer />
     </Layout>
@@ -32,17 +32,25 @@ const Solution = () => {
 
   const handleImageUpload = (event) => {
     const image = event.target.files[0];
-
-
+  
+    if (!image) {
+      // No file selected
+      return;
+    }
+  
+    if (!image.type.startsWith('image/')) {
+      alert('Please upload a valid image file.');
+      return;
+    }
+  
     const reader = new FileReader();
-
+  
     reader.onload = () => {
       setImageData(reader.result);
     };
-
+  
     reader.readAsDataURL(image);
   };
-
   const handlePredict = async () => {
     if (!imageData) {
       alert("Please upload an image before inspecting.");

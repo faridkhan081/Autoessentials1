@@ -20,6 +20,7 @@ import {
   // BestSellingPage,
   EventsPage,
   SolutionsPage,
+  OilInsight,
   FaqsPage,
   ProductDetailsPage,
   CheckoutPage,
@@ -80,6 +81,7 @@ import {
   AdminShopRequest 
 } from "./routes/AdminRoutes";
 
+
 const App = () => {
   const [stripeApikey, setStripeApiKey] = useState("");
 
@@ -111,6 +113,8 @@ const App = () => {
                   </ProtectedRoute>
                 }
               />
+
+              
             </Routes>
           </Elements>
         )}
@@ -124,7 +128,6 @@ const App = () => {
           <Route path="/forget-password" element={<ForgetPasswordPage />} />
           <Route path="/reset-password/:resetToken" element={<ResetPasswordPage />} />
           <Route path="/sign-up" element={<SignupPage />} />
-          <Route path="*" element={<PageNotFound />} />
           <Route
             path="/activation/:activation_token"
             element={<ActivationPage />}
@@ -151,6 +154,14 @@ const App = () => {
             }
           />
 
+<Route
+            path="/oilInsights"
+            element={
+              <ProtectedRoute>
+              <OilInsight />
+              </ProtectedRoute>
+            }
+          />
           <Route path="/faq" element={<FaqsPage />} />
           <Route path="/order/success" element={<OrderSuccessPage />} />
           <Route
@@ -386,6 +397,9 @@ const App = () => {
             </ProtectedAdminRoute>
           }
         />
+
+<Route element={<PageNotFound />} />
+
         </Routes>
         <ToastContainer
           position="bottom-center"

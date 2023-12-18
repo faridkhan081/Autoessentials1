@@ -22,7 +22,7 @@ const AdminShopRequestComponent = () => {
 
   useEffect(() => {
     dispatch(getAllSellers());
-  }, [dispatch]);
+  }, [dispatch]); 
 
   const handlePreview = (seller) => {
     setSelectedSeller(seller);

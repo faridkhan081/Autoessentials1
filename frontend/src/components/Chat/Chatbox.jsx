@@ -47,6 +47,14 @@ const Chatbox = ({ isOpen, onClose }) => {
   };
 
   useEffect(() => {
+    const messageContainer = document.getElementById('chatbox');
+    
+    // Scroll to the bottom whenever messages change
+    if (messageContainer) {
+      messageContainer.scrollTop = messageContainer.scrollHeight;
+    }
+  }, [messages]);
+  useEffect(() => {
     // Display an initial greeting when the component mounts
     addBotMessage("Hi there! How can I help you today?");
 
@@ -56,7 +64,6 @@ const Chatbox = ({ isOpen, onClose }) => {
       messageContainer.scrollTop = messageContainer.scrollHeight;
     }
   }, []); // Empty dependency array ensures this effect runs only once on mount
-
   return (
     <div className={`fixed w-[300px] 800px:w-[400px] bottom-20 right-5 mb-4 mr-4 ${isOpen ? '' : 'hidden'} `}>
       <div className="bg-white shadow-md rounded-lg max-w-lg w-full">
@@ -110,7 +117,7 @@ const Chatbox = ({ isOpen, onClose }) => {
             placeholder="Type a message"
             className="w-full px-3 py-2 border rounded-l-md focus:outline-none focus:ring-0"
             value={userInput}
-            onChange={(e) => setUserInput(e.target.value)}
+            onChange={(e) => setUserInput(e.target.value.toLowerCase())}
             onKeyUp={(e) => e.key === 'Enter' && sendMessage()}
           />
           <button
