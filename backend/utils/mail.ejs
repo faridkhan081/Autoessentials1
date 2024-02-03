@@ -7,6 +7,10 @@
       Welcome to <%= appName %>
     <% } else if (emailType === 'resetPassword') { %>
       Password Reset for <%= appName %>
+    <% } else if (emailType === 'withdrwaRequest') { %>
+      Withdraw Request
+    <% } else if (emailType === 'Paymentconfirmation') { %>
+      Payment Confirmation for <%= appName %>
     <% } %>
   </title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -70,9 +74,9 @@
     }
 
     .email-footer {
+      padding: 24px;
       background-color: black;
       color: white;
-      padding: 24px;
     }
 
     /* Buttons */
@@ -90,6 +94,7 @@
     }
   </style>
 </head>
+</head>
 
 <body>
   <div class="email-wrapper">
@@ -101,6 +106,10 @@
           Welcome to Vendors Membership
         <% } else if (emailType === 'resetPassword') { %>
           Password Reset for <%= appName %>
+        <% } else if (emailType === 'withdrwaRequest') { %>
+          Withdraw Request
+        <% } else if (emailType === 'Paymentconfirmation') { %>
+          Payment Confirmation for <%= appName %>
         <% } %>
       </h1>
     </div>
@@ -117,11 +126,22 @@
         <p>To reset your password, please click on the following link:</p>
         <a href="<%= resetUrl %>" class="button">Reset Password</a>
         <p>This link will expire in the next 30 minutes for security reasons.</p>
+      <% } else if (emailType === 'withdrwaRequest') { %>
+        <p><%= message %></p>
+        <p>Thank you for choosing <%= appName %>.</p>
+        <div class="email-footer">
+          <p>If you did not request a withdrawal, please ignore this email.</p>
+        </div>
+      <% } else if (emailType === 'Paymentconfirmation') { %>
+        <!-- Add your content for Paymentconfirmation -->
+        <p>Your payment has been confirmed for <%= appName %>.</p>
+      <% } else { %>
+        <!-- Default case for other email types -->
+        <div class="email-footer">
+          <p>If you did not request a password reset, please ignore this email.</p>
+        </div>
       <% } %>
-      <p>If you have any questions or concerns, please contact us at <a href="mailto:autoessentials01@gmail.com">autoessentials01@gmail.com</a>.</p>
-    </div>
-    <div class="email-footer">
-      <p>If you did not request a password reset, please ignore this email.</p>
+      <span style="color: black;">If you have any questions or concerns, please contact us at <a style="color: black;" href="mailto:autoessentials01@gmail.com">autoessentials01@gmail.com</a>.</span>
     </div>
   </div>
 </body>

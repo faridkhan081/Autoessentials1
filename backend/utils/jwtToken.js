@@ -1,4 +1,4 @@
-// utils/jwtToken.js
+// utils/jwtToken.js 
 const jwt = require("jsonwebtoken");
 
 // create activation token

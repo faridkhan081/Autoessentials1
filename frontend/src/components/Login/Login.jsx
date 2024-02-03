@@ -1,4 +1,4 @@
-import React, { useState } from "react"; 
+import React, { useState } from "react";
 import styles from "../../styles/styles";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { BsFillArrowLeftSquareFill } from "react-icons/bs";
@@ -8,6 +8,7 @@ import { server } from "../../server";
 import mainlogo from "../../Assets/images/main-logo.svg";
 import { toast } from "react-toastify";
 import "../Login/Login.css";
+import OAuth from "../OAuth/OAuth";
 const Login = () => {
   const [visible, setVisible] = useState(false);
   const [password, setPassword] = useState("");
@@ -27,7 +28,6 @@ const Login = () => {
         { withCredentials: true }
       )
       .then((res) => {
-     
         toast.success("Login Success!");
         navigate("/");
         window.location.reload(true);
@@ -36,7 +36,7 @@ const Login = () => {
         toast.error(err.response.data.message);
       });
 
-      setLoading(false);
+    setLoading(false);
   };
 
   return (
@@ -154,12 +154,20 @@ const Login = () => {
               <div className="col-span-6">
                 <p className="text-sm text-gray-500">
                   By creating an account, you agree to our{" "}
-                  <Link to="/terms-conditions" className="text-gray-700 underline">
-                    {" "}terms and conditions
-                  </Link>
-                 {" "} and
-                  <Link to="/privacy-policy" className="text-gray-700 underline">
-                    {" "}privacy policy
+                  <Link
+                    to="/terms-conditions"
+                    className="text-gray-700 underline"
+                  >
+                    {" "}
+                    terms and conditions
+                  </Link>{" "}
+                  and
+                  <Link
+                    to="/privacy-policy"
+                    className="text-gray-700 underline"
+                  >
+                    {" "}
+                    privacy policy
                   </Link>
                   .
                 </p>
@@ -182,20 +190,17 @@ const Login = () => {
                   </button>
                 )} */}
 
-
-              
-                  <button
-                    style={{ width: "142px" }}
-                    className={`inline-block w-full py-2 px-4 border border-transparent rounded-md font-semibold text-white ${
-                loading ? "bg-green-400 cursor-not-allowed" : "bg-rose-500 hover:bg-rose-600"
-              } focus:outline-none focus:ring focus:border-rose-300 active:bg-rose-800 transition`}
-              disabled={loading}
-                  >
-
-
-{loading ? "Loading..." : "Login"}
-                  </button>
-                
+                <button
+                  style={{ width: "142px" }}
+                  className={`inline-block w-full py-2 px-4 border border-transparent rounded-md font-semibold text-white ${
+                    loading
+                      ? "bg-green-400 cursor-not-allowed"
+                      : "bg-rose-500 hover:bg-rose-600"
+                  } focus:outline-none focus:ring focus:border-rose-300 active:bg-rose-800 transition`}
+                  disabled={loading}
+                >
+                  {loading ? "Loading..." : "Login"}
+                </button>
 
                 <p className="mt-4 text-sm text-gray-500 sm:mt-0">
                   No account?
@@ -206,6 +211,14 @@ const Login = () => {
                 </p>
               </div>
             </form>
+        <div className="">
+        <div className="mt-5 separator">
+    <hr className="line" />
+    <span>Or</span>
+    <hr className="line" />
+  </div>
+        <OAuth/>
+        </div>
           </div>
         </main>
       </div>

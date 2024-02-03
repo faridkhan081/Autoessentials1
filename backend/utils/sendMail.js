@@ -10,7 +10,7 @@ const sendMail = async (options) => {
         auth: {
             user: process.env.SMPT_MAIL,
             pass: process.env.SMPT_PASSWORD,
-        },
+        }, 
     });
 
     // Specify the path to your EJS template
