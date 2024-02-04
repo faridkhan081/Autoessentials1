@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { server } from "../../server";
+import { toast } from "react-toastify";
 
 const ResetPassword = () => {
+  const navigate  = useNavigate()
   const { resetToken } = useParams();
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -16,8 +18,12 @@ const ResetPassword = () => {
     try {
       await axios.post(`${server}/user/reset-password`, { resetToken, password });
       setResetSuccess(true);
+      toast.success("Password reset successful. You can now login with your new password.");
+      navigate('/')
     } catch (error) {
       // Handle errors
+      console.log(error);
+      toast.error(error.response.data.message);
     }
 
     setLoading(false);
@@ -55,15 +61,15 @@ const ResetPassword = () => {
               <button
                 type="submit"
                 className={`w-full py-2 px-4 border border-transparent rounded-md font-semibold text-white ${
-                  loading ? "bg-gray-400 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-600"
-                } focus:outline-none focus:ring focus:border-blue-300 active:bg-blue-800 transition`}
+                  loading ? "bg-gray-400 cursor-not-allowed" : "bg-rose-500 hover:bg-rose-600"
+                } focus:outline-none focus:ring focus:border-blue-300 active:bg-rose-800 transition`}
                 disabled={loading}
               >
                 {loading ? "Resetting..." : "Reset Password"}
               </button>
             </div>
 
-            <Link to="/" className="block text-blue-500 hover:underline">
+            <Link to="/" className="block  hover:underline">
               Return to Home Page
             </Link>
           </form>

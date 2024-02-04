@@ -58,12 +58,12 @@ const Login = () => {
           }}
         >
           <div className="max-w-xl lg:max-w-3xl mt-2">
-            <a className="block" href="/">
+            {/* <a className="block" href="/">
               <span className="sr-only">Home</span>
               <Link to="/" className="primary-light-text hover:text-rose-600 ">
                 <BsFillArrowLeftSquareFill size={30} />
               </Link>
-            </a>
+            </a> */}
 
             <h1 className="mt-6 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">
               Welcome to AutoEssentials
