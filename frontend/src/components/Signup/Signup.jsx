@@ -11,6 +11,7 @@ import { server } from "./../../server";
 import { toast } from 'react-toastify';
 import { BsFillArrowLeftSquareFill } from "react-icons/bs";
 import '../Signup/Signup.css'
+import OAuth from './../OAuth/OAuth';
 
 const Signup = () => {
   const [visible, setVisible] = useState(false);
@@ -251,7 +252,14 @@ const Signup = () => {
           </div>
         </form>
 
-              
+        <div className="">
+        <div className="mt-5 separator">
+    <hr className="line" />
+    <span>Or</span>
+    <hr className="line" />
+  </div>
+        <OAuth/>
+        </div> 
 {/* <div>
   <div className="mt-5 separator">
     <hr className="line" />
