@@ -13,15 +13,8 @@ ChartJS.register(
   Legend
 );
 
-function LineChart() {
-  const { orders, isLoading } = useSelector((state) => state.order);
-
+function LineChart({ orders }) {
   // Check if orders is still loading
-  if (isLoading) {
-    return <p>Loading...</p>;
-  }
-
-  // Check if orders is not yet defined or empty
   if (!orders || orders.length === 0) {
     return <p>No sales data available</p>;
   }
@@ -38,6 +31,7 @@ function LineChart() {
 
   const options = {
     responsive: true,
+    
     plugins: {
       legend: {
         position: 'top',

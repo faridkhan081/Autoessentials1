@@ -56,7 +56,7 @@ const DashboardSidebar = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setCollapsed(window.innerWidth <= 500);
+      setCollapsed(window.innerWidth <= 768);
     };
 
     window.addEventListener("resize", handleResize);

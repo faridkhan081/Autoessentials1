@@ -176,7 +176,7 @@ const ProfileSidebar = ({ setActive, active }) => {
 
       <div
         className="single_item flex items-center cursor-pointer w-full mb-8"
-        onClick={() => setActive(8) || logoutHandler()}
+        onClick={() => setActive(9) || logoutHandler()}
       >
         <LogOut size={20} color={active === 9 ? "red" : "black"} />
         <span

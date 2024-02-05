@@ -11,6 +11,8 @@ import Loader from "../Layout/Loader";
 import { getAllSellers } from "../../redux/actions/sellers";
 import { GrMoney } from "react-icons/gr";
 import { FaShop } from 'react-icons/fa6';
+import LineChart from './../Shop/Charts/LineChart';
+import BarChart from './../Shop/Charts/BarChart';
 
 const AdminDashboardMain = () => {
   const dispatch = useDispatch();
@@ -142,6 +144,20 @@ const AdminDashboardMain = () => {
         </div>
   
         <br />
+
+        <br />
+      <h3 className="text-[22px] font-bold font-Poppins  mb-5 text-gray-700 p-2">
+        Sales Performance
+      </h3>
+      <div className="w-full min-h-[200px] flex 800px:flex-row items-center flex-col justify-center gap-10 bg-white rounded mb-5">
+        <div>
+        <LineChart orders={adminOrders} />
+        </div>
+
+        <div>
+          <BarChart orders={adminOrders}/>
+        </div>
+      </div>
         <h3 className="text-[22px] font-Poppins pb-2">Latest Orders</h3>
         <div className="w-full min-h-[45vh] bg-white rounded">
           <DataGrid

@@ -13,21 +13,26 @@ import BarChart from "./Charts/BarChart";
 import { ShoppingBag, SpeakerIcon, Zap, ZapIcon } from "lucide-react";
 import { GrProductHunt } from "react-icons/gr";
 import { getAllEventsShop } from "../../redux/actions/event";
-
+import { getAllOrdersOfAdmin } from "../../redux/actions/order"; // Import the action for admin orders
+import CategoryPieChart from "./Charts/CategoryPieChart";
 const DashboardHero = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); 
   const { orders, isLoading } = useSelector((state) => state.order);
   const { seller } = useSelector((state) => state.seller);
   const { products } = useSelector((state) => state.products);
   const { events } = useSelector((state) => state.events);
  
-  
+  const { adminOrders, adminOrderLoading } = useSelector((state) => state.order);
   useEffect(() => {
-    dispatch(getAllOrdersOfShop(seller._id));
-    dispatch(getAllProductsShop(seller._id));
-    dispatch(getAllEventsShop(seller._id));
-   
-  }, [dispatch]); 
+    if (seller) {
+      dispatch(getAllOrdersOfShop(seller._id));
+      dispatch(getAllProductsShop(seller._id));
+      dispatch(getAllEventsShop(seller._id));
+    }
+
+    // Fetch admin orders
+    dispatch(getAllOrdersOfAdmin());
+  }, [dispatch, seller]);
 
  
   const availableBalance = seller?.availableBalance.toFixed(2) || 0;
@@ -203,13 +208,19 @@ const DashboardHero = () => {
       <h3 className="text-[22px] font-bold font-Poppins  mb-5 text-gray-700 p-2">
         Sales Performance
       </h3>
-      <div className="w-full min-h-[200px] flex 800px:flex-row items-center flex-col justify-center gap-10 bg-white rounded mb-5">
-        <div>
-          <LineChart />
+    <div className="w-full flex flex-col items-center justify-center gap-5 bg-white rounded p-4">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-5 w-full">
+          <div className="w-full md:w-1/2">
+            <LineChart orders={orders} />
+          </div>
+
+          <div className="w-full md:w-1/2">
+            <BarChart orders={orders} />
+          </div>
         </div>
 
-        <div>
-          <BarChart />
+        <div className="w-full md:w-1/2">
+          <CategoryPieChart />
         </div>
       </div>
 

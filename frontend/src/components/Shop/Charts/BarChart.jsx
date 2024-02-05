@@ -1,7 +1,6 @@
 import React from 'react';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import { useSelector } from 'react-redux';
 
 ChartJS.register(
   CategoryScale,
@@ -12,15 +11,8 @@ ChartJS.register(
   Legend
 );
 
-function BarChart() {
-  const { orders, isLoading } = useSelector((state) => state.order);
-
+function BarChart({ orders }) {
   // Check if orders is still loading
-  if (isLoading) {
-    return <p>Loading...</p>;
-  }
-
-  // Check if orders is not yet defined or empty
   if (!orders || orders.length === 0) {
     return <p>No orders data available</p>;
   }
@@ -37,6 +29,7 @@ function BarChart() {
 
   const options = {
     responsive: true,
+    
     plugins: {
       legend: {
         position: 'top',
@@ -60,6 +53,8 @@ function BarChart() {
       },
     ],
   };
+
+  
 
   return <Bar options={options} data={data} />;
 }
