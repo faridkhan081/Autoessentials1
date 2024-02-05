@@ -5,101 +5,86 @@ const fs = require("fs");
 const jwt = require("jsonwebtoken");
 const sendMail = require("../utils/sendMail");
 
-const { isAuthenticated, isSeller,isAdmin } = require("../middleware/auth");
+const { isAuthenticated, isSeller, isAdmin } = require("../middleware/auth");
 const Shop = require("../model/shop");
 const User = require("../model/user");
 const { upload } = require("../multer");
 const catchAsyncError = require("../middleware/catchAsyncError");
 const ErrorHandler = require("../utils/ErrorHandler");
-const {sendShopToken ,createResetToken}= require("../utils/shopToken");
+const { sendShopToken, createResetToken } = require("../utils/shopToken");
 
-
-
-
-
-
-router.post("/forgot-password", catchAsyncError(async (req, res, next) => {
-  try {
-    const { email } = req.body;
-
-    const shop = await Shop.findOne({ email });
-
-    if (!shop) {
-      return next(new ErrorHandler("Shop not found", 404));
-    }
-  
-    const resetToken = createResetToken(shop);
-
-    const resetUrl = `http://localhost:3000/shop/reset-password/${resetToken}`;
-
+router.post(
+  "/forgot-password",
+  catchAsyncError(async (req, res, next) => {
     try {
-      // Send the reset URL to the user's email using Nodemailer or your preferred email service
-      await sendMail({
-     
+      const { email } = req.body;
 
+      const shop = await Shop.findOne({ email });
 
-        email: shop.email,
-        subject: "Reset Your Password",
-        emailType: "resetPassword",
-        appName: "AutoEssentials", // Replace with your app name
-        resetUrl: resetUrl, // Replace with the actual reset URL
-        recipientName: shop.name,
-      });
+      if (!shop) {
+        return next(new ErrorHandler("Shop not found", 404));
+      }
+
+      const resetToken = createResetToken(shop);
+
+      const resetUrl = `http://localhost:3000/shop/reset-password/${resetToken}`;
+
+      try {
+        // Send the reset URL to the user's email using Nodemailer or your preferred email service
+        await sendMail({
+          email: shop.email,
+          subject: "Reset Your Password",
+          emailType: "resetPassword",
+          appName: "AutoEssentials", // Replace with your app name
+          resetUrl: resetUrl, // Replace with the actual reset URL
+          recipientName: shop.name,
+        });
+
+        res.status(200).json({
+          success: true,
+          message: "Password reset email sent. Check your inbox.",
+        });
+      } catch (error) {
+        return next(new ErrorHandler(error.message, 500));
+      }
+    } catch (error) {
+      return next(new ErrorHandler(error.message, 400));
+    }
+  })
+);
+
+router.post(
+  "/reset-password",
+  catchAsyncError(async (req, res, next) => {
+    try {
+      const { resetToken, password } = req.body;
+      const decoded = jwt.verify(resetToken, process.env.RESET_SECRET);
+
+      if (!decoded) {
+        return next(new ErrorHandler("Invalid or expired reset token", 400));
+      }
+
+      const shop = await Shop.findById(decoded.id);
+
+      if (!shop) {
+        return next(new ErrorHandler("Shop not found", 404));
+      }
+
+      // Update the user's password
+      shop.password = password;
+      await shop.save();
+
+      // You may want to invalidate the reset token after successful use
 
       res.status(200).json({
         success: true,
-        message: "Password reset email sent. Check your inbox.",
+        message: "Password reset successful.",
       });
     } catch (error) {
       return next(new ErrorHandler(error.message, 500));
     }
-  } catch (error) {
-    return next(new ErrorHandler(error.message, 400));
-  }
-}));
-
-
-
-router.post("/reset-password", catchAsyncError(async (req, res, next) => {
-  try {
-    const { resetToken, password } = req.body;
-    const decoded = jwt.verify(resetToken, process.env.RESET_SECRET);
-
-    if (!decoded) {
-      return next(new ErrorHandler("Invalid or expired reset token", 400));
-    }
-
-    const shop = await Shop.findById(decoded.id);
-
-    if (!shop) {
-      return next(new ErrorHandler("Shop not found", 404));
-    }
-
-    // Update the user's password
-    shop.password = password;
-    await shop.save();
-
-    // You may want to invalidate the reset token after successful use
-
-    res.status(200).json({
-      success: true,
-      message: "Password reset successful.",
-    });
-  } catch (error) {
-    return next(new ErrorHandler(error.message, 500));
-  }
-}));
-
-
-
-
-
-
-
-
-
-
-
+  })
+);
 
 // create shop
 router.post("/create-shop", upload.single("file"), async (req, res, next) => {
@@ -143,8 +128,8 @@ router.post("/create-shop", upload.single("file"), async (req, res, next) => {
         email: seller.email,
         emailType: "sellerActivation",
         recipientName: seller.name,
-        activationCode: activationUrl, 
-        appName: "AutoEssentials", 
+        activationCode: activationUrl,
+        appName: "AutoEssentials",
         // Use the activation URL as the code for seller activation
         // Add any other dynamic data needed for your template
       });
@@ -338,7 +323,7 @@ router.put(
         fs.unlinkSync(existAvatarPath);
       }
 
-      const fileUrl = path.join( req.file.filename); // Use path.join for the new avatar path
+      const fileUrl = path.join(req.file.filename); // Use path.join for the new avatar path
 
       const user = await Shop.findByIdAndUpdate(req.seller._id, {
         avatar: fileUrl,
@@ -354,44 +339,43 @@ router.put(
   })
 );
 
-
 //update shop/seller profile information
-router.put('/update-seller-info',isSeller,catchAsyncError(async(req,res,next)=>{
-  try {
-    const {name,description,address,phoneNumber,zipCode} = req.body;
-    const shop = await Shop.findOne(req.seller._id)
-    if(!shop){
-      return next(new ErrorHandler("shop doesn't exists", 400));
+router.put(
+  "/update-seller-info",
+  isSeller,
+  catchAsyncError(async (req, res, next) => {
+    try {
+      const { name, description, address, phoneNumber, zipCode } = req.body;
+      const shop = await Shop.findOne(req.seller._id);
+      if (!shop) {
+        return next(new ErrorHandler("shop doesn't exists", 400));
+      }
+      // const isPasswordValid = await shop.comparePassword(password);
+
+      // if (!isPasswordValid) {
+      //   return next(
+      //     new ErrorHandler("Please provide the correct information", 400)
+      //   );
+      // }
+
+      shop.name = name;
+      shop.address = address;
+      shop.phoneNumber = phoneNumber;
+      shop.description = description;
+      shop.zipCode = zipCode;
+      await shop.save();
+
+      res.status(201).json({
+        success: true,
+        shop,
+      });
+    } catch (error) {
+      return next(new ErrorHandler(error.message, 500));
     }
-    // const isPasswordValid = await shop.comparePassword(password);
-  
-    // if (!isPasswordValid) {
-    //   return next(
-    //     new ErrorHandler("Please provide the correct information", 400)
-    //   );
-    // }
-  
-    shop.name = name
-    shop.address = address
-    shop.phoneNumber = phoneNumber
-    shop.description = description
-    shop.zipCode = zipCode
-    await shop.save()
-  
-    res.status(201).json({
-      success:true,
-      shop
-    })
-  
-  
-  } catch (error) {
-    return next(new ErrorHandler(error.message,500))
-  }
-  }))
+  })
+);
 
-
-
-  // update shop status ---admin
+// update shop status ---admin
 router.put(
   "/update-shop-status/:id",
   isAuthenticated,
@@ -410,7 +394,7 @@ router.put(
       const { newStatus } = req.body;
 
       // Assuming that 'newStatus' is a valid status value
-      shop.status = newStatus; 
+      shop.status = newStatus;
       await shop.save();
 
       res.status(201).json({
@@ -423,32 +407,27 @@ router.put(
   })
 );
 
-
-
-
-
-  // all sellers --- for users
-  router.get(
-    "/all-sellers",
+// all sellers --- for users
+router.get(
+  "/all-sellers",
   isAuthenticated,
-    
-    catchAsyncError(async (req, res, next) => {
-      try {
-        const sellers = await Shop.find().sort({
-          createdAt: -1,
-        });
-        res.status(201).json({
-          success: true, 
-          sellers,
-        });
-      } catch (error) {
-        return next(new ErrorHandler(error.message, 500));
-      }
-    })
-  );
 
+  catchAsyncError(async (req, res, next) => {
+    try {
+      const sellers = await Shop.find().sort({
+        createdAt: -1,
+      });
+      res.status(201).json({
+        success: true,
+        sellers,
+      });
+    } catch (error) {
+      return next(new ErrorHandler(error.message, 500));
+    }
+  })
+);
 
-  // update seller withdraw methods --- sellers
+// update seller withdraw methods --- sellers
 router.put(
   "/update-payment-methods",
   isSeller,
@@ -495,5 +474,5 @@ router.delete(
     }
   })
 );
-  
+
 module.exports = router;
