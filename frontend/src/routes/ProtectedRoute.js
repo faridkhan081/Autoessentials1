@@ -13,7 +13,7 @@ const ProtectedRoute = ({ children }) => {
 
   if (!isAuthenticated) {
     // Display a toast notification indicating that login is required
-    toast.error("Login required. Please log in to access this page.");
+    toast.error("You need to login to access this page.");
     // Redirect the user to the home page or login page
     return <Navigate to="/" replace />;
   }

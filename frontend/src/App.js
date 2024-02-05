@@ -35,19 +35,13 @@ import {
   OrderDetailsPage,
   TrackOrderPage,
   UserInbox,
+  AboutPage 
 } from "./routes/Routes.js";
 
 //shop imports
 
-import { ShopDashboardPage } from "./routes/ShopRoutes";
-
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
-import Store from "./redux/store";
-import { loadSeller, loadUser } from "./redux/actions/user";
-
 import {
+  ShopDashboardPage,
   ShopHomePage,
   ShopCreateProduct,
   ShopAllProducts,
@@ -61,12 +55,22 @@ import {
   ShopAllRefunds,
   ShopSettingsPage,
   ShopWithDrawMoneyPage,
-  ShopInboxPage 
-} from "./ShopRoutes.js";
+  ShopInboxPage,
+  ShopForgetPasswordPage,
+  ShopResetPasswordPage, 
+} from "../src/routes/ShopRoutes";
+
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import Store from "./redux/store";
+import { loadSeller, loadUser } from "./redux/actions/user";
+
+
 import SellerProtectedRoute from "./routes/SellerProtectedRoute";
 import ProtectedAdminRoute from "./routes/ProtectedAdminRoute.js";
 import { getAllProducts, getSingleProduct } from "./redux/actions/product";
-import AboutPage from "./pages/AboutPage";
+
 import { getAllEvents } from "./redux/actions/event";
 import axios from "axios";
 
@@ -127,6 +131,7 @@ const App = () => {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/forget-password" element={<ForgetPasswordPage />} />
           <Route path="/reset-password/:resetToken" element={<ResetPasswordPage />} />
+         
           <Route path="/sign-up" element={<SignupPage />} />
           <Route
             path="/activation/:activation_token"
@@ -211,6 +216,8 @@ const App = () => {
           <Route path="/shop/preview/:id" element={<ShopPreviewPage />} />
           <Route path="/shop-create" element={<ShopCreatePage />} />
           <Route path="/shop-login" element={<ShopLoginPage />} />
+          <Route path="/shop/forget-password" element={<ShopForgetPasswordPage />} />
+          <Route path="/shop/reset-password/:resetToken" element={<ShopResetPasswordPage />} />
           <Route
             path="/shop/:id"
             element={

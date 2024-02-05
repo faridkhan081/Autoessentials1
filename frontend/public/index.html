@@ -25,6 +25,7 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title></title>
+   
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -40,6 +41,36 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    
+<!-- 
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+ 
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Check if the current page is the homepage
+      if (window.location.pathname === '/') {
+        window.botpressWebChat.init({
+      "composerPlaceholder": "Chat with autoessntials",
+      "botConversationDescription": "Your assistant ",
+      "botId": "916da6fb-4aff-436c-8108-dcdff30ce9b1",
+      "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
+      "messagingUrl": "https://messaging.botpress.cloud",
+      "clientId": "916da6fb-4aff-436c-8108-dcdff30ce9b1",
+      "webhookId": "a1ef648b-7dff-4ca4-a64c-474436ff5262",
+      "lazySocket": true,
+      "themeName": "prism",
+      "botName": "AutoEssentials",
+      "frontendVersion": "v1",
+      "useSessionStorage": true,
+      "enableConversationDeletion": true,
+      "theme": "prism",
+      "themeColor": "#2563eb"
+  });
+   
+      }
+    });
+  </script> -->
+   
   </body>
 </html>

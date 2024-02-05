@@ -1,11 +1,10 @@
-// src/components/ForgotPassword/ForgotPassword.js
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { server } from "../../server";
 import { toast } from "react-toastify";
 
-const ForgotPassword = () => {
+const ShopForgetPasswordPage = () => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -14,7 +13,7 @@ const ForgotPassword = () => {
     setLoading(true);
 
     try {
-      await axios.post(`${server}/user/forgot-password`, { email });
+      await axios.post(`${server}/shop/forgot-password`, { email });
 
       toast.success("Password reset email sent. Check your inbox.");
     } catch (error) {
@@ -27,7 +26,7 @@ const ForgotPassword = () => {
   return (
 
 <div className="max-w-lg mx-auto my-10 bg-white p-8 rounded-xl shadow shadow-slate-300">
-  <h1 className="text-4xl font-medium">Forget password</h1>
+  <h1 className="text-4xl font-medium">Seller Forget password</h1>
   <p className="text-slate-500">Fill up the form to reset the password</p>
   <form action className="my-10" onSubmit={handleSubmit}>
     <div className="flex flex-col space-y-5">
@@ -52,4 +51,4 @@ const ForgotPassword = () => {
   );
 };
 
-export default ForgotPassword;
+export default ShopForgetPasswordPage;

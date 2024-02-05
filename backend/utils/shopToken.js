@@ -1,4 +1,6 @@
 // create token and saving that in cookies
+const jwt = require("jsonwebtoken");
+
 const sendShopToken = (user, statusCode, res) => {
   const token = user.getJwtToken();
 
@@ -17,4 +19,15 @@ const sendShopToken = (user, statusCode, res) => {
   });
 };
 
-module.exports = sendShopToken;
+
+const createResetToken = (shop) => {
+  return jwt.sign({ id: shop._id }, process.env.RESET_SECRET, {
+    expiresIn: "15m",
+  });
+};
+
+module.exports = {
+  sendShopToken,
+  createResetToken,
+
+}

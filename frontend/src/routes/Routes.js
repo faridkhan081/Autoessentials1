@@ -27,6 +27,7 @@ import OrderDetailsPage from "./../pages/OrderDetailsPage.jsx";
 import TrackOrderPage from "./../pages/TrackOrderPage.jsx";
 import UserInbox from "./../pages/UserInbox.jsx";
 import PrivacyPolicy  from "./../pages/PrivacyPolicy.jsx";
+import AboutPage from './../pages/AboutPage';
 
 
 export {
@@ -40,6 +41,7 @@ export {
   TermsAndConditions,
   PrivacyPolicy ,
   // BestSellingPage,
+  AboutPage ,
   EventsPage,
   SolutionsPage,
   FaqsPage,

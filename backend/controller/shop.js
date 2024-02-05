@@ -11,7 +11,95 @@ const User = require("../model/user");
 const { upload } = require("../multer");
 const catchAsyncError = require("../middleware/catchAsyncError");
 const ErrorHandler = require("../utils/ErrorHandler");
-const sendShopToken = require("../utils/shopToken");
+const {sendShopToken ,createResetToken}= require("../utils/shopToken");
+
+
+
+
+
+
+router.post("/forgot-password", catchAsyncError(async (req, res, next) => {
+  try {
+    const { email } = req.body;
+
+    const shop = await Shop.findOne({ email });
+
+    if (!shop) {
+      return next(new ErrorHandler("Shop not found", 404));
+    }
+  
+    const resetToken = createResetToken(shop);
+
+    const resetUrl = `http://localhost:3000/shop/reset-password/${resetToken}`;
+
+    try {
+      // Send the reset URL to the user's email using Nodemailer or your preferred email service
+      await sendMail({
+     
+
+
+        email: shop.email,
+        subject: "Reset Your Password",
+        emailType: "resetPassword",
+        appName: "AutoEssentials", // Replace with your app name
+        resetUrl: resetUrl, // Replace with the actual reset URL
+        recipientName: shop.name,
+      });
+
+      res.status(200).json({
+        success: true,
+        message: "Password reset email sent. Check your inbox.",
+      });
+    } catch (error) {
+      return next(new ErrorHandler(error.message, 500));
+    }
+  } catch (error) {
+    return next(new ErrorHandler(error.message, 400));
+  }
+}));
+
+
+
+router.post("/reset-password", catchAsyncError(async (req, res, next) => {
+  try {
+    const { resetToken, password } = req.body;
+    const decoded = jwt.verify(resetToken, process.env.RESET_SECRET);
+
+    if (!decoded) {
+      return next(new ErrorHandler("Invalid or expired reset token", 400));
+    }
+
+    const shop = await Shop.findById(decoded.id);
+
+    if (!shop) {
+      return next(new ErrorHandler("Shop not found", 404));
+    }
+
+    // Update the user's password
+    shop.password = password;
+    await shop.save();
+
+    // You may want to invalidate the reset token after successful use
+
+    res.status(200).json({
+      success: true,
+      message: "Password reset successful.",
+    });
+  } catch (error) {
+    return next(new ErrorHandler(error.message, 500));
+  }
+}));
+
+
+
+
+
+
+
+
+
+
+
 
 // create shop
 router.post("/create-shop", upload.single("file"), async (req, res, next) => {

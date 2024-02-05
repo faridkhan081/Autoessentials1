@@ -145,12 +145,12 @@ const ShopLogin = () => {
                   </label>
                 </div>
                 <div className="text-sm ">
-                  <a
-                    href="/forgot-password"
+                  <Link
+                    to="/shop/forget-password"
                     className="font-medium text-rose-600 hover:text-rose-500"
                   >
                     Forgot your password?
-                  </a>
+                  </Link>
                 </div>
               </div>
 
