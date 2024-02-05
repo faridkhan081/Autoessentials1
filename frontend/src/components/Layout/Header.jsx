@@ -104,7 +104,9 @@ const Header = ({ activeHeading }) => {
         <div className="hidden 800px:h-[50px] 800px:my-[20px] 800px:flex items-center justify-between ">
           <div>
             <Link to="/">
-              <img src={logo} alt="" className="h-[150px] ml-1" />
+            <div className='flex gap-2 items-center p-1 rounded-sm' style={{border:'1px solid black'}}>
+         <span className='bg-rose-600 text-white p-2'>Auto</span> <span className=''>Essentials</span>
+         </div>
             </Link>
           </div>
           {/* search box */}
@@ -140,22 +142,16 @@ const Header = ({ activeHeading }) => {
           </div>
           {isSeller ? (
             <Link to="/seller-dashboard">
-              <div className={`${styles.button} hover:bg-gray-800  primary-dark !rounded-md`}>
-                <h1 className="text-[#fff] flex items-center">
-                  Dashboard
-                  <IoIosArrowForward className="ml-1" />
-                </h1>
-              </div>
+            <button className="btn-d">
+Dashboard
+</button>
             </Link>
           ) : (
             <>
               <Link to="/shop-login">
-                <div className={`${styles.button} primary-dark !rounded-md`}>
-                  <h1 className="text-[#fff] flex items-center">
-                    Seller Zone
-                    <IoIosArrowForward className="ml-1" />
-                  </h1>
-                </div>
+              <button className="btn-d">
+Sell online
+</button>
               </Link>
             </>
           )}
@@ -368,18 +364,20 @@ const Header = ({ activeHeading }) => {
             className={` fixed w-full bg-[#0000005f] z-20 h-full top-0 left-0`}
           >
             <div className="fixed w-[50%] bg-[#fff] h-screen top-0 left-0 z-10 overflow-y-scroll">
-              <div className="flex justify-between">
+              <div className="flex justify-between items-center mt-1">
                 <div>
                   <AiOutlineClose
                     size={28}
                     onClick={() => setOpen(false)}
-                    className="mt-[37px] ml-4 cursor-pointer"
+                    className=" ml-4 cursor-pointer"
                   />
                 </div>
 
-                <div>
+                <div >
                   <Link to="/">
-                    <img src={logo} className="h-[100px] mr-4" alt="" />
+                  <div className='flex gap-2 items-center p-1 rounded-sm' style={{border:'1px solid black'}}>
+         <span className='bg-rose-600 text-white p-2'>Auto</span> <span className=''>Essentials</span>
+         </div>
                   </Link>
                 </div>
               </div>
@@ -387,7 +385,7 @@ const Header = ({ activeHeading }) => {
               {/* nav-bar */}
 
               <div
-                className={`w-[120px] p-2 mb-5 ml-4 !rounded-[4px] primary-dark`}
+                className={`w-[120px] mt-5 p-2 mb-5 ml-4 !rounded-[4px] primary-dark`}
               >
                  <Link to="/shop-login">
                   <h1 className="text-[#fff] flex items-center">

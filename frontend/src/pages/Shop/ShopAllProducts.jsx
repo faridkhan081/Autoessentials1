@@ -5,7 +5,8 @@ import AllProducts from "../../components/Shop/AllProducts.jsx";
 import Layout from '../../components/Layout/Layout.jsx';
 
 const ShopAllProducts = () => {
-  return (
+  
+  return ( 
     <Layout title={'All Products'}>
       
         <div className="flex ">

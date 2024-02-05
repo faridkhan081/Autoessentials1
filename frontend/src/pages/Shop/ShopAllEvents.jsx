@@ -5,6 +5,7 @@ import AllEvents from "../../components/Shop/AllEvents.jsx";
 import Layout from '../../components/Layout/Layout.jsx';
 
 const ShopAllEvents = () => {
+  
   return (
     <Layout title={'All Events'}>
        
