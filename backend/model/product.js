@@ -58,6 +58,8 @@ const productSchema = new mongoose.Schema({
       }
     },
   ],
+
+  
   ratings: {
     type: Number,
   },
